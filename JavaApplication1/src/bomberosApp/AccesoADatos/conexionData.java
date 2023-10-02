@@ -1,0 +1,34 @@
+package bomberosApp.AccesoADatos;
+
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import org.mariadb.jdbc.Connection;
+
+import javax.swing.JOptionPane;
+
+public class conexionData {
+
+    private static final String URL = "jdcb:mariadb://localhost:3306/";
+    private static final String DB = "1-bomberos";
+    private static final String USUARIO = "root";
+    private static final String PASSWORD = "";
+
+    private static Connection connection;
+
+    private conexionData() {
+
+    }
+
+    public static Connection getConexion() {
+        if (connection == null) {
+            try {
+                Class.forName("org.mariadb.jdbc.Driver");
+                connection=DriverManager.getConnection(URL+DB, USUARIO, PASSWORD);
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos" + e.getMessage());
+            }}
+        return connection;
+    }
+        
+}
