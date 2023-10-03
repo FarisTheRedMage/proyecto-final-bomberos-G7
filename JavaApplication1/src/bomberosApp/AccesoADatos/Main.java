@@ -5,6 +5,9 @@
  */
 package bomberosApp.AccesoADatos;
 
+import bomberosApp.Entidades.Bombero;
+import java.time.LocalDate;
+
 /**
  *
  * @author faris
@@ -16,6 +19,10 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Bombero juan = new Bombero("Juan", "Castro", "12345678", LocalDate.of(1996,5,13), "A+", 2, "23112412", true);
+         BomberoData bombi = new BomberoData();
+         bombi.GuardarBombero(juan);
+         System.out.println(bombi);
     }
     
 }

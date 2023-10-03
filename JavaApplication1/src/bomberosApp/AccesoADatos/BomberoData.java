@@ -18,7 +18,7 @@ public class BomberoData {
     }
 
     public void GuardarBombero(Bombero bombero) {
-        String SQL = "INSERT INTO bombero (nombre, apellido, dni, fecha_nacimiento, grupo_sanguineo, codigo_bigrada, celular, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO bombero (nombre, apellido, dni, fecha_nacimiento, grupo_sanguineo, codigo_brigada, celular, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, bombero.getNombre());
@@ -29,6 +29,7 @@ public class BomberoData {
             ps.setInt(6, bombero.getCodigo_brigada());
             ps.setString(7, bombero.getCelular());
             ps.setBoolean(8, bombero.isEstado());
+            ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
