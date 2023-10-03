@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
-public class conexionData {
+public class ConexionData {
 
     private static final String URL = "jdcb:mariadb://localhost:3306/";
     private static final String DB = "1-bomberos";
@@ -18,7 +18,7 @@ public class conexionData {
 
     private static Connection connection;
 
-    private conexionData() {
+    private ConexionData() {
     }
 
     public static Connection getConexion() {
