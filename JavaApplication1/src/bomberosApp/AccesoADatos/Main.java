@@ -1,28 +1,63 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bomberosApp.AccesoADatos;
 
 import bomberosApp.Entidades.Bombero;
 import java.time.LocalDate;
 
-/**
- *
- * @author faris
- */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Bombero juan = new Bombero("Juan", "Castro", "12345678", LocalDate.of(1996,5,13), "A+", 2, "23112412", true);
-         BomberoData bombi = new BomberoData();
-         bombi.GuardarBombero(juan);
-         System.out.println(bombi);
+          /*
+          //Prueba metodo GuardarBombero - FUNCA.
+             Bombero juan = new Bombero("Juan", "Castro", "12345678", LocalDate.of(1996,5,13), "A+", 2, "23112412", true);
+             BomberoData bombi = new BomberoData();
+             bombi.GuardarBombero(juan);
+        
+             BomberoData bombi = new BomberoData();
+            Bombero BomberoEncontrado = bombi.BuscarBombero(1);
+
+            if (BomberoEncontrado != null) {
+                System.out.println("Personal encontrado:");
+                
+                System.out.println("ID: " + BomberoEncontrado.getId_bombero());
+                System.out.println("Nombre: " + BomberoEncontrado.getNombre());
+                System.out.println("Apellido: " + BomberoEncontrado.getApellido());
+                System.out.println("DNI: " + BomberoEncontrado.getDni());
+                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
+                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
+                System.out.println("Codigo Brigada: " + BomberoEncontrado.getCodigo_brigada());
+                System.out.println("Celular: " + BomberoEncontrado.getCelular());
+                System.out.println("Estado: " + BomberoEncontrado.isEstado());
+                
+            } else {
+                System.out.println("No se encontró el Personal. ");
+            } 
+             
+         */
+      
+          /*
+          //Prueba BuscarBombero por id - FUNCA
+          
+            BomberoData bombi = new BomberoData();
+            Bombero BomberoEncontrado = bombi.BuscarBombero(1);
+
+            if (BomberoEncontrado != null) {
+                System.out.println("Personal encontrado:");
+                
+                System.out.println("ID: " + BomberoEncontrado.getId_bombero());
+                System.out.println("Nombre: " + BomberoEncontrado.getNombre());
+                System.out.println("Apellido: " + BomberoEncontrado.getApellido());
+                System.out.println("DNI: " + BomberoEncontrado.getDni());
+                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
+                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
+                System.out.println("Codigo Brigada: " + BomberoEncontrado.getCodigo_brigada());
+                System.out.println("Celular: " + BomberoEncontrado.getCelular());
+                System.out.println("Estado: " + BomberoEncontrado.isEstado());
+                
+            } else {
+                System.out.println("No se encontró el Personal. ");
+            } 
+          */
     }
-    
+          
+          
 }

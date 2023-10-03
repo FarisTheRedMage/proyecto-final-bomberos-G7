@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
+
 public class BomberoData {
 
     private Connection con = null;
@@ -45,10 +46,10 @@ public class BomberoData {
         }
     }
 
-    public Bombero buscarBombero(int id) {
+    public Bombero BuscarBombero(int id) {
         Bombero bombero = null;
 
-        String SQL = "SELECT (nombre, apellido, dni, fecha_nacimiento, grupo_sanguineo, codigo_bigrada, celular) WHERE id_bombero=? and estado=1";
+        String SQL = "SELECT * FROM bombero WHERE id_bombero=? and estado=1";
         PreparedStatement ps = null;
 
         try {
@@ -68,16 +69,70 @@ public class BomberoData {
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
                 bombero.setCodigo_brigada(rs.getInt("codigo_brigada"));
                 bombero.setCelular(rs.getString("celular"));
-                bombero.setEstado(true);
 
-            }else{
-                JOptionPane.showMessageDialog(null,"No existe el empleado" );
+                bombero.setEstado(rs.getBoolean("estado"));//
+
+            } else {
+                JOptionPane.showMessageDialog(null, "No existe el empleado");
             }
             ps.close();
             rs.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero"+ e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero" + e.getMessage());
         }
         return bombero;
+    }
+
+    public void ModificarBombero(Bombero bombero) {
+        String SQL = "UPDATE bombero SET nombre = ?, apellido = ?, dni = ?,"
+                         + " fecha_nacimiento = ?, grupo_sanguineo = ?, codigo_brigada = ?, celular = ?, estado = ?";
+
+        PreparedStatement ps = null;
+        try {
+            
+            ps=con.prepareStatement(SQL);
+            
+            ps.setString(1, bombero.getNombre());
+            ps.setString(2, bombero.getApellido());
+            ps.setString(3, bombero.getDni());
+            ps.setDate(4, Date.valueOf(bombero.getFecha_nacimiento()));
+            ps.setString(5, bombero.getGrupo_sanguineo());
+            ps.setInt(6, bombero.getCodigo_brigada());
+             ps.setString(7, bombero.getCelular());
+            ps.setBoolean(8, bombero.isEstado());
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "El Bombero no existe");
+            } 
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero " +e.getMessage());
+        }
+        
+    }
+    
+    public void EliminarBombero(int id){
+        
+        try {
+            String SQL="UPDATE bombero SET estado = 0 WHERE id_bombero = ? ";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            
+            ps.setInt(1, id);
+            int fila = ps.executeUpdate();
+            
+            if (fila == 1) {
+                JOptionPane.showMessageDialog(null,"Se elimino el Bombero. ");
+            }
+            
+            ps.close();
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero. "+ e.getMessage());
+        }
+        
+        
+        
     }
 }
