@@ -3,7 +3,9 @@ package bomberosApp.AccesoADatos;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import org.mariadb.jdbc.Connection;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
@@ -17,7 +19,6 @@ public class conexionData {
     private static Connection connection;
 
     private conexionData() {
-
     }
 
     public static Connection getConexion() {
@@ -27,6 +28,8 @@ public class conexionData {
                 connection=DriverManager.getConnection(URL+DB, USUARIO, PASSWORD);
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos" + e.getMessage());
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null,"Error a cargar los drivers"+ ex);
             }}
         return connection;
     }
