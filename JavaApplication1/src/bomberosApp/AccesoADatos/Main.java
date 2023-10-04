@@ -35,7 +35,7 @@ public class Main {
          
           //Prueba BuscarBombero por id - FUNCA
           
-            BomberoData bombi = new BomberoData();
+        /*    BomberoData bombi = new BomberoData();
             Bombero BomberoEncontrado = bombi.BuscarBombero(1);
 
             if (BomberoEncontrado != null) {
@@ -55,9 +55,9 @@ public class Main {
                 System.out.println("No se encontró el Personal. ");
             } 
           
-          
+          */
            //Prueba ModificarBombero
-           
+           /*
                 BomberoData bombi2 = new BomberoData();
                 Bombero bombero = new Bombero();
                 bombero.setNombre("rigoberto");
@@ -89,5 +89,14 @@ public class Main {
             } else {
                 System.out.println("No se encontró el Personal. ");
             } 
+*/
+           
+           // Prueba EliminarBombero
+         /*  
+           BomberoData bombi = new BomberoData();
+           bombi.EliminarBombero(1); 
+            */       
+                  
+           
     }          
 }
