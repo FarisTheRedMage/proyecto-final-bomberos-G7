@@ -84,8 +84,10 @@ public class BomberoData {
     }
 
     public void ModificarBombero(Bombero bombero) {
-        String SQL = "UPDATE bombero SET nombre = ?, apellido = ?, dni = ?,"
-                         + " fecha_nacimiento = ?, grupo_sanguineo = ?, codigo_brigada = ?, celular = ?, estado = ?";
+        
+        String SQL = " UPDATE bombero SET nombre = ?, apellido = ?"
+                         + " fecha_nacimiento = ?, grupo_sanguineo = ?, codigo_brigada = ?, celular = ?, estado = ? ";
+                    
 
         PreparedStatement ps = null;
         try {
@@ -94,12 +96,11 @@ public class BomberoData {
             
             ps.setString(1, bombero.getNombre());
             ps.setString(2, bombero.getApellido());
-            ps.setString(3, bombero.getDni());
-            ps.setDate(4, Date.valueOf(bombero.getFecha_nacimiento()));
-            ps.setString(5, bombero.getGrupo_sanguineo());
-            ps.setInt(6, bombero.getCodigo_brigada());
-             ps.setString(7, bombero.getCelular());
-            ps.setBoolean(8, bombero.isEstado());
+            ps.setDate(3, Date.valueOf(bombero.getFecha_nacimiento()));
+            ps.setString(4, bombero.getGrupo_sanguineo());
+            ps.setInt(5, bombero.getCodigo_brigada());
+             ps.setString(6, bombero.getCelular());
+            ps.setBoolean(7, bombero.isEstado());
             int exito = ps.executeUpdate();
 
             if (exito == 1) {
@@ -135,4 +136,5 @@ public class BomberoData {
         
         
     }
+    
 }

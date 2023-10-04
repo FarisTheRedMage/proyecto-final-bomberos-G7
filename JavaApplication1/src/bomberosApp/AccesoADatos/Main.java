@@ -30,11 +30,9 @@ public class Main {
                 
             } else {
                 System.out.println("No se encontró el Personal. ");
-            } 
-             
+            }     
          */
-      
-          /*
+         
           //Prueba BuscarBombero por id - FUNCA
           
             BomberoData bombi = new BomberoData();
@@ -56,8 +54,20 @@ public class Main {
             } else {
                 System.out.println("No se encontró el Personal. ");
             } 
-          */
-    }
           
           
+           //Prueba ModificarBombero
+           
+                BomberoData bombi2 = new BomberoData();
+                Bombero bombero = new Bombero();
+                bombero.setNombre("Gerardo");
+                bombero.setApellido("Muñoz"); 
+                bombero.setFecha_nacimiento(LocalDate.of(1990, 5, 15)); 
+                bombero.setGrupo_sanguineo("A+"); 
+                bombero.setCodigo_brigada(2); 
+                bombero.setCelular("12321313"); 
+                bombero.setEstado(true); 
+
+                  bombi2.ModificarBombero(bombero);
+    }          
 }
