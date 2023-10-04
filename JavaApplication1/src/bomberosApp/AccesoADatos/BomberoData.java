@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.text.html.HTMLDocument;
 import org.mariadb.jdbc.Statement;
 
 
@@ -137,4 +138,36 @@ public class BomberoData {
         
     }
     
+    public Bombero BuscarBomberoPorDni (int dni){
+        Bombero bombero = null;
+         String SQL = "SELECT * FROM bombero WHERE dni= ?";
+         PreparedStatement ps = null;
+         
+         try {
+            ps = con.prepareStatement(SQL);
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                bombero = new Bombero();
+                bombero.setId_bombero(rs.getInt("id_bombero"));
+                bombero.setNombre(rs.getString("nombre"));
+                bombero.setApellido(rs.getString("apellido"));
+                bombero.setDni(rs.getString("dni"));
+                bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
+                bombero.setCodigo_brigada(rs.getInt("codigo_brigada"));
+                bombero.setCelular(rs.getString("celular"));
+                bombero.setEstado(true);
+            } else {
+                JOptionPane.showConfirmDialog(null, "Este Empleado no esta Duplicado");
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero"+ ex);
+        }
+         
+      return bombero;
+    }
 }

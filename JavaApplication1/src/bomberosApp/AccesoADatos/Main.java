@@ -91,12 +91,31 @@ public class Main {
             } 
 */
            
-           // Prueba EliminarBombero
+           // Prueba EliminarBombero // funca xd x2
          /*  
            BomberoData bombi = new BomberoData();
            bombi.EliminarBombero(1); 
             */       
                   
-           
+//         //Probamos Buscar x dni /// FUNCA. xD
+//           BomberoData bombi = new BomberoData();
+//            Bombero BomberoEncontrado = bombi.BuscarBomberoPorDni(12345678);
+//
+//            if (BomberoEncontrado != null) {
+//                System.out.println("Personal encontrado:");
+//                
+//                System.out.println("ID: " + BomberoEncontrado.getId_bombero());
+//                System.out.println("Nombre: " + BomberoEncontrado.getNombre());
+//                System.out.println("Apellido: " + BomberoEncontrado.getApellido());
+//                System.out.println("DNI: " + BomberoEncontrado.getDni());
+//                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
+//                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
+//                System.out.println("Codigo Brigada: " + BomberoEncontrado.getCodigo_brigada());
+//                System.out.println("Celular: " + BomberoEncontrado.getCelular());
+//                System.out.println("Estado: " + BomberoEncontrado.isEstado());
+//                
+//            } else {
+//                System.out.println("No se encontró el Personal. ");
+//            } 
     }          
 }
