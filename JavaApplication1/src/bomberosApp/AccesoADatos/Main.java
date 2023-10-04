@@ -2,6 +2,7 @@ package bomberosApp.AccesoADatos;
 
 import bomberosApp.Entidades.Bombero;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main {
 
@@ -117,5 +118,29 @@ public class Main {
 //            } else {
 //                System.out.println("No se encontró el Personal. ");
 //            } 
+
+               BomberoData bombibis = new BomberoData();
+    
+            List<Bombero> ListarBomberos  = bombibis.ListarBomberos();
+
+         if (!ListarBomberos.isEmpty()) {
+            System.out.println("Lista de bomberos:");
+
+            for (Bombero bombero : ListarBomberos) {
+                System.out.println("ID: " + bombero.getId_bombero());
+                System.out.println("Nombre: " + bombero.getNombre());
+                System.out.println("Apellido: " + bombero.getApellido());
+                System.out.println("DNI: " + bombero.getDni());
+                System.out.println("Fecha de Nacimiento: " + bombero.getFecha_nacimiento());
+                System.out.println("Grupo Sanguineo: "+ bombero.getGrupo_sanguineo());
+                System.out.println("Codigo de Brigada: "+ bombero.getCodigo_brigada());
+                System.out.println("Celular: "+bombero.getCelular());
+                System.out.println("Estado: " + bombero.isEstado());
+                System.out.println("-----------------------------");
+            }
+            
+        } else {
+            System.out.println("No hay alumnos en la lista.");
+        }
     }          
 }
