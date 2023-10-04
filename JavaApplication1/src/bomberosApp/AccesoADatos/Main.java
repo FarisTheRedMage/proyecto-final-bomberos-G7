@@ -60,14 +60,34 @@ public class Main {
            
                 BomberoData bombi2 = new BomberoData();
                 Bombero bombero = new Bombero();
-                bombero.setNombre("Gerardo");
-                bombero.setApellido("Muñoz"); 
-                bombero.setFecha_nacimiento(LocalDate.of(1990, 5, 15)); 
+                bombero.setNombre("rigoberto");
+                bombero.setApellido("chocolatoso"); 
+                bombero.setFecha_nacimiento(LocalDate.of(1990,5,15)); 
                 bombero.setGrupo_sanguineo("A+"); 
                 bombero.setCodigo_brigada(2); 
                 bombero.setCelular("12321313"); 
                 bombero.setEstado(true); 
+                bombero.setId_bombero(1);
+                bombi2.ModificarBombero(bombero);
+                
+                
+                 Bombero BomberoEncontrado2 = bombi2.BuscarBombero(1);
 
-                  bombi2.ModificarBombero(bombero);
+            if (BomberoEncontrado2 != null) {
+                System.out.println("Personal encontrado:");
+                
+                System.out.println("ID: " + BomberoEncontrado2.getId_bombero());
+                System.out.println("Nombre: " + BomberoEncontrado2.getNombre());
+                System.out.println("Apellido: " + BomberoEncontrado2.getApellido());
+                System.out.println("DNI: " + BomberoEncontrado2.getDni());
+                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado2.getFecha_nacimiento());
+                System.out.println("Grupo Sanguineo: " + BomberoEncontrado2.getGrupo_sanguineo());
+                System.out.println("Codigo Brigada: " + BomberoEncontrado2.getCodigo_brigada());
+                System.out.println("Celular: " + BomberoEncontrado2.getCelular());
+                System.out.println("Estado: " + BomberoEncontrado2.isEstado());
+                
+            } else {
+                System.out.println("No se encontró el Personal. ");
+            } 
     }          
 }
