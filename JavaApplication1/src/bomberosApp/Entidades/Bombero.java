@@ -9,32 +9,32 @@ public class Bombero {
     private String dni;
     private LocalDate fecha_nacimiento;
     private String grupo_sanguineo;
-    private int codigo_brigada;
+    private Brigada brigada;
     private String celular;
     private boolean estado;
 
     public Bombero() {
     }
 
-    public Bombero(String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, int codigo_brigada, String celular, boolean estado) {
+    public Bombero(String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.fecha_nacimiento = fecha_nacimiento;
         this.grupo_sanguineo = grupo_sanguineo;
-        this.codigo_brigada = codigo_brigada;
+        this.brigada = brigada;
         this.celular = celular;
         this.estado = estado;
     }
-    
-    public Bombero(int id_bombero, String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, int codigo_brigada, String celular, boolean estado) {
+
+    public Bombero(int id_bombero, String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado) {
         this.id_bombero = id_bombero;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.fecha_nacimiento = fecha_nacimiento;
         this.grupo_sanguineo = grupo_sanguineo;
-        this.codigo_brigada = codigo_brigada;
+        this.brigada = brigada;
         this.celular = celular;
         this.estado = estado;
     }
@@ -87,12 +87,12 @@ public class Bombero {
         this.grupo_sanguineo = grupo_sanguineo;
     }
 
-    public int getCodigo_brigada() {
-        return codigo_brigada;
+    public Brigada getBrigada() {
+        return brigada;
     }
 
-    public void setCodigo_brigada(int codigo_brigada) {
-        this.codigo_brigada = codigo_brigada;
+    public void setBrigada(Brigada brigada) {
+        this.brigada = brigada;
     }
 
     public String getCelular() {
@@ -113,7 +113,16 @@ public class Bombero {
 
     @Override
     public String toString() {
-        return "bombero{" + "id_bombero=" + id_bombero + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", fecha_nacimiento=" + fecha_nacimiento + ", grupo_sanguineo=" + grupo_sanguineo + ", codigo_brigada=" + codigo_brigada + ", celular=" + celular + ", estado=" + estado + '}';
+        return "ID" + id_bombero + 
+                ", Nombre" + nombre +
+                ", Apellido" + apellido + 
+                ", Dni" + dni +
+                ", Fecha Nacimiento" + fecha_nacimiento +
+                ", Grupo Sanguineo" + grupo_sanguineo + 
+                ", Brigada" + brigada + 
+                ", Celular" + celular + 
+                ", Estado" + estado;
     }
 
+    
 }

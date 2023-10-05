@@ -2,7 +2,7 @@ package bomberosApp.Entidades;
 
 public class Cuartel {
     
-    private int codigo_cuartel;
+    private int id_cuartel;
     private String nombre_cuartel;
     private String direccion;
     private int coord_X;
@@ -22,8 +22,8 @@ public class Cuartel {
         this.Correo = Correo;
     }
 
-    public Cuartel(int codigo_cuartel, String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String Correo) {
-        this.codigo_cuartel = codigo_cuartel;
+    public Cuartel(int id_cuartel, String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String Correo) {
+        this.id_cuartel = id_cuartel;
         this.nombre_cuartel = nombre_cuartel;
         this.direccion = direccion;
         this.coord_X = coord_X;
@@ -32,12 +32,12 @@ public class Cuartel {
         this.Correo = Correo;
     }
 
-    public int getCodigo_cuartel() {
-        return codigo_cuartel;
+    public int getId_cuartel() {
+        return id_cuartel;
     }
 
-    public void setCodigo_cuartel(int codigo_cuartel) {
-        this.codigo_cuartel = codigo_cuartel;
+    public void setId_cuartel(int id_cuartel) {
+        this.id_cuartel = id_cuartel;
     }
 
     public String getNombre_cuartel() {
@@ -90,7 +90,14 @@ public class Cuartel {
 
     @Override
     public String toString() {
-        return "cuartel{" + "codigo_cuartel=" + codigo_cuartel + ", nombre_cuartel=" + nombre_cuartel + ", direccion=" + direccion + ", coord_X=" + coord_X + ", coord_Y=" + coord_Y + ", telefono=" + telefono + ", Correo=" + Correo + '}';
+        return "ID" + id_cuartel + 
+                   ", Nombre del Cuartel" + nombre_cuartel + 
+                   ", Direccion" + direccion + 
+                   ", Coordenadas X" + coord_X + 
+                   ", Coordenadas Y" + coord_Y + 
+                   ", Telefono" + telefono + 
+                   ", Correo" + Correo;
     }
-
+    
+    
 }

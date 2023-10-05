@@ -1,6 +1,7 @@
 package bomberosApp.AccesoADatos;
 
 import bomberosApp.Entidades.Bombero;
+import bomberosApp.Entidades.Brigada;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -12,17 +13,18 @@ import javax.swing.JOptionPane;
 import javax.swing.text.html.HTMLDocument;
 import org.mariadb.jdbc.Statement;
 
-
 public class BomberoData {
 
     private Connection con = null;
+
+    private BrigadaData br = new BrigadaData();
 
     public BomberoData() {
         con = ConexionData.getConexion();
     }
 
     public void GuardarBombero(Bombero bombero) {
-        String SQL = "INSERT INTO bombero (nombre, apellido, dni, fecha_nacimiento, grupo_sanguineo, codigo_brigada, celular, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO bombero (nombre, apellido, dni, fecha_nacimiento, grupo_sanguineo, id_brigada, celular, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, bombero.getNombre());
@@ -30,7 +32,9 @@ public class BomberoData {
             ps.setString(3, bombero.getDni());
             ps.setDate(4, Date.valueOf(bombero.getFecha_nacimiento()));
             ps.setString(5, bombero.getGrupo_sanguineo());
-            ps.setInt(6, bombero.getCodigo_brigada());
+
+            ps.setInt(6, bombero.getBrigada().getId_brigada());//----------
+
             ps.setString(7, bombero.getCelular());
             ps.setBoolean(8, bombero.isEstado());
             ps.executeUpdate();
@@ -64,16 +68,19 @@ public class BomberoData {
 
             if (rs.next()) {
                 bombero = new Bombero();
+                Brigada brigada = new Brigada();
+
                 bombero.setId_bombero(id);
                 bombero.setNombre(rs.getString("nombre"));
                 bombero.setApellido(rs.getString("apellido"));
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-                bombero.setCodigo_brigada(rs.getInt("codigo_brigada"));
-                bombero.setCelular(rs.getString("celular"));
 
-                bombero.setEstado(rs.getBoolean("estado"));//
+                brigada.setId_brigada(rs.getInt("id_brigada"));//-------
+
+                bombero.setCelular(rs.getString("celular"));
+                bombero.setEstado(rs.getBoolean("estado"));
 
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el empleado");
@@ -87,20 +94,21 @@ public class BomberoData {
     }
 
     public void ModificarBombero(Bombero bombero) {
-        
-        String SQL = " UPDATE bombero SET nombre = ?, apellido =?, fecha_nacimiento = ?, grupo_sanguineo = ?, codigo_brigada = ?, celular = ?, estado = ? WHERE id_bombero=?";
-                    
+
+        String SQL = " UPDATE bombero SET nombre = ?, apellido =?, fecha_nacimiento = ?, grupo_sanguineo = ?, id_brigada = ?, celular = ?, estado = ? WHERE id_bombero=?";
 
         PreparedStatement ps = null;
         try {
-            
-            ps=con.prepareStatement(SQL);
-            
+
+            ps = con.prepareStatement(SQL);
+
             ps.setString(1, bombero.getNombre());
             ps.setString(2, bombero.getApellido());
             ps.setDate(3, Date.valueOf(bombero.getFecha_nacimiento()));
             ps.setString(4, bombero.getGrupo_sanguineo());
-            ps.setInt(5, bombero.getCodigo_brigada());
+
+            ps.setInt(6, bombero.getBrigada().getId_brigada());//----------
+
             ps.setString(6, bombero.getCelular());
             ps.setBoolean(7, bombero.isEstado());
             ps.setInt(8, bombero.getId_bombero());
@@ -110,47 +118,45 @@ public class BomberoData {
                 JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
             } else {
                 JOptionPane.showMessageDialog(null, "El Bombero no existe");
-            } 
+            }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero " +e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero " + e.getMessage());
         }
-        
+
     }
-    
-    public void EliminarBombero(int id){
-        
+
+    public void EliminarBombero(int id) {
+
         try {
-            String SQL="UPDATE bombero SET estado = 0 WHERE id_bombero = ? ";
+            String SQL = "UPDATE bombero SET estado = 0 WHERE id_bombero = ? ";
             PreparedStatement ps = con.prepareStatement(SQL);
-            
+
             ps.setInt(1, id);
             int fila = ps.executeUpdate();
-            
+
             if (fila == 1) {
-                JOptionPane.showMessageDialog(null,"Se elimino el Bombero. ");
+                JOptionPane.showMessageDialog(null, "Se elimino el Bombero. ");
             }
-            
+
             ps.close();
-            
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero. "+ e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero. " + e.getMessage());
         }
-        
-        
-        
+
     }
-    
-    public Bombero BuscarBomberoPorDni (int dni){
+
+    public Bombero BuscarBomberoPorDni(int dni) {
         Bombero bombero = null;
-         String SQL = "SELECT * FROM bombero WHERE dni= ?";
-         PreparedStatement ps = null;
-         
-         try {
+        String SQL = "SELECT * FROM bombero WHERE dni= ?";
+        PreparedStatement ps = null;
+
+        try {
             ps = con.prepareStatement(SQL);
             ps.setInt(1, dni);
             ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()){
+
+            if (rs.next()) {
                 bombero = new Bombero();
                 bombero.setId_bombero(rs.getInt("id_bombero"));
                 bombero.setNombre(rs.getString("nombre"));
@@ -158,7 +164,9 @@ public class BomberoData {
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-                bombero.setCodigo_brigada(rs.getInt("codigo_brigada"));
+
+                bombero.getBrigada().setId_brigada(rs.getInt("id_brigada"));//----------
+
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(true);
             } else {
@@ -166,39 +174,44 @@ public class BomberoData {
             }
             ps.close();
         } catch (SQLException ex) {
-            
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero"+ ex);
+
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero" + ex);
         }
-         
-      return bombero;
+
+        return bombero;
     }
-    
-    public List<Bombero> ListarBomberos(){
+
+    public List<Bombero> ListarBomberos() {
         List<Bombero> bomberos = new ArrayList<>();
-        
+
         try {
             String SQL = "SELECT * FROM bombero";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
-            
-            while (rs.next()){
+
+            while (rs.next()) {
                 Bombero bombero = new Bombero();
-                
+                Brigada brigada = new Brigada();
                 bombero.setId_bombero(rs.getInt("id_bombero"));
                 bombero.setNombre(rs.getString("nombre"));
                 bombero.setApellido(rs.getString("apellido"));
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-                bombero.setCodigo_brigada(rs.getInt("codigo_brigada"));
+                
+                brigada.setId_brigada(rs.getInt("id_brigada"));//------
+                
+                bombero.setBrigada(brigada);
+
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(true);
                 bomberos.add(bombero);
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Bombero"+ ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero" + ex.getMessage());
         }
         return bomberos;
     }
+
 }

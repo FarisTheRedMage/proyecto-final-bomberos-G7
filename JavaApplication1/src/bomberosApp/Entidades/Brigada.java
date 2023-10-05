@@ -1,7 +1,7 @@
 package bomberosApp.Entidades;
 
 public class Brigada {
-    private int codigo_brigada;
+    private int id_brigada;
     private String nombre_brigada;
     private String especialidad;
     private boolean estado;
@@ -17,20 +17,20 @@ public class Brigada {
         this.cuartel = cuartel;
     }
 
-    public Brigada(int codigo_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel) {
-        this.codigo_brigada = codigo_brigada;
+    public Brigada(int id_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel) {
+        this.id_brigada = id_brigada;
         this.nombre_brigada = nombre_brigada;
         this.especialidad = especialidad;
         this.estado = estado;
         this.cuartel = cuartel;
     }
 
-    public int getCodigo_brigada() {
-        return codigo_brigada;
+    public int getId_brigada() {
+        return id_brigada;
     }
 
-    public void setCodigo_brigada(int codigo_brigada) {
-        this.codigo_brigada = codigo_brigada;
+    public void setId_brigada(int id_brigada) {
+        this.id_brigada = id_brigada;
     }
 
     public String getNombre_brigada() {
@@ -67,7 +67,11 @@ public class Brigada {
 
     @Override
     public String toString() {
-        return "Brigada{" + "codigo_brigada=" + codigo_brigada + ", nombre_brigada=" + nombre_brigada + ", especialidad=" + especialidad + ", estado=" + estado + ", cuartel=" + cuartel + '}';
+        return " ID" + id_brigada + 
+                ", Nombre de la brigada" + nombre_brigada +
+                ", Especialidad" + especialidad + 
+                ", Estado" + estado + 
+                ", Cuartel" + cuartel;
     }
-   
+
 }

@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Siniestro {
     
-    private int codigo_siniestro;
+    private int id_siniestro;
     private int  coord_X;
     private int coord_Y;
     private Date fecha_siniestro;
@@ -28,8 +28,8 @@ public class Siniestro {
         this.calificacion = calificacion;
     }
 
-    public Siniestro(int codigo_siniestro, int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion) {
-        this.codigo_siniestro = codigo_siniestro;
+    public Siniestro(int id_siniestro, int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion) {
+        this.id_siniestro = id_siniestro;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
         this.fecha_siniestro = fecha_siniestro;
@@ -40,12 +40,12 @@ public class Siniestro {
         this.calificacion = calificacion;
     }
 
-    public int getCodigo_siniestro() {
-        return codigo_siniestro;
+    public int getId_siniestro() {
+        return id_siniestro;
     }
 
-    public void setCodigo_siniestro(int codigo_siniestro) {
-        this.codigo_siniestro = codigo_siniestro;
+    public void setId_siniestro(int id_siniestro) {
+        this.id_siniestro = id_siniestro;
     }
 
     public int getCoord_X() {
@@ -114,7 +114,16 @@ public class Siniestro {
 
     @Override
     public String toString() {
-        return "Siniestro{" + "codigo_siniestro=" + codigo_siniestro + ", coord_X=" + coord_X + ", coord_Y=" + coord_Y + ", fecha_siniestro=" + fecha_siniestro + ", tipo=" + tipo + ", detalles=" + detalles + ", brigada=" + brigada + ", fecha_resolucion=" + fecha_resolucion + ", calificacion=" + calificacion + '}';
-    }
+        return "ID" + id_siniestro +
+                  ", Coordenadas X" + coord_X + 
+                  ", Coordenadas Y" + coord_Y + 
+                  ", Fecha Del Siniestro=" + fecha_siniestro + 
+                  ", Tipo" + tipo +
+                  ", Detalles" + detalles + 
+                  ", Brigada" + brigada +
+                  ", Fecha Resolucion" + fecha_resolucion + 
+                  ", Calificacion" + calificacion;
+        }
 
+    
 }
