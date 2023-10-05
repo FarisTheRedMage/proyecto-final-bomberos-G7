@@ -34,6 +34,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -68,6 +69,9 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         jMenuItem3.setText("Gestion de Cuarteles");
         jMenu2.add(jMenuItem3);
+
+        jMenuItem7.setText("Revisar Cuarteles");
+        jMenu2.add(jMenuItem7);
 
         jMenuBar1.add(jMenu2);
 
@@ -169,5 +173,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }
