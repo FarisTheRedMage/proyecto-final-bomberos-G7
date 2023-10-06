@@ -18,7 +18,7 @@ public class Main {
 //             bombi.GuardarBombero(juan);
              
              
-             //Ver Bombero Guardado
+//             Ver Bombero Guardado
              BomberoData bombi = new BomberoData();
             Bombero BomberoEncontrado = bombi.BuscarBombero(3);
 
@@ -31,7 +31,7 @@ public class Main {
                 System.out.println("DNI: " + BomberoEncontrado.getDni());
                 System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
                 System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
-                System.out.println("Codigo Brigada: " + BomberoEncontrado.getId_brigada());
+                System.out.println("Codigo Brigada: " + BomberoEncontrado.getBrigada().getId_brigada());
                 System.out.println("Celular: " + BomberoEncontrado.getCelular());
                 System.out.println("Estado: " + BomberoEncontrado.isEstado());
                 
@@ -134,29 +134,29 @@ public class Main {
 
 //--------------------------------------------------------Prueba ListarBomberos-----------------------------------------------------------
 
-        BomberoData bombibis = new BomberoData();
-
-        List<Bombero> ListarBomberos = bombibis.ListarBomberos();
-
-        if (!ListarBomberos.isEmpty()) {
-            System.out.println("Lista de bomberos:");
-
-            for (Bombero bombero : ListarBomberos) {
-                System.out.println("ID: " + bombero.getId_bombero());
-                System.out.println("Nombre: " + bombero.getNombre());
-                System.out.println("Apellido: " + bombero.getApellido());
-                System.out.println("DNI: " + bombero.getDni());
-                System.out.println("Fecha de Nacimiento: " + bombero.getFecha_nacimiento());
-                System.out.println("Grupo Sanguineo: " + bombero.getGrupo_sanguineo());
-                System.out.println("Codigo de Brigada: " + bombero.getBrigada().getId_brigada());//-----
-                System.out.println("Celular: " + bombero.getCelular());
-                System.out.println("Estado: " + bombero.isEstado());
-                System.out.println("-----------------------------");
-            }
-
-        } else {
-            System.out.println("No hay Personal en la lista.");
-        }
+//        BomberoData bombibis = new BomberoData();
+//
+//        List<Bombero> ListarBomberos = bombibis.ListarBomberos();
+//
+//        if (!ListarBomberos.isEmpty()) {
+//            System.out.println("Lista de bomberos:");
+//
+//            for (Bombero bombero : ListarBomberos) {
+//                System.out.println("ID: " + bombero.getId_bombero());
+//                System.out.println("Nombre: " + bombero.getNombre());
+//                System.out.println("Apellido: " + bombero.getApellido());
+//                System.out.println("DNI: " + bombero.getDni());
+//                System.out.println("Fecha de Nacimiento: " + bombero.getFecha_nacimiento());
+//                System.out.println("Grupo Sanguineo: " + bombero.getGrupo_sanguineo());
+//                System.out.println("Codigo de Brigada: " + bombero.getBrigada().getId_brigada());//-----
+//                System.out.println("Celular: " + bombero.getCelular());
+//                System.out.println("Estado: " + bombero.isEstado());
+//                System.out.println("-----------------------------");
+//            }
+//
+//        } else {
+//            System.out.println("No hay Personal en la lista.");
+//        }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 
 //------------------------------------------------------SEGUNDA ENTREGA ---------------------------------------------------------------//

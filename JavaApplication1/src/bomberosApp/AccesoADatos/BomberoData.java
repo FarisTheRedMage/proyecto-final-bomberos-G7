@@ -65,10 +65,10 @@ public class BomberoData {
             ps.setInt(1, id);
 
             ResultSet rs = ps.executeQuery();
-
+            Brigada brg;
             if (rs.next()) {
                 bombero = new Bombero();
-                Brigada brigada = new Brigada();
+                brg = new Brigada();
 
                 bombero.setId_bombero(id);
                 bombero.setNombre(rs.getString("nombre"));
@@ -76,9 +76,8 @@ public class BomberoData {
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-
-                brigada.setId_brigada(rs.getInt("id_brigada"));//-------
-
+                brg.setId_brigada(rs.getInt("id_brigada"));
+                bombero.setBrigada(brg); // -------
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(rs.getBoolean("estado"));
 
