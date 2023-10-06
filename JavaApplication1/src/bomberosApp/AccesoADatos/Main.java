@@ -10,34 +10,48 @@ public class Main {
 
     public static void main(String[] args) {
 //------------------------------------------------------PRIMERA ENTREGA --------------------------------------------------------------//
-
+//bombero.getBrigada().getId_brigada();//-----
 //--------------------------------------------Prueba GuardarBombero por id FUNCA----------------------------------------------------
 
-//             Bombero juan = new Bombero("Juan", "Castro", "1111", LocalDate.of(1996,5,13), "A+", 2, "23112412", true);
-//             BomberoData bombi = new BomberoData();
-//             bombi.GuardarBombero(juan);
+             Bombero juan = new Bombero();
+             BomberoData bombi = new BomberoData();
+             BrigadaData brigi = new BrigadaData();
+             Brigada brigi2 =new Brigada();
+             
+             brigi.BuscarBrigada(2);    
+             brigi2.getId_brigada(brigi);
+             
+                juan.setNombre(" Walter");
+                juan.setApellido("chocolatoso"); 
+                juan.setFecha_nacimiento(LocalDate.of(1990,5,15)); 
+                juan.setGrupo_sanguineo("A+"); 
+                juan.getBrigada().getId_brigada();
+                juan.setCelular("12321313"); 
+                juan.setEstado(true); 
+                juan.setId_bombero(1);
+                bombi.GuardarBombero(juan);
              
              
 //             Ver Bombero Guardado
-             BomberoData bombi = new BomberoData();
-            Bombero BomberoEncontrado = bombi.BuscarBombero(3);
-
-            if (BomberoEncontrado != null) {
-                System.out.println("Personal encontrado:");
-                
-                System.out.println("ID: " + BomberoEncontrado.getId_bombero());
-                System.out.println("Nombre: " + BomberoEncontrado.getNombre());
-                System.out.println("Apellido: " + BomberoEncontrado.getApellido());
-                System.out.println("DNI: " + BomberoEncontrado.getDni());
-                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
-                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
-                System.out.println("Codigo Brigada: " + BomberoEncontrado.getBrigada().getId_brigada());
-                System.out.println("Celular: " + BomberoEncontrado.getCelular());
-                System.out.println("Estado: " + BomberoEncontrado.isEstado());
-                
-            } else {
-                System.out.println("No se encontró el Personal. ");
-            }     
+//             BomberoData bombi = new BomberoData();
+//            Bombero BomberoEncontrado = bombi.BuscarBombero(3);
+//
+//            if (BomberoEncontrado != null) {
+//                System.out.println("Personal encontrado:");
+//                
+//                System.out.println("ID: " + BomberoEncontrado.getId_bombero());
+//                System.out.println("Nombre: " + BomberoEncontrado.getNombre());
+//                System.out.println("Apellido: " + BomberoEncontrado.getApellido());
+//                System.out.println("DNI: " + BomberoEncontrado.getDni());
+//                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
+//                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
+//                System.out.println("Codigo Brigada: " + BomberoEncontrado.getBrigada().getId_brigada());
+//                System.out.println("Celular: " + BomberoEncontrado.getCelular());
+//                System.out.println("Estado: " + BomberoEncontrado.isEstado());
+//                
+//            } else {
+//                System.out.println("No se encontró el Personal. ");
+//            }     
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------Prueba BuscarBombero por id FUNCA----------------------------------------------------
