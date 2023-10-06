@@ -72,7 +72,7 @@ public class BrigadaData {
             ps.close();
             rs.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Brigada" + e.getMessage());////VER ESTO!!!!!!!
         }
         return brigada;
     }

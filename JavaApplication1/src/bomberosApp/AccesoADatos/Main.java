@@ -12,26 +12,30 @@ public class Main {
 //------------------------------------------------------PRIMERA ENTREGA --------------------------------------------------------------//
 //bombero.getBrigada().getId_brigada();//-----
 //--------------------------------------------Prueba GuardarBombero por id FUNCA----------------------------------------------------
+        Bombero juan = new Bombero();
+        BomberoData bombi = new BomberoData();
+        BrigadaData brigiData = new BrigadaData(); // Debes crear una instancia de BrigadaData
 
-             Bombero juan = new Bombero();
-             BomberoData bombi = new BomberoData();
-             BrigadaData brigi = new BrigadaData();
-             Brigada brigi2 =new Brigada();
-             
-             brigi.BuscarBrigada(2);    
-             brigi2.getId_brigada(brigi);
-             
-                juan.setNombre(" Walter");
-                juan.setApellido("chocolatoso"); 
-                juan.setFecha_nacimiento(LocalDate.of(1990,5,15)); 
-                juan.setGrupo_sanguineo("A+"); 
-                juan.getBrigada().getId_brigada();
-                juan.setCelular("12321313"); 
-                juan.setEstado(true); 
-                juan.setId_bombero(1);
-                bombi.GuardarBombero(juan);
-             
-             
+// Debes buscar la brigada y asignarla a brigi2
+        Brigada brigi2 = brigiData.BuscarBrigada(2);
+
+// Establecer los atributos del bombero juan
+        juan.setNombre("Marioooo"); // No incluyas un espacio antes del nombre
+        juan.setApellido("Marquezzzzzz");
+        juan.setFecha_nacimiento(LocalDate.of(1990, 5, 15));
+        juan.setGrupo_sanguineo("A - ");
+
+// Establecer el valor del campo dni
+        juan.setDni("0000"); // Cambiar el DNI a uno único
+
+        juan.setBrigada(brigi2); // Asignar la brigada encontrada a juan
+        juan.setCelular("2231231231");
+        juan.setEstado(true);
+        juan.setId_bombero(1);
+
+// Luego, guarda el bombero
+        bombi.GuardarBombero(juan);
+
 //             Ver Bombero Guardado
 //             BomberoData bombi = new BomberoData();
 //            Bombero BomberoEncontrado = bombi.BuscarBombero(3);
@@ -53,9 +57,7 @@ public class Main {
 //                System.out.println("No se encontró el Personal. ");
 //            }     
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-
 //--------------------------------------------Prueba BuscarBombero por id FUNCA----------------------------------------------------
-
 //        BomberoData bombi = new BomberoData();
 //        Bombero BomberoEncontrado = bombi.BuscarBombero(2);
 //
@@ -85,9 +87,7 @@ public class Main {
 //            System.out.println("No se encontró el Personal.");
 //        }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-
 //---------------------------------------------------------Prueba ModificarBombero-------------------------------------------------------
-
 //                BomberoData bombi2 = new BomberoData();
 //                Bombero bombero = new Bombero();
 //                bombero.setNombre(" Walter");
@@ -118,10 +118,7 @@ public class Main {
 //                System.out.println("No se encontró el Personal. ");
 //            } 
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 //------------------------------------------------------Prueba EliminarBombero------------------------------------------------------------
-
 //           BomberoData bombi = new BomberoData();
 //           bombi.EliminarBombero(1); 
 //         //Probamos Buscar x dni /// FUNCA. xD
@@ -145,9 +142,7 @@ public class Main {
 //                System.out.println("No se encontró el Personal. ");
 //            } 
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-
 //--------------------------------------------------------Prueba ListarBomberos-----------------------------------------------------------
-
 //        BomberoData bombibis = new BomberoData();
 //
 //        List<Bombero> ListarBomberos = bombibis.ListarBomberos();
@@ -172,11 +167,8 @@ public class Main {
 //            System.out.println("No hay Personal en la lista.");
 //        }
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-
 //------------------------------------------------------SEGUNDA ENTREGA ---------------------------------------------------------------//
-
 //------------------------------------------------Prueba metodo GuardarBombero-------------------------------------------------------
-
 //             Cuartel c1 = new Cuartel("Cuartel General","Santa Cecilia ST ", 12, 14, "1234532", "cuartelgeneral@gmail.com");
 //             CuartelData cuart1 = new CuartelData();
 //             cuart1.GuardarCuartel(c1);
@@ -200,7 +192,6 @@ public class Main {
 //                System.out.println("No se encontró el Cuartel. ");
 //            }     
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-
 //---------------------------------------------------Prueba BuscarBombero por id - FUNCA.------------------------------------------        
 
         /*    BomberoData bombi = new BomberoData();
