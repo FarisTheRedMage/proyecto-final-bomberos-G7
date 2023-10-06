@@ -236,13 +236,35 @@ public class Main {
 //        cuartelito.EliminarCuartel(3); 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------Prueba -------------------------------------------------------------------
+//-------------------------------------------------------------Prueba ListarCuartel -  -------------------------------------------------------------------
         
 
 
 
 
-
+//    BomberoData bombibis = new BomberoData();
+//
+//        List<Bombero> ListarBomberos = bombibis.ListarBomberos();
+//
+//        if (!ListarBomberos.isEmpty()) {
+//            System.out.println("Lista de bomberos:");
+//
+//            for (Bombero bombero : ListarBomberos) {
+//                System.out.println("ID: " + bombero.getId_bombero());
+//                System.out.println("Nombre: " + bombero.getNombre());
+//                System.out.println("Apellido: " + bombero.getApellido());
+//                System.out.println("DNI: " + bombero.getDni());
+//                System.out.println("Fecha de Nacimiento: " + bombero.getFecha_nacimiento());
+//                System.out.println("Grupo Sanguineo: " + bombero.getGrupo_sanguineo());
+//                System.out.println("Codigo de Brigada: " + bombero.getBrigada().getId_brigada());//-----
+//                System.out.println("Celular: " + bombero.getCelular());
+//                System.out.println("Estado: " + bombero.isEstado());
+//                System.out.println("-----------------------------");
+//            }
+//
+//        } else {
+//            System.out.println("No hay Personal en la lista.");
+//        }
 
 
     }

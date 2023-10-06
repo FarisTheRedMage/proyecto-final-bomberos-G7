@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class CuartelData {
@@ -136,5 +138,33 @@ public class CuartelData {
     }
     
     //FALTA LISTA
+    
+    public List<Cuartel> ListarCuarteles(){
+      List<Cuartel> bomberos = new ArrayList<>();
+      
+        try {
+            String SQL = "SELECT * FROM cuartel";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){
+                Cuartel cuartel = new Cuartel();
+                cuartel.setId_cuartel(rs.getInt("id_cuartel"));
+                cuartel.setNombre_cuartel(rs.getString("nombre"));
+                cuartel.setDireccion(rs.getString("direccion"));
+                cuartel.setCoord_X(rs.getInt("coord_X"));
+                cuartel.setCoord_Y(rs.getInt("coord_Y"));
+                cuartel.setTelefono(rs.getString("telefono"));
+                cuartel.setCorreo(rs.getString("correo"));
+                cuartel.setEstado(true);
+                bomberos.add(cuartel);
+            }
+            ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Cuartel"+ex.getMessage());
+        }
+        return bomberos;
+    }
     
 }
