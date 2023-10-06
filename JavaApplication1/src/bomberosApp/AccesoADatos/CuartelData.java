@@ -2,6 +2,7 @@ package bomberosApp.AccesoADatos;
 
 import bomberosApp.Entidades.Cuartel;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +18,7 @@ public class CuartelData {
     }
 
     public void GuardarCuartel(Cuartel cuartel) {
-        String SQL = "INSERT INTO cuartel (nombre_cuartel, direccion, coord_X, coord_Y, telefono, correo) VALUES (?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO cuartel (nombre_cuartel, direccion, coord_X, coord_Y, telefono, correo, estado) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, cuartel.getNombre_cuartel());
@@ -26,6 +27,7 @@ public class CuartelData {
             ps.setInt(4, cuartel.getCoord_Y());
             ps.setString(5, cuartel.getTelefono());
             ps.setString(6, cuartel.getCorreo());
+            ps.setBoolean(7, cuartel.isEstado()); 
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
@@ -64,6 +66,7 @@ public class CuartelData {
                 cuartel.setCoord_Y(rs.getInt("coord_Y"));
                 cuartel.setTelefono(rs.getString("telefono"));
                 cuartel.setCorreo(rs.getString("correo"));
+                cuartel.setEstado(rs.getBoolean("estado"));
 
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el Cuartel. ");
@@ -76,6 +79,60 @@ public class CuartelData {
         return cuartel;
     }
 
+    public void ModificarCuartel(Cuartel cuartel) {
+
+        String SQL = " UPDATE cuartel SET nombre_cuartel = ?, direccion = ?, coord_X = ?, coord_Y = ?, telefono = ?, correo = ? estado = ? WHERE id_cuartel = ?";
+
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL);
+
+            ps.setString(1, cuartel.getNombre_cuartel());
+            ps.setString(2, cuartel.getDireccion());
+            ps.setInt(3, cuartel.getCoord_X());
+            ps.setInt(4, cuartel.getCoord_Y());
+            ps.setString(5, cuartel.getTelefono());
+            ps.setString(6, cuartel.getCorreo());
+            ps.setBoolean(7, cuartel.isEstado()); 
+            ps.setInt(8, cuartel.getId_cuartel());
+
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "El Cuartel no existe");
+            }
+
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Cuartel " + e.getMessage());
+        }
+
+    }
+
+    public void EliminarCuartel (int id){
+    try {
+            String SQL = "UPDATE cuartel SET estado = 0 WHERE id_cuartel = ? ";
+            
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            
+            int fila = ps.executeUpdate();
+
+            if (fila == 1) {
+                JOptionPane.showMessageDialog(null, "Se elimino el Cuartel. ");
+            }
+
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Cuartel. " + e.getMessage());
+        }
+
+    }
     
     
     

@@ -193,27 +193,49 @@ public class Main {
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------Prueba BuscarCuartelPorId. FUNCA--------------------------------------------------        
 
-    CuartelData cuartelito = new CuartelData();
-    Cuartel cuartelEncontrado = cuartelito.BuscarCuartelPorId(3);
-
-    if (cuartelEncontrado != null) {
-        
-        System.out.println("Cuartel encontrado:");
-        System.out.println("ID: " + cuartelEncontrado.getId_cuartel());
-        System.out.println("Nombre: " + cuartelEncontrado.getNombre_cuartel());
-        System.out.println("Dirección: " + cuartelEncontrado.getDireccion());
-        System.out.println("Coordenada X: " + cuartelEncontrado.getCoord_X());
-        System.out.println("Coordenada Y: " + cuartelEncontrado.getCoord_Y());
-        System.out.println("Teléfono: " + cuartelEncontrado.getTelefono());
-        System.out.println("Correo: " + cuartelEncontrado.getCorreo());
-        
-    } else {
-        System.out.println("No se encontró el Cuartel.");
-    }
+//    CuartelData cuartelito = new CuartelData();
+//    Cuartel cuartelEncontrado = cuartelito.BuscarCuartelPorId(3);
+//
+//    if (cuartelEncontrado != null) {
+//        
+//        System.out.println("Cuartel encontrado:");
+//        System.out.println("ID: " + cuartelEncontrado.getId_cuartel());
+//        System.out.println("Nombre: " + cuartelEncontrado.getNombre_cuartel());
+//        System.out.println("Dirección: " + cuartelEncontrado.getDireccion());
+//        System.out.println("Coordenada X: " + cuartelEncontrado.getCoord_X());
+//        System.out.println("Coordenada Y: " + cuartelEncontrado.getCoord_Y());
+//        System.out.println("Teléfono: " + cuartelEncontrado.getTelefono());
+//        System.out.println("Correo: " + cuartelEncontrado.getCorreo());
+//        
+//    } else {
+//        System.out.println("No se encontró el Cuartel.");
+//    }
     
-//---------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba ModificarCuartel FUNCA-----------------------------------------------------------------
+
+//        CuartelData cuartelito = new CuartelData();
+//        Cuartel cuartel = new Cuartel();
+//        cuartel.setId_cuartel(3); 
+//        cuartel.setNombre_cuartel("Cuartel Zona Este");                                       //Ver!!!!
+//        cuartel.setDireccion("Santa Clara ST");
+//        cuartel.setCoord_X(12345); 
+//        cuartel.setCoord_Y(54321); 
+//        cuartel.setTelefono("7773662");
+//        cuartel.setCorreo("cuartelzonaeste12@gmail.com");
+//        cuartel.setEstado(true);
+//
+//        cuartelito.ModificarCuartel(cuartel);
+        
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba EliminarCuartel FUNCA-------------------------------------------------------------------
+
+//        CuartelData cuartelito = new CuartelData();
+//        cuartelito.EliminarCuartel(2); 
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba -------------------------------------------------------------------
         
     }
 }

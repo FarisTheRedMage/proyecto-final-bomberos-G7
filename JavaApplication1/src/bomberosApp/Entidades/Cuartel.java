@@ -1,35 +1,38 @@
 package bomberosApp.Entidades;
 
 public class Cuartel {
-    
+
     private int id_cuartel;
     private String nombre_cuartel;
     private String direccion;
     private int coord_X;
     private int coord_Y;
     private String telefono;
-    private String Correo;
+    private String correo;
+    private Boolean estado;
 
     public Cuartel() {
     }
 
-    public Cuartel(String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String Correo) {
+    public Cuartel(String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String correo, Boolean estado) {
         this.nombre_cuartel = nombre_cuartel;
         this.direccion = direccion;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
         this.telefono = telefono;
-        this.Correo = Correo;
+        this.correo = correo;
+        this.estado = estado;
     }
 
-    public Cuartel(int id_cuartel, String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String Correo) {
+    public Cuartel(int id_cuartel, String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String correo, Boolean estado) {
         this.id_cuartel = id_cuartel;
         this.nombre_cuartel = nombre_cuartel;
         this.direccion = direccion;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
         this.telefono = telefono;
-        this.Correo = Correo;
+        this.correo = correo;
+        this.estado = estado;
     }
 
     public int getId_cuartel() {
@@ -81,23 +84,32 @@ public class Cuartel {
     }
 
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
 
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
+
+    public boolean isEstado() {
+         return estado;
+       }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+
 
     @Override
     public String toString() {
-        return "ID" + id_cuartel + 
-                   ", Nombre del Cuartel" + nombre_cuartel + 
-                   ", Direccion" + direccion + 
-                   ", Coordenadas X" + coord_X + 
-                   ", Coordenadas Y" + coord_Y + 
-                   ", Telefono" + telefono + 
-                   ", Correo" + Correo;
+        return "ID" + id_cuartel
+                + ", Nombre del Cuartel" + nombre_cuartel
+                + ", Direccion" + direccion
+                + ", Coordenadas X" + coord_X
+                + ", Coordenadas Y" + coord_Y
+                + ", Telefono" + telefono
+                + ", Correo" + correo
+                + ", Estado" + estado;
     }
-    
-    
 }

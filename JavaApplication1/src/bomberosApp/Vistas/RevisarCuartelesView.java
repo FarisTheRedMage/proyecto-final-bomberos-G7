@@ -9,12 +9,12 @@ package bomberosApp.Vistas;
  *
  * @author lucia
  */
-public class RevisarCuarteles extends javax.swing.JInternalFrame {
+public class RevisarCuartelesView extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form RevisarCuarteles
      */
-    public RevisarCuarteles() {
+    public RevisarCuartelesView() {
         initComponents();
     }
 
