@@ -165,15 +165,15 @@ public class Main {
 //------------------------------------------------------SEGUNDA ENTREGA ---------------------------------------------------------------//
 //------------------------------------------------Prueba metodo GuardarCuartel FUNCA-------------------------------------------------
 //
-//             Cuartel c1 = new Cuartel("Cuartel General","Santa Cecilia ST ", 12, 14, "1234532", "cuartelgeneral@gmail.com");
+//             Cuartel c1 = new Cuartel("Cuartel: Los Bomberitos.", "Goove ST", 11212, 31212, "2221111222", "groovesthome@gmail.com", true);
 //             CuartelData cuart1 = new CuartelData();
 //             cuart1.GuardarCuartel(c1);
-             
-
- //                                ----   Ver Cuartel Guardado ----
- 
+//             
+//
+////                                 ----   Ver Cuartel Guardado ----
+// 
 //             CuartelData cuart2 = new CuartelData();
-//             Cuartel CuartelEncontrado = cuart2.BuscarCuartelPorId(3); //Cambiar ID de cuartel 
+//             Cuartel CuartelEncontrado = cuart2.BuscarCuartelPorId(4); //Cambiar ID de cuartel 
 //
 //            if (CuartelEncontrado != null) {
 //                System.out.println("Cuartel Encontrado:");
@@ -194,7 +194,7 @@ public class Main {
 //---------------------------------------------------Prueba BuscarCuartelPorId. FUNCA--------------------------------------------------        
 
 //    CuartelData cuartelito = new CuartelData();
-//    Cuartel cuartelEncontrado = cuartelito.BuscarCuartelPorId(3);
+//    Cuartel cuartelEncontrado = cuartelito.BuscarCuartelPorId(4);
 //
 //    if (cuartelEncontrado != null) {
 //        
@@ -217,25 +217,33 @@ public class Main {
 
 //        CuartelData cuartelito = new CuartelData();
 //        Cuartel cuartel = new Cuartel();
-//        cuartel.setId_cuartel(3); 
-//        cuartel.setNombre_cuartel("Cuartel Zona Este");                                       //Ver!!!!
+//        
+//        cuartel.setNombre_cuartel("Cuartel Zona Este");                                       
 //        cuartel.setDireccion("Santa Clara ST");
-//        cuartel.setCoord_X(12345); 
-//        cuartel.setCoord_Y(54321); 
+//        cuartel.setCoord_X(10); 
+//        cuartel.setCoord_Y(52); 
 //        cuartel.setTelefono("7773662");
 //        cuartel.setCorreo("cuartelzonaeste12@gmail.com");
 //        cuartel.setEstado(true);
-//
+//        cuartel.setId_cuartel(3); 
+//        
 //        cuartelito.ModificarCuartel(cuartel);
         
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba EliminarCuartel FUNCA-------------------------------------------------------------------
 
 //        CuartelData cuartelito = new CuartelData();
-//        cuartelito.EliminarCuartel(2); 
+//        cuartelito.EliminarCuartel(3); 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba -------------------------------------------------------------------
         
+
+
+
+
+
+
+
     }
 }

@@ -81,7 +81,8 @@ public class CuartelData {
 
     public void ModificarCuartel(Cuartel cuartel) {
 
-        String SQL = " UPDATE cuartel SET nombre_cuartel = ?, direccion = ?, coord_X = ?, coord_Y = ?, telefono = ?, correo = ? estado = ? WHERE id_cuartel = ?";
+        String SQL = " UPDATE cuartel SET nombre_cuartel=?,direccion=?,coord_X =?,coord_Y =?,telefono=?,correo=?, estado = ? "
+                         + "WHERE id_cuartel = ? ";
 
         PreparedStatement ps = null;
 
@@ -134,6 +135,6 @@ public class CuartelData {
 
     }
     
-    
+    //FALTA LISTA
     
 }

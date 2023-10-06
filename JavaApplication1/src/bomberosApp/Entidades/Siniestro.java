@@ -13,11 +13,12 @@ public class Siniestro {
     private Brigada brigada;
     private Date fecha_resolucion;
     private int calificacion;
-
+    private Boolean estado;
+    
     public Siniestro() {
     }
 
-    public Siniestro(int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion) {
+    public Siniestro(int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion, Boolean estado) {
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
         this.fecha_siniestro = fecha_siniestro;
@@ -26,9 +27,10 @@ public class Siniestro {
         this.brigada = brigada;
         this.fecha_resolucion = fecha_resolucion;
         this.calificacion = calificacion;
+        this.estado = estado;
     }
 
-    public Siniestro(int id_siniestro, int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion) {
+    public Siniestro(int id_siniestro, int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion, Boolean estado) {
         this.id_siniestro = id_siniestro;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
@@ -38,6 +40,18 @@ public class Siniestro {
         this.brigada = brigada;
         this.fecha_resolucion = fecha_resolucion;
         this.calificacion = calificacion;
+        this.estado = estado;
+    }
+
+    public Siniestro(int id_siniestro, int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Boolean estado) {
+        this.id_siniestro = id_siniestro;
+        this.coord_X = coord_X;
+        this.coord_Y = coord_Y;
+        this.fecha_siniestro = fecha_siniestro;
+        this.tipo = tipo;
+        this.detalles = detalles;
+        this.brigada = brigada;
+        this.estado = estado;
     }
 
     public int getId_siniestro() {
@@ -112,6 +126,14 @@ public class Siniestro {
         this.calificacion = calificacion;
     }
 
+    public Boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
         return "ID" + id_siniestro +
@@ -122,7 +144,8 @@ public class Siniestro {
                   ", Detalles" + detalles + 
                   ", Brigada" + brigada +
                   ", Fecha Resolucion" + fecha_resolucion + 
-                  ", Calificacion" + calificacion;
+                  ", Calificacion" + calificacion +
+                   ", Estado"+ estado;
         }
 
     
