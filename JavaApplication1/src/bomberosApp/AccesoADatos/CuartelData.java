@@ -42,7 +42,7 @@ public class CuartelData {
         }
     }
 
-    public Cuartel BuscarCuartel(int id) {
+    public Cuartel BuscarCuartelPorId(int id) {
         Cuartel cuartel = null;
 
         String SQL = "SELECT * FROM cuartel WHERE id_cuartel = ? ";

@@ -65,10 +65,10 @@ public class BomberoData {
             ps.setInt(1, id);
 
             ResultSet rs = ps.executeQuery();
-            Brigada brg;
+            Brigada brg;// -------
             if (rs.next()) {
                 bombero = new Bombero();
-                brg = new Brigada();
+                brg = new Brigada();// -------
 
                 bombero.setId_bombero(id);
                 bombero.setNombre(rs.getString("nombre"));
@@ -76,8 +76,10 @@ public class BomberoData {
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-                brg.setId_brigada(rs.getInt("id_brigada"));
+                
+                brg.setId_brigada(rs.getInt("id_brigada"));// -------
                 bombero.setBrigada(brg); // -------
+                
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(rs.getBoolean("estado"));
 
@@ -106,7 +108,7 @@ public class BomberoData {
             ps.setDate(3, Date.valueOf(bombero.getFecha_nacimiento()));
             ps.setString(4, bombero.getGrupo_sanguineo());
 
-            ps.setInt(6, bombero.getBrigada().getId_brigada());//----------
+            ps.setInt(5, bombero.getBrigada().getId_brigada());//---------- estaba mal el orden (decia 6 6)
 
             ps.setString(6, bombero.getCelular());
             ps.setBoolean(7, bombero.isEstado());
@@ -118,6 +120,9 @@ public class BomberoData {
             } else {
                 JOptionPane.showMessageDialog(null, "El Bombero no existe");
             }
+            
+            ps.close();
+            
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero " + e.getMessage());
         }
@@ -154,9 +159,12 @@ public class BomberoData {
             ps = con.prepareStatement(SQL);
             ps.setInt(1, dni);
             ResultSet rs = ps.executeQuery();
-
+                Brigada brg;// -------
             if (rs.next()) {
+                
                 bombero = new Bombero();
+                brg = new Brigada();
+                
                 bombero.setId_bombero(rs.getInt("id_bombero"));
                 bombero.setNombre(rs.getString("nombre"));
                 bombero.setApellido(rs.getString("apellido"));
@@ -164,7 +172,8 @@ public class BomberoData {
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
 
-                bombero.getBrigada().setId_brigada(rs.getInt("id_brigada"));//----------
+                brg.setId_brigada(rs.getInt("id_brigada"));// -------
+                bombero.setBrigada(brg); // -------
 
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(true);

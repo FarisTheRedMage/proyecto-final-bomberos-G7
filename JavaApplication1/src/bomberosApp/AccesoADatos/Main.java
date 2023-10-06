@@ -9,36 +9,33 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-//------------------------------------------------------PRIMERA ENTREGA --------------------------------------------------------------//
-//bombero.getBrigada().getId_brigada();//-----
+//------------------------------------------------------PRIMERA ENTREGA ---------------------------------------------------------------//
 //--------------------------------------------Prueba GuardarBombero por id FUNCA----------------------------------------------------
-        Bombero juan = new Bombero();
-        BomberoData bombi = new BomberoData();
-        BrigadaData brigiData = new BrigadaData(); // Debes crear una instancia de BrigadaData
 
-// Debes buscar la brigada y asignarla a brigi2
-        Brigada brigi2 = brigiData.BuscarBrigada(2);
+//        Bombero juan = new Bombero();                                             
+//        BomberoData bombi = new BomberoData();              //SALE VENTANA, pero se carga, MODIFICAR JOptionPane.             
+//        BrigadaData brigiData = new BrigadaData(); //--------------
+//
+//        Brigada brigi2 = brigiData.BuscarBrigada(2);//--------------
+//
+//        juan.setNombre("Sonia");
+//        juan.setApellido("Fernandez");
+//        juan.setFecha_nacimiento(LocalDate.of(1990, 5, 15));
+//        juan.setGrupo_sanguineo("0 - ");
+//        juan.setDni("232123211"); 
 
-// Establecer los atributos del bombero juan
-        juan.setNombre("Marioooo"); // No incluyas un espacio antes del nombre
-        juan.setApellido("Marquezzzzzz");
-        juan.setFecha_nacimiento(LocalDate.of(1990, 5, 15));
-        juan.setGrupo_sanguineo("A - ");
+//        juan.setBrigada(brigi2);//------------
 
-// Establecer el valor del campo dni
-        juan.setDni("0000"); // Cambiar el DNI a uno único
+//        juan.setCelular("223131223");
+//        juan.setEstado(true);
+//        juan.setId_bombero(1);
+//
+//        bombi.GuardarBombero(juan);
 
-        juan.setBrigada(brigi2); // Asignar la brigada encontrada a juan
-        juan.setCelular("2231231231");
-        juan.setEstado(true);
-        juan.setId_bombero(1);
+//                      ----   Ver Bombero Guardado ----
 
-// Luego, guarda el bombero
-        bombi.GuardarBombero(juan);
-
-//             Ver Bombero Guardado
-//             BomberoData bombi = new BomberoData();
-//            Bombero BomberoEncontrado = bombi.BuscarBombero(3);
+//            BomberoData bombi = new BomberoData();
+//            Bombero BomberoEncontrado = bombi.BuscarBombero(10);   //cambiar ID
 //
 //            if (BomberoEncontrado != null) {
 //                System.out.println("Personal encontrado:");
@@ -49,15 +46,17 @@ public class Main {
 //                System.out.println("DNI: " + BomberoEncontrado.getDni());
 //                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
 //                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
-//                System.out.println("Codigo Brigada: " + BomberoEncontrado.getBrigada().getId_brigada());
+//                System.out.println("Codigo Brigada: " + BomberoEncontrado.getBrigada().getId_brigada());//--------------
 //                System.out.println("Celular: " + BomberoEncontrado.getCelular());
 //                System.out.println("Estado: " + BomberoEncontrado.isEstado());
 //                
 //            } else {
 //                System.out.println("No se encontró el Personal. ");
 //            }     
-//---------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------Prueba BuscarBombero por id FUNCA----------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------Prueba BuscarBombero por id FUNCA------------------------------------------------------
+
 //        BomberoData bombi = new BomberoData();
 //        Bombero BomberoEncontrado = bombi.BuscarBombero(2);
 //
@@ -70,60 +69,50 @@ public class Main {
 //            System.out.println("DNI: " + BomberoEncontrado.getDni());
 //            System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
 //            System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
-//
+//           
+//            Brigada brigada = BomberoEncontrado.getBrigada();//--------------
+//            System.out.println("Codigo de Brigada: " + brigada.getId_brigada());//--------------
 //            
-//            Brigada brigada = BomberoEncontrado.getBrigada();
-//            
-//            if (brigada != null) {
-//                System.out.println("Codigo de Brigada: " + brigada.getId_brigada());
-//            } else {
-//                System.out.println("Brigada no asignada.");
-//            }
-//
 //            System.out.println("Celular: " + BomberoEncontrado.getCelular());
 //            System.out.println("Estado: " + BomberoEncontrado.isEstado());
 //
 //        } else {
 //            System.out.println("No se encontró el Personal.");
 //        }
-//---------------------------------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------------Prueba ModificarBombero-------------------------------------------------------
-//                BomberoData bombi2 = new BomberoData();
-//                Bombero bombero = new Bombero();
-//                bombero.setNombre(" Walter");
-//                bombero.setApellido("chocolatoso"); 
-//                bombero.setFecha_nacimiento(LocalDate.of(1990,5,15)); 
-//                bombero.setGrupo_sanguineo("A+"); 
-//                bombero.getBrigada().getId_brigada();//-----
-//                bombero.setCelular("12321313"); 
-//                bombero.setEstado(true); 
-//                bombero.setId_bombero(1);
-//                bombi2.ModificarBombero(bombero);
-//            Bombero BomberoEncontrado2 = bombi2.BuscarBombero(1);
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------Prueba ModificarBombero FUNCA----------------------------------------------
+////
+//                         BomberoData bombi2 = new BomberoData();
+//                         Bombero bombero = new Bombero();
+//                         Brigada brigada = new Brigada();
+//                         
+//                         bombero.setNombre("Rigoberto");
+//                         bombero.setApellido("Chocolatoso");
+//                         bombero.setFecha_nacimiento(LocalDate.of(1990, 5, 15));
+//                         bombero.setGrupo_sanguineo("A+");
 //
-//            if (BomberoEncontrado2 != null) {
-//                System.out.println("Personal encontrado:");
-//                
-//                System.out.println("ID: " + BomberoEncontrado2.getId_bombero());
-//                System.out.println("Nombre: " + BomberoEncontrado2.getNombre());
-//                System.out.println("Apellido: " + BomberoEncontrado2.getApellido());
-//                System.out.println("DNI: " + BomberoEncontrado2.getDni());
-//                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado2.getFecha_nacimiento());
-//                System.out.println("Grupo Sanguineo: " + BomberoEncontrado2.getGrupo_sanguineo());
-//                System.out.println("Codigo de Brigada: " + bombero.getBrigada().getId_brigada());//-----
-//                System.out.println("Celular: " + BomberoEncontrado2.getCelular());
-//                System.out.println("Estado: " + BomberoEncontrado2.isEstado());
-//                
-//            } else {
-//                System.out.println("No se encontró el Personal. ");
-//            } 
-//---------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------Prueba EliminarBombero------------------------------------------------------------
+//                         brigada.setId_brigada(2);//------------
+//                         
+//                         bombero.setBrigada(brigada);
+//
+//                         bombero.setCelular("12321313");
+//                         bombero.setEstado(true);
+//                         bombero.setId_bombero(1);
+//
+//                         bombi2.ModificarBombero(bombero);// ESTABA MAL ORDEN DEL METODO XD
+//                         
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------Prueba EliminarBombero FUNCA---------------------------------------------------
+
 //           BomberoData bombi = new BomberoData();
 //           bombi.EliminarBombero(1); 
-//         //Probamos Buscar x dni /// FUNCA. xD
+         
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------Prueba BuscarBomberoPorDni FUNCA-------------------------------------------------- 
+           
 //           BomberoData bombi = new BomberoData();
-//            Bombero BomberoEncontrado = bombi.BuscarBomberoPorDni(1111);
+//           Bombero BomberoEncontrado = bombi.BuscarBomberoPorDni(1111);
 //
 //            if (BomberoEncontrado != null) {
 //                System.out.println("Personal encontrado:");
@@ -134,15 +123,20 @@ public class Main {
 //                System.out.println("DNI: " + BomberoEncontrado.getDni());
 //                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
 //                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
-//                 System.out.println("Codigo de Brigada: " + bombero.getBrigada().getId_brigada());//-----
+//                
+//                Brigada brigada = BomberoEncontrado.getBrigada();//--------------
+//                System.out.println("Codigo de Brigada: " + brigada.getId_brigada());//--------------
+//                
 //                System.out.println("Celular: " + BomberoEncontrado.getCelular());
 //                System.out.println("Estado: " + BomberoEncontrado.isEstado());
 //                
 //            } else {
 //                System.out.println("No se encontró el Personal. ");
 //            } 
-//---------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------Prueba ListarBomberos-----------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------Prueba ListarBomberos------------------------------------------------------------
+
 //        BomberoData bombibis = new BomberoData();
 //
 //        List<Bombero> ListarBomberos = bombibis.ListarBomberos();
@@ -166,19 +160,23 @@ public class Main {
 //        } else {
 //            System.out.println("No hay Personal en la lista.");
 //        }
-//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------SEGUNDA ENTREGA ---------------------------------------------------------------//
-//------------------------------------------------Prueba metodo GuardarBombero-------------------------------------------------------
+//------------------------------------------------Prueba metodo GuardarCuartel FUNCA-------------------------------------------------
+//
 //             Cuartel c1 = new Cuartel("Cuartel General","Santa Cecilia ST ", 12, 14, "1234532", "cuartelgeneral@gmail.com");
 //             CuartelData cuart1 = new CuartelData();
 //             cuart1.GuardarCuartel(c1);
-///////////////
-//        
-//             CuartelData cuart1 = new CuartelData();
-//             Cuartel CuartelEncontrado = cuart1.BuscarCuartel(2);
+             
+
+ //                                ----   Ver Cuartel Guardado ----
+ 
+//             CuartelData cuart2 = new CuartelData();
+//             Cuartel CuartelEncontrado = cuart2.BuscarCuartelPorId(3); //Cambiar ID de cuartel 
 //
 //            if (CuartelEncontrado != null) {
-//                System.out.println("Personal encontrado:");
+//                System.out.println("Cuartel Encontrado:");
 //                
 //                System.out.println("ID: " + CuartelEncontrado.getId_cuartel());
 //                System.out.println("Nombre: " + CuartelEncontrado.getNombre_cuartel());
@@ -191,31 +189,31 @@ public class Main {
 //            } else {
 //                System.out.println("No se encontró el Cuartel. ");
 //            }     
-//---------------------------------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------Prueba BuscarBombero por id - FUNCA.------------------------------------------        
 
-        /*    BomberoData bombi = new BomberoData();
-            Bombero BomberoEncontrado = bombi.BuscarBombero(1);
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------Prueba BuscarCuartelPorId. FUNCA--------------------------------------------------        
 
-            if (BomberoEncontrado != null) {
-                System.out.println("Personal encontrado:");
-                
-                System.out.println("ID: " + BomberoEncontrado.getId_bombero());
-                System.out.println("Nombre: " + BomberoEncontrado.getNombre());
-                System.out.println("Apellido: " + BomberoEncontrado.getApellido());
-                System.out.println("DNI: " + BomberoEncontrado.getDni());
-                System.out.println("Fecha de Nacimiento: " + BomberoEncontrado.getFecha_nacimiento());
-                System.out.println("Grupo Sanguineo: " + BomberoEncontrado.getGrupo_sanguineo());
-                System.out.println("Codigo Brigada: " + BomberoEncontrado.getCodigo_brigada());
-                System.out.println("Celular: " + BomberoEncontrado.getCelular());
-                System.out.println("Estado: " + BomberoEncontrado.isEstado());
-                
-            } else {
-                System.out.println("No se encontró el Personal. ");
-            } 
+    CuartelData cuartelito = new CuartelData();
+    Cuartel cuartelEncontrado = cuartelito.BuscarCuartelPorId(3);
+
+    if (cuartelEncontrado != null) {
+        
+        System.out.println("Cuartel encontrado:");
+        System.out.println("ID: " + cuartelEncontrado.getId_cuartel());
+        System.out.println("Nombre: " + cuartelEncontrado.getNombre_cuartel());
+        System.out.println("Dirección: " + cuartelEncontrado.getDireccion());
+        System.out.println("Coordenada X: " + cuartelEncontrado.getCoord_X());
+        System.out.println("Coordenada Y: " + cuartelEncontrado.getCoord_Y());
+        System.out.println("Teléfono: " + cuartelEncontrado.getTelefono());
+        System.out.println("Correo: " + cuartelEncontrado.getCorreo());
+        
+    } else {
+        System.out.println("No se encontró el Cuartel.");
+    }
+    
 //---------------------------------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------
-         */
+        
     }
 }
