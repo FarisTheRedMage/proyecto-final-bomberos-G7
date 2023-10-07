@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2023 a las 17:51:35
+-- Tiempo de generación: 07-10-2023 a las 02:06:47
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -98,7 +98,8 @@ CREATE TABLE `cuartel` (
 INSERT INTO `cuartel` (`id_cuartel`, `nombre_cuartel`, `direccion`, `coord_X`, `coord_Y`, `telefono`, `correo`, `estado`) VALUES
 (1, 'Cuartel Central', '123 Calle Principal', 46, -78, '1234567890', 'cuartelcentral02@gmail.com', 1),
 (2, 'Cuartel General', 'Santa Cecilia ST ', 12, 14, '1234532', 'cuartelgeneral123@gmail.com', 1),
-(3, 'Cuartel Zona Este', 'Santa Clara ST', 12345, 54321, '7773662', 'cuartelzonaeste12@gmail.com', 1);
+(3, 'Cuartel Zona Este', 'Santa Clara ST', 10, 52, '7773662', 'cuartelzonaeste12@gmail.com', 0),
+(4, 'Cuartel: Los Bomberi', 'Goove ST', 11, 31, '2221111222', 'groovesthome@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,8 @@ CREATE TABLE `siniestro` (
   `detalles` text NOT NULL,
   `id_brigada` int(11) NOT NULL,
   `fecha_resolucion` date NOT NULL,
-  `calificacion` int(11) NOT NULL
+  `calificacion` int(11) NOT NULL,
+  `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -170,7 +172,7 @@ ALTER TABLE `brigada`
 -- AUTO_INCREMENT de la tabla `cuartel`
 --
 ALTER TABLE `cuartel`
-  MODIFY `id_cuartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_cuartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `siniestro`
