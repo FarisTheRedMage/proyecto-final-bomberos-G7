@@ -190,8 +190,8 @@ public class Main {
 //                System.out.println("No se encontró el Cuartel. ");
 //            }     
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------Prueba BuscarCuartelPorId. FUNCA--------------------------------------------------        
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------Prueba BuscarCuartelPorId. FUNCA---------------------------------------------------      
 
 //    CuartelData cuartelito = new CuartelData();
 //    Cuartel cuartelEncontrado = cuartelito.BuscarCuartelPorId(4);
@@ -211,9 +211,9 @@ public class Main {
 //        System.out.println("No se encontró el Cuartel.");
 //    }
     
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
 
-//-------------------------------------------------------------Prueba ModificarCuartel FUNCA-----------------------------------------------------------------
+//-------------------------------------------------------------Prueba ModificarCuartel FUNCA----------------------------------------------
 
 //        CuartelData cuartelito = new CuartelData();
 //        Cuartel cuartel = new Cuartel();
@@ -229,14 +229,14 @@ public class Main {
 //        
 //        cuartelito.ModificarCuartel(cuartel);
         
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------Prueba EliminarCuartel FUNCA-------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba EliminarCuartel FUNCA------------------------------------------------
 
 //        CuartelData cuartelito = new CuartelData();
 //        cuartelito.EliminarCuartel(3); 
 
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------Prueba ListarCuartel - FUNCA --------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba ListarCuartel - FUNCA ------------------------------------------------
         
 //    CuartelData cuarteliwi = new CuartelData();
 //
@@ -261,20 +261,112 @@ public class Main {
 //            System.out.println("No hay Cuarteles en la lista.");
 //        }
 
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------Prueba  -  --------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba GuardarBrigada - FUNCA --------------------------------------------
+
+//        Brigada juan = new Brigada();                                             
+//        BrigadaData b1 = new BrigadaData();                         
+//        CuartelData cuartData = new CuartelData(); //--------------
+//
+//        Cuartel cuartel1 = cuartData.BuscarCuartelPorId(2);//--------------
+//
+//        
+//        juan.setNombre_brigada("S.E.E.S.");
+//        juan.setEspecialidad("Cazar Mounstruos");
+//        juan.setEstado(true);
+//        juan.setCuartel(cuartel1);
+//       
+//        
+//        b1.GuardarBrigada(juan);
+//
+////                      ----   Ver Brigada Guardada ----
+//
+//            BrigadaData b2 = new BrigadaData();
+//            Brigada BrigadaEncontrada = b2.BuscarBrigada(3);   //cambiar ID
+//
+//            if (BrigadaEncontrada != null) {
+//                System.out.println("Brigada Encontrada: ");
+//                
+//                System.out.println("ID: " + BrigadaEncontrada.getId_brigada());
+//                System.out.println("Nombre Brigada: " + BrigadaEncontrada.getNombre_brigada());
+//                System.out.println("Especialidad: " + BrigadaEncontrada.getEspecialidad());
+//                System.out.println("Estado: " + BrigadaEncontrada.isEstado());
+//                System.out.println("Codigo Cuartel: " + BrigadaEncontrada.getCuartel().getId_cuartel());//------------
+//                
+//            } else {
+//                System.out.println("No se encontró la Brigada. ");
+//            }     
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba BuscarBrigada - FUNCA ----------------------------------------------
+
+//            BrigadaData b2 = new BrigadaData();
+//            Brigada BrigadaEncontrada = b2.BuscarBrigada(3);   //cambiar ID
+//
+//            if (BrigadaEncontrada != null) {
+//                System.out.println("Brigada Encontrada: ");
+//                
+//                System.out.println("ID: " + BrigadaEncontrada.getId_brigada());
+//                System.out.println("Nombre Brigada: " + BrigadaEncontrada.getNombre_brigada());
+//                System.out.println("Especialidad: " + BrigadaEncontrada.getEspecialidad());
+//                System.out.println("Estado: " + BrigadaEncontrada.isEstado());
+//                System.out.println("Codigo Cuartel: " + BrigadaEncontrada.getCuartel().getId_cuartel());//------------
+//                
+//            } else {
+//                System.out.println("No se encontró la Brigada. ");
+//            }     
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba ModificarBrigada - FUNCA  ------------------------------------------
+//
+//                    BrigadaData bri = new BrigadaData();
+//                    Brigada brigada = new Brigada();
+//                    Cuartel cuartel = new Cuartel();
+//                    
+//                              brigada.setId_brigada(3);     
+//                              brigada.setNombre_brigada("S.E.E.S.");
+//                              brigada.setEspecialidad("Caza Bichos");
+//                              brigada.setEstado(true);
+//                              
+//                              cuartel.setId_cuartel(2);//------------
+//                                        
+//                              brigada.setCuartel(cuartel);
+//               
+//                              bri.ModificarBrigada(brigada);
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba EliminarBrigada -FUNCA  ---------------------------------------------
+
+//        BrigadaData brigadita = new BrigadaData();
+//        brigadita.EliminarBrigada(1); 
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba ListarBrigadas -  --------------------------------------------------------
+       
+    BrigadaData brigadita = new BrigadaData();
+
+        List<Brigada> ListarBrigada = brigadita.ListarBrigada();
+
+        if (!ListarBrigada.isEmpty()) {
+            System.out.println("Lista de Brigadas:");
+
+            for (Brigada brigadas : ListarBrigada) {
+                System.out.println("ID: " + brigadas.getId_brigada());
+                System.out.println("Nombre: " + brigadas.getNombre_brigada());
+                System.out.println("Direccion: " + brigadas.getEspecialidad());
+              System.out.println("Direccion: " + brigadas.getCuartel().getId_cuartel());
+                System.out.println("Estado: " + brigadas.isEstado());
+                System.out.println("-----------------------------");
+            }
+
+        } else {
+            System.out.println("No hay Brigadas en la lista.");
+        }
 
 
 
-
-
-
-
-
-
-
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba  -  --------------------------------------------------------
 
 
 
