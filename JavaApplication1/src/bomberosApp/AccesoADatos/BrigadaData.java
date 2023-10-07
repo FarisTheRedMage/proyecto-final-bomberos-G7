@@ -11,15 +11,14 @@ import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
 public class BrigadaData {
-    
-     private Connection con = null;
-     
+
+    private Connection con = null;
+
     public BrigadaData() {
         con = ConexionData.getConexion();
     }
-//probar en main
-    
-     public void GuardarBrigada(Brigada brigada) {
+
+    public void GuardarBrigada(Brigada brigada) {
         String SQL = "INSERT INTO brigada (nombre_brigada, especialidad, estado, id_cuartel) VALUES ( ?, ?, ?, ?)";
 
         try {
@@ -28,8 +27,8 @@ public class BrigadaData {
             ps.setString(2, brigada.getEspecialidad());
             ps.setBoolean(3, brigada.isEstado());
             ps.setInt(4, brigada.getCuartel().getId_cuartel());  //Mepa q era asi  // OJO
-            
-           ps.executeUpdate();
+
+            ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
@@ -42,11 +41,10 @@ public class BrigadaData {
             JOptionPane.showMessageDialog(null, "Error a Acceder a la tabla Brigada. " + e.getMessage());
         }
     }
-    
-     public Brigada BuscarBrigada(int id) {
-        
-        
-         Brigada brigada = null;
+
+    public Brigada BuscarBrigada(int id) {
+
+        Brigada brigada = null;
 
         String SQL = "SELECT * FROM bombero WHERE id_bombero=? and estado=1";
         PreparedStatement ps = null;
@@ -76,11 +74,45 @@ public class BrigadaData {
         }
         return brigada;
     }
-    
-    
-    
-    
-    
-    
-    
+
+    public void ModificarBrigada(Brigada brigada) {
+
+        String SQL = " UPDATE brigada "
+                + "SET nombre_brigada = ?, especialidad = ?, estado = ?, id_cuartel = ? "
+                + "WHERE id_brigada = ?";
+
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(SQL);
+
+            ps.setString(1, brigada.getNombre_brigada());
+            ps.setString(2, brigada.getEspecialidad());
+            ps.setBoolean(3, brigada.isEstado());
+            ps.setInt(4, brigada.getCuartel().getId_cuartel());
+            ps.setInt(5, brigada.getId_brigada());
+
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "La Brigada no existe");
+            }
+            ps.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Brigada " + e.getMessage());
+        }
+
+//     public void EliminarBrigada(){
+//         
+//         
+//         
+//     }
+//  
+//    public ListarBrigadas(){
+//        
+//        
+//        
+    }
+
 }

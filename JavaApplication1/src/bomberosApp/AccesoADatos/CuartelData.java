@@ -137,10 +137,8 @@ public class CuartelData {
 
     }
     
-    //FALTA LISTA
-    
     public List<Cuartel> ListarCuarteles(){
-      List<Cuartel> bomberos = new ArrayList<>();
+      List<Cuartel> cuarteles = new ArrayList<>();
       
         try {
             String SQL = "SELECT * FROM cuartel";
@@ -149,22 +147,24 @@ public class CuartelData {
             
             while (rs.next()){
                 Cuartel cuartel = new Cuartel();
+                
                 cuartel.setId_cuartel(rs.getInt("id_cuartel"));
-                cuartel.setNombre_cuartel(rs.getString("nombre"));
+                cuartel.setNombre_cuartel(rs.getString("nombre_cuartel"));
                 cuartel.setDireccion(rs.getString("direccion"));
                 cuartel.setCoord_X(rs.getInt("coord_X"));
                 cuartel.setCoord_Y(rs.getInt("coord_Y"));
                 cuartel.setTelefono(rs.getString("telefono"));
                 cuartel.setCorreo(rs.getString("correo"));
                 cuartel.setEstado(true);
-                bomberos.add(cuartel);
+                
+                cuarteles.add(cuartel);
             }
             ps.close();
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al acceder a la tabla Cuartel"+ex.getMessage());
         }
-        return bomberos;
+        return cuarteles;
     }
     
 }

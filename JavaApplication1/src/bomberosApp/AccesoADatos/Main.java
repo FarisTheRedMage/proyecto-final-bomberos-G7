@@ -236,35 +236,50 @@ public class Main {
 //        cuartelito.EliminarCuartel(3); 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------Prueba ListarCuartel -  -------------------------------------------------------------------
+//-------------------------------------------------------------Prueba ListarCuartel - FUNCA --------------------------------------------------------------------
         
-
-
-
-
-//    BomberoData bombibis = new BomberoData();
+//    CuartelData cuarteliwi = new CuartelData();
 //
-//        List<Bombero> ListarBomberos = bombibis.ListarBomberos();
+//        List<Cuartel> ListarCuarteles = cuarteliwi.ListarCuarteles();
 //
-//        if (!ListarBomberos.isEmpty()) {
-//            System.out.println("Lista de bomberos:");
+//        if (!ListarCuarteles.isEmpty()) {
+//            System.out.println("Lista de Cuarteles:");
 //
-//            for (Bombero bombero : ListarBomberos) {
-//                System.out.println("ID: " + bombero.getId_bombero());
-//                System.out.println("Nombre: " + bombero.getNombre());
-//                System.out.println("Apellido: " + bombero.getApellido());
-//                System.out.println("DNI: " + bombero.getDni());
-//                System.out.println("Fecha de Nacimiento: " + bombero.getFecha_nacimiento());
-//                System.out.println("Grupo Sanguineo: " + bombero.getGrupo_sanguineo());
-//                System.out.println("Codigo de Brigada: " + bombero.getBrigada().getId_brigada());//-----
-//                System.out.println("Celular: " + bombero.getCelular());
-//                System.out.println("Estado: " + bombero.isEstado());
+//            for (Cuartel cuarteles : ListarCuarteles) {
+//                System.out.println("ID: " + cuarteles.getId_cuartel());
+//                System.out.println("Nombre: " + cuarteles.getNombre_cuartel());
+//                System.out.println("Direccion: " + cuarteles.getDireccion());
+//                System.out.println("Coordenada X: " + cuarteles.getCoord_X());
+//                System.out.println("Coordenada Y: " + cuarteles.getCoord_Y());
+//                System.out.println("Telefono: " + cuarteles.getTelefono());
+//                System.out.println("Correo: " + cuarteles.getCorreo());
+//                System.out.println("Estado: " + cuarteles.isEstado());
 //                System.out.println("-----------------------------");
 //            }
 //
 //        } else {
-//            System.out.println("No hay Personal en la lista.");
+//            System.out.println("No hay Cuarteles en la lista.");
 //        }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba  -  --------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
