@@ -29,19 +29,19 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        JMUnidades = new javax.swing.JMenu();
+        JMICargaDePersonal = new javax.swing.JMenuItem();
+        JMIGestionDePersonal = new javax.swing.JMenuItem();
+        JMCuarteles = new javax.swing.JMenu();
+        JMIGestionDeCuarteles = new javax.swing.JMenuItem();
+        JMIRevisarCuarteles = new javax.swing.JMenuItem();
+        JMBrigadas = new javax.swing.JMenu();
+        JMIGestionDeBrigadas = new javax.swing.JMenuItem();
+        JMIRevisarBrigadas = new javax.swing.JMenuItem();
+        JMSiniestros = new javax.swing.JMenu();
+        JMItemSiniestros = new javax.swing.JMenuItem();
+        JMIHistorialDeSiniestros = new javax.swing.JMenuItem();
+        JMSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,53 +56,63 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
             .addGap(0, 641, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Unidades");
+        JMUnidades.setText("Unidades");
 
-        jMenuItem1.setText("Carga De Personal");
-        jMenu1.add(jMenuItem1);
+        JMICargaDePersonal.setText("Carga De Personal");
+        JMUnidades.add(JMICargaDePersonal);
 
-        jMenuItem2.setText("Gestion De Personal");
-        jMenu1.add(jMenuItem2);
+        JMIGestionDePersonal.setText("Gestion De Personal");
+        JMUnidades.add(JMIGestionDePersonal);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(JMUnidades);
 
-        jMenu2.setText("Cuarteles");
+        JMCuarteles.setText("Cuarteles");
 
-        jMenuItem3.setText("Gestion de Cuarteles");
-        jMenu2.add(jMenuItem3);
+        JMIGestionDeCuarteles.setText("Gestion de Cuarteles");
+        JMCuarteles.add(JMIGestionDeCuarteles);
 
-        jMenuItem7.setText("Revisar Cuarteles");
-        jMenu2.add(jMenuItem7);
+        JMIRevisarCuarteles.setText("Revisar Cuarteles");
+        JMCuarteles.add(JMIRevisarCuarteles);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(JMCuarteles);
 
-        jMenu3.setText("Brigadas");
+        JMBrigadas.setText("Brigadas");
 
-        jMenuItem4.setText("Gestion De Brigadas");
-        jMenu3.add(jMenuItem4);
-
-        jMenuItem8.setText("Revisar Brigadas");
-        jMenu3.add(jMenuItem8);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Siniestros");
-
-        jMenuItem5.setText("Siniestros");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        JMIGestionDeBrigadas.setText("Gestion De Brigadas");
+        JMIGestionDeBrigadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                JMIGestionDeBrigadasActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem5);
+        JMBrigadas.add(JMIGestionDeBrigadas);
 
-        jMenuItem6.setText("Historial de Siniestros");
-        jMenu4.add(jMenuItem6);
+        JMIRevisarBrigadas.setText("Revisar Brigadas");
+        JMBrigadas.add(JMIRevisarBrigadas);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(JMBrigadas);
 
-        jMenu5.setText("Salir");
-        jMenuBar1.add(jMenu5);
+        JMSiniestros.setText("Siniestros");
+
+        JMItemSiniestros.setText("Siniestros");
+        JMItemSiniestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMItemSiniestrosActionPerformed(evt);
+            }
+        });
+        JMSiniestros.add(JMItemSiniestros);
+
+        JMIHistorialDeSiniestros.setText("Historial de Siniestros");
+        JMIHistorialDeSiniestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIHistorialDeSiniestrosActionPerformed(evt);
+            }
+        });
+        JMSiniestros.add(JMIHistorialDeSiniestros);
+
+        jMenuBar1.add(JMSiniestros);
+
+        JMSalir.setText("Salir");
+        jMenuBar1.add(JMSalir);
 
         setJMenuBar(jMenuBar1);
 
@@ -124,9 +134,17 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void JMItemSiniestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMItemSiniestrosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_JMItemSiniestrosActionPerformed
+
+    private void JMIGestionDeBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIGestionDeBrigadasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMIGestionDeBrigadasActionPerformed
+
+    private void JMIHistorialDeSiniestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIHistorialDeSiniestrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMIHistorialDeSiniestrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,20 +182,20 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu JMBrigadas;
+    private javax.swing.JMenu JMCuarteles;
+    private javax.swing.JMenuItem JMICargaDePersonal;
+    private javax.swing.JMenuItem JMIGestionDeBrigadas;
+    private javax.swing.JMenuItem JMIGestionDeCuarteles;
+    private javax.swing.JMenuItem JMIGestionDePersonal;
+    private javax.swing.JMenuItem JMIHistorialDeSiniestros;
+    private javax.swing.JMenuItem JMIRevisarBrigadas;
+    private javax.swing.JMenuItem JMIRevisarCuarteles;
+    private javax.swing.JMenuItem JMItemSiniestros;
+    private javax.swing.JMenu JMSalir;
+    private javax.swing.JMenu JMSiniestros;
+    private javax.swing.JMenu JMUnidades;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     // End of variables declaration//GEN-END:variables
 }
