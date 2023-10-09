@@ -334,32 +334,32 @@ public class Main {
 //            System.out.println("No hay Brigadas en la lista.");
 //        }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------Prueba GuardarSiniestro-  --------------------------------------------------------
+//-------------------------------------------------------------Prueba GuardarSiniestro-  FUNCA--------------------------------------------------------
    
-        Siniestro s1 = new Siniestro();                                             
-        SiniestroData siniestrito = new SiniestroData();                       
-        BrigadaData brigiData = new BrigadaData(); //--------------
-
-        Brigada brigi2 = brigiData.BuscarBrigada(2);//--------------
-
-
-            s1.setCoord_X(123);
-            s1.setCoord_Y(112);
-            s1.setFecha_siniestro(LocalDate.of(2023, 10, 9));
-            s1.setTipo("Incendio");
-            s1.setDetalles("Incendio en un edificio residencial.");
-            s1.setBrigada(brigi2);
-            
-            s1.setFecha_resolucion(null); // VER!! puede o no haber termindo el siniestro
-            
-            s1.setCalificacion(0);  //sin calificacion porque no termino
-            s1.setEstado(true);
-
-            siniestrito.GuardarSiniestro(s1);
+//        Siniestro s1 = new Siniestro();                                             
+//        SiniestroData siniestrito = new SiniestroData();                       
+//        BrigadaData brigiData = new BrigadaData(); //--------------
+//
+//        Brigada brigi2 = brigiData.BuscarBrigada(2);//--------------
+//
+//
+//            s1.setCoord_X(123);
+//            s1.setCoord_Y(112);
+//            s1.setFecha_siniestro(LocalDate.of(2023, 10, 9));
+//            s1.setTipo("Incendio");
+//            s1.setDetalles("Incendio en un edificio residencial.");
+//            s1.setBrigada(brigi2);
+//            
+//            s1.setFecha_resolucion(LocalDate.of(2023, 10, 15)); 
+//            
+//            s1.setCalificacion(6);  //sin calificacion porque no termino
+//            s1.setEstado(true);
+//
+//            siniestrito.GuardarSiniestro(s1);
 //
 //////////           ----   Ver Siniestro Guardado ----
 //            SiniestroData bombi = new SiniestroData();
-//            Siniestro SiniestroEncontrado = bombi.BuscarSiniestroPorID(1);   //cambiar ID
+//            Siniestro SiniestroEncontrado = bombi.BuscarSiniestroPorID(2);   //cambiar ID
 //
 //            if (SiniestroEncontrado != null) {
 //                System.out.println("Siniestro encontrado:");

@@ -32,7 +32,15 @@ public class SiniestroData {
 
             ps.setInt(6, siniestro.getBrigada().getId_brigada());//----------
 
-            ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
+         
+                if (siniestro.getFecha_resolucion()!=null){
+                       ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
+                    
+                }else{
+                    ps.setNull(7, java.sql.Types.NULL);
+                }
+            
+            
             ps.setInt(8, siniestro.getCalificacion());
             ps.setBoolean(9, siniestro.isEstado());
 
@@ -71,7 +79,7 @@ public class SiniestroData {
 
             if (rs.next()) {
                 siniestro = new Siniestro();
-                brg = new Brigada();// -------
+                brg = new Brigada();
 
                 siniestro.setId_siniestro(id);
                 siniestro.setCoord_X(rs.getInt("coord_X"));
@@ -82,9 +90,19 @@ public class SiniestroData {
                 siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
                 
-                brg.setId_brigada(rs.getInt("id_brigada"));// -------
+                brg.setId_brigada(rs.getInt("id_brigada"));
+                siniestro.setBrigada(brg);
                 
-                siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+                
+                
+                
+                if (rs.getDate("fecha_resolucion")!=null){
+                       siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+                    
+                }else{
+                    siniestro.setFecha_resolucion(null);
+                }
+                
                 
                 siniestro.setCalificacion(rs.getInt("calificacion"));
                 siniestro.setEstado(rs.getBoolean("estado"));

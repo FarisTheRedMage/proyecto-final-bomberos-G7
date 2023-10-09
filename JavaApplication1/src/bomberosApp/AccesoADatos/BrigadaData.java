@@ -131,7 +131,7 @@ public class BrigadaData {
 
 public List<Brigada> ListarBrigada() {
         List<Brigada> brigadas = new ArrayList<>();
-
+        
         try {
             String SQL = "SELECT * FROM brigada";
             PreparedStatement ps = con.prepareStatement(SQL);
