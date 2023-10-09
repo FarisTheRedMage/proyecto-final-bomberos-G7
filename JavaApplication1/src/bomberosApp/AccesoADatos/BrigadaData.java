@@ -143,7 +143,7 @@ public List<Brigada> ListarBrigada() {
                 brigada.setId_brigada(rs.getInt("id_brigada"));
                 brigada.setNombre_brigada(rs.getString("nombre_brigada"));
                 brigada.setEspecialidad(rs.getString("especialidad"));
-                brigada.setEstado(true);
+                brigada.setEstado(rs.getBoolean("estado"));
                 
                 cuartel.setId_cuartel(rs.getInt("id_cuartel"));//------ 
                 brigada.setCuartel(cuartel);

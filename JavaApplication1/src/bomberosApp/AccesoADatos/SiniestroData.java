@@ -8,6 +8,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
@@ -84,25 +86,18 @@ public class SiniestroData {
                 siniestro.setId_siniestro(id);
                 siniestro.setCoord_X(rs.getInt("coord_X"));
                 siniestro.setCoord_Y(rs.getInt("coord_Y"));
-                
                 siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
-                
                 siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
-                
                 brg.setId_brigada(rs.getInt("id_brigada"));
                 siniestro.setBrigada(brg);
-                
-                
-                
-                
+               
                 if (rs.getDate("fecha_resolucion")!=null){
                        siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
                     
                 }else{
                     siniestro.setFecha_resolucion(null);
                 }
-                
                 
                 siniestro.setCalificacion(rs.getInt("calificacion"));
                 siniestro.setEstado(rs.getBoolean("estado"));
@@ -119,10 +114,91 @@ public class SiniestroData {
     }
 
     
+public void ModificarSiniestro(Siniestro siniestro){
+    String SQL = "UPDATE siniestro SET coord_X=?, coord_Y=?, fecha_siniestro=?, tipo=?, detalles=?, id_brigada=?, fecha_resolucion=?, calificacion=?, estado=?";
+    
+    PreparedStatement ps= null;
+    
+    try {
+        ps = con.prepareStatement(SQL);
+        
+        ps.setInt(1, siniestro.getCoord_X());
+        ps.setInt(2, siniestro.getCoord_Y());
+        ps.setDate(3, Date.valueOf(siniestro.getFecha_siniestro()));
+        ps.setString(4, siniestro.getTipo());
+        ps.setString(5, siniestro.getDetalles());
+        ps.setInt(6, siniestro.getBrigada().getId_brigada());
+        ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
+        ps.setInt(8, siniestro.getCalificacion());
+        ps.setBoolean(9, siniestro.isEstado());
+        
+        int exito= ps.executeUpdate();
+        
+        if(exito == 1){
+            JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
+        }else {
+                JOptionPane.showMessageDialog(null, "El Siniestro no existe");
+            }
+        
+        ps.close();
+        
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro" + ex.getMessage());
+    } 
+}
+    
+    public void EliminarSiniestro(int id) {
+        try {
+            String SQL = "UPDATE siniestro SET estado = 0 WHERE id_siniestro = ? ";
 
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+
+            int fila = ps.executeUpdate();
+
+            if (fila == 1) {
+                JOptionPane.showMessageDialog(null, "Se elimino el Siniestro. ");
+            }
+            ps.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro. " + e.getMessage());
+        }
+    }
     
-    
-    
+    public List <Siniestro> ListarSiniestro(){
+        List<Siniestro> siniestros = new ArrayList<>();
+        
+        try {
+            String SQL = "SELECT * FROM siniestro";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){
+                Siniestro siniestro = new Siniestro();
+                Brigada brigada = new Brigada();
+                
+                siniestro.setId_siniestro(rs.getInt("id_siniestro"));
+                siniestro.setCoord_X(rs.getInt("cood_X"));
+                siniestro.setCoord_Y(rs.getInt("cood_Y"));
+                siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
+                siniestro.setTipo(rs.getString("tipo"));
+                siniestro.setDetalles(rs.getString("detalles"));
+                brigada.setId_brigada(rs.getInt("id_brigada"));
+                siniestro.setBrigada(brigada);
+                siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+                siniestro.setCalificacion(rs.getInt("calificacion"));
+                siniestro.setEstado(rs.getBoolean("estado"));
+                
+                siniestros.add(siniestro);
+                
+            }
+           ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro" + ex.getMessage());
+        }
+        return siniestros;
+    }
     
     
 }

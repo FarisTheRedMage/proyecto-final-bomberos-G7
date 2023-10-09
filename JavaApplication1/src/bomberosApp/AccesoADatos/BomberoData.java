@@ -176,7 +176,7 @@ public class BomberoData {
                 bombero.setBrigada(brg); // -------
 
                 bombero.setCelular(rs.getString("celular"));
-                bombero.setEstado(true);
+                bombero.setEstado(rs.getBoolean("estado"));
             } else {
                 JOptionPane.showConfirmDialog(null, "Este Empleado no esta Duplicado");
             }

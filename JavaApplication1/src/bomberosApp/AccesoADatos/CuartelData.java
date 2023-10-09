@@ -155,7 +155,7 @@ public class CuartelData {
                 cuartel.setCoord_Y(rs.getInt("coord_Y"));
                 cuartel.setTelefono(rs.getString("telefono"));
                 cuartel.setCorreo(rs.getString("correo"));
-                cuartel.setEstado(true);
+                cuartel.setEstado(rs.getBoolean("estado"));
                 
                 cuarteles.add(cuartel);
             }
