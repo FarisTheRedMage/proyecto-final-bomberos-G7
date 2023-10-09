@@ -3,6 +3,7 @@ package bomberosApp.AccesoADatos;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
+import bomberosApp.Entidades.Siniestro;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,17 +24,14 @@ public class Main {
 //        juan.setFecha_nacimiento(LocalDate.of(1990, 5, 15));
 //        juan.setGrupo_sanguineo("0 - ");
 //        juan.setDni("232123211"); 
-
 //        juan.setBrigada(brigi2);//------------
-
 //        juan.setCelular("223131223");
 //        juan.setEstado(true);
 //        juan.setId_bombero(1);
 //
 //        bombi.GuardarBombero(juan);
 
-//                      ----   Ver Bombero Guardado ----
-
+//    //                  ----   Ver Bombero Guardado ----
 //            BomberoData bombi = new BomberoData();
 //            Bombero BomberoEncontrado = bombi.BuscarBombero(10);   //cambiar ID
 //
@@ -53,10 +51,8 @@ public class Main {
 //            } else {
 //                System.out.println("No se encontró el Personal. ");
 //            }     
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------Prueba BuscarBombero por id FUNCA------------------------------------------------------
-
 //        BomberoData bombi = new BomberoData();
 //        Bombero BomberoEncontrado = bombi.BuscarBombero(2);
 //
@@ -79,7 +75,6 @@ public class Main {
 //        } else {
 //            System.out.println("No se encontró el Personal.");
 //        }
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------Prueba ModificarBombero FUNCA----------------------------------------------
 ////
@@ -104,13 +99,10 @@ public class Main {
 //                         
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------Prueba EliminarBombero FUNCA---------------------------------------------------
-
 //           BomberoData bombi = new BomberoData();
 //           bombi.EliminarBombero(1); 
-         
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------Prueba BuscarBomberoPorDni FUNCA-------------------------------------------------- 
-           
 //           BomberoData bombi = new BomberoData();
 //           Bombero BomberoEncontrado = bombi.BuscarBomberoPorDni(1111);
 //
@@ -133,10 +125,8 @@ public class Main {
 //            } else {
 //                System.out.println("No se encontró el Personal. ");
 //            } 
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------Prueba ListarBomberos------------------------------------------------------------
-
 //        BomberoData bombibis = new BomberoData();
 //
 //        List<Bombero> ListarBomberos = bombibis.ListarBomberos();
@@ -160,7 +150,6 @@ public class Main {
 //        } else {
 //            System.out.println("No hay Personal en la lista.");
 //        }
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------SEGUNDA ENTREGA ---------------------------------------------------------------//
 //------------------------------------------------Prueba metodo GuardarCuartel FUNCA-------------------------------------------------
@@ -189,10 +178,8 @@ public class Main {
 //            } else {
 //                System.out.println("No se encontró el Cuartel. ");
 //            }     
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------Prueba BuscarCuartelPorId. FUNCA---------------------------------------------------      
-
 //    CuartelData cuartelito = new CuartelData();
 //    Cuartel cuartelEncontrado = cuartelito.BuscarCuartelPorId(4);
 //
@@ -210,11 +197,8 @@ public class Main {
 //    } else {
 //        System.out.println("No se encontró el Cuartel.");
 //    }
-    
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
-
 //-------------------------------------------------------------Prueba ModificarCuartel FUNCA----------------------------------------------
-
 //        CuartelData cuartelito = new CuartelData();
 //        Cuartel cuartel = new Cuartel();
 //        
@@ -228,16 +212,12 @@ public class Main {
 //        cuartel.setId_cuartel(3); 
 //        
 //        cuartelito.ModificarCuartel(cuartel);
-        
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba EliminarCuartel FUNCA------------------------------------------------
-
 //        CuartelData cuartelito = new CuartelData();
 //        cuartelito.EliminarCuartel(3); 
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba ListarCuartel - FUNCA ------------------------------------------------
-        
 //    CuartelData cuarteliwi = new CuartelData();
 //
 //        List<Cuartel> ListarCuarteles = cuarteliwi.ListarCuarteles();
@@ -260,10 +240,8 @@ public class Main {
 //        } else {
 //            System.out.println("No hay Cuarteles en la lista.");
 //        }
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba GuardarBrigada - FUNCA --------------------------------------------
-
 //        Brigada juan = new Brigada();                                             
 //        BrigadaData b1 = new BrigadaData();                         
 //        CuartelData cuartData = new CuartelData(); //--------------
@@ -296,10 +274,8 @@ public class Main {
 //            } else {
 //                System.out.println("No se encontró la Brigada. ");
 //            }     
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba BuscarBrigada - FUNCA ----------------------------------------------
-
 //            BrigadaData b2 = new BrigadaData();
 //            Brigada BrigadaEncontrada = b2.BuscarBrigada(3);   //cambiar ID
 //
@@ -315,7 +291,6 @@ public class Main {
 //            } else {
 //                System.out.println("No se encontró la Brigada. ");
 //            }     
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba ModificarBrigada - FUNCA  ------------------------------------------
 //
@@ -333,46 +308,80 @@ public class Main {
 //                              brigada.setCuartel(cuartel);
 //               
 //                              bri.ModificarBrigada(brigada);
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba EliminarBrigada -FUNCA  ---------------------------------------------
-
 //        BrigadaData brigadita = new BrigadaData();
 //        brigadita.EliminarBrigada(1); 
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba ListarBrigadas -  --------------------------------------------------------
-       
-    BrigadaData brigadita = new BrigadaData();
+//    BrigadaData brigadita = new BrigadaData();
+//
+//        List<Brigada> ListarBrigada = brigadita.ListarBrigada();
+//
+//        if (!ListarBrigada.isEmpty()) {
+//            System.out.println("Lista de Brigadas:");
+//
+//            for (Brigada brigadas : ListarBrigada) {
+//                System.out.println("ID: " + brigadas.getId_brigada());
+//                System.out.println("Nombre: " + brigadas.getNombre_brigada());
+//                System.out.println("Direccion: " + brigadas.getEspecialidad());
+//              System.out.println("Direccion: " + brigadas.getCuartel().getId_cuartel());
+//                System.out.println("Estado: " + brigadas.isEstado());
+//                System.out.println("-----------------------------");
+//            }
+//
+//        } else {
+//            System.out.println("No hay Brigadas en la lista.");
+//        }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba GuardarSiniestro-  --------------------------------------------------------
+   
+        Siniestro s1 = new Siniestro();                                             
+        SiniestroData siniestrito = new SiniestroData();                       
+        BrigadaData brigiData = new BrigadaData(); //--------------
 
-        List<Brigada> ListarBrigada = brigadita.ListarBrigada();
-
-        if (!ListarBrigada.isEmpty()) {
-            System.out.println("Lista de Brigadas:");
-
-            for (Brigada brigadas : ListarBrigada) {
-                System.out.println("ID: " + brigadas.getId_brigada());
-                System.out.println("Nombre: " + brigadas.getNombre_brigada());
-                System.out.println("Direccion: " + brigadas.getEspecialidad());
-              System.out.println("Direccion: " + brigadas.getCuartel().getId_cuartel());
-                System.out.println("Estado: " + brigadas.isEstado());
-                System.out.println("-----------------------------");
-            }
-
-        } else {
-            System.out.println("No hay Brigadas en la lista.");
-        }
-
-
-
-//-----------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------Prueba  -  --------------------------------------------------------
-
-
-
-
+        Brigada brigi2 = brigiData.BuscarBrigada(2);//--------------
 
 
+            s1.setCoord_X(123);
+            s1.setCoord_Y(112);
+            s1.setFecha_siniestro(LocalDate.of(2023, 10, 9));
+            s1.setTipo("Incendio");
+            s1.setDetalles("Incendio en un edificio residencial.");
+            s1.setBrigada(brigi2);
+            
+            s1.setFecha_resolucion(null); // VER!! puede o no haber termindo el siniestro
+            
+            s1.setCalificacion(0);  //sin calificacion porque no termino
+            s1.setEstado(true);
 
+            siniestrito.GuardarSiniestro(s1);
+//
+//////////           ----   Ver Siniestro Guardado ----
+//            SiniestroData bombi = new SiniestroData();
+//            Siniestro SiniestroEncontrado = bombi.BuscarSiniestroPorID(1);   //cambiar ID
+//
+//            if (SiniestroEncontrado != null) {
+//                System.out.println("Siniestro encontrado:");
+//                
+//                System.out.println("ID Siniestro: " + SiniestroEncontrado.getId_siniestro());
+//                System.out.println("Coordenada X: " + SiniestroEncontrado.getCoord_X());
+//                System.out.println("Coordenada Y: " + SiniestroEncontrado.getCoord_Y());
+//                System.out.println("Fecha de Inicio del Siniestro: " + SiniestroEncontrado.getFecha_siniestro());
+//                System.out.println("Tipo de Siniestro: " + SiniestroEncontrado.getTipo());
+//                System.out.println("Detalles del Siniestro: " + SiniestroEncontrado.getDetalles());
+//                System.out.println("Codigo Brigada: " + SiniestroEncontrado.getBrigada().getId_brigada());//--------------
+//                System.out.println("Fecha de Resolucion del Siniestro: " + SiniestroEncontrado.getFecha_resolucion());
+//                System.out.println("Calificacion: " + SiniestroEncontrado.getCalificacion());
+//                System.out.println("Estado: " + SiniestroEncontrado.isEstado());
+//                
+//            } else {
+//                System.out.println("No se encontró el Siniestro. ");
+//            }     
+            
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
+//-------------------------------------------------------------Prueba -  --------------------------------------------------------            
+            
+            
     }
 }

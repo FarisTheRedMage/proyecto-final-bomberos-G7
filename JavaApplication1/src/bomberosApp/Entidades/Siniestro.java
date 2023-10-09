@@ -1,24 +1,25 @@
 package bomberosApp.Entidades;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Siniestro {
-    
+
     private int id_siniestro;
-    private int  coord_X;
+    private int coord_X;
     private int coord_Y;
-    private Date fecha_siniestro;
+    private LocalDate fecha_siniestro;
     private String tipo;
     private String detalles;
     private Brigada brigada;
-    private Date fecha_resolucion;
+    private LocalDate fecha_resolucion;
     private int calificacion;
     private Boolean estado;
-    
+
     public Siniestro() {
     }
 
-    public Siniestro(int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion, Boolean estado) {
+    public Siniestro(int coord_X, int coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
         this.fecha_siniestro = fecha_siniestro;
@@ -30,7 +31,7 @@ public class Siniestro {
         this.estado = estado;
     }
 
-    public Siniestro(int id_siniestro, int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Date fecha_resolucion, int calificacion, Boolean estado) {
+    public Siniestro(int id_siniestro, int coord_X, int coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
         this.id_siniestro = id_siniestro;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
@@ -43,7 +44,7 @@ public class Siniestro {
         this.estado = estado;
     }
 
-    public Siniestro(int id_siniestro, int coord_X, int coord_Y, Date fecha_siniestro, String tipo, String detalles, Brigada brigada, Boolean estado) {
+    public Siniestro(int id_siniestro, int coord_X, int coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, Boolean estado) {
         this.id_siniestro = id_siniestro;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
@@ -78,11 +79,11 @@ public class Siniestro {
         this.coord_Y = coord_Y;
     }
 
-    public Date getFecha_siniestro() {
+    public LocalDate getFecha_siniestro() {
         return fecha_siniestro;
     }
 
-    public void setFecha_siniestro(Date fecha_siniestro) {
+    public void setFecha_siniestro(LocalDate fecha_siniestro) {
         this.fecha_siniestro = fecha_siniestro;
     }
 
@@ -110,11 +111,11 @@ public class Siniestro {
         this.brigada = brigada;
     }
 
-    public Date getFecha_resolucion() {
+    public LocalDate getFecha_resolucion() {
         return fecha_resolucion;
     }
 
-    public void setFecha_resolucion(Date fecha_resolucion) {
+    public void setFecha_resolucion(LocalDate fecha_resolucion) {
         this.fecha_resolucion = fecha_resolucion;
     }
 
@@ -136,17 +137,16 @@ public class Siniestro {
 
     @Override
     public String toString() {
-        return "ID" + id_siniestro +
-                  ", Coordenadas X" + coord_X + 
-                  ", Coordenadas Y" + coord_Y + 
-                  ", Fecha Del Siniestro=" + fecha_siniestro + 
-                  ", Tipo" + tipo +
-                  ", Detalles" + detalles + 
-                  ", Brigada" + brigada +
-                  ", Fecha Resolucion" + fecha_resolucion + 
-                  ", Calificacion" + calificacion +
-                   ", Estado"+ estado;
-        }
+        return "ID" + id_siniestro
+                + ", Coordenadas X" + coord_X
+                + ", Coordenadas Y" + coord_Y
+                + ", Fecha Del Siniestro=" + fecha_siniestro
+                + ", Tipo" + tipo
+                + ", Detalles" + detalles
+                + ", Brigada" + brigada
+                + ", Fecha Resolucion" + fecha_resolucion
+                + ", Calificacion" + calificacion
+                + ", Estado" + estado;
+    }
 
-    
 }
