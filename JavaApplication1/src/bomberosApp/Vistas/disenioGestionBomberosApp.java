@@ -5,17 +5,34 @@
  */
 package bomberosApp.Vistas;
 
+import bomberosApp.AccesoADatos.BomberoData;
+import bomberosApp.AccesoADatos.BrigadaData;
+import bomberosApp.AccesoADatos.CuartelData;
+import bomberosApp.AccesoADatos.SiniestroData;
+
 /**
  *
  * @author faris
  */
 public class disenioGestionBomberosApp extends javax.swing.JFrame {
+    
+    private final BomberoData bd;
+    private final CuartelData cd;
+    private final BrigadaData brigd;
+    private final SiniestroData sd;
 
     /**
      * Creates new form disenioGestionBomberosApp
      */
     public disenioGestionBomberosApp() {
         initComponents();
+        setTitle("Sistema de gestión de Estaciones de Bomberos de La Punta - San Luis");
+        
+        bd = new BomberoData();
+        cd = new CuartelData();
+        brigd = new BrigadaData();
+        sd = new SiniestroData();
+        
     }
 
     /**
