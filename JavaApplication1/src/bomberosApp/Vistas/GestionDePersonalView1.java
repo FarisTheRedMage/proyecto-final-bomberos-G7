@@ -9,12 +9,12 @@ package bomberosApp.Vistas;
  *
  * @author lucia
  */
-public class GestionDePersonalView extends javax.swing.JInternalFrame {
+public class GestionDePersonalView1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form GestionDePersonalView
      */
-    public GestionDePersonalView() {
+    public GestionDePersonalView1() {
         initComponents();
     }
 

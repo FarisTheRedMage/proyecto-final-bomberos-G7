@@ -9,12 +9,12 @@ package bomberosApp.Vistas;
  *
  * @author lucia
  */
-public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
+public class GestionDeCuartelesView1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form GestionDeCuarteles
      */
-    public GestionDeCuartelesView() {
+    public GestionDeCuartelesView1() {
         initComponents();
     }
 
@@ -91,7 +91,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel8.setText(" Turno Nocturno?");
+        jLabel8.setText("REVISAR!");
 
         JBSalir.setText("Salir");
 

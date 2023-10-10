@@ -239,7 +239,7 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="JRBEstado">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Estado"/>
+        <Property name="text" type="java.lang.String" value="SINIESTRO ACTIVO O NO"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">

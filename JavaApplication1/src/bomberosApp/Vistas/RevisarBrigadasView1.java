@@ -9,12 +9,12 @@ package bomberosApp.Vistas;
  *
  * @author lucia
  */
-public class RevisarCuartelesView extends javax.swing.JInternalFrame {
+public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form RevisarCuartelesView
      */
-    public RevisarCuartelesView() {
+    public RevisarBrigadasView1() {
         initComponents();
     }
 
@@ -51,9 +51,19 @@ public class RevisarCuartelesView extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Selecciona una opcion para ver los Cuarteles Activos e Inactivos ");
 
-        jRadioButton1.setText("Cuarteles Que No estan de Turno");
+        jRadioButton1.setText("Brigadas en Campo");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Cuarteles De Turno");
+        jRadioButton2.setText("Brigadas Disponibles");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,6 +103,14 @@ public class RevisarCuartelesView extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

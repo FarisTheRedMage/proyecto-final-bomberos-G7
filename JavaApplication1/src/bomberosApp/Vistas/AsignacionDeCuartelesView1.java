@@ -7,14 +7,14 @@ package bomberosApp.Vistas;
 
 /**
  *
- * @author lucia
+ * @author Faris
  */
-public class HistorialDeSiniestrosView extends javax.swing.JInternalFrame {
+public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form HistorialDeSiniestrosView
+     * Creates new form AsignacionDeCuartelesView1
      */
-    public HistorialDeSiniestrosView() {
+    public AsignacionDeCuartelesView1() {
         initComponents();
     }
 
@@ -27,15 +27,25 @@ public class HistorialDeSiniestrosView extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
+        jLabel1.setText("aca podemos poner la distancia entre el cuartel y el sinistro en una comparacion");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 792, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel1)
+                .addContainerGap(284, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1)
+                .addContainerGap(330, Short.MAX_VALUE))
         );
 
         pack();
@@ -43,5 +53,6 @@ public class HistorialDeSiniestrosView extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

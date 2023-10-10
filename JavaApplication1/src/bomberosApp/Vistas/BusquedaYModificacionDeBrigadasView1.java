@@ -9,12 +9,12 @@ package bomberosApp.Vistas;
  *
  * @author lucia
  */
-public class GestionDeBrigadasView extends javax.swing.JInternalFrame {
+public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form GestionDeBrigadasView
      */
-    public GestionDeBrigadasView() {
+    public BusquedaYModificacionDeBrigadasView1() {
         initComponents();
     }
 

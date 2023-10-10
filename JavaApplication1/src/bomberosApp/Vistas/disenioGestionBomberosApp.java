@@ -55,9 +55,11 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMBrigadas = new javax.swing.JMenu();
         JMIGestionDeBrigadas = new javax.swing.JMenuItem();
         JMIRevisarBrigadas = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         JMSiniestros = new javax.swing.JMenu();
         JMItemSiniestros = new javax.swing.JMenuItem();
         JMIHistorialDeSiniestros = new javax.swing.JMenuItem();
+        JMIAsignacionDeCuarteles = new javax.swing.JMenuItem();
         JMSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,7 +97,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         JMBrigadas.setText("Brigadas");
 
-        JMIGestionDeBrigadas.setText("Gestion De Brigadas");
+        JMIGestionDeBrigadas.setText("Modificacion y Busqueda de Brigadas");
         JMIGestionDeBrigadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JMIGestionDeBrigadasActionPerformed(evt);
@@ -105,6 +107,9 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         JMIRevisarBrigadas.setText("Revisar Brigadas");
         JMBrigadas.add(JMIRevisarBrigadas);
+
+        jMenuItem1.setText("Personal en Brigadas");
+        JMBrigadas.add(jMenuItem1);
 
         jMenuBar1.add(JMBrigadas);
 
@@ -125,6 +130,9 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
             }
         });
         JMSiniestros.add(JMIHistorialDeSiniestros);
+
+        JMIAsignacionDeCuarteles.setText("Asignacion de Cuarteles");
+        JMSiniestros.add(JMIAsignacionDeCuarteles);
 
         jMenuBar1.add(JMSiniestros);
 
@@ -201,6 +209,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JMBrigadas;
     private javax.swing.JMenu JMCuarteles;
+    private javax.swing.JMenuItem JMIAsignacionDeCuarteles;
     private javax.swing.JMenuItem JMICargaDePersonal;
     private javax.swing.JMenuItem JMIGestionDeBrigadas;
     private javax.swing.JMenuItem JMIGestionDeCuarteles;
@@ -214,5 +223,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JMenu JMUnidades;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

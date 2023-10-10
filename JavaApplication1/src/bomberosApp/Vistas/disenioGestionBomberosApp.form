@@ -45,7 +45,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="JMIGestionDeBrigadas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Gestion De Brigadas"/>
+                <Property name="text" type="java.lang.String" value="Modificacion y Busqueda de Brigadas"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIGestionDeBrigadasActionPerformed"/>
@@ -54,6 +54,11 @@
             <MenuItem class="javax.swing.JMenuItem" name="JMIRevisarBrigadas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Revisar Brigadas"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Personal en Brigadas"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -78,6 +83,11 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIHistorialDeSiniestrosActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="JMIAsignacionDeCuarteles">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Asignacion de Cuarteles"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>

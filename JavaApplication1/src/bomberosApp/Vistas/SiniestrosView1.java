@@ -9,12 +9,12 @@ package bomberosApp.Vistas;
  *
  * @author lucia
  */
-public class SiniestrosView extends javax.swing.JInternalFrame {
+public class SiniestrosView1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form SiniestrosView
      */
-    public SiniestrosView() {
+    public SiniestrosView1() {
         initComponents();
     }
 
@@ -78,7 +78,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             }
         });
 
-        JRBEstado.setText("Estado");
+        JRBEstado.setText("SINIESTRO ACTIVO O NO");
 
         jLabel6.setText("Detalles Del Siniestro");
 
