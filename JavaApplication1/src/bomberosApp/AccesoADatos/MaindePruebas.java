@@ -1,7 +1,14 @@
 package bomberosApp.AccesoADatos;
 
+import bomberosApp.Entidades.Brigada;
+import bomberosApp.Entidades.Siniestro;
+import bomberosApp.Enumeraciones.TipoSiniestro;
+import java.time.LocalDate;
+import java.util.List;
+
 public class MaindePruebas {
-    //------------------------------------------------------PRIMERA ENTREGA ---------------------------------------------------------------//
+    public static void main(String[] args) {
+         //------------------------------------------------------PRIMERA ENTREGA ---------------------------------------------------------------//
 //--------------------------------------------Prueba GuardarBombero por id FUNCA----------------------------------------------------
 
 //        Bombero juan = new Bombero();                                             
@@ -326,18 +333,17 @@ public class MaindePruebas {
 //        }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba GuardarSiniestro-  FUNCA--------------------------------------------------------
-   
+//   
 //        Siniestro s1 = new Siniestro();                                             
 //        SiniestroData siniestrito = new SiniestroData();                       
 //        BrigadaData brigiData = new BrigadaData(); //--------------
-//
 //        Brigada brigi2 = brigiData.BuscarBrigada(2);//--------------
 //
 //
 //            s1.setCoord_X(123);
 //            s1.setCoord_Y(112);
 //            s1.setFecha_siniestro(LocalDate.of(2023, 10, 9));
-//            s1.setTipo("Incendio");
+//            s1.setTipo(TipoSiniestro.INCENDIO);
 //            s1.setDetalles("Incendio en un edificio residencial.");
 //            s1.setBrigada(brigi2);
 //            
@@ -360,7 +366,7 @@ public class MaindePruebas {
 //                System.out.println("Coordenada X: " + SiniestroEncontrado.getCoord_X());
 //                System.out.println("Coordenada Y: " + SiniestroEncontrado.getCoord_Y());
 //                System.out.println("Fecha de Inicio del Siniestro: " + SiniestroEncontrado.getFecha_siniestro());
-//                System.out.println("Tipo de Siniestro: " + SiniestroEncontrado.getTipo());
+//                System.out.println("Tipo de Siniestro: " + SiniestroEncontrado.getTipo().getIncidencia());
 //                System.out.println("Detalles del Siniestro: " + SiniestroEncontrado.getDetalles());
 //                System.out.println("Codigo Brigada: " + SiniestroEncontrado.getBrigada().getId_brigada());//--------------
 //                System.out.println("Fecha de Resolucion del Siniestro: " + SiniestroEncontrado.getFecha_resolucion());
@@ -373,7 +379,7 @@ public class MaindePruebas {
             
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
 //-------------------------------------------------------------Prueba ModificarSiniestro - FUNCA-----------------------------------------------------------           
-
+//
 //                         SiniestroData sin1 = new SiniestroData();
 //                         Siniestro siniestro = new Siniestro();
 //                         Brigada brigada = new Brigada();
@@ -382,16 +388,16 @@ public class MaindePruebas {
 //                         siniestro.setCoord_X(331);
 //                         siniestro.setCoord_Y(211);
 //                         siniestro.setFecha_siniestro(LocalDate.of(2023, 5, 15));
-//                         siniestro.setTipo(" Incendio");
+//                         siniestro.setTipo(TipoSiniestro.DERRUMBE);
 //                         siniestro.setDetalles("Incendio en una Casa de la zona.");
 //                         brigada.setId_brigada(2);//------------
 //                         siniestro.setBrigada(brigada);
 //                         siniestro.setFecha_resolucion(LocalDate.of(2023, 5, 16));
 //                         siniestro.setCalificacion(3);
 //                         siniestro.setEstado(true);
-//                         siniestro.setId_siniestro(1);
+//                         siniestro.setId_siniestro(2);
 //                         
-//                         sin1.ModificarSiniestro(siniestro);// ESTABA MAL ORDEN DEL METODO XD
+//                         sin1.ModificarSiniestro(siniestro);
 //
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
@@ -402,33 +408,34 @@ public class MaindePruebas {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
 //-------------------------------------------------------------Prueba Siniestro -ListarSiniestro --------------------------------------------------------            
-//
-//            SiniestroData siniestrito = new SiniestroData();
-//    
-//            List<Siniestro> ListarSiniestro = siniestrito.ListarSiniestro();
-//    
-//            if (!ListarSiniestro.isEmpty()) {
-//                System.out.println("Lista de Siniestros: ");
-//    
-//                for (Siniestro siniestro : ListarSiniestro) {
-//                    System.out.println("ID Siniestro: " + siniestro.getId_siniestro());
-//                    System.out.println("Coordenada X: " + siniestro.getCoord_X());
-//                    System.out.println("Coordenada Y: " + siniestro.getCoord_Y());  
-//                    System.out.println("Fecha Inicio de Siniestro: " + siniestro.getFecha_siniestro());
-//                    System.out.println("Tipo: " + siniestro.getTipo());
-//                    System.out.println("Detalles: " + siniestro.getDetalles());
-//                    System.out.println("Codigo de Brigada: " + siniestro.getBrigada().getId_brigada());//-----
-//                    System.out.println("Fecha de Resolucion: " + siniestro.getFecha_resolucion());
-//                    System.out.println("Calificacion: " + siniestro.getCalificacion());
-//                    System.out.println("Estado: " + siniestro.isEstado());
-//                    System.out.println("-----------------------------");
-//                }
-//    
-//            } else {
-//                System.out.println("No hay Siniestros en la lista.");
-//            }
+
+            SiniestroData siniestrito = new SiniestroData();
+    
+            List<Siniestro> ListarSiniestro = siniestrito.ListarSiniestro();
+    
+            if (!ListarSiniestro.isEmpty()) {
+                System.out.println("Lista de Siniestros: ");
+    
+                for (Siniestro siniestro : ListarSiniestro) {
+                    System.out.println("ID Siniestro: " + siniestro.getId_siniestro());
+                    System.out.println("Coordenada X: " + siniestro.getCoord_X());
+                    System.out.println("Coordenada Y: " + siniestro.getCoord_Y());  
+                    System.out.println("Fecha Inicio de Siniestro: " + siniestro.getFecha_siniestro());
+                    System.out.println("Tipo: " + siniestro.getTipo().getIncidencia());
+                    System.out.println("Detalles: " + siniestro.getDetalles());
+                    System.out.println("Codigo de Brigada: " + siniestro.getBrigada().getId_brigada());//-----
+                    System.out.println("Fecha de Resolucion: " + siniestro.getFecha_resolucion());
+                    System.out.println("Calificacion: " + siniestro.getCalificacion());
+                    System.out.println("Estado: " + siniestro.isEstado());
+                    System.out.println("-----------------------------");
+                }
+    
+            } else {
+                System.out.println("No hay Siniestros en la lista.");
+            }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------FIN SEGUNDA ENTREGA -------------------------------------------------------//
     
+    }
 }
