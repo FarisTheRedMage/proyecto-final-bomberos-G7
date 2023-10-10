@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 10, 2023 at 12:42 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-10-2023 a las 01:40:13
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `1-bomberos`
+-- Base de datos: `1-bomberos`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bombero`
+-- Estructura de tabla para la tabla `bombero`
 --
 
 CREATE TABLE `bombero` (
@@ -40,7 +40,7 @@ CREATE TABLE `bombero` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `bombero`
+-- Volcado de datos para la tabla `bombero`
 --
 
 INSERT INTO `bombero` (`id_bombero`, `nombre`, `apellido`, `dni`, `fecha_nacimiento`, `grupo_sanguineo`, `id_brigada`, `celular`, `estado`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `bombero` (`id_bombero`, `nombre`, `apellido`, `dni`, `fecha_nacimie
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brigada`
+-- Estructura de tabla para la tabla `brigada`
 --
 
 CREATE TABLE `brigada` (
@@ -68,7 +68,7 @@ CREATE TABLE `brigada` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `brigada`
+-- Volcado de datos para la tabla `brigada`
 --
 
 INSERT INTO `brigada` (`id_brigada`, `nombre_brigada`, `especialidad`, `estado`, `id_cuartel`) VALUES
@@ -77,7 +77,7 @@ INSERT INTO `brigada` (`id_brigada`, `nombre_brigada`, `especialidad`, `estado`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cuartel`
+-- Estructura de tabla para la tabla `cuartel`
 --
 
 CREATE TABLE `cuartel` (
@@ -92,7 +92,7 @@ CREATE TABLE `cuartel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cuartel`
+-- Volcado de datos para la tabla `cuartel`
 --
 
 INSERT INTO `cuartel` (`id_cuartel`, `nombre_cuartel`, `direccion`, `coord_X`, `coord_Y`, `telefono`, `correo`, `estado`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `cuartel` (`id_cuartel`, `nombre_cuartel`, `direccion`, `coord_X`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siniestro`
+-- Estructura de tabla para la tabla `siniestro`
 --
 
 CREATE TABLE `siniestro` (
@@ -121,19 +121,18 @@ CREATE TABLE `siniestro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `siniestro`
+-- Volcado de datos para la tabla `siniestro`
 --
 
 INSERT INTO `siniestro` (`id_siniestro`, `coord_X`, `coord_Y`, `fecha_siniestro`, `tipo`, `detalles`, `id_brigada`, `fecha_resolucion`, `calificacion`, `estado`) VALUES
-(1, 123, 112, '2023-10-09', 'Incendio', 'Incendio en un edificio residencial.', 2, NULL, 0, 1),
-(2, 123, 112, '2023-10-09', 'Incendio', 'Incendio en un edificio residencial.', 2, '2023-10-15', 6, 1);
+(2, 331, 211, '2023-05-15', 'DERRUMBE', 'Incendio en una Casa de la zona.', 2, '2023-05-16', 3, 1);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `bombero`
+-- Indices de la tabla `bombero`
 --
 ALTER TABLE `bombero`
   ADD PRIMARY KEY (`id_bombero`),
@@ -141,71 +140,71 @@ ALTER TABLE `bombero`
   ADD KEY `codigo_brigada` (`id_brigada`);
 
 --
--- Indexes for table `brigada`
+-- Indices de la tabla `brigada`
 --
 ALTER TABLE `brigada`
   ADD PRIMARY KEY (`id_brigada`),
   ADD KEY `numero_cuartel` (`id_cuartel`);
 
 --
--- Indexes for table `cuartel`
+-- Indices de la tabla `cuartel`
 --
 ALTER TABLE `cuartel`
   ADD PRIMARY KEY (`id_cuartel`);
 
 --
--- Indexes for table `siniestro`
+-- Indices de la tabla `siniestro`
 --
 ALTER TABLE `siniestro`
   ADD PRIMARY KEY (`id_siniestro`),
   ADD KEY `codigo_brigada` (`id_brigada`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `bombero`
+-- AUTO_INCREMENT de la tabla `bombero`
 --
 ALTER TABLE `bombero`
   MODIFY `id_bombero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `brigada`
+-- AUTO_INCREMENT de la tabla `brigada`
 --
 ALTER TABLE `brigada`
   MODIFY `id_brigada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `cuartel`
+-- AUTO_INCREMENT de la tabla `cuartel`
 --
 ALTER TABLE `cuartel`
   MODIFY `id_cuartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `siniestro`
+-- AUTO_INCREMENT de la tabla `siniestro`
 --
 ALTER TABLE `siniestro`
   MODIFY `id_siniestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `bombero`
+-- Filtros para la tabla `bombero`
 --
 ALTER TABLE `bombero`
   ADD CONSTRAINT `bombero_ibfk_1` FOREIGN KEY (`id_brigada`) REFERENCES `brigada` (`id_brigada`);
 
 --
--- Constraints for table `brigada`
+-- Filtros para la tabla `brigada`
 --
 ALTER TABLE `brigada`
   ADD CONSTRAINT `brigada_ibfk_1` FOREIGN KEY (`id_cuartel`) REFERENCES `cuartel` (`id_cuartel`);
 
 --
--- Constraints for table `siniestro`
+-- Filtros para la tabla `siniestro`
 --
 ALTER TABLE `siniestro`
   ADD CONSTRAINT `siniestro_ibfk_1` FOREIGN KEY (`id_brigada`) REFERENCES `brigada` (`id_brigada`);
