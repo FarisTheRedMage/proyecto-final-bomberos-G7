@@ -88,7 +88,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Selecciona una opcion para ver los Cuarteles Activos e Inactivos "/>
+        <Property name="text" type="java.lang.String" value="Selecciona una opcion para ver las Brigadas Activas e Inactivas "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton1">

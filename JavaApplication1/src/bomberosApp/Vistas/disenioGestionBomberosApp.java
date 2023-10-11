@@ -51,7 +51,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMIGestionDePersonal = new javax.swing.JMenuItem();
         JMCuarteles = new javax.swing.JMenu();
         JMIGestionDeCuarteles = new javax.swing.JMenuItem();
-        JMIRevisarCuarteles = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         JMBrigadas = new javax.swing.JMenu();
         JMIGestionDeBrigadas = new javax.swing.JMenuItem();
         JMIRevisarBrigadas = new javax.swing.JMenuItem();
@@ -90,8 +90,13 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMIGestionDeCuarteles.setText("Gestion de Cuarteles");
         JMCuarteles.add(JMIGestionDeCuarteles);
 
-        JMIRevisarCuarteles.setText("Revisar Cuarteles");
-        JMCuarteles.add(JMIRevisarCuarteles);
+        jMenuItem2.setText("Informacion De Cuartel");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        JMCuarteles.add(jMenuItem2);
 
         jMenuBar1.add(JMCuarteles);
 
@@ -171,6 +176,10 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JMIHistorialDeSiniestrosActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,7 +225,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JMenuItem JMIGestionDePersonal;
     private javax.swing.JMenuItem JMIHistorialDeSiniestros;
     private javax.swing.JMenuItem JMIRevisarBrigadas;
-    private javax.swing.JMenuItem JMIRevisarCuarteles;
     private javax.swing.JMenuItem JMItemSiniestros;
     private javax.swing.JMenu JMSalir;
     private javax.swing.JMenu JMSiniestros;
@@ -224,5 +232,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

@@ -49,7 +49,7 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
 
         jButton1.setText("Salir");
 
-        jLabel1.setText("Selecciona una opcion para ver los Cuarteles Activos e Inactivos ");
+        jLabel1.setText("Selecciona una opcion para ver las Brigadas Activas e Inactivas ");
 
         jRadioButton1.setText("Brigadas en Campo");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {

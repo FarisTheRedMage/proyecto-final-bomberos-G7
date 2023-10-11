@@ -31,10 +31,13 @@
                 <Property name="text" type="java.lang.String" value="Gestion de Cuarteles"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="JMIRevisarCuarteles">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Revisar Cuarteles"/>
+                <Property name="text" type="java.lang.String" value="Informacion De Cuartel"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

@@ -9,12 +9,12 @@ package bomberosApp.Vistas;
  *
  * @author lucia
  */
-public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalFrame {
+public class ModificacionYBusquedaDeBrigadasView1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form GestionDeBrigadasView
      */
-    public BusquedaYModificacionDeBrigadasView1() {
+    public ModificacionYBusquedaDeBrigadasView1() {
         initComponents();
     }
 
@@ -42,7 +42,7 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
         JBSalir = new javax.swing.JButton();
         JBModificar = new javax.swing.JButton();
 
-        setTitle("Gestion de Brigadas");
+        setTitle("Busqueda Y Modificacion De Brigadas");
 
         jLabel1.setText("Codigo/ID");
 
