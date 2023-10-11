@@ -1,5 +1,6 @@
 package bomberosApp.AccesoADatos;
 
+import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Siniestro;
 import bomberosApp.Enumeraciones.TipoSiniestro;
@@ -142,6 +143,32 @@ public class MaindePruebas {
 //                System.out.println("Codigo de Brigada: " + bombero.getBrigada().getId_brigada());//-----
 //                System.out.println("Celular: " + bombero.getCelular());
 //                System.out.println("Estado: " + bombero.isEstado());
+//                System.out.println("-----------------------------");
+//            }
+//
+//        } else {
+//            System.out.println("No hay Personal en la lista.");
+//        }
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------Prueba ListarBomberos x ID Brigada FUNCA------------------------------------------------------------
+//        BomberoData bombibis = new BomberoData();
+//
+//        List<Bombero> ListarBomberosxidbrig = bombibis.ListarBomberosEnBrigada(2);
+//
+//        if (!ListarBomberosxidbrig.isEmpty()) {
+//            System.out.println("Lista de bomberos:");
+//
+//            for (Bombero bombero : ListarBomberosxidbrig) {
+//                System.out.println("ID: " + bombero.getId_bombero());
+//                System.out.println("Nombre: " + bombero.getNombre());
+//                System.out.println("Apellido: " + bombero.getApellido());
+//                System.out.println("DNI: " + bombero.getDni());
+//                System.out.println("Fecha de Nacimiento: " + bombero.getFecha_nacimiento());
+//                System.out.println("Grupo Sanguineo: " + bombero.getGrupo_sanguineo());
+//                System.out.println("Celular: " + bombero.getCelular());
+//                System.out.println("Estado: " + bombero.isEstado());
+//                System.out.println("Nombre Clave: "+ bombero.getNombre_clave());
 //                System.out.println("-----------------------------");
 //            }
 //
@@ -331,6 +358,36 @@ public class MaindePruebas {
 //        } else {
 //            System.out.println("No hay Brigadas en la lista.");
 //        }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//     BrigadaData brigii = new BrigadaData();
+//        List<Brigada> ListarCuarteles = brigii.BomberosPorBrigada();
+//
+//        if (!ListarCuarteles.isEmpty()) {
+//            System.out.println("Lista de Cuarteles:");
+//
+//            for (Cuartel cuarteles : ListarCuarteles) {
+//                System.out.println("ID: " + cuarteles.getId_cuartel());
+//                System.out.println("Nombre: " + cuarteles.getNombre_cuartel());
+//                System.out.println("Direccion: " + cuarteles.getDireccion());
+//                System.out.println("Coordenada X: " + cuarteles.getCoord_X());
+//                System.out.println("Coordenada Y: " + cuarteles.getCoord_Y());
+//                System.out.println("Telefono: " + cuarteles.getTelefono());
+//                System.out.println("Correo: " + cuarteles.getCorreo());
+//                System.out.println("Estado: " + cuarteles.isEstado());
+//                System.out.println("-----------------------------");
+//            }
+//
+//        } else {
+//            System.out.println("No hay Cuarteles en la lista.");
+//        }
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba GuardarSiniestro-  FUNCA--------------------------------------------------------
 //   

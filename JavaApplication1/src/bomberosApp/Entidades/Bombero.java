@@ -27,6 +27,7 @@ public class Bombero {
         this.brigada = brigada;
         this.celular = celular;
         this.estado = estado;
+        this.nombre_clave = nombre_clave;
     }
 
     public Bombero(int id_bombero, String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado,BomberoNombreClave nombre_clave) {
@@ -39,6 +40,7 @@ public class Bombero {
         this.brigada = brigada;
         this.celular = celular;
         this.estado = estado;
+        this.nombre_clave = nombre_clave;
     }
 
     public int getId_bombero() {
@@ -132,7 +134,9 @@ public class Bombero {
                 ", Grupo Sanguineo" + grupo_sanguineo + 
                 ", Brigada" + brigada + 
                 ", Celular" + celular + 
-                ", Estado" + estado;
+                ", Estado" + estado+
+                "Nombre clave"+nombre_clave;
+                
     }
 
     

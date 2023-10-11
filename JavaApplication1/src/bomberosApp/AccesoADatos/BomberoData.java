@@ -2,6 +2,7 @@ package bomberosApp.AccesoADatos;
 
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
+import bomberosApp.Enumeraciones.BomberoNombreClave;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -17,7 +18,7 @@ public class BomberoData {
 
     private Connection con = null;
 
-    private BrigadaData br = new BrigadaData();
+    
 
     public BomberoData() {
         con = ConexionData.getConexion();
@@ -206,11 +207,8 @@ public class BomberoData {
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-                
-                brigada.setId_brigada(rs.getInt("id_brigada"));//------
-                
+                brigada.setId_brigada(rs.getInt("id_brigada"));    
                 bombero.setBrigada(brigada);
-
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(true);
                 bomberos.add(bombero);
@@ -220,6 +218,40 @@ public class BomberoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero" + ex.getMessage());
         }
         return bomberos;
+    }
+    
+    public List<Bombero> ListarBomberosEnBrigada(int id) {
+        List<Bombero> bomberosxid = new ArrayList<>();
+
+        try {
+            String SQL = "SELECT * FROM bombero WHERE id_brigada = ?";
+           
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+          
+            
+            while (rs.next()) {
+                Brigada brigada = new Brigada();
+                Bombero bombero = new Bombero();
+                
+                bombero.setId_bombero(rs.getInt("id_bombero"));
+                bombero.setNombre(rs.getString("nombre"));
+                bombero.setApellido(rs.getString("apellido"));
+                bombero.setDni(rs.getString("dni"));
+                bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
+                bombero.setCelular(rs.getString("celular"));
+                bombero.setEstado(true);
+                bombero.setNombre_clave(BomberoNombreClave.values()[0]);
+                bomberosxid.add(bombero);
+                
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero" + ex.getMessage());
+        }
+        return bomberosxid;
     }
 
 }
