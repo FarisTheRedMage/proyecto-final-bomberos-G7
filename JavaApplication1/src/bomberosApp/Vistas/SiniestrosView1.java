@@ -53,6 +53,9 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
         JBGuardarNuevoSiniestro = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Siniestros");
 
         jLabel1.setText("Codigo/ID");

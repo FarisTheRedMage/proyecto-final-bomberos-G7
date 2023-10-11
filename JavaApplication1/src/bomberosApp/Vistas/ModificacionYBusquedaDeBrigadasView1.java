@@ -42,6 +42,9 @@ public class ModificacionYBusquedaDeBrigadasView1 extends javax.swing.JInternalF
         JBSalir = new javax.swing.JButton();
         JBModificar = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Busqueda Y Modificacion De Brigadas");
 
         jLabel1.setText("Codigo/ID");

@@ -33,6 +33,11 @@ public class InformacionDeCuartelView1 extends javax.swing.JInternalFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Informacion de Cuartel");
+
         jButton1.setText("jButton1");
 
         jButton2.setText("jButton2");

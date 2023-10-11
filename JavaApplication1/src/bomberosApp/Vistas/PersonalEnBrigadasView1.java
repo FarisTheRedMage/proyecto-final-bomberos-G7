@@ -29,6 +29,11 @@ public class PersonalEnBrigadasView1 extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Personal en Brigadas");
+
         jLabel1.setText("Bomberos en cada Brigada!!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

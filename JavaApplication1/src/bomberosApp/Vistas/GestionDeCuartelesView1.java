@@ -49,6 +49,9 @@ public class GestionDeCuartelesView1 extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         JBSalir = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Gestion de Cuarteles");
 
         jLabel1.setText("Nombre");

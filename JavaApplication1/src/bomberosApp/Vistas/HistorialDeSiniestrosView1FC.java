@@ -29,6 +29,11 @@ public class HistorialDeSiniestrosView1FC extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Historial de Siniestros");
+
         jLabel1.setText("Mostrar incidentes entre ayer y hoy // opcional los que se encuentran en curso");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -46,6 +46,9 @@ public class CargaDePersonalView1 extends javax.swing.JInternalFrame {
         JCBCodigoDeBrigada = new javax.swing.JComboBox<>();
         JBSalir = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Carga De Personal");
 
         jLabel2.setText("DNI");

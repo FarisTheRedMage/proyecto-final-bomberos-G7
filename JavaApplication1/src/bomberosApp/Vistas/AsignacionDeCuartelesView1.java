@@ -29,6 +29,11 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Asignacion de Cuarteles");
+
         jLabel1.setText("aca podemos poner la distancia entre el cuartel y el sinistro en una comparacion");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

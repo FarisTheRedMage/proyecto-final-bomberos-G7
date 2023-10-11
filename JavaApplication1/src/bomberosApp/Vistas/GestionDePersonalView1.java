@@ -70,6 +70,11 @@ public class GestionDePersonalView1 extends javax.swing.JInternalFrame {
         JCBGrupoSanguineo = new javax.swing.JComboBox<>();
         JCBCodigoDeBrigada = new javax.swing.JComboBox<>();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Gestion de Personal");
+
         jLabel1.setText("Nombre/s");
 
         jLabel2.setText("DNI");

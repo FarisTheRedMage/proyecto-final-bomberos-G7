@@ -44,18 +44,18 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         JMUnidades = new javax.swing.JMenu();
         JMICargaDePersonal = new javax.swing.JMenuItem();
         JMIGestionDePersonal = new javax.swing.JMenuItem();
         JMCuarteles = new javax.swing.JMenu();
         JMIGestionDeCuarteles = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        JMIInformacionDeCuartel = new javax.swing.JMenuItem();
         JMBrigadas = new javax.swing.JMenu();
         JMIGestionDeBrigadas = new javax.swing.JMenuItem();
         JMIRevisarBrigadas = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        JMIPersonalEnBrigadas = new javax.swing.JMenuItem();
         JMSiniestros = new javax.swing.JMenu();
         JMItemSiniestros = new javax.swing.JMenuItem();
         JMIHistorialDeSiniestros = new javax.swing.JMenuItem();
@@ -64,23 +64,33 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 881, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 641, Short.MAX_VALUE)
         );
 
         JMUnidades.setText("Unidades");
 
         JMICargaDePersonal.setText("Carga De Personal");
+        JMICargaDePersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMICargaDePersonalActionPerformed(evt);
+            }
+        });
         JMUnidades.add(JMICargaDePersonal);
 
         JMIGestionDePersonal.setText("Gestion De Personal");
+        JMIGestionDePersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIGestionDePersonalActionPerformed(evt);
+            }
+        });
         JMUnidades.add(JMIGestionDePersonal);
 
         jMenuBar1.add(JMUnidades);
@@ -88,15 +98,20 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMCuarteles.setText("Cuarteles");
 
         JMIGestionDeCuarteles.setText("Gestion de Cuarteles");
-        JMCuarteles.add(JMIGestionDeCuarteles);
-
-        jMenuItem2.setText("Informacion De Cuartel");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        JMIGestionDeCuarteles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                JMIGestionDeCuartelesActionPerformed(evt);
             }
         });
-        JMCuarteles.add(jMenuItem2);
+        JMCuarteles.add(JMIGestionDeCuarteles);
+
+        JMIInformacionDeCuartel.setText("Informacion De Cuartel");
+        JMIInformacionDeCuartel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIInformacionDeCuartelActionPerformed(evt);
+            }
+        });
+        JMCuarteles.add(JMIInformacionDeCuartel);
 
         jMenuBar1.add(JMCuarteles);
 
@@ -111,10 +126,20 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMBrigadas.add(JMIGestionDeBrigadas);
 
         JMIRevisarBrigadas.setText("Revisar Brigadas");
+        JMIRevisarBrigadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIRevisarBrigadasActionPerformed(evt);
+            }
+        });
         JMBrigadas.add(JMIRevisarBrigadas);
 
-        jMenuItem1.setText("Personal en Brigadas");
-        JMBrigadas.add(jMenuItem1);
+        JMIPersonalEnBrigadas.setText("Personal en Brigadas");
+        JMIPersonalEnBrigadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIPersonalEnBrigadasActionPerformed(evt);
+            }
+        });
+        JMBrigadas.add(JMIPersonalEnBrigadas);
 
         jMenuBar1.add(JMBrigadas);
 
@@ -137,6 +162,11 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMSiniestros.add(JMIHistorialDeSiniestros);
 
         JMIAsignacionDeCuarteles.setText("Asignacion de Cuarteles");
+        JMIAsignacionDeCuarteles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMIAsignacionDeCuartelesActionPerformed(evt);
+            }
+        });
         JMSiniestros.add(JMIAsignacionDeCuarteles);
 
         jMenuBar1.add(JMSiniestros);
@@ -151,13 +181,13 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -166,19 +196,103 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
     private void JMItemSiniestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMItemSiniestrosActionPerformed
         // TODO add your handling code here:
+         escritorio.removeAll();
+        escritorio.repaint();
+        SiniestrosView1 sv=new SiniestrosView1();
+        sv.setVisible(true);
+        escritorio.add(sv);
+        escritorio.moveToFront(sv);
     }//GEN-LAST:event_JMItemSiniestrosActionPerformed
 
     private void JMIGestionDeBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIGestionDeBrigadasActionPerformed
         // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        ModificacionYBusquedaDeBrigadasView1 mybdbv=new ModificacionYBusquedaDeBrigadasView1();
+        mybdbv.setVisible(true);
+        escritorio.add(mybdbv);
+        escritorio.moveToFront(mybdbv);
     }//GEN-LAST:event_JMIGestionDeBrigadasActionPerformed
 
     private void JMIHistorialDeSiniestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIHistorialDeSiniestrosActionPerformed
         // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        HistorialDeSiniestrosView1FC hdsv=new HistorialDeSiniestrosView1FC();
+        hdsv.setVisible(true);
+        escritorio.add(hdsv);
+        escritorio.moveToFront(hdsv);
     }//GEN-LAST:event_JMIHistorialDeSiniestrosActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void JMIInformacionDeCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIInformacionDeCuartelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        InformacionDeCuartelView1 idcv=new InformacionDeCuartelView1();
+        idcv.setVisible(true);
+        escritorio.add(idcv);
+        escritorio.moveToFront(idcv);
+    }//GEN-LAST:event_JMIInformacionDeCuartelActionPerformed
+
+    private void JMICargaDePersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMICargaDePersonalActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        CargaDePersonalView1 cdpv=new CargaDePersonalView1();
+        cdpv.setVisible(true);
+        escritorio.add(cdpv);
+        escritorio.moveToFront(cdpv);
+    }//GEN-LAST:event_JMICargaDePersonalActionPerformed
+
+    private void JMIGestionDePersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIGestionDePersonalActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        GestionDePersonalView1 gdpv=new GestionDePersonalView1();
+        gdpv.setVisible(true);
+        escritorio.add(gdpv);
+        escritorio.moveToFront(gdpv);
+    }//GEN-LAST:event_JMIGestionDePersonalActionPerformed
+
+    private void JMIGestionDeCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIGestionDeCuartelesActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        GestionDeCuartelesView1 gdcv=new GestionDeCuartelesView1();
+        gdcv.setVisible(true);
+        escritorio.add(gdcv);
+        escritorio.moveToFront(gdcv);
+    }//GEN-LAST:event_JMIGestionDeCuartelesActionPerformed
+
+    private void JMIRevisarBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIRevisarBrigadasActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        RevisarBrigadasView1 rbv=new RevisarBrigadasView1();
+        rbv.setVisible(true);
+        escritorio.add(rbv);
+        escritorio.moveToFront(rbv);
+    }//GEN-LAST:event_JMIRevisarBrigadasActionPerformed
+
+    private void JMIPersonalEnBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIPersonalEnBrigadasActionPerformed
+        // TODO add your handling code here
+         escritorio.removeAll();
+        escritorio.repaint();
+        PersonalEnBrigadasView1 pebv=new PersonalEnBrigadasView1();
+        pebv.setVisible(true);
+        escritorio.add(pebv);
+        escritorio.moveToFront(pebv);
+    }//GEN-LAST:event_JMIPersonalEnBrigadasActionPerformed
+
+    private void JMIAsignacionDeCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAsignacionDeCuartelesActionPerformed
+        // TODO add your handling code here:
+         escritorio.removeAll();
+        escritorio.repaint();
+        AsignacionDeCuartelesView1 adcv=new AsignacionDeCuartelesView1();
+        adcv.setVisible(true);
+        escritorio.add(adcv);
+        escritorio.moveToFront(adcv);
+    }//GEN-LAST:event_JMIAsignacionDeCuartelesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,14 +338,14 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JMenuItem JMIGestionDeCuarteles;
     private javax.swing.JMenuItem JMIGestionDePersonal;
     private javax.swing.JMenuItem JMIHistorialDeSiniestros;
+    private javax.swing.JMenuItem JMIInformacionDeCuartel;
+    private javax.swing.JMenuItem JMIPersonalEnBrigadas;
     private javax.swing.JMenuItem JMIRevisarBrigadas;
     private javax.swing.JMenuItem JMItemSiniestros;
     private javax.swing.JMenu JMSalir;
     private javax.swing.JMenu JMSiniestros;
     private javax.swing.JMenu JMUnidades;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }
