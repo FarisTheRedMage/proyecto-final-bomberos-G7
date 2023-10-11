@@ -25,7 +25,7 @@ public class BomberoData {
     }
 
     public void GuardarBombero(Bombero bombero) {
-        String SQL = "INSERT INTO bombero (nombre, apellido, dni, fecha_nacimiento, grupo_sanguineo, id_brigada, celular, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO bombero (nombre, apellido, dni, fecha_nacimiento, grupo_sanguineo, id_brigada, celular, estado, nombre_clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, bombero.getNombre());
@@ -33,11 +33,10 @@ public class BomberoData {
             ps.setString(3, bombero.getDni());
             ps.setDate(4, Date.valueOf(bombero.getFecha_nacimiento()));
             ps.setString(5, bombero.getGrupo_sanguineo());
-
-            ps.setInt(6, bombero.getBrigada().getId_brigada());//----------
-
+            ps.setInt(6, bombero.getBrigada().getId_brigada());
             ps.setString(7, bombero.getCelular());
             ps.setBoolean(8, bombero.isEstado());
+            ps.setString(9, bombero.getNombre_clave().getNombreClave());
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
 
@@ -77,13 +76,12 @@ public class BomberoData {
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-                
-                brg.setId_brigada(rs.getInt("id_brigada"));// -------
-                bombero.setBrigada(brg); // -------
+                brg.setId_brigada(rs.getInt("id_brigada"));
+                bombero.setBrigada(brg);
                 
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(rs.getBoolean("estado"));
-
+                bombero.setNombre_clave(BomberoNombreClave.values()[0]);
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el empleado");
             }
@@ -97,7 +95,7 @@ public class BomberoData {
 
     public void ModificarBombero(Bombero bombero) {
 
-        String SQL = " UPDATE bombero SET nombre = ?, apellido =?, fecha_nacimiento = ?, grupo_sanguineo = ?, id_brigada = ?, celular = ?, estado = ? WHERE id_bombero=?";
+        String SQL = " UPDATE bombero SET nombre = ?, apellido =?, fecha_nacimiento = ?, grupo_sanguineo = ?, id_brigada = ?, celular = ?, estado = ?, nombre_clave = ? WHERE id_bombero=?";
 
         PreparedStatement ps = null;
         try {
@@ -108,12 +106,12 @@ public class BomberoData {
             ps.setString(2, bombero.getApellido());
             ps.setDate(3, Date.valueOf(bombero.getFecha_nacimiento()));
             ps.setString(4, bombero.getGrupo_sanguineo());
-
-            ps.setInt(5, bombero.getBrigada().getId_brigada());//---------- estaba mal el orden (decia 6 6)
-
+            ps.setInt(5, bombero.getBrigada().getId_brigada());
             ps.setString(6, bombero.getCelular());
             ps.setBoolean(7, bombero.isEstado());
             ps.setInt(8, bombero.getId_bombero());
+            ps.setString(9, bombero.getNombre_clave().getNombreClave());
+            
             int exito = ps.executeUpdate();
 
             if (exito == 1) {
@@ -172,12 +170,11 @@ public class BomberoData {
                 bombero.setDni(rs.getString("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
-
-                brg.setId_brigada(rs.getInt("id_brigada"));// -------
-                bombero.setBrigada(brg); // -------
-
+                brg.setId_brigada(rs.getInt("id_brigada"));
+                bombero.setBrigada(brg); 
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(rs.getBoolean("estado"));
+                bombero.setNombre_clave(BomberoNombreClave.values()[0]);
             } else {
                 JOptionPane.showConfirmDialog(null, "Este Empleado no esta Duplicado");
             }
@@ -211,6 +208,7 @@ public class BomberoData {
                 bombero.setBrigada(brigada);
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(true);
+                bombero.setNombre_clave(BomberoNombreClave.values()[0]);
                 bomberos.add(bombero);
             }
             ps.close();
@@ -243,7 +241,7 @@ public class BomberoData {
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(true);
-                bombero.setNombre_clave(BomberoNombreClave.values()[0]);
+                bombero.setNombre_clave(BomberoNombreClave.values()[0]); //revisar como mandarselo a db
                 bomberosxid.add(bombero);
                 
             }
