@@ -1,5 +1,6 @@
 package bomberosApp.Entidades;
 
+import bomberosApp.Enumeraciones.BomberoNombreClave;
 import java.time.LocalDate;
 
 public class Bombero {
@@ -12,11 +13,12 @@ public class Bombero {
     private Brigada brigada;
     private String celular;
     private boolean estado;
+    private BomberoNombreClave nombre_clave;
 
     public Bombero() {
     }
 
-    public Bombero(String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado) {
+    public Bombero(String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado, BomberoNombreClave nombre_clave) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -27,7 +29,7 @@ public class Bombero {
         this.estado = estado;
     }
 
-    public Bombero(int id_bombero, String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado) {
+    public Bombero(int id_bombero, String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado,BomberoNombreClave nombre_clave) {
         this.id_bombero = id_bombero;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -111,6 +113,15 @@ public class Bombero {
         this.estado = estado;
     }
 
+    public BomberoNombreClave getNombre_clave() {
+        return nombre_clave;
+    }
+
+    public void setNombre_clave(BomberoNombreClave nombre_clave) {
+        this.nombre_clave = nombre_clave;
+    }
+
+    
     @Override
     public String toString() {
         return "ID" + id_bombero + 

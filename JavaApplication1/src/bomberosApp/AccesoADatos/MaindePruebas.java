@@ -6,7 +6,7 @@ import bomberosApp.Enumeraciones.TipoSiniestro;
 import java.time.LocalDate;
 import java.util.List;
 
-public class MaindePruebas {
+public class MaindePruebas {    
     public static void main(String[] args) {
          //------------------------------------------------------PRIMERA ENTREGA ---------------------------------------------------------------//
 //--------------------------------------------Prueba GuardarBombero por id FUNCA----------------------------------------------------
@@ -408,34 +408,41 @@ public class MaindePruebas {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
 //-------------------------------------------------------------Prueba Siniestro -ListarSiniestro --------------------------------------------------------            
-
-            SiniestroData siniestrito = new SiniestroData();
-    
-            List<Siniestro> ListarSiniestro = siniestrito.ListarSiniestro();
-    
-            if (!ListarSiniestro.isEmpty()) {
-                System.out.println("Lista de Siniestros: ");
-    
-                for (Siniestro siniestro : ListarSiniestro) {
-                    System.out.println("ID Siniestro: " + siniestro.getId_siniestro());
-                    System.out.println("Coordenada X: " + siniestro.getCoord_X());
-                    System.out.println("Coordenada Y: " + siniestro.getCoord_Y());  
-                    System.out.println("Fecha Inicio de Siniestro: " + siniestro.getFecha_siniestro());
-                    System.out.println("Tipo: " + siniestro.getTipo().getIncidencia());
-                    System.out.println("Detalles: " + siniestro.getDetalles());
-                    System.out.println("Codigo de Brigada: " + siniestro.getBrigada().getId_brigada());//-----
-                    System.out.println("Fecha de Resolucion: " + siniestro.getFecha_resolucion());
-                    System.out.println("Calificacion: " + siniestro.getCalificacion());
-                    System.out.println("Estado: " + siniestro.isEstado());
-                    System.out.println("-----------------------------");
-                }
-    
-            } else {
-                System.out.println("No hay Siniestros en la lista.");
-            }
+//
+//            SiniestroData siniestrito = new SiniestroData();
+//    
+//            List<Siniestro> ListarSiniestro = siniestrito.ListarSiniestro();
+//    
+//            if (!ListarSiniestro.isEmpty()) {
+//                System.out.println("Lista de Siniestros: ");
+//    
+//                for (Siniestro siniestro : ListarSiniestro) {
+//                    System.out.println("ID Siniestro: " + siniestro.getId_siniestro());
+//                    System.out.println("Coordenada X: " + siniestro.getCoord_X());
+//                    System.out.println("Coordenada Y: " + siniestro.getCoord_Y());  
+//                    System.out.println("Fecha Inicio de Siniestro: " + siniestro.getFecha_siniestro());
+//                    System.out.println("Tipo: " + siniestro.getTipo().getIncidencia());
+//                    System.out.println("Detalles: " + siniestro.getDetalles());
+//                    System.out.println("Codigo de Brigada: " + siniestro.getBrigada().getId_brigada());//-----
+//                    System.out.println("Fecha de Resolucion: " + siniestro.getFecha_resolucion());
+//                    System.out.println("Calificacion: " + siniestro.getCalificacion());
+//                    System.out.println("Estado: " + siniestro.isEstado());
+//                    System.out.println("-----------------------------");
+//                }
+//    
+//            } else {
+//                System.out.println("No hay Siniestros en la lista.");
+//            }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------FIN SEGUNDA ENTREGA -------------------------------------------------------//
+    
+//
+//          Meses[] arregloMeses = Meses.values();
+//
+//          for (Meses mes : arregloMeses) {
+//            System.out.println(mes);
+//          }
     
     }
 }

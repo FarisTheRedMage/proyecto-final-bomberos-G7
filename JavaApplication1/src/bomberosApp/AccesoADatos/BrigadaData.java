@@ -3,17 +3,21 @@ package bomberosApp.AccesoADatos;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
+import bomberosApp.Enumeraciones.BomberoNombreClave;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
 public class BrigadaData {
+
+    BomberoData bombero = new BomberoData();
 
     private Connection con = null;
 
@@ -58,19 +62,19 @@ public class BrigadaData {
 
             ResultSet rs = ps.executeQuery();
             Cuartel cuart;
-            
+
             if (rs.next()) {
                 brigada = new Brigada();
                 cuart = new Cuartel();
-                
+
                 brigada.setId_brigada(id);
                 brigada.setNombre_brigada(rs.getString("nombre_brigada"));
                 brigada.setEspecialidad(rs.getString("especialidad"));
                 brigada.setEstado(rs.getBoolean("estado"));//
-                
+
                 cuart.setId_cuartel(rs.getInt("id_brigada"));
                 brigada.setCuartel(cuart);
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el empleado");
             }
@@ -85,8 +89,8 @@ public class BrigadaData {
     public void ModificarBrigada(Brigada brigada) {
 
         String SQL = " UPDATE brigada "
-                            + "SET nombre_brigada = ?, especialidad = ?, estado = ?, id_cuartel = ? "
-                            + "WHERE id_brigada = ?";
+                + "SET nombre_brigada = ?, especialidad = ?, estado = ?, id_cuartel = ? "
+                + "WHERE id_brigada = ?";
 
         PreparedStatement ps = null;
         try {
@@ -110,7 +114,7 @@ public class BrigadaData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Brigada " + e.getMessage());
         }
     }
-    
+
     public void EliminarBrigada(int id) {
         try {
             String SQL = "UPDATE brigada SET estado = 0 WHERE id_brigada = ? ";
@@ -129,9 +133,9 @@ public class BrigadaData {
         }
     }
 
-public List<Brigada> ListarBrigada() {
+    public List<Brigada> ListarBrigada() {
         List<Brigada> brigadas = new ArrayList<>();
-        
+
         try {
             String SQL = "SELECT * FROM brigada";
             PreparedStatement ps = con.prepareStatement(SQL);
@@ -144,10 +148,10 @@ public List<Brigada> ListarBrigada() {
                 brigada.setNombre_brigada(rs.getString("nombre_brigada"));
                 brigada.setEspecialidad(rs.getString("especialidad"));
                 brigada.setEstado(rs.getBoolean("estado"));
-                
+
                 cuartel.setId_cuartel(rs.getInt("id_cuartel"));//------ 
                 brigada.setCuartel(cuartel);
-                
+
                 brigadas.add(brigada);
             }
             ps.close();
@@ -156,5 +160,29 @@ public List<Brigada> ListarBrigada() {
         }
         return brigadas;
     }
-    
+
+    public List<Bombero> BomberosPorBrigada(Bombero[] bomberos) {
+
+        if (bomberos.length > 5) {
+            JOptionPane.showMessageDialog(null, "No se pueden asignar nombres clave a más de 5 bomberos.");
+            return new ArrayList<>(); // Devuelve una lista vacía en caso de error.
+        }
+
+        BomberoNombreClave[] bomberoNombreClave = BomberoNombreClave.values();
+
+        if (bomberoNombreClave.length < bomberos.length) {
+            JOptionPane.showMessageDialog(null, "No hay suficientes nombres clave para todos los bomberos.");
+            return new ArrayList<>();
+        }
+
+        for (int i = 0; i < bomberos.length; i++) {
+            bomberos[i].setNombre_clave(bomberoNombreClave[i].setNombreClave(NombreClave));
+            // Aquí debes guardar los cambios en la base de datos usando tu lógica, si es necesario.
+        }
+
+        JOptionPane.showMessageDialog(null, "Nombres clave asignados exitosamente.");
+
+        // Devuelve la lista de bomberos actualizada.
+        return Arrays.asList(bomberos);
+    }
 }
