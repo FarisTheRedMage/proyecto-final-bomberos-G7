@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2023 a las 01:40:13
+-- Tiempo de generación: 12-10-2023 a las 02:48:30
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -36,22 +36,20 @@ CREATE TABLE `bombero` (
   `grupo_sanguineo` varchar(4) NOT NULL,
   `id_brigada` int(11) NOT NULL,
   `celular` varchar(15) NOT NULL,
-  `estado` tinyint(1) NOT NULL
+  `estado` tinyint(1) NOT NULL,
+  `nombre_clave` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `bombero`
 --
 
-INSERT INTO `bombero` (`id_bombero`, `nombre`, `apellido`, `dni`, `fecha_nacimiento`, `grupo_sanguineo`, `id_brigada`, `celular`, `estado`) VALUES
-(1, 'Rigoberto', 'Chocolatoso', '12345678', '1990-05-15', 'A+', 2, '12321313', 1),
-(2, 'Carlos', 'Jose Rivera', '78231231', '1995-03-10', '0 -', 2, '31234213', 1),
-(3, 'Juan', 'Castro', '1111', '1996-05-13', 'A+', 2, '23112412', 1),
-(6, 'Walter', 'Heredia', '98765432', '1990-05-15', 'A+', 2, '22223333', 1),
-(7, 'Mario', 'Marquez', '1231111', '1990-05-15', 'A - ', 2, '2231231231', 1),
-(8, 'Ruben', 'Ruperto', '009900', '1990-05-15', 'A - ', 2, '2231231231', 1),
-(9, 'Maria', 'Del Valle', '0000', '1990-05-15', 'A - ', 2, '2231231231', 1),
-(10, 'Sonia', 'Fernandez', '23212321', '1990-05-15', '0 - ', 2, '223131223', 1);
+INSERT INTO `bombero` (`id_bombero`, `nombre`, `apellido`, `dni`, `fecha_nacimiento`, `grupo_sanguineo`, `id_brigada`, `celular`, `estado`, `nombre_clave`) VALUES
+(1, 'Rigoberto', 'Chocolatoso', '12345678', '1990-05-15', 'A+', 2, '12321313', 1, ''),
+(2, 'Carlos', 'Jose Rivera', '78231231', '1995-03-10', '0 -', 2, '31234213', 1, ''),
+(3, 'Juan', 'Castro', '1111', '1996-05-13', 'A+', 2, '23112412', 1, ''),
+(6, 'Walter', 'Heredia', '98765432', '1990-05-15', 'A+', 2, '22223333', 1, ''),
+(7, 'Mario', 'Marquez', '1231111', '1990-05-15', 'A - ', 2, '2231231231', 1, '');
 
 -- --------------------------------------------------------
 
