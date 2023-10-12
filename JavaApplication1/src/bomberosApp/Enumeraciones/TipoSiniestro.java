@@ -22,7 +22,5 @@ public enum TipoSiniestro {
 
     public void setIncidencia(String incidencia) {
         this.incidencia = incidencia;
-    }
-    
-    
+    }   
 }

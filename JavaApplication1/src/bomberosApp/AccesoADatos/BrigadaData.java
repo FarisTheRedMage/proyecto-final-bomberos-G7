@@ -3,7 +3,6 @@ package bomberosApp.AccesoADatos;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
-import bomberosApp.Enumeraciones.BomberoNombreClave;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -160,34 +159,30 @@ public class BrigadaData {
         return brigadas;
     }
 
-    public List<Bombero> RenombrarBomberosEnBrigada() {
- 
-        BomberoData bd = new BomberoData();
-        List <Bombero> bomberos = new ArrayList<>();
-        
-       bomberos.add((Bombero) bd.ListarBomberosEnBrigada(2));
-        
-        
-        if (bomberos.size() > 5) {
-            JOptionPane.showMessageDialog(null, "No se pueden asignar nombres clave a más de 5 bomberos.");
-            return new ArrayList<>(); // Devuelve una lista vacía en caso de error.
-        }
-
-        BomberoNombreClave[] bomberoNombreClave = BomberoNombreClave.values();
-
-        if (bomberoNombreClave.length < bomberos.size()) {
-            JOptionPane.showMessageDialog(null, "No hay suficientes nombres clave para todos los bomberos.");
-            return new ArrayList<>();
-        }
-
-        for (int i = 0; i < bomberos.size(); i++) {
-            bomberos[i].setNombre_clave(bomberoNombreClave[i].values()[i]);
-            // Aquí debes guardar los cambios en la base de datos usando tu lógica, si es necesario.
-        }
-
-        JOptionPane.showMessageDialog(null, "Nombres clave asignados exitosamente.");
-
-        // Devuelve la lista de bomberos actualizada.
-        return Arrays.asList(bomberos);
-    }
+//    public List<Bombero> RenombrarBomberosEnBrigada(int brigadaId) {
+//        
+//        BomberoData brigdata = new BomberoData();
+//        List<Bombero> bomberos = brigdata.ListarBomberosEnBrigada(brigadaId);
+//
+//        if (bomberos.size() > 5) {
+//            JOptionPane.showMessageDialog(null, "No se pueden asignar nombres clave a más de 5 bomberos.");
+//            return new ArrayList<>();
+//        }
+//
+//        BomberoNombreClave[] bomberoNombreClave = BomberoNombreClave.values();
+//
+//        if (bomberoNombreClave.length < bomberos.size()) {
+//            JOptionPane.showMessageDialog(null, "No hay suficientes nombres clave para todos los bomberos.");
+//            return new ArrayList<>();
+//        }
+//
+//        for (int i = 0; i < bomberos.size(); i++) {
+//            Bombero bombero = bomberos.get(i);
+//            bombero.setNombre_clave(bomberoNombreClave[i]);
+//        }
+//
+//        JOptionPane.showMessageDialog(null, "Nombres clave asignados exitosamente.");
+//        return bomberos;
+//        
+//    }
 }

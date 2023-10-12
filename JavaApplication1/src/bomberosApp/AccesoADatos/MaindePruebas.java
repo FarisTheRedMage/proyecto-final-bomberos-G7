@@ -7,9 +7,10 @@ import bomberosApp.Enumeraciones.TipoSiniestro;
 import java.time.LocalDate;
 import java.util.List;
 
-public class MaindePruebas {    
+public class MaindePruebas {
+
     public static void main(String[] args) {
-         //------------------------------------------------------PRIMERA ENTREGA ---------------------------------------------------------------//
+        //------------------------------------------------------PRIMERA ENTREGA ---------------------------------------------------------------//
 //--------------------------------------------Prueba GuardarBombero por id FUNCA----------------------------------------------------
 
 //        Bombero juan = new Bombero();                                             
@@ -29,7 +30,6 @@ public class MaindePruebas {
 //        juan.setId_bombero(1);
 //
 //        bombi.GuardarBombero(juan);
-
 //    //                  ----   Ver Bombero Guardado ----
 //            BomberoData bombi = new BomberoData();
 //            Bombero BomberoEncontrado = bombi.BuscarBombero(10);   //cambiar ID
@@ -149,9 +149,8 @@ public class MaindePruebas {
 //        } else {
 //            System.out.println("No hay Personal en la lista.");
 //        }
-
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------Prueba ListarBomberos x ID Brigada FUNCA------------------------------------------------------------
+//--------------------------------------------------------Prueba ListarBomberos x ID Brigada FUNCA AHORA SI!!------------------------------------------------------------
 //        BomberoData bombibis = new BomberoData();
 //
 //        List<Bombero> ListarBomberosxidbrig = bombibis.ListarBomberosEnBrigada(2);
@@ -358,13 +357,7 @@ public class MaindePruebas {
 //        } else {
 //            System.out.println("No hay Brigadas en la lista.");
 //        }
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //     BrigadaData brigii = new BrigadaData();
 //        List<Brigada> ListarCuarteles = brigii.BomberosPorBrigada();
@@ -387,7 +380,6 @@ public class MaindePruebas {
 //        } else {
 //            System.out.println("No hay Cuarteles en la lista.");
 //        }
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba GuardarSiniestro-  FUNCA--------------------------------------------------------
 //   
@@ -433,7 +425,6 @@ public class MaindePruebas {
 //            } else {
 //                System.out.println("No se encontró el Siniestro. ");
 //            }     
-            
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
 //-------------------------------------------------------------Prueba ModificarSiniestro - FUNCA-----------------------------------------------------------           
 //
@@ -456,13 +447,10 @@ public class MaindePruebas {
 //                         
 //                         sin1.ModificarSiniestro(siniestro);
 //
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
 //-------------------------------------------------------------Prueba Siniestro - EliminarSiniestro-FUNCA------------------------------------------------            
-
 //        SiniestroData siniestroD = new SiniestroData();
 //        siniestroD.EliminarSiniestro(1); 
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
 //-------------------------------------------------------------Prueba Siniestro -ListarSiniestro --------------------------------------------------------            
 //
@@ -490,16 +478,29 @@ public class MaindePruebas {
 //            } else {
 //                System.out.println("No hay Siniestros en la lista.");
 //            }
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------FIN SEGUNDA ENTREGA -------------------------------------------------------//
-    
+//        BrigadaData brigadaData = new BrigadaData();
+//        BomberoData bomberoData = new BomberoData();
 //
-//          Meses[] arregloMeses = Meses.values();
+//        // obtener los bomberos de una brigada.
+//        List<Bombero> bomberosEnBrigada = bomberoData.ListarBomberosEnBrigada(2); // id_brigada
 //
-//          for (Meses mes : arregloMeses) {
-//            System.out.println(mes);
-//          }
-    
+//        // asignar nombres clave a los bomberos.
+//        List<Bombero> bomberosRenombrados = brigadaData.RenombrarBomberosEnBrigada(1); // id_brigada
+//
+//        
+//        
+//        
+//
+//        System.out.println("Bomberos en la brigada:");
+//        for (Bombero bombero : bomberosEnBrigada) {
+//            System.out.println(" Nombre: " + bombero.getNombre() + "  Nombre Clave: " + bombero.getNombre_clave());
+//        }
+//        System.out.println("Bomberos renombrados en la brigada:");
+//        for (Bombero bombero : bomberosRenombrados) {
+//            System.out.println(" Nombre: " + bombero.getNombre() + "  Nombre Clave: " + bombero.getNombre_clave());
+//        }
     }
+
 }

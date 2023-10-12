@@ -7,6 +7,7 @@ public class Brigada {
     private boolean estado;
     private Cuartel cuartel;
 
+    
     public Brigada() {
     }
 

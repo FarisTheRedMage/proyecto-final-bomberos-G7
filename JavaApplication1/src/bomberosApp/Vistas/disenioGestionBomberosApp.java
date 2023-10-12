@@ -172,6 +172,11 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         jMenuBar1.add(JMSiniestros);
 
         JMSalir.setText("Salir");
+        JMSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JMSalirMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(JMSalir);
 
         setJMenuBar(jMenuBar1);
@@ -293,6 +298,10 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         escritorio.add(adcv);
         escritorio.moveToFront(adcv);
     }//GEN-LAST:event_JMIAsignacionDeCuartelesActionPerformed
+
+    private void JMSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JMSalirMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_JMSalirMouseClicked
 
     /**
      * @param args the command line arguments
