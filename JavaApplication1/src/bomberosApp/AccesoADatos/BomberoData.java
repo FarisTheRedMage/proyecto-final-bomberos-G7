@@ -172,7 +172,7 @@ public class BomberoData {
                 bombero.setEstado(rs.getBoolean("estado"));
                 bombero.setNombre_clave(rs.getNString("nombre_clave"));
             } else {
-                JOptionPane.showConfirmDialog(null, "Este Empleado no esta Duplicado");
+                JOptionPane.showMessageDialog(null, "Este Empleado no esta Duplicado");
             }
             ps.close();
         } catch (SQLException ex) {
