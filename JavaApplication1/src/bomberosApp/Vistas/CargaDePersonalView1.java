@@ -4,14 +4,9 @@ import bomberosApp.AccesoADatos.BomberoData;
 import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
-import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 public class CargaDePersonalView1 extends javax.swing.JInternalFrame {
 
@@ -79,7 +74,7 @@ public class CargaDePersonalView1 extends javax.swing.JInternalFrame {
             }
         });
 
-        JCBGrupoSanguineo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" }));
+        JCBGrupoSanguineo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" }));
 
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -196,34 +191,30 @@ public class CargaDePersonalView1 extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarActionPerformed
-   try {System.out.println(JTFDni.getText());
-   Brigada brigada = new Brigada();
-//         if (bombero == null) {
-             bombero.setDni(JTFDni.getText());
-             bombero.setApellido(JTFApellido.getText());
-             bombero.setNombre(JTFNombre.getText());
-             bombero.setFecha_nacimiento(JDCFechaNacimiento.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-             brigada.setId_brigada((int) JCBCodigoDeBrigada.getSelectedItem());
-             bombero.setBrigada(brigada);
-             System.out.println(bombero.getBrigada().toString()+"Brigada");
-             bombero.setGrupo_sanguineo((String) JCBGrupoSanguineo.getSelectedItem());
-             bombero.setNombre_clave((String) JCBNombreClave.getSelectedItem());
-             bombero.setCelular(JTFTelefono.getText());
-         //}  
-         System.out.println("asasas"+bombero);
-         
-         if (JRBEstado.isSelected() == true){
-              bombero.setEstado(true);
-              }else {
-              bombero.setEstado(false);
-              }
-         bomberoData.GuardarBombero(bombero);
+        try {
+            Brigada brigada = new Brigada();
+            bombero.setDni(JTFDni.getText());
+            bombero.setApellido(JTFApellido.getText());
+            bombero.setNombre(JTFNombre.getText());
+            bombero.setFecha_nacimiento(JDCFechaNacimiento.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            brigada.setId_brigada((int) JCBCodigoDeBrigada.getSelectedItem());
+            bombero.setBrigada(brigada);
+            bombero.setGrupo_sanguineo((String) JCBGrupoSanguineo.getSelectedItem());
+            bombero.setNombre_clave((String) JCBNombreClave.getSelectedItem());
+            bombero.setCelular(JTFTelefono.getText());
+
+            if (JRBEstado.isSelected() == true) {
+                bombero.setEstado(true);
+            } else {
+                bombero.setEstado(false);
+            }
+            bomberoData.GuardarBombero(bombero);
             limpiar();
-     } catch (NumberFormatException  e) {
-                JOptionPane.showMessageDialog(this, " El Dni debe ser un Numero. "+e.getMessage());
-                limpiar();
-     }catch(NullPointerException e) {
-            JOptionPane.showMessageDialog(this, "No deje campos Vacios "+ e.getMessage());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, " El Dni debe ser un Numero. " + e.getMessage());
+            limpiar();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(this, "No deje campos Vacios " + e.getMessage());
             e.printStackTrace();
         }
     }//GEN-LAST:event_JBGuardarActionPerformed
@@ -269,6 +260,9 @@ public class CargaDePersonalView1 extends javax.swing.JInternalFrame {
         JTFNombre.setText("");
         JTFTelefono.setText("");
         JRBEstado.setSelected(false);
+        JCBCodigoDeBrigada.setSelectedIndex(0);
+        JCBGrupoSanguineo.setSelectedIndex(0);
+        JCBNombreClave.setSelectedIndex(0);
     }
 
 }
