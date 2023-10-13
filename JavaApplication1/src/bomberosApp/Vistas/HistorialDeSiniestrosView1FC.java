@@ -78,7 +78,7 @@ public class HistorialDeSiniestrosView1FC extends javax.swing.JInternalFrame {
                             .addComponent(jButton2)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
+                        .addGap(251, 251, 251)
                         .addComponent(jButton1)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
@@ -94,7 +94,7 @@ public class HistorialDeSiniestrosView1FC extends javax.swing.JInternalFrame {
                 .addComponent(jButton1)
                 .addGap(17, 17, 17)
                 .addComponent(jButton2)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();

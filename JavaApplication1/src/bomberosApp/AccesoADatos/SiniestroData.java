@@ -113,7 +113,6 @@ public class SiniestroData {
         }
         return siniestro;
     }
-
     
     public void ModificarSiniestro(Siniestro siniestro){
         String SQL = "UPDATE siniestro SET coord_X=?, coord_Y=?, fecha_siniestro=?, tipo=?, detalles=?, id_brigada=?, fecha_resolucion=?, calificacion=?, estado=? WHERE id_siniestro = ?";

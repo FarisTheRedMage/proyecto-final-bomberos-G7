@@ -6,24 +6,26 @@ public class Brigada {
     private String especialidad;
     private boolean estado;
     private Cuartel cuartel;
-
+    private Boolean disponibiblidad;
     
     public Brigada() {
     }
 
-    public Brigada(String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel) {
+    public Brigada(String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel, Boolean disponibiblidad) {
         this.nombre_brigada = nombre_brigada;
         this.especialidad = especialidad;
         this.estado = estado;
         this.cuartel = cuartel;
+        this.disponibiblidad = disponibiblidad;
     }
 
-    public Brigada(int id_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel) {
+    public Brigada(int id_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel,Boolean disponibiblidad) {
         this.id_brigada = id_brigada;
         this.nombre_brigada = nombre_brigada;
         this.especialidad = especialidad;
         this.estado = estado;
         this.cuartel = cuartel;
+        this.disponibiblidad = disponibiblidad;
     }
 
     public int getId_brigada() {
@@ -66,13 +68,23 @@ public class Brigada {
         this.cuartel = cuartel;
     }
 
+    public Boolean isDisponibiblidad() {
+        return disponibiblidad;
+    }
+
+    public void setDisponibiblidad(Boolean disponibiblidad) {
+        this.disponibiblidad = disponibiblidad;
+    }
+
     @Override
     public String toString() {
         return " ID" + id_brigada + 
                 ", Nombre de la brigada" + nombre_brigada +
                 ", Especialidad" + especialidad + 
                 ", Estado" + estado + 
-                ", Cuartel" + cuartel;
+                ", Cuartel" + cuartel + 
+                ", Disponibilidad" + disponibiblidad;
+        
     }
 
 }

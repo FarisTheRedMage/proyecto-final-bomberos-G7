@@ -31,8 +31,9 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
         JTablaSiniestros = new javax.swing.JTable();
         JBSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        JRBBrigadasNODisponibles = new javax.swing.JRadioButton();
+        JRBBrigadasDisponibles = new javax.swing.JRadioButton();
+        JBDisponibleOEnLabor = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -56,17 +57,24 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Selecciona una opcion para ver las Brigadas Activas e Inactivas ");
 
-        jRadioButton1.setText("Brigadas en Campo");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        JRBBrigadasNODisponibles.setText("Brigadas En Labor");
+        JRBBrigadasNODisponibles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                JRBBrigadasNODisponiblesActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("Brigadas Disponibles");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        JRBBrigadasDisponibles.setText("Brigadas Disponibles");
+        JRBBrigadasDisponibles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                JRBBrigadasDisponiblesActionPerformed(evt);
+            }
+        });
+
+        JBDisponibleOEnLabor.setText("Cambiar Disponible/En Labor");
+        JBDisponibleOEnLabor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBDisponibleOEnLaborActionPerformed(evt);
             }
         });
 
@@ -77,21 +85,18 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jRadioButton1))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JBSalir)
+                            .addComponent(jLabel1)
+                            .addComponent(JRBBrigadasNODisponibles)
+                            .addComponent(JRBBrigadasDisponibles))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(JBDisponibleOEnLabor)
+                        .addGap(152, 152, 152)
+                        .addComponent(JBSalir)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -100,34 +105,41 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
-                .addComponent(jRadioButton2)
+                .addComponent(JRBBrigadasDisponibles)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton1)
+                .addComponent(JRBBrigadasNODisponibles)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(JBSalir)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JBSalir)
+                    .addComponent(JBDisponibleOEnLabor))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void JRBBrigadasDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBBrigadasDisponiblesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_JRBBrigadasDisponiblesActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void JRBBrigadasNODisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBBrigadasNODisponiblesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_JRBBrigadasNODisponiblesActionPerformed
+
+    private void JBDisponibleOEnLaborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBDisponibleOEnLaborActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBDisponibleOEnLaborActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBDisponibleOEnLabor;
     private javax.swing.JButton JBSalir;
+    private javax.swing.JRadioButton JRBBrigadasDisponibles;
+    private javax.swing.JRadioButton JRBBrigadasNODisponibles;
     private javax.swing.JTable JTablaSiniestros;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
