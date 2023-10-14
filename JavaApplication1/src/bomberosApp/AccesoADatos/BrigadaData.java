@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
 public class BrigadaData {
-
+    private CuartelData cd = new CuartelData();
     private Cuartel cuartel = new Cuartel();
     BomberoData bombero = new BomberoData();
     private Connection con = null;
@@ -65,14 +65,12 @@ public class BrigadaData {
             if (rs.next()) {
                 brigada = new Brigada();
                 cuart = new Cuartel();
-                
-                brigada.setId_brigada(id);
                 brigada.setNombre_brigada(rs.getString("nombre_brigada"));
                 brigada.setEspecialidad(rs.getString("especialidad"));
                 brigada.setEstado(rs.getBoolean("estado"));
                 brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
                 brigada.setNombre_cuartel(rs.getString("nombre_cuartel"));
-                cuart.setId_cuartel(rs.getInt("id_cuartel"));/////aaaaaaaaaaaaaaaaaaaaaaaaa
+                cuart.setId_cuartel(rs.getInt("id_cuartel"));
                 brigada.setCuartel(cuart);
                 
             } else {

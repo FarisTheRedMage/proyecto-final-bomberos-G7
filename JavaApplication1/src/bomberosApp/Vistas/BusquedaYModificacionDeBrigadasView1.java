@@ -264,12 +264,14 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
 
         try {
             int id = Integer.parseInt(JTFidCuartel.getText());
-            Brigada brigadita = brigadaData.BuscarBrigada(id);
-
-            if (brigadita != null) {
+            CuartelData cuartelData = new CuartelData();
+            Cuartel cuartelito = new Cuartel();
+            cuartelito =  cuartelData.BuscarCuartelPorId(id);
+              //Brigada brigadita = brigadaData.BuscarBrigada(id);
+            if (cuartelito != null) {
                 
-                JTFidCuartel.setText(String.valueOf(brigadita.getCuartel().getId_cuartel()));
-                JTFCuartelito.setText(brigadita.getNombre_cuartel());
+                JTFidCuartel.setText(String.valueOf(cuartelito.getId_cuartel()));
+                JTFCuartelito.setText(cuartelito.getNombre_cuartel());
 
             } else {
                 JOptionPane.showMessageDialog(this, "No se encontró un Cuartel con este ID.");
