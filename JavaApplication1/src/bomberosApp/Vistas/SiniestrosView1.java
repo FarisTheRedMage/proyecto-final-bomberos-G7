@@ -74,7 +74,6 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Calificacion");
 
-        JCBAsignarBrigada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         JCBAsignarBrigada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBAsignarBrigadaActionPerformed(evt);
@@ -87,14 +86,11 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
 
         jScrollPane1.setViewportView(JTDetallesDelSiniestro);
 
-        JTFCoorX.setText("jTextField1");
         JTFCoorX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFCoorXActionPerformed(evt);
             }
         });
-
-        JTFCoordY.setText("jTextField1");
 
         JBBuscar.setText("Buscar");
 
@@ -118,8 +114,6 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
                 JBGuardarNuevoSiniestroActionPerformed(evt);
             }
         });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
