@@ -1,4 +1,3 @@
-
 package bomberosApp.Vistas;
 
 import bomberosApp.AccesoADatos.BrigadaData;
@@ -9,20 +8,18 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalFrame {
-    
+
     private Cuartel cuartel = new Cuartel();
     private CuartelData cuartelData = new CuartelData();
     private List<Cuartel> listarCuarteles = cuartelData.ListarCuarteles();
-    
- private Brigada brigada = new Brigada();
- private BrigadaData brigadaData = new BrigadaData();
- private List<Brigada> listarBrigadas = brigadaData.ListarBrigada();
-    
+
+    private Brigada brigada = new Brigada();
+    private BrigadaData brigadaData = new BrigadaData();
+    private List<Brigada> listarBrigadas = brigadaData.ListarBrigada();
+
     public BusquedaYModificacionDeBrigadasView1() {
         initComponents();
-        
-        
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -66,6 +63,11 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
         JRBEstado.setText("Estado");
 
         JBGuardar.setText("Guardar Modificaciones");
+        JBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBGuardarActionPerformed(evt);
+            }
+        });
 
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -160,31 +162,58 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
     }//GEN-LAST:event_JBSalirActionPerformed
 
     private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
-        
-         try {
+        try {
             int id = Integer.parseInt(JTFCodigo.getText());
             Brigada brigadita = brigadaData.BuscarBrigada(id);
-            
-            
+
             if (brigadita != null) {
                 JTFNombreBrigada.setText(brigadita.getNombre_brigada());
-                JTFEspecialidad.setText(String.valueOf(brigadita.getEspecialidad()));
+                JTFEspecialidad.setText(brigadita.getEspecialidad());
                 JRBEstado.setSelected(brigadita.isEstado());
-                JTFCuartel.setText(brigadita.getCuartel().getNombre_cuartel());
-//                cuartel.setNombre_cuartel((String) JTFCuartel.getText());
-//                brigadita.setCuartel(cuartel);
-                
-//                JTFCuartel.setText(String.valueOf(brigadita.getCuartel().getNombre_cuartel()));
                 JRBDisponibilidad.setSelected(brigadita.isDisponibilidad());
-           
+                //solucionado!!!!!
+                JTFCuartel.setText(brigadita.getNombre_cuartel());
+
             } else {
-                JOptionPane.showMessageDialog(this, "No se encontró un Brigada con este ID.");
+                JOptionPane.showMessageDialog(this, "No se encontró una Brigada con este ID.");
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese un número válido para el ID: " + e.getMessage());
         }
-        
+
     }//GEN-LAST:event_JBBuscarActionPerformed
+
+    private void JBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarActionPerformed
+
+        try {
+            Brigada brigada = new Brigada();
+
+            brigada.setNombre_brigada(JTFNombreBrigada.getText());
+            brigada.setEspecialidad(JTFEspecialidad.getText());
+            brigada.setEstado(JRBEstado.isSelected());
+            brigada.setDisponibilidad(JRBDisponibilidad.isSelected());
+            brigada.setNombre_cuartel(JTFCuartel.getText());
+
+            if (JRBEstado.isSelected() == true) {
+                brigada.setEstado(true);
+            } else {
+                brigada.setEstado(false);
+            }
+            if (JRBDisponibilidad.isSelected() == true) {
+                brigada.setEstado(true);
+            } else {
+                brigada.setEstado(false);
+            }
+          brigadaData.ModificarBrigada(brigada);
+          limpiar();
+          
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El DNI debe ser un número. " + e.getMessage());
+            limpiar();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(this, "No deje campos vacíos " + e.getMessage());
+        }
+    }//GEN-LAST:event_JBGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -202,4 +231,14 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
+
+    public void limpiar() {
+        JTFCodigo.setText("");
+        JTFCuartel.setText("");
+        JTFEspecialidad.setText("");
+        JTFNombreBrigada.setText("");
+        JRBDisponibilidad.setSelected(false);
+        JRBEstado.setSelected(false);
+    }
+
 }

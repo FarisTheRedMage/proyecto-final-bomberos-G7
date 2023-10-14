@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2023 a las 02:48:30
+-- Tiempo de generación: 14-10-2023 a las 20:01:39
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -37,7 +37,7 @@ CREATE TABLE `bombero` (
   `id_brigada` int(11) NOT NULL,
   `celular` varchar(15) NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `nombre_clave` varchar(20) NOT NULL
+  `nombre_clave` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -45,11 +45,14 @@ CREATE TABLE `bombero` (
 --
 
 INSERT INTO `bombero` (`id_bombero`, `nombre`, `apellido`, `dni`, `fecha_nacimiento`, `grupo_sanguineo`, `id_brigada`, `celular`, `estado`, `nombre_clave`) VALUES
-(1, 'Rigoberto', 'Chocolatoso', '12345678', '1990-05-15', 'A+', 2, '12321313', 1, ''),
-(2, 'Carlos', 'Jose Rivera', '78231231', '1995-03-10', '0 -', 2, '31234213', 1, ''),
-(3, 'Juan', 'Castro', '1111', '1996-05-13', 'A+', 2, '23112412', 1, ''),
-(6, 'Walter', 'Heredia', '98765432', '1990-05-15', 'A+', 2, '22223333', 1, ''),
-(7, 'Mario', 'Marquez', '1231111', '1990-05-15', 'A - ', 2, '2231231231', 1, '');
+(1, 'Rigoberto', 'Chocolatoso', '12345678', '1990-05-15', 'A+', 2, '12321313', 1, 'Gama'),
+(2, 'Carlos', 'Jose Rivera', '78231231', '1995-03-10', '0 -', 2, '31234213', 1, '0'),
+(3, 'Juan Santo', 'Domingo', '1111', '1996-05-13', 'A+', 2, '23112412', 1, 'Gama'),
+(6, 'Walter', 'Heredia', '98765432', '1990-05-15', 'A+', 2, '22223333', 1, '0'),
+(7, 'Mario', 'Marquez', '1231111', '1990-05-15', 'A - ', 2, '2231231231', 1, '0'),
+(11, 'Luna Mariela', 'Del Prado', '12130', '1954-10-03', 'B-', 2, '123123', 1, 'Zetta'),
+(16, 'Juana Maria', 'De Los Andes Floreados', '12341234', '1998-10-17', 'O+', 2, '1235612357', 1, 'Gama'),
+(17, 'lola', 'asad', '123090', '1900-10-02', 'B+', 2, '1212', 1, 'Zetta');
 
 -- --------------------------------------------------------
 
@@ -62,15 +65,17 @@ CREATE TABLE `brigada` (
   `nombre_brigada` varchar(20) NOT NULL,
   `especialidad` varchar(30) NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `id_cuartel` int(11) NOT NULL
+  `id_cuartel` int(11) NOT NULL,
+  `disponibilidad` tinyint(1) NOT NULL,
+  `nombre_cuartel` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `brigada`
 --
 
-INSERT INTO `brigada` (`id_brigada`, `nombre_brigada`, `especialidad`, `estado`, `id_cuartel`) VALUES
-(2, 'Brigada de Rescate', 'Rescate de Montaña', 1, 1);
+INSERT INTO `brigada` (`id_brigada`, `nombre_brigada`, `especialidad`, `estado`, `id_cuartel`, `disponibilidad`, `nombre_cuartel`) VALUES
+(2, 'Brigada de Rescate', 'Rescate de Montaña', 1, 1, 1, 'Cuartel Central');
 
 -- --------------------------------------------------------
 
@@ -94,10 +99,12 @@ CREATE TABLE `cuartel` (
 --
 
 INSERT INTO `cuartel` (`id_cuartel`, `nombre_cuartel`, `direccion`, `coord_X`, `coord_Y`, `telefono`, `correo`, `estado`) VALUES
-(1, 'Cuartel Central', '123 Calle Principal', 46, -78, '1234567890', 'cuartelcentral02@gmail.com', 1),
-(2, 'Cuartel General', 'Santa Cecilia ST ', 12, 14, '1234532', 'cuartelgeneral123@gmail.com', 1),
-(3, 'Cuartel Zona Este', 'Santa Clara ST', 10, 52, '7773662', 'cuartelzonaeste12@gmail.com', 0),
-(4, 'Cuartel: Los Bomberi', 'Goove ST', 11, 31, '2221111222', 'groovesthome@gmail.com', 1);
+(1, 'Cuartel Central', '123 Calle Principal', 46, -78, '0800 333 1212', 'cuartelcentral02@gmail.com', 0),
+(2, 'Cuartel General', 'Santa Cecilia ST ', 12, 14, '131312312', 'cuartelgeneral123@gmail.com', 1),
+(3, 'Cuartel Zona Este', 'Santa Clara ST', 10, 52, '7773662', 'cuartelzonaeste12@gmail.com', 1),
+(4, 'Cuartel: Los Bomberi', 'Goove ST', 11, 31, '2221111222', 'groovesthome@gmail.com', 1),
+(5, 'asdasd', 'asdadasd', 11, 12, '111', 'asdasdasd', 1),
+(6, 'qqq', 'qqq', 12, 11, '111', 'sfadfs', 1);
 
 -- --------------------------------------------------------
 
@@ -165,7 +172,7 @@ ALTER TABLE `siniestro`
 -- AUTO_INCREMENT de la tabla `bombero`
 --
 ALTER TABLE `bombero`
-  MODIFY `id_bombero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_bombero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `brigada`
@@ -177,7 +184,7 @@ ALTER TABLE `brigada`
 -- AUTO_INCREMENT de la tabla `cuartel`
 --
 ALTER TABLE `cuartel`
-  MODIFY `id_cuartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_cuartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `siniestro`

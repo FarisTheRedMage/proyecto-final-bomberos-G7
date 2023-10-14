@@ -7,25 +7,28 @@ public class Brigada {
     private boolean estado;
     private Cuartel cuartel;
     private Boolean disponibilidad;
-        
+    private String nombre_cuartel;
+     
     public Brigada() {
     }
 
-    public Brigada(String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel, Boolean disponibilidad) {
+    public Brigada(String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel, Boolean disponibilidad,String nombre_cuartel) {
         this.nombre_brigada = nombre_brigada;
         this.especialidad = especialidad;
         this.estado = estado;
         this.cuartel = cuartel;
         this.disponibilidad = disponibilidad;
+        this.nombre_cuartel = nombre_cuartel;
     }
 
-    public Brigada(int id_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel,Boolean disponibilidad) {
+    public Brigada(int id_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel,Boolean disponibilidad, String nombre_cuartel) {
         this.id_brigada = id_brigada;
         this.nombre_brigada = nombre_brigada;
         this.especialidad = especialidad;
         this.estado = estado;
         this.cuartel = cuartel;
         this.disponibilidad = disponibilidad;
+        this.nombre_cuartel = nombre_cuartel;
     }
 
     public int getId_brigada() {
@@ -76,6 +79,25 @@ public class Brigada {
         this.disponibilidad = disponibiblidad;
     }
 
+    public String getNombre_cuartel() {
+        return nombre_cuartel;
+    }
+
+    public void setNombre_cuartel(String nombre_cuartel) {
+        this.nombre_cuartel = nombre_cuartel;
+    }
+    
+    
+    //METODO UTIL EN LA VISTA BusquedaYModificacionDeBrigadasView...
+    
+        public String ObtenerNombreCuartel(Brigada brigada) {
+        if (brigada != null && brigada.getCuartel() != null) {
+            return brigada.getCuartel().getNombre_cuartel();
+        } else {
+            return "Sin cuartel asignado";
+        }
+    }
+
     @Override
     public String toString() {
         return " ID" + id_brigada + 
@@ -83,7 +105,8 @@ public class Brigada {
                 ", Especialidad" + especialidad + 
                 ", Estado" + estado + 
                 ", Cuartel" + cuartel + 
-                ", Disponibilidad" + disponibilidad;
+                ", Disponibilidad" + disponibilidad +
+                ", Nombre del Cuartel" + nombre_cuartel;
         
     }
 
