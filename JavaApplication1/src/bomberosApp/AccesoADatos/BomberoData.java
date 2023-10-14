@@ -52,7 +52,7 @@ public class BomberoData {
     public Bombero BuscarBombero(int id) {
         Bombero bombero = null;
 
-        String SQL = "SELECT * FROM bombero WHERE id_bombero=? and estado=1";
+        String SQL = "SELECT * FROM bombero WHERE id_bombero=?";
         PreparedStatement ps = null;
 
         try {
@@ -74,7 +74,6 @@ public class BomberoData {
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
                 brg.setId_brigada(rs.getInt("id_brigada"));
                 bombero.setBrigada(brg);
-
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(rs.getBoolean("estado"));
                 bombero.setNombre_clave(rs.getNString("nombre_clave"));
@@ -200,5 +199,38 @@ public class BomberoData {
         }
         return bomberos;
     }
+    
+    
+    public List<Bombero> ListarBomberosPorBrigada(int id) {
+        List<Bombero> bomberos = new ArrayList<>();
+
+        try {
+            
+            
+            String SQL = "SELECT * FROM bombero WHERE id_brigada = ?";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Bombero bombero = new Bombero();
+                bombero.setId_bombero(rs.getInt("id_bombero"));
+                bombero.setNombre(rs.getString("nombre"));
+                bombero.setApellido(rs.getString("apellido"));
+                bombero.setDni(rs.getString("dni"));
+                bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
+                bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
+                bombero.setCelular(rs.getString("celular"));
+                bombero.setEstado(true);
+                bombero.setNombre_clave(rs.getNString("nombre_clave"));
+                bomberos.add(bombero);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Bombero" + ex.getMessage());
+        }
+        return bomberos;
+    }
+    
 
 }

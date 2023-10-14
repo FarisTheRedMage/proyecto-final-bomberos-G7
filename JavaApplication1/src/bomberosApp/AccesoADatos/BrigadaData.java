@@ -24,7 +24,7 @@ public class BrigadaData {
     }
 
     public void GuardarBrigada(Brigada brigada) {
-        String SQL = "INSERT INTO brigada (nombre_brigada, especialidad, estado, id_cuartel, disponibiblidad) VALUES ( ?, ?, ?, ?,?)";
+        String SQL = "INSERT INTO brigada (nombre_brigada, especialidad, estado, id_cuartel, disponibilidad) VALUES ( ?, ?, ?, ?,?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -32,7 +32,7 @@ public class BrigadaData {
             ps.setString(2, brigada.getEspecialidad());
             ps.setBoolean(3, brigada.isEstado());
             ps.setInt(4, brigada.getCuartel().getId_cuartel());  //Mepa q era asi  // OJO
-            ps.setBoolean(5, brigada.isDisponibiblidad());
+            ps.setBoolean(5, brigada.isDisponibilidad());
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
@@ -70,7 +70,7 @@ public class BrigadaData {
                 brigada.setNombre_brigada(rs.getString("nombre_brigada"));
                 brigada.setEspecialidad(rs.getString("especialidad"));
                 brigada.setEstado(rs.getBoolean("estado"));
-                brigada.setDisponibiblidad(rs.getBoolean("disponibiblidad"));
+                brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
 
                 cuart.setId_cuartel(rs.getInt("id_brigada"));
                 brigada.setCuartel(cuart);
@@ -100,7 +100,7 @@ public class BrigadaData {
             ps.setString(2, brigada.getEspecialidad());
             ps.setBoolean(3, brigada.isEstado());
             ps.setInt(4, brigada.getCuartel().getId_cuartel());
-            ps.setBoolean(5, brigada.isDisponibiblidad());
+            ps.setBoolean(5, brigada.isDisponibilidad());
             ps.setInt(6, brigada.getId_brigada());
 
             int exito = ps.executeUpdate();
@@ -150,7 +150,7 @@ public class BrigadaData {
                 brigada.setNombre_brigada(rs.getString("nombre_brigada"));
                 brigada.setEspecialidad(rs.getString("especialidad"));
                 brigada.setEstado(rs.getBoolean("estado"));
-                brigada.setDisponibiblidad(rs.getBoolean("disponibiblidad"));
+                brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
 
                 cuartel.setId_cuartel(rs.getInt("id_cuartel"));//------ 
                 brigada.setCuartel(cuartel);
@@ -181,8 +181,9 @@ public class BrigadaData {
                 brigada.setNombre_brigada(rs.getString("nombre_brigada"));
                 brigada.setEspecialidad(rs.getString("especialidad"));
                 brigada.setEstado(rs.getBoolean("estado"));
-                brigada.setDisponibiblidad(rs.getBoolean("disponibiblidad"));
-//                cuartel.setId_cuartel(rs.getInt("id_cuartel"));
+                brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
+                cuartel.setId_cuartel(rs.getInt("id_cuartel"));
+                //cuartel.setNombre_cuartel(rs.getString("nombre_cuartel")); //revisar como conseguir el nombre del cuartel, sera util despues
                 brigada.setCuartel(cuartel);
 
                 brigadas.add(brigada);

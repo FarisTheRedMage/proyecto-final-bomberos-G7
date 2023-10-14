@@ -153,7 +153,7 @@ public class MaindePruebas {
 //--------------------------------------------------------Prueba ListarBomberos x ID Brigada FUNCA AHORA SI!!------------------------------------------------------------
 //        BomberoData bombibis = new BomberoData();
 //
-//        List<Bombero> ListarBomberosxidbrig = bombibis.ListarBomberosEnBrigada(2);
+//        List<Bombero> ListarBomberosxidbrig = bombibis.ListarBomberosPorBrigada(2);
 //
 //        if (!ListarBomberosxidbrig.isEmpty()) {
 //            System.out.println("Lista de bomberos:");
@@ -264,6 +264,32 @@ public class MaindePruebas {
 //        } else {
 //            System.out.println("No hay Cuarteles en la lista.");
 //        }
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------Prueba ListarBrigadasEnCuartel -  Funca ------------------------------------------------
+
+
+//    BrigadaData brigadita = new BrigadaData();
+//    List<Brigada> ListarBrigada = brigadita.ListarBrigadaPorCuartel(1);
+//
+//        if (!ListarBrigada.isEmpty()) {
+//            System.out.println("Lista de Brigadas:");
+//
+//            for (Brigada brigadas : ListarBrigada) {
+//                System.out.println("ID: " + brigadas.getId_brigada());
+//                System.out.println("Nombre: " + brigadas.getNombre_brigada());
+//                System.out.println("Especialidad: " + brigadas.getEspecialidad());
+//                System.out.println("Estado: " + brigadas.isEstado());
+//                System.out.println("Disponibilidad: " + brigadas.isDisponibilidad());
+//                System.out.println("Cuartel: "+brigadas.getCuartel().getId_cuartel());
+//                System.out.println("-----------------------------");
+//            }
+//        } else {
+//            System.out.println("No hay Brigadas en la lista.");
+//        }
+
+
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------Prueba GuardarBrigada - FUNCA --------------------------------------------
 //        Brigada juan = new Brigada();                                             

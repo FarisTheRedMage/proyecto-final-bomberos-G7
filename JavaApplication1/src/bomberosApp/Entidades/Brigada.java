@@ -6,26 +6,26 @@ public class Brigada {
     private String especialidad;
     private boolean estado;
     private Cuartel cuartel;
-    private Boolean disponibiblidad;
+    private Boolean disponibilidad;
     
     public Brigada() {
     }
 
-    public Brigada(String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel, Boolean disponibiblidad) {
+    public Brigada(String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel, Boolean disponibilidad) {
         this.nombre_brigada = nombre_brigada;
         this.especialidad = especialidad;
         this.estado = estado;
         this.cuartel = cuartel;
-        this.disponibiblidad = disponibiblidad;
+        this.disponibilidad = disponibilidad;
     }
 
-    public Brigada(int id_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel,Boolean disponibiblidad) {
+    public Brigada(int id_brigada, String nombre_brigada, String especialidad, boolean estado, Cuartel cuartel,Boolean disponibilidad) {
         this.id_brigada = id_brigada;
         this.nombre_brigada = nombre_brigada;
         this.especialidad = especialidad;
         this.estado = estado;
         this.cuartel = cuartel;
-        this.disponibiblidad = disponibiblidad;
+        this.disponibilidad = disponibilidad;
     }
 
     public int getId_brigada() {
@@ -68,12 +68,12 @@ public class Brigada {
         this.cuartel = cuartel;
     }
 
-    public Boolean isDisponibiblidad() {
-        return disponibiblidad;
+    public Boolean isDisponibilidad() {
+        return disponibilidad;
     }
 
-    public void setDisponibiblidad(Boolean disponibiblidad) {
-        this.disponibiblidad = disponibiblidad;
+    public void setDisponibilidad(Boolean disponibiblidad) {
+        this.disponibilidad = disponibiblidad;
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Brigada {
                 ", Especialidad" + especialidad + 
                 ", Estado" + estado + 
                 ", Cuartel" + cuartel + 
-                ", Disponibilidad" + disponibiblidad;
+                ", Disponibilidad" + disponibilidad;
         
     }
 

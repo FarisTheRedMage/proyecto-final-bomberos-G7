@@ -209,7 +209,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        ModificacionYBusquedaDeBrigadasView1 mybdbv=new ModificacionYBusquedaDeBrigadasView1();
+        BusquedaYModificacionDeBrigadasView1 mybdbv=new BusquedaYModificacionDeBrigadasView1();
         mybdbv.setVisible(true);
         escritorio.add(mybdbv);
         escritorio.moveToFront(mybdbv);

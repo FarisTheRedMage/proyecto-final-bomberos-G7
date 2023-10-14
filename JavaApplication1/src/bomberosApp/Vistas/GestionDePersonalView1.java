@@ -103,7 +103,7 @@ public class GestionDePersonalView1 extends javax.swing.JInternalFrame {
             }
         });
 
-        JCBGrupoSanguineo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" }));
+        JCBGrupoSanguineo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" }));
 
         jLabel18.setText("Nombre Clave");
 
@@ -358,6 +358,7 @@ public class GestionDePersonalView1 extends javax.swing.JInternalFrame {
     }
 
     public void limpiar() {
+        JTFCodigo.setText("");
         JTFApellidos.setText("");
         JTFDni.setText("");
         JTFNombres.setText("");
