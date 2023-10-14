@@ -306,16 +306,17 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
     private void JMSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JMSalirMouseClicked
         this.dispose();
-         escritorio.removeAll();
+       
+    }//GEN-LAST:event_JMSalirMouseClicked
+
+    private void JMICargarBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMICargarBrigadasActionPerformed
+        // TODO add your handling code here:
+          escritorio.removeAll();
         escritorio.repaint();
         CargaDeBrigadasView1 cdbv=new CargaDeBrigadasView1();
         cdbv.setVisible(true);
         escritorio.add(cdbv);
         escritorio.moveToFront(cdbv);
-    }//GEN-LAST:event_JMSalirMouseClicked
-
-    private void JMICargarBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMICargarBrigadasActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_JMICargarBrigadasActionPerformed
 
     /**
