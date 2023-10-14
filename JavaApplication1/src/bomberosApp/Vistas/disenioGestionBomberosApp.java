@@ -53,7 +53,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMIGestionDeCuarteles = new javax.swing.JMenuItem();
         JMIInformacionDeCuartel = new javax.swing.JMenuItem();
         JMBrigadas = new javax.swing.JMenu();
-        JMICargarBrigadas = new javax.swing.JMenuItem();
         JMIGestionDeBrigadas = new javax.swing.JMenuItem();
         JMIRevisarBrigadas = new javax.swing.JMenuItem();
         JMIPersonalEnBrigadas = new javax.swing.JMenuItem();
@@ -118,15 +117,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         JMBrigadas.setText("Brigadas");
 
-        JMICargarBrigadas.setText("Cargar Brigadas");
-        JMICargarBrigadas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMICargarBrigadasActionPerformed(evt);
-            }
-        });
-        JMBrigadas.add(JMICargarBrigadas);
-
-        JMIGestionDeBrigadas.setText("Modificacion y Busqueda de Brigadas");
+        JMIGestionDeBrigadas.setText("Busqueda Y Modificacion de Brigadas");
         JMIGestionDeBrigadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JMIGestionDeBrigadasActionPerformed(evt);
@@ -309,16 +300,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
        
     }//GEN-LAST:event_JMSalirMouseClicked
 
-    private void JMICargarBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMICargarBrigadasActionPerformed
-        // TODO add your handling code here:
-          escritorio.removeAll();
-        escritorio.repaint();
-        CargaDeBrigadasView1 cdbv=new CargaDeBrigadasView1();
-        cdbv.setVisible(true);
-        escritorio.add(cdbv);
-        escritorio.moveToFront(cdbv);
-    }//GEN-LAST:event_JMICargarBrigadasActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -359,7 +340,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JMenu JMCuarteles;
     private javax.swing.JMenuItem JMIAsignacionDeCuarteles;
     private javax.swing.JMenuItem JMICargaDePersonal;
-    private javax.swing.JMenuItem JMICargarBrigadas;
     private javax.swing.JMenuItem JMIGestionDeBrigadas;
     private javax.swing.JMenuItem JMIGestionDeCuarteles;
     private javax.swing.JMenuItem JMIGestionDePersonal;

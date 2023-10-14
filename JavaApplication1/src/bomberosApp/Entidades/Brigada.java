@@ -8,6 +8,7 @@ public class Brigada {
     private Cuartel cuartel;
     private Boolean disponibilidad;
     private String nombre_cuartel;
+   
      
     public Brigada() {
     }

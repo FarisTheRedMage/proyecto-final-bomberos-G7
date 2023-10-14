@@ -32,7 +32,7 @@ public class BrigadaData {
             ps.setString(1, brigada.getNombre_brigada());
             ps.setString(2, brigada.getEspecialidad());
             ps.setBoolean(3, brigada.isEstado());
-            ps.setInt(4, brigada.getCuartel().getId_cuartel());  //Mepa q era asi  // OJO
+            ps.setInt(4, brigada.getCuartel().getId_cuartel());
             ps.setBoolean(5, brigada.isDisponibilidad());
             ps.setString(6, brigada.getNombre_cuartel());
             ps.executeUpdate();
@@ -52,7 +52,7 @@ public class BrigadaData {
     public Brigada BuscarBrigada(int id) {
         Brigada brigada = null;
 
-        String SQL = "SELECT * FROM brigada WHERE id_brigada=? and estado=1";
+        String SQL = "SELECT * FROM brigada WHERE id_brigada=?";
         PreparedStatement ps = null;
 
         try {
@@ -72,7 +72,7 @@ public class BrigadaData {
                 brigada.setEstado(rs.getBoolean("estado"));
                 brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
                 brigada.setNombre_cuartel(rs.getString("nombre_cuartel"));
-                cuart.setId_cuartel(rs.getInt("id_brigada"));
+                cuart.setId_cuartel(rs.getInt("id_cuartel"));/////aaaaaaaaaaaaaaaaaaaaaaaaa
                 brigada.setCuartel(cuart);
                 
             } else {
