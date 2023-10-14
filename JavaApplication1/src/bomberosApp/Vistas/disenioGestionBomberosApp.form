@@ -55,6 +55,14 @@
             <Property name="text" type="java.lang.String" value="Brigadas"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="JMICargarBrigadas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar Brigadas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMICargarBrigadasActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="JMIGestionDeBrigadas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificacion y Busqueda de Brigadas"/>
