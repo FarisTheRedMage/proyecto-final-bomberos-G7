@@ -15,11 +15,11 @@ public class InformacionDeCuartelView1 extends javax.swing.JInternalFrame {
     private Cuartel cuartel = new Cuartel();
     private CuartelData cuartelData = new CuartelData();
     private List<Cuartel> listarCuarteles = cuartelData.ListarCuarteles();
-    
+
     private BrigadaData brigadaData = new BrigadaData();
     private Brigada brigada = new Brigada();
     private List<Brigada> listarBrigada = brigadaData.ListarBrigada();
-    
+
     public InformacionDeCuartelView1() {
         initComponents();
         armarCabeceras();
@@ -76,17 +76,19 @@ public class InformacionDeCuartelView1 extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JBSalir)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(JTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(JBBuscar))))
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JBBuscar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JBSalir)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 11, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,11 +98,11 @@ public class InformacionDeCuartelView1 extends javax.swing.JInternalFrame {
                     .addComponent(JTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(JBBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JBSalir)
-                .addGap(34, 34, 34))
+                .addGap(39, 39, 39))
         );
 
         pack();
@@ -108,31 +110,31 @@ public class InformacionDeCuartelView1 extends javax.swing.JInternalFrame {
 
     private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
 
-        int id = Integer.parseInt(JTFCodigo.getText());
-        Brigada brigadita = (Brigada) brigadaData.ListarBrigadaPorCuartel(id);
-        
-        
         try {
-            JTFCodigo.getText();
-            
-            if (brigadita != null) {
-                
-                
-                DefaultTableModel model = (DefaultTableModel) JTablaBrigadasEnCuartel.getModel(); 
-                model.setRowCount(0); 
-                model.addRow(new Object[]{brigadita.getId_brigada()}); 
-                
-                
-                
-                
+            int id = Integer.parseInt(JTFCodigo.getText());
+            List<Brigada> brigadas = brigadaData.ListarBrigadaPorCuartel(id);
+
+            if (!brigadas.isEmpty()) {
+                DefaultTableModel model = (DefaultTableModel) JTablaBrigadasEnCuartel.getModel();
+                model.setRowCount(0);
+
+                for (Brigada brigada : brigadas) {
+                    model.addRow(new Object[]{
+                        brigada.getId_brigada(),
+                        brigada.getNombre_brigada(),
+                        brigada.getEspecialidad(),
+                        brigada.isEstado(),
+                        brigada.getCuartel().getId_cuartel(),
+                        brigada.isDisponibilidad()
+                    });
+                }
 
             } else {
-                JOptionPane.showMessageDialog(this, "No se encontró un Cuartel con este ID.");
+                JOptionPane.showMessageDialog(this, "No se encontraron brigadas para el Cuartel con este ID.");
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese un número válido para el ID: " + e.getMessage());
         }
-        
     }//GEN-LAST:event_JBBuscarActionPerformed
 //Funca
     private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed

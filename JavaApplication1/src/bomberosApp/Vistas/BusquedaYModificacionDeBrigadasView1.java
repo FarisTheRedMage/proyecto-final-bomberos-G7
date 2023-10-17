@@ -286,8 +286,16 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
     private void JBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNuevoActionPerformed
 
         try {
+            Cuartel c1 = new Cuartel();
+            
+//            brigada.setId_brigada(Integer.parseInt(JTFCodigo.getText()));
             brigada.setNombre_brigada(JTFNombreBrigada.getText());
             brigada.setEspecialidad(JTFEspecialidad.getText());
+
+            cuartel.setNombre_cuartel(JTFCuartelito.getText());
+            c1.setId_cuartel(Integer.parseInt(JTFidCuartel.getText()));
+            brigada.setCuartel(c1);
+            
             if (JRBEstado.isSelected() == true) {
                 brigada.setEstado(true);
             } else {
@@ -304,10 +312,12 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
             limpiar();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "El ID debe ser un número válido. " + e.getMessage());
+//            e.printStackTrace();
             
             limpiar();
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(this, "No deje campos vacíos. " + e.getMessage());
+            e.printStackTrace();
         }
 
 
