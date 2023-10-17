@@ -1,9 +1,17 @@
 package bomberosApp.Vistas;
 
+import bomberosApp.AccesoADatos.BrigadaData;
+import bomberosApp.Entidades.Brigada;
+import java.util.List;
 import javax.swing.ButtonGroup;
 import javax.swing.table.DefaultTableModel;
 
 public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
+    
+    private Brigada brigada = new Brigada();
+    private BrigadaData brigadaD = new BrigadaData();
+    private List<Brigada> listarDispo = brigadaD.ObtenerBrigadasDisponibles();
+    private List<Brigada> listarNODispo = brigadaD.ObtenerBrigadasNODisponibles(); 
 
     public RevisarBrigadasView1() {
         initComponents();
@@ -21,7 +29,6 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         JRBBrigadasNODisponibles = new javax.swing.JRadioButton();
         JRBBrigadasDisponibles = new javax.swing.JRadioButton();
-        JBDisponibleOEnLabor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         JTablaBrigadas = new javax.swing.JTable();
 
@@ -40,13 +47,16 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
         jLabel1.setText("Selecciona una opcion para ver las Brigadas Activas e Inactivas ");
 
         JRBBrigadasNODisponibles.setText("Brigadas En Labor");
+        JRBBrigadasNODisponibles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRBBrigadasNODisponiblesActionPerformed(evt);
+            }
+        });
 
         JRBBrigadasDisponibles.setText("Brigadas Disponibles");
-
-        JBDisponibleOEnLabor.setText("Cambiar Disponible/En Labor");
-        JBDisponibleOEnLabor.addActionListener(new java.awt.event.ActionListener() {
+        JRBBrigadasDisponibles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBDisponibleOEnLaborActionPerformed(evt);
+                JRBBrigadasDisponiblesActionPerformed(evt);
             }
         });
 
@@ -80,8 +90,6 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(JBDisponibleOEnLabor)
-                        .addGap(100, 100, 100)
                         .addComponent(JBSalir))
                     .addComponent(jLabel1)
                     .addComponent(JRBBrigadasNODisponibles)
@@ -101,30 +109,46 @@ public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBSalir)
-                    .addComponent(JBDisponibleOEnLabor))
+                .addComponent(JBSalir)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JBDisponibleOEnLaborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBDisponibleOEnLaborActionPerformed
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_JBDisponibleOEnLaborActionPerformed
 //funca =)
     private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed
        this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
 
+    private void JRBBrigadasDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBBrigadasDisponiblesActionPerformed
+        // TODO add your handling code here:
+                borrarFilasTabla();
+        
+        
+        //        for (Materia materia : listarAlumnos) {
+        //            modelo.addRow(new Object[]{materia.getId_materia(), materia.getNombre(), materia.getAnio()});
+        //        }
+       
+        for (Brigada brigada : listarDispo){
+            modelo.addRow(new Object[]{brigada.getId_brigada(), brigada.getNombre_brigada(), brigada.getEspecialidad(), brigada.isEstado(), brigada.getCuartel().getId_cuartel(), brigada.isDisponibilidad(), brigada.getNombre_cuartel()});
+        }
+    }//GEN-LAST:event_JRBBrigadasDisponiblesActionPerformed
+
+    private void JRBBrigadasNODisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBBrigadasNODisponiblesActionPerformed
+        // TODO add your handling code here:
+                borrarFilasTabla();
+        
+        
+        //        for (Materia materia : listarAlumnos) {
+        //            modelo.addRow(new Object[]{materia.getId_materia(), materia.getNombre(), materia.getAnio()});
+        //        }
+       
+        for (Brigada brigada : listarNODispo){
+            modelo.addRow(new Object[]{brigada.getId_brigada(), brigada.getNombre_brigada(), brigada.getEspecialidad(), brigada.isEstado(), brigada.getCuartel().getId_cuartel(), brigada.isDisponibilidad(), brigada.getNombre_cuartel()});
+        }
+    }//GEN-LAST:event_JRBBrigadasNODisponiblesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBDisponibleOEnLabor;
     private javax.swing.JButton JBSalir;
     private javax.swing.JRadioButton JRBBrigadasDisponibles;
     private javax.swing.JRadioButton JRBBrigadasNODisponibles;
@@ -152,6 +176,17 @@ private void armarCabeceras() {
        grupoDeBotones.add(JRBBrigadasNODisponibles);
       
    }
+   
+   public void borrarFilasTabla() {
+        if (modelo != null) {
+            int a = modelo.getRowCount() - 1;
+            if (modelo.getRowCount() > 0) {
+                for (int i = a; i >= 0; i--) {
+                    modelo.removeRow(i);
+                }
+            }
+        }
+    }
 
 
 }

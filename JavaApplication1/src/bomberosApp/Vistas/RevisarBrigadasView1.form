@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="grupoDeBotones">
     </Component>
@@ -34,8 +34,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="JBDisponibleOEnLabor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="JBSalir" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -59,10 +57,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="165" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JBSalir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="JBDisponibleOEnLabor" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="JBSalir" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="39" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -86,18 +81,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Brigadas En Labor"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBBrigadasNODisponiblesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="JRBBrigadasDisponibles">
       <Properties>
         <Property name="text" type="java.lang.String" value="Brigadas Disponibles"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="JBDisponibleOEnLabor">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cambiar Disponible/En Labor"/>
-      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBDisponibleOEnLaborActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBBrigadasDisponiblesActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

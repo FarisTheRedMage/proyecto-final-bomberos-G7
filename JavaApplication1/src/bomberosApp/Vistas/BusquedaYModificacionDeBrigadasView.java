@@ -267,9 +267,9 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             }
 
             if (JRBDisponibilidad.isSelected() == true) {
-                brigada.setEstado(true);
+                brigada.setDisponibilidad(true);
             } else {
-                brigada.setEstado(false);
+                brigada.setDisponibilidad(false);
             }
             brigadaData.ModificarBrigada(brigada);
             limpiar();
