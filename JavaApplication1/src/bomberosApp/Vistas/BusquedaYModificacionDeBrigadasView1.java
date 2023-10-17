@@ -67,6 +67,24 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
 
         jLabel5.setText("Especialidad");
 
+        JTFCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFCodigoActionPerformed(evt);
+            }
+        });
+
+        JTFidCuartel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFidCuartelActionPerformed(evt);
+            }
+        });
+
+        JTFEspecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFEspecialidadActionPerformed(evt);
+            }
+        });
+
         JRBEstado.setText("Estado");
 
         JBGuardar.setText("Guardar Modificaciones");
@@ -87,7 +105,11 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
 
         jLabel6.setText("ID/ Codigo Cuartel");
 
-        JTFCuartelito.setEditable(false);
+        JTFCuartelito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFCuartelitoActionPerformed(evt);
+            }
+        });
 
         JBBuscarPorIDCuartel.setText("Buscar");
         JBBuscarPorIDCuartel.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +149,7 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
                                     .addComponent(jLabel4)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(JTFCuartelito, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 71, Short.MAX_VALUE))
+                                    .addGap(0, 0, Short.MAX_VALUE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
@@ -288,24 +310,25 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
         try {
             Cuartel c1 = new Cuartel();
             
-//            brigada.setId_brigada(Integer.parseInt(JTFCodigo.getText()));
             brigada.setNombre_brigada(JTFNombreBrigada.getText());
             brigada.setEspecialidad(JTFEspecialidad.getText());
 
-            cuartel.setNombre_cuartel(JTFCuartelito.getText());
-            c1.setId_cuartel(Integer.parseInt(JTFidCuartel.getText()));
-            brigada.setCuartel(c1);
-            
             if (JRBEstado.isSelected() == true) {
                 brigada.setEstado(true);
             } else {
                 brigada.setEstado(false);
             }
+            
+            c1.setId_cuartel(Integer.parseInt(JTFidCuartel.getText()));
+            brigada.setCuartel(c1);
+            
             if (JRBDisponibilidad.isSelected() == true) {
-                brigada.setEstado(true);
+                brigada.setDisponibilidad(true);
             } else {
-                brigada.setEstado(false);
+                brigada.setDisponibilidad(false);
             }
+            
+            brigada.setNombre_cuartel(JTFCuartelito.getText());
 
             brigadaData.GuardarBrigada(brigada);
 
@@ -317,11 +340,27 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
             limpiar();
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(this, "No deje campos vacíos. " + e.getMessage());
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
 
     }//GEN-LAST:event_JBNuevoActionPerformed
+
+    private void JTFCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFCodigoActionPerformed
+
+    private void JTFidCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFidCuartelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFidCuartelActionPerformed
+
+    private void JTFCuartelitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCuartelitoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFCuartelitoActionPerformed
+
+    private void JTFEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEspecialidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFEspecialidadActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
