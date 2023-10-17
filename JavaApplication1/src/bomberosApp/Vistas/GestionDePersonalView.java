@@ -10,7 +10,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
-public class GestionDePersonalView1 extends javax.swing.JInternalFrame {
+public class GestionDePersonalView extends javax.swing.JInternalFrame {
 
     private BrigadaData brigadaData = new BrigadaData();
     private List<Brigada> listarBrigada = brigadaData.ListarBrigada();
@@ -19,7 +19,7 @@ public class GestionDePersonalView1 extends javax.swing.JInternalFrame {
     private BomberoData bomberoData = new BomberoData();
     private List<Bombero> listarBomberos = bomberoData.ListarBomberos();
 
-    public GestionDePersonalView1() {
+    public GestionDePersonalView() {
         initComponents();
         CargarComboBox();
     }

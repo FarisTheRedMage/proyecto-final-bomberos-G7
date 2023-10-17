@@ -9,7 +9,7 @@ import java.time.ZoneId;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalFrame {
+public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFrame {
 
     private Cuartel cuartel = new Cuartel();
     private CuartelData cuartelData = new CuartelData();
@@ -19,7 +19,7 @@ public class BusquedaYModificacionDeBrigadasView1 extends javax.swing.JInternalF
     private BrigadaData brigadaData = new BrigadaData();
     private List<Brigada> listarBrigadas = brigadaData.ListarBrigada();
 
-    public BusquedaYModificacionDeBrigadasView1() {
+    public BusquedaYModificacionDeBrigadasView() {
         initComponents();
 
     }

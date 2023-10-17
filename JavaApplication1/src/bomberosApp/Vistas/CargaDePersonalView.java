@@ -8,7 +8,7 @@ import java.time.ZoneId;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class CargaDePersonalView1 extends javax.swing.JInternalFrame {
+public class CargaDePersonalView extends javax.swing.JInternalFrame {
 
     private BrigadaData brigadaData = new BrigadaData();
     private List<Brigada> listarBrigada = brigadaData.ListarBrigada();
@@ -17,7 +17,7 @@ public class CargaDePersonalView1 extends javax.swing.JInternalFrame {
     private BomberoData bomberoData = new BomberoData();
     private List<Bombero> listarBomberos = bomberoData.ListarBomberos();
 
-    public CargaDePersonalView1() {
+    public CargaDePersonalView() {
         initComponents();
         CargarComboBox();
     }

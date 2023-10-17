@@ -209,7 +209,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        BusquedaYModificacionDeBrigadasView1 mybdbv=new BusquedaYModificacionDeBrigadasView1();
+        BusquedaYModificacionDeBrigadasView mybdbv=new BusquedaYModificacionDeBrigadasView();
         mybdbv.setVisible(true);
         escritorio.add(mybdbv);
         escritorio.moveToFront(mybdbv);
@@ -229,7 +229,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        InformacionDeCuartelView1 idcv=new InformacionDeCuartelView1();
+        InformacionDeCuartelView idcv=new InformacionDeCuartelView();
         idcv.setVisible(true);
         escritorio.add(idcv);
         escritorio.moveToFront(idcv);
@@ -239,7 +239,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        CargaDePersonalView1 cdpv=new CargaDePersonalView1();
+        CargaDePersonalView cdpv=new CargaDePersonalView();
         cdpv.setVisible(true);
         escritorio.add(cdpv);
         escritorio.moveToFront(cdpv);
@@ -249,7 +249,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        GestionDePersonalView1 gdpv=new GestionDePersonalView1();
+        GestionDePersonalView gdpv=new GestionDePersonalView();
         gdpv.setVisible(true);
         escritorio.add(gdpv);
         escritorio.moveToFront(gdpv);
@@ -259,7 +259,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        GestionDeCuartelesView1 gdcv=new GestionDeCuartelesView1();
+        GestionDeCuartelesView gdcv=new GestionDeCuartelesView();
         gdcv.setVisible(true);
         escritorio.add(gdcv);
         escritorio.moveToFront(gdcv);

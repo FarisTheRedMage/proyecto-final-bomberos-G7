@@ -5,13 +5,13 @@ import bomberosApp.Entidades.Cuartel;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class GestionDeCuartelesView1 extends javax.swing.JInternalFrame {
+public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
 
     private Cuartel cuartel = new Cuartel();
     private CuartelData cuartelData = new CuartelData();
     private List<Cuartel> listarCuarteles = cuartelData.ListarCuarteles();
 
-    public GestionDeCuartelesView1() {
+    public GestionDeCuartelesView() {
         initComponents();
     }
 
