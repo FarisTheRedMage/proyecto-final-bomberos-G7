@@ -527,6 +527,47 @@ public class MaindePruebas {
 //        for (Bombero bombero : bomberosRenombrados) {
 //            System.out.println(" Nombre: " + bombero.getNombre() + "  Nombre Clave: " + bombero.getNombre_clave());
 //        }
+
+
+//-------------------------------------------------------------------------------------------------------
+//probamos local date, para ordenar los siniestros:
+
+//    public class Siniestro {
+//    private Date fecha;
+//
+//    public Siniestro(Date fecha) {
+//        this.fecha = fecha;
+//    }
+//
+//    public Date getFecha() {
+//        return fecha;
+//    }
+//
+//    public static void main(String[] args) {
+//        // Simulamos una lista de siniestros
+//        List<Siniestro> siniestros = new ArrayList<>();
+//
+//        // Obtén la fecha actual
+//        LocalDate fechaActual = LocalDate.now();
+//
+//        // Calcula la fecha del día anterior
+//        LocalDate fechaAyer = fechaActual.minusDays(1);
+//
+//        // Filtra los siniestros del día actual y el día anterior
+//        List<Siniestro> siniestrosDelDia = new ArrayList<>();
+//        for (Siniestro siniestro : siniestros) {
+//            LocalDate fechaSiniestro = siniestro.getFecha().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//            if (fechaSiniestro.isEqual(fechaActual) || fechaSiniestro.isEqual(fechaAyer)) {
+//                siniestrosDelDia.add(siniestro);
+//            }
+//        }
+//
+//        // Ahora, 'siniestrosDelDia' contiene los siniestros del día actual y el día anterior
+//        for (Siniestro siniestro : siniestrosDelDia) {
+//            System.out.println("Fecha del siniestro: " + siniestro.getFecha());
+//        }
+//    }
+//}
     }
 
 }

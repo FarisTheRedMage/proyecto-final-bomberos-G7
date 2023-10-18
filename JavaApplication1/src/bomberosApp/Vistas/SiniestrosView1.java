@@ -38,7 +38,6 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         JTCodigo = new javax.swing.JTextField();
         JCBAsignarBrigada = new javax.swing.JComboBox<>();
-        JSCalificacion = new javax.swing.JSpinner();
         JRBEstado = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -52,6 +51,7 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
         JBModificar = new javax.swing.JButton();
         JBGuardarNuevoSiniestro = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        JCBCalificacion = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -80,7 +80,12 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
             }
         });
 
-        JRBEstado.setText("SINIESTRO ACTIVO O NO");
+        JRBEstado.setText("Marcar si esta en curso");
+        JRBEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRBEstadoActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Detalles Del Siniestro");
 
@@ -112,6 +117,13 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
         JBGuardarNuevoSiniestro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBGuardarNuevoSiniestroActionPerformed(evt);
+            }
+        });
+
+        JCBCalificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        JCBCalificacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBCalificacionActionPerformed(evt);
             }
         });
 
@@ -174,17 +186,19 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JBGuardarNuevoSiniestro)
-                            .addComponent(jLabel10))
-                        .addGap(18, 18, 18)
-                        .addComponent(JSCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(jLabel10)
+                                .addGap(28, 28, 28)
+                                .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(65, 65, 65)
                         .addComponent(JRBEstado)))
                 .addContainerGap(37, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(233, 233, 233))
         );
         layout.setVerticalGroup(
@@ -225,14 +239,14 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(JSCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JRBEstado))
+                    .addComponent(JRBEstado)
+                    .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBSalir)
                     .addComponent(JBModificar)
                     .addComponent(JBGuardarNuevoSiniestro))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -258,6 +272,14 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBSalirActionPerformed
 
+    private void JCBCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBCalificacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBCalificacionActionPerformed
+
+    private void JRBEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JRBEstadoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
@@ -265,10 +287,10 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
     private javax.swing.JButton JBModificar;
     private javax.swing.JButton JBSalir;
     private javax.swing.JComboBox<String> JCBAsignarBrigada;
+    private javax.swing.JComboBox<String> JCBCalificacion;
     private com.toedter.calendar.JDateChooser JDCFechaDeResolucion;
     private com.toedter.calendar.JDateChooser JDCFechaInicio;
     private javax.swing.JRadioButton JRBEstado;
-    private javax.swing.JSpinner JSCalificacion;
     private javax.swing.JTextField JTCodigo;
     private javax.swing.JTextPane JTDetallesDelSiniestro;
     private javax.swing.JTextField JTFCoorX;
