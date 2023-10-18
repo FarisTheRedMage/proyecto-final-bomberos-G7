@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2023 a las 23:20:07
+-- Tiempo de generación: 19-10-2023 a las 00:02:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -129,7 +129,9 @@ CREATE TABLE `siniestro` (
 --
 
 INSERT INTO `siniestro` (`id_siniestro`, `coord_X`, `coord_Y`, `fecha_siniestro`, `tipo`, `detalles`, `id_brigada`, `fecha_resolucion`, `calificacion`, `estado`) VALUES
-(2, 331, 211, '2023-05-15', 'DERRUMBE', 'Incendio en una Casa de la zona.', 2, '2023-05-16', 3, 1);
+(2, 31, 21, '2023-05-15', 'DERRUMBE', 'Incendio en una Casa de la zona.', 2, '2023-05-16', 10, 1),
+(3, 11, 22, '2023-10-18', 'Inundacion', 'inundacion de departamentos', 2, NULL, 0, 1),
+(4, 32, 25, '2023-10-17', 'Incendio - bosque', 'bosque prendido fuego', 3, NULL, 0, 1);
 
 --
 -- Índices para tablas volcadas
@@ -189,7 +191,7 @@ ALTER TABLE `cuartel`
 -- AUTO_INCREMENT de la tabla `siniestro`
 --
 ALTER TABLE `siniestro`
-  MODIFY `id_siniestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_siniestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
