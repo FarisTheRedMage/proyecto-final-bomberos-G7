@@ -193,7 +193,7 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
     private void JBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarActionPerformed
         try {
             Brigada brigada = new Brigada();
-            bombero.setDni(JTFDni.getText());
+            bombero.setDni(Integer.parseInt(JTFDni.getText()));
             bombero.setApellido(JTFApellido.getText());
             bombero.setNombre(JTFNombre.getText());
             bombero.setFecha_nacimiento(JDCFechaNacimiento.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());

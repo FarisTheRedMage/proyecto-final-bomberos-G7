@@ -249,7 +249,7 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
             bombero.setGrupo_sanguineo((String) JCBGrupoSanguineo.getSelectedItem());
             bombero.setNombre_clave((String) JCBNombreClave.getSelectedItem());
             bombero.setCelular(JTFTelefono.getText());
-            bombero.setDni(JTFDni.getText());
+            bombero.setDni(Integer.parseInt(JTFDni.getText()));
 
             if (JRBEstado.isSelected() == true) {
                 bombero.setEstado(true);
@@ -306,7 +306,7 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
             if (bombi != null) {
                 JTFApellidos.setText(bombi.getApellido());
                 JTFNombres.setText(bombi.getNombre());
-                JTFDni.setText(bombi.getDni());
+                JTFDni.setText(String.valueOf(bombi.getDni()));
                 JDCFechaDeNacimiento.setDate(Date.from(bombi.getFecha_nacimiento().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 JCBCodigoDeBrigada.setSelectedItem(bombi.getBrigada().getId_brigada());
                 JCBGrupoSanguineo.setSelectedItem(bombi.getGrupo_sanguineo());

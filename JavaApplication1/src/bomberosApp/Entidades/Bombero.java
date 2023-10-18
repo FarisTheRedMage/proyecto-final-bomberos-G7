@@ -6,7 +6,7 @@ public class Bombero {
     private int id_bombero;
     private String nombre;
     private String apellido;
-    private String dni;
+    private int dni;
     private LocalDate fecha_nacimiento;
     private String grupo_sanguineo;
     private Brigada brigada;
@@ -17,7 +17,7 @@ public class Bombero {
     public Bombero() {
     }
 
-    public Bombero(String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado, String nombre_clave) {
+    public Bombero(String nombre, String apellido, int dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado, String nombre_clave) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -29,7 +29,7 @@ public class Bombero {
         this.nombre_clave = nombre_clave;
     }
 
-    public Bombero(int id_bombero, String nombre, String apellido, String dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado,String nombre_clave) {
+    public Bombero(int id_bombero, String nombre, String apellido, int dni, LocalDate fecha_nacimiento, String grupo_sanguineo, Brigada brigada, String celular, boolean estado,String nombre_clave) {
         this.id_bombero = id_bombero;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -66,11 +66,11 @@ public class Bombero {
         this.apellido = apellido;
     }
 
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 

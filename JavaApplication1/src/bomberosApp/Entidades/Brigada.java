@@ -101,13 +101,13 @@ public class Brigada {
 
     @Override
     public String toString() {
-        return " ID" + id_brigada + 
-                ", Nombre de la brigada" + nombre_brigada +
-                ", Especialidad" + especialidad + 
-                ", Estado" + estado + 
-                ", Cuartel" + cuartel + 
-                ", Disponibilidad" + disponibilidad +
-                ", Nombre del Cuartel" + nombre_cuartel;
+        return " ID " + id_brigada + 
+                ", Nombre " + nombre_brigada +
+                ", Especialidad " + especialidad + 
+                ", Estado " + estado + 
+                ", Cuartel " + cuartel + 
+                ", Disponibilidad " + disponibilidad +
+                ", Nombre Cuartel " + nombre_cuartel;
         
     }
 
