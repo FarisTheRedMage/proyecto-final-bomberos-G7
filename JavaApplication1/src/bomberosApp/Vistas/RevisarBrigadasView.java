@@ -6,14 +6,14 @@ import java.util.List;
 import javax.swing.ButtonGroup;
 import javax.swing.table.DefaultTableModel;
 
-public class RevisarBrigadasView1 extends javax.swing.JInternalFrame {
+public class RevisarBrigadasView extends javax.swing.JInternalFrame {
     
     private Brigada brigada = new Brigada();
     private BrigadaData brigadaD = new BrigadaData();
     private List<Brigada> listarDispo = brigadaD.ObtenerBrigadasDisponibles();
     private List<Brigada> listarNODispo = brigadaD.ObtenerBrigadasNODisponibles(); 
 
-    public RevisarBrigadasView1() {
+    public RevisarBrigadasView() {
         initComponents();
         armarCabeceras();
         unirBotones();
