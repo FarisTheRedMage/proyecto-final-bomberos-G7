@@ -117,7 +117,7 @@ public class PersonalEnBrigadasView1 extends javax.swing.JInternalFrame {
 
     private void JCBPersonalEnBrigadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBPersonalEnBrigadaActionPerformed
         Brigada brig = (Brigada) JCBPersonalEnBrigada.getSelectedItem();
-
+        
         if (brig != null) {
             llenarTabla(brig);
         }
@@ -163,7 +163,7 @@ public class PersonalEnBrigadasView1 extends javax.swing.JInternalFrame {
             List<Bombero> bomberos = bomberoData.ListarBomberosPorBrigada(brigada.getId_brigada());
 
             for (Bombero bombero : bomberos) {
-                int brigadaId = (bombero.getBrigada() != null) ? bombero.getBrigada().getId_brigada() : -1;
+//                Brigada brig = new Brigada();
                 modelo.addRow(new Object[]{
                     bombero.getId_bombero(),
                     bombero.getNombre(),
@@ -171,7 +171,7 @@ public class PersonalEnBrigadasView1 extends javax.swing.JInternalFrame {
                     bombero.getDni(),
                     bombero.getFecha_nacimiento(),
                     bombero.getGrupo_sanguineo(),
-                    (brigadaId != -1) ? brigadaId : "Sin Brigada",
+                    bombero.getBrigada(),
                     bombero.getCelular(),
                     bombero.isEstado(),
                     bombero.getNombre_clave()
@@ -179,5 +179,4 @@ public class PersonalEnBrigadasView1 extends javax.swing.JInternalFrame {
             }
         }
     }
-
 }
