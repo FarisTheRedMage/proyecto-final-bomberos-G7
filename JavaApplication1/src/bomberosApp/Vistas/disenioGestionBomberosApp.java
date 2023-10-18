@@ -279,7 +279,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here
          escritorio.removeAll();
         escritorio.repaint();
-        PersonalEnBrigadasView1 pebv=new PersonalEnBrigadasView1();
+        PersonalEnBrigadasView pebv=new PersonalEnBrigadasView();
         pebv.setVisible(true);
         escritorio.add(pebv);
         escritorio.moveToFront(pebv);

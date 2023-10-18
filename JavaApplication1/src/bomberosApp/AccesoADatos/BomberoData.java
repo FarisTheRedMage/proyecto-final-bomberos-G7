@@ -212,12 +212,15 @@ public class BomberoData {
 
             while (rs.next()) {
                 Bombero bombero = new Bombero();
+                Brigada brigada = new Brigada();
                 bombero.setId_bombero(rs.getInt("id_bombero"));
                 bombero.setNombre(rs.getString("nombre"));
                 bombero.setApellido(rs.getString("apellido"));
                 bombero.setDni(rs.getInt("dni"));
                 bombero.setFecha_nacimiento(rs.getDate("fecha_nacimiento").toLocalDate());
                 bombero.setGrupo_sanguineo(rs.getString("grupo_sanguineo"));
+                brigada.setId_brigada(rs.getInt("id_brigada"));
+                bombero.setBrigada(brigada);
                 bombero.setCelular(rs.getString("celular"));
                 bombero.setEstado(true);
                 bombero.setNombre_clave(rs.getNString("nombre_clave"));
