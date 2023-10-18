@@ -3,7 +3,6 @@ package bomberosApp.AccesoADatos;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Siniestro;
-import bomberosApp.Enumeraciones.TipoSiniestro;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -492,7 +491,7 @@ public class MaindePruebas {
 //                    System.out.println("Coordenada X: " + siniestro.getCoord_X());
 //                    System.out.println("Coordenada Y: " + siniestro.getCoord_Y());  
 //                    System.out.println("Fecha Inicio de Siniestro: " + siniestro.getFecha_siniestro());
-//                    System.out.println("Tipo: " + siniestro.getTipo().getIncidencia());
+//                    System.out.println("Tipo: " + siniestro.getTipo());
 //                    System.out.println("Detalles: " + siniestro.getDetalles());
 //                    System.out.println("Codigo de Brigada: " + siniestro.getBrigada().getId_brigada());//-----
 //                    System.out.println("Fecha de Resolucion: " + siniestro.getFecha_resolucion());

@@ -1,6 +1,6 @@
 package bomberosApp.Entidades;
 
-import bomberosApp.Enumeraciones.TipoSiniestro;
+
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -10,7 +10,7 @@ public class Siniestro {
     private int coord_X;
     private int coord_Y;
     private LocalDate fecha_siniestro;
-    private TipoSiniestro tipo;
+    private String tipo;
     private String detalles;
     private Brigada brigada;
     private LocalDate fecha_resolucion;
@@ -20,7 +20,7 @@ public class Siniestro {
     public Siniestro() {
     }
 
-    public Siniestro(int coord_X, int coord_Y, LocalDate fecha_siniestro, TipoSiniestro tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
+    public Siniestro(int coord_X, int coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
         this.fecha_siniestro = fecha_siniestro;
@@ -32,7 +32,7 @@ public class Siniestro {
         this.estado = estado;
     }
 
-    public Siniestro(int id_siniestro, int coord_X, int coord_Y, LocalDate fecha_siniestro, TipoSiniestro tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
+    public Siniestro(int id_siniestro, int coord_X, int coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
         this.id_siniestro = id_siniestro;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
@@ -77,11 +77,11 @@ public class Siniestro {
         this.fecha_siniestro = fecha_siniestro;
     }
 
-    public TipoSiniestro getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoSiniestro tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

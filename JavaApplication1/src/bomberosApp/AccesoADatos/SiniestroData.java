@@ -3,7 +3,6 @@ package bomberosApp.AccesoADatos;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Siniestro;
-import bomberosApp.Enumeraciones.TipoSiniestro;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -30,7 +29,7 @@ public class SiniestroData {
             ps.setInt(1, siniestro.getCoord_X());
             ps.setInt(2, siniestro.getCoord_Y());
             ps.setDate(3, Date.valueOf(siniestro.getFecha_siniestro()));
-            ps.setString(4, siniestro.getTipo().name());
+            ps.setString(4, siniestro.getTipo());
             ps.setString(5, siniestro.getDetalles());
 
             ps.setInt(6, siniestro.getBrigada().getId_brigada());//----------
@@ -88,7 +87,7 @@ public class SiniestroData {
                 siniestro.setCoord_X(rs.getInt("coord_X"));
                 siniestro.setCoord_Y(rs.getInt("coord_Y"));
                 siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
-                siniestro.setTipo(TipoSiniestro.values()[0]);
+                siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
                 brg.setId_brigada(rs.getInt("id_brigada"));
                 siniestro.setBrigada(brg);
@@ -125,7 +124,7 @@ public class SiniestroData {
             ps.setInt(1, siniestro.getCoord_X());
             ps.setInt(2, siniestro.getCoord_Y());
             ps.setDate(3, Date.valueOf(siniestro.getFecha_siniestro()));
-            ps.setString(4, siniestro.getTipo().name());
+            ps.setString(4, siniestro.getTipo());
             ps.setString(5, siniestro.getDetalles());
             ps.setInt(6, siniestro.getBrigada().getId_brigada());
             ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
@@ -181,11 +180,18 @@ public class SiniestroData {
                 siniestro.setCoord_X(rs.getInt("coord_X"));
                 siniestro.setCoord_Y(rs.getInt("coord_Y"));
                 siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
-                siniestro.setTipo(TipoSiniestro.values()[0]);
+                siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
                 brigada.setId_brigada(rs.getInt("id_brigada"));
                 siniestro.setBrigada(brigada);
-                siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+                
+                if (rs.getDate("fecha_resolucion")!=null){
+                       siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+                    
+                }else{
+                    siniestro.setFecha_resolucion(null);
+                }
+               
                 siniestro.setCalificacion(rs.getInt("calificacion"));
                 siniestro.setEstado(rs.getBoolean("estado"));
                 

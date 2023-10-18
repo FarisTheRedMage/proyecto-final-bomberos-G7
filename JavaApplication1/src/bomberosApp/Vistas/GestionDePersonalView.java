@@ -105,6 +105,12 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
 
         JCBGrupoSanguineo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" }));
 
+        JCBCodigoDeBrigada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBCodigoDeBrigadaActionPerformed(evt);
+            }
+        });
+
         jLabel18.setText("Nombre Clave");
 
         JCBNombreClave.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Alfa", "Beta", "Gama", "Omega", "Zetta" }));
@@ -321,6 +327,10 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Ingrese un número válido para el ID: " + e.getMessage());
         }
     }//GEN-LAST:event_JBBuscarPorIDActionPerformed
+
+    private void JCBCodigoDeBrigadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBCodigoDeBrigadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBCodigoDeBrigadaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscarPorDni;
