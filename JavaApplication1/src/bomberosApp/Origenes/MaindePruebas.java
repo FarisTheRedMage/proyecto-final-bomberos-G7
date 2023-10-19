@@ -1,4 +1,4 @@
-package bomberosApp.AccesoADatos;
+package bomberosApp.Origenes;
 
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;

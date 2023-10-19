@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bomberosApp.Vistas;
 
+import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Siniestro;
@@ -13,22 +9,21 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author lucia
- */
 public class SiniestrosView1 extends javax.swing.JInternalFrame {
 
     private SiniestroData sd = new SiniestroData();
     private Siniestro siniestro = new Siniestro();
     private List<Siniestro> listarSiniestros = sd.ListarSiniestro();
-    
-    
+
+    private Brigada brigada = new Brigada();
+    private BrigadaData brigadaData = new BrigadaData();
+    private List<Brigada> listarBrigada = brigadaData.ListarBrigada();
+
     public SiniestrosView1() {
         initComponents();
+        llenarComboBox();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -39,7 +34,6 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         JTCodigo = new javax.swing.JTextField();
@@ -80,6 +74,12 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Calificacion");
 
+        JCBAsignarBrigada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBAsignarBrigadaActionPerformed(evt);
+            }
+        });
+
         JRBEstado.setText("Marcar si esta en curso");
 
         jLabel6.setText("Detalles Del Siniestro");
@@ -115,11 +115,6 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
         });
 
         jCBoxTipoSiniestro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Incendio", "Derrumbe", "Rescate en Montaña", "Rescate en Accidente", "Inundación", "Prevención" }));
-        jCBoxTipoSiniestro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBoxTipoSiniestroActionPerformed(evt);
-            }
-        });
 
         JCBCalificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
@@ -151,7 +146,7 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(201, 201, 201)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -243,89 +238,113 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBGuardarNuevoSiniestroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarNuevoSiniestroActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_JBGuardarNuevoSiniestroActionPerformed
 
     private void JBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBModificarActionPerformed
-        // TODO add your handling code here:
         try {
-            Brigada brigada = new Brigada();
-            
+            // Recopila y asigna datos de la interfaz a la entidad Siniestro.
             siniestro.setCoord_X(Integer.parseInt(JTFCoordX.getText()));
             siniestro.setCoord_Y(Integer.parseInt(JTFCoordY.getText()));
-            siniestro.setFecha_siniestro(JDCFechaInicio.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-            siniestro.setTipo((String)jCBoxTipoSiniestro.getSelectedItem());
+
+            if (JDCFechaInicio.getDate() != null) {
+                siniestro.setFecha_siniestro(JDCFechaInicio.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            } else {
+                siniestro.setFecha_siniestro(null);  // Permite fecha_siniestro  null.
+            }
+            siniestro.setTipo((String) jCBoxTipoSiniestro.getSelectedItem());
             siniestro.setDetalles(JTDetallesDelSiniestro.getText());
-            brigada.setId_brigada((int)JCBAsignarBrigada.getSelectedItem());                    
-            siniestro.setBrigada(brigada);
-            siniestro.setFecha_resolucion(JDCFechaDeResolucion.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-            siniestro.setCalificacion((int)JCBCalificacion.getSelectedItem());
-             if (siniestro.isEstado()) {
-                    JRBEstado.setSelected(true);
+
+            Brigada brigadaSeleccionada = (Brigada) JCBAsignarBrigada.getSelectedItem();
+            siniestro.setBrigada(brigadaSeleccionada);
+
+            if (JDCFechaDeResolucion.getDate() != null) {
+                siniestro.setFecha_resolucion(JDCFechaDeResolucion.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            } else {
+                siniestro.setFecha_resolucion(null);  // Permite fecha_resolución como null.
+            }
+
+            // Procesa la calificación si se selecciona una Sino null.
+            Integer calificacion = null;
+            Object selectedCalificacion = JCBCalificacion.getSelectedItem();
+            if (selectedCalificacion != null) {
+                if (selectedCalificacion instanceof Integer) {
+                    calificacion = (Integer) selectedCalificacion;
+                } else {
+                    calificacion = Integer.parseInt(selectedCalificacion.toString());
                 }
-                if (siniestro.isEstado() == false) {
-                    JRBEstado.setSelected(false);
-                }
-                
-             sd.ModificarSiniestro(siniestro);
-             limpiar();
-             
+            }
+            siniestro.setCalificacion(calificacion);
+            // Actualiza la fecha de resolución en la interfaz si es null.
+            if (siniestro.getFecha_resolucion() == null) {
+                JDCFechaDeResolucion.setDate(null);
+            } else {
+                JDCFechaDeResolucion.setDate(Date.from(siniestro.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+            }
+            // Llama al método pa modificar
+            sd.ModificarSiniestro(siniestro);
+            JOptionPane.showMessageDialog(this, "Siniestro modificado exitosamente.");
+            limpiar();
         } catch (NullPointerException ex) {
-            JOptionPane.showMessageDialog(this, "No deje campos vacios"+ex.getMessage());
+            JOptionPane.showMessageDialog(this, "No deje campos vacíos");
             limpiar();
-        } catch (NumberFormatException ex2){
-            JOptionPane.showMessageDialog(this, "El dni debe ser un numero"+ ex2.getMessage());
+
+            ex.printStackTrace();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "El campo debe ser un número");
             limpiar();
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_JBModificarActionPerformed
 
     private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
 
     private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
-        // TODO add your handling code here:
-       
+
         try {
             int id = Integer.parseInt(JTCodigo.getText());
             Siniestro sini = sd.BuscarSiniestroPorID(id);
-            
-            if(sini != null){
+
+            if (sini != null) {
                 JTFCoordX.setText(String.valueOf(sini.getCoord_X()));
                 JTFCoordY.setText(String.valueOf(sini.getCoord_Y()));
                 JDCFechaInicio.setDate(Date.from(sini.getFecha_siniestro().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 jCBoxTipoSiniestro.setSelectedItem(sini.getTipo());
                 JTDetallesDelSiniestro.setText(sini.getDetalles());
                 JCBAsignarBrigada.setSelectedItem(sini.getBrigada()); //REVISAR SI FALTA ID
-                
-                
-                JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+
+                if (sini.getFecha_resolucion() == null) {
+                    JDCFechaDeResolucion.setDate(null);
+                } else {
+                    JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                }
+
                 JCBCalificacion.setSelectedItem(sini.getCalificacion());
-                
+
                 if (sini.isEstado()) {
                     JRBEstado.setSelected(true);
                 }
                 if (sini.isEstado() == false) {
                     JRBEstado.setSelected(false);
                 }
-                
-                
             }
-            
+
         } catch (NullPointerException ex) {
-            JOptionPane.showMessageDialog(this, "No deje campos vacios"+ex.getMessage());
+            JOptionPane.showMessageDialog(this, "No deje campos vacios" + ex.getMessage());
             limpiar();
-        } catch (NumberFormatException ex2){
-            JOptionPane.showMessageDialog(this, "El dni debe ser un numero"+ ex2.getMessage());
+        } catch (NumberFormatException ex2) {
+            JOptionPane.showMessageDialog(this, "El dni debe ser un numero" + ex2.getMessage());
             limpiar();
         }
-        
+
     }//GEN-LAST:event_JBBuscarActionPerformed
 
-    private void jCBoxTipoSiniestroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBoxTipoSiniestroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCBoxTipoSiniestroActionPerformed
+    private void JCBAsignarBrigadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAsignarBrigadaActionPerformed
+
+    }//GEN-LAST:event_JCBAsignarBrigadaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -333,7 +352,7 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
     private javax.swing.JButton JBGuardarNuevoSiniestro;
     private javax.swing.JButton JBModificar;
     private javax.swing.JButton JBSalir;
-    private javax.swing.JComboBox<String> JCBAsignarBrigada;
+    private javax.swing.JComboBox<Brigada> JCBAsignarBrigada;
     private javax.swing.JComboBox<String> JCBCalificacion;
     private com.toedter.calendar.JDateChooser JDCFechaDeResolucion;
     private com.toedter.calendar.JDateChooser JDCFechaInicio;
@@ -351,16 +370,30 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-    public void limpiar(){
-    JTFCoordX.setText("");
-    JTFCoordY.setText("");
-    JTCodigo.setText("");
-    
-    
+
+    public void limpiar() {
+        JTCodigo.setText("");
+        JTFCoordX.setText("");
+        JTFCoordY.setText("");
+        JTDetallesDelSiniestro.setText("");
+        JRBEstado.setSelected(false);
+        jCBoxTipoSiniestro.setSelectedIndex(0);
+        JCBAsignarBrigada.setSelectedIndex(0);
+        JCBCalificacion.setSelectedIndex(0);
+
+        JDCFechaDeResolucion.setDate(null);//
+        JDCFechaInicio.setDate(null);//
+    }
+
+    private void llenarComboBox() {
+        JCBAsignarBrigada.removeAllItems();
+
+        for (Brigada listarBrigada : listarBrigada) {
+            JCBAsignarBrigada.addItem(listarBrigada);
+        }
     }
 
 }

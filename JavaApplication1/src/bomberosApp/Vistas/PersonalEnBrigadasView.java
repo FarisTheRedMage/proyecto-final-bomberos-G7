@@ -120,7 +120,6 @@ public class PersonalEnBrigadasView extends javax.swing.JInternalFrame {
 
     private void JCBPersonalEnBrigadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBPersonalEnBrigadaActionPerformed
         Brigada brig = (Brigada) JCBPersonalEnBrigada.getSelectedItem();
-        
         if (brig != null) {
             llenarTabla(brig);
         }
@@ -166,7 +165,6 @@ public class PersonalEnBrigadasView extends javax.swing.JInternalFrame {
             List<Bombero> bomberos = bomberoData.ListarBomberosPorBrigada(brigada.getId_brigada());
 
             for (Bombero bombero : bomberos) {
-//                Brigada brig = new Brigada();
                 modelo.addRow(new Object[]{
                     bombero.getId_bombero(),
                     bombero.getNombre(),

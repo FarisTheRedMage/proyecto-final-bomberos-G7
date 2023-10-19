@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -34,15 +35,13 @@ public class SiniestroData {
 
             ps.setInt(6, siniestro.getBrigada().getId_brigada());//----------
 
-         
-                if (siniestro.getFecha_resolucion()!=null){
-                       ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
-                    
-                }else{
-                    ps.setNull(7, java.sql.Types.NULL);
-                }
-            
-            
+            if (siniestro.getFecha_resolucion() != null) {
+                ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
+
+            } else {
+                ps.setNull(7, java.sql.Types.NULL);
+            }
+
             ps.setInt(8, siniestro.getCalificacion());
             ps.setBoolean(9, siniestro.isEstado());
 
@@ -91,14 +90,14 @@ public class SiniestroData {
                 siniestro.setDetalles(rs.getString("detalles"));
                 brg.setId_brigada(rs.getInt("id_brigada"));
                 siniestro.setBrigada(brg);
-               
-                if (rs.getDate("fecha_resolucion")!=null){
-                       siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
-                    
-                }else{
+
+                if (rs.getDate("fecha_resolucion") != null) {
+                    siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+
+                } else {
                     siniestro.setFecha_resolucion(null);
                 }
-                
+
                 siniestro.setCalificacion(rs.getInt("calificacion"));
                 siniestro.setEstado(rs.getBoolean("estado"));
 
@@ -112,12 +111,11 @@ public class SiniestroData {
         }
         return siniestro;
     }
-    
-    public void ModificarSiniestro(Siniestro siniestro){
+
+    public void ModificarSiniestro(Siniestro siniestro) {
         String SQL = "UPDATE siniestro SET coord_X=?, coord_Y=?, fecha_siniestro=?, tipo=?, detalles=?, id_brigada=?, fecha_resolucion=?, calificacion=?, estado=? WHERE id_siniestro = ?";
 
-        PreparedStatement ps= null;
-
+        PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(SQL);
 
@@ -127,25 +125,30 @@ public class SiniestroData {
             ps.setString(4, siniestro.getTipo());
             ps.setString(5, siniestro.getDetalles());
             ps.setInt(6, siniestro.getBrigada().getId_brigada());
-            ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
+           
+            if (siniestro.getFecha_resolucion() != null) {
+                ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
+            } else {
+                ps.setNull(7, Types.DATE);
+            }
+            
             ps.setInt(8, siniestro.getCalificacion());
             ps.setBoolean(9, siniestro.isEstado());
             ps.setInt(10, siniestro.getId_siniestro());
-            int exito= ps.executeUpdate();
 
-            if(exito == 1){
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
                 JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
-            }else {
-                    JOptionPane.showMessageDialog(null, "El Siniestro no existe");
-                }
-
+            } else {
+                JOptionPane.showMessageDialog(null, "El Siniestro no existe");
+            }
             ps.close();
-
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro" + ex.getMessage());
-        } 
+        }
     }
-    
+
     public void EliminarSiniestro(int id) {
         try {
             String SQL = "UPDATE siniestro SET estado = 0 WHERE id_siniestro = ? ";
@@ -163,19 +166,19 @@ public class SiniestroData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro. " + e.getMessage());
         }
     }
-    
-    public List <Siniestro> ListarSiniestro(){
+
+    public List<Siniestro> ListarSiniestro() {
         List<Siniestro> siniestros = new ArrayList<>();
-        
+
         try {
             String SQL = "SELECT * FROM siniestro";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
-            
-            while (rs.next()){
+
+            while (rs.next()) {
                 Siniestro siniestro = new Siniestro();
                 Brigada brigada = new Brigada();
-                
+
                 siniestro.setId_siniestro(rs.getInt("id_siniestro"));
                 siniestro.setCoord_X(rs.getInt("coord_X"));
                 siniestro.setCoord_Y(rs.getInt("coord_Y"));
@@ -184,26 +187,25 @@ public class SiniestroData {
                 siniestro.setDetalles(rs.getString("detalles"));
                 brigada.setId_brigada(rs.getInt("id_brigada"));
                 siniestro.setBrigada(brigada);
-                
-                if (rs.getDate("fecha_resolucion")!=null){
-                       siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
-                    
-                }else{
+
+                if (rs.getDate("fecha_resolucion") != null) {
+                    siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+
+                } else {
                     siniestro.setFecha_resolucion(null);
                 }
-               
+
                 siniestro.setCalificacion(rs.getInt("calificacion"));
                 siniestro.setEstado(rs.getBoolean("estado"));
-                
-                siniestros.add(siniestro); 
+
+                siniestros.add(siniestro);
             }
-           ps.close();
-            
+            ps.close();
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro" + ex.getMessage());
         }
         return siniestros;
     }
-    
-    
+
 }
