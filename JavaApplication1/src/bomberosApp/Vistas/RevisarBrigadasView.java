@@ -7,11 +7,11 @@ import javax.swing.ButtonGroup;
 import javax.swing.table.DefaultTableModel;
 
 public class RevisarBrigadasView extends javax.swing.JInternalFrame {
-    
+
     private Brigada brigada = new Brigada();
     private BrigadaData brigadaD = new BrigadaData();
     private List<Brigada> listarDispo = brigadaD.ObtenerBrigadasDisponibles();
-    private List<Brigada> listarNODispo = brigadaD.ObtenerBrigadasNODisponibles(); 
+    private List<Brigada> listarNODispo = brigadaD.ObtenerBrigadasNODisponibles();
 
     public RevisarBrigadasView() {
         initComponents();
@@ -20,6 +20,7 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
     }
 
     private DefaultTableModel modelo = new DefaultTableModel();
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -117,33 +118,20 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 //funca =)
     private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed
-       this.dispose();
+        this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
 
     private void JRBBrigadasDisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBBrigadasDisponiblesActionPerformed
-        // TODO add your handling code here:
-                borrarFilasTabla();
-        
-        
-        //        for (Materia materia : listarAlumnos) {
-        //            modelo.addRow(new Object[]{materia.getId_materia(), materia.getNombre(), materia.getAnio()});
-        //        }
-       
-        for (Brigada brigada : listarDispo){
+        borrarFilasTabla();
+        for (Brigada brigada : listarDispo) {
             modelo.addRow(new Object[]{brigada.getId_brigada(), brigada.getNombre_brigada(), brigada.getEspecialidad(), brigada.isEstado(), brigada.getCuartel().getId_cuartel(), brigada.isDisponibilidad(), brigada.getNombre_cuartel()});
         }
     }//GEN-LAST:event_JRBBrigadasDisponiblesActionPerformed
 
     private void JRBBrigadasNODisponiblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBBrigadasNODisponiblesActionPerformed
-        // TODO add your handling code here:
-                borrarFilasTabla();
-        
-        
-        //        for (Materia materia : listarAlumnos) {
-        //            modelo.addRow(new Object[]{materia.getId_materia(), materia.getNombre(), materia.getAnio()});
-        //        }
-       
-        for (Brigada brigada : listarNODispo){
+
+        borrarFilasTabla();
+        for (Brigada brigada : listarNODispo) {
             modelo.addRow(new Object[]{brigada.getId_brigada(), brigada.getNombre_brigada(), brigada.getEspecialidad(), brigada.isEstado(), brigada.getCuartel().getId_cuartel(), brigada.isDisponibilidad(), brigada.getNombre_cuartel()});
         }
     }//GEN-LAST:event_JRBBrigadasNODisponiblesActionPerformed
@@ -158,26 +146,24 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-private void armarCabeceras() {
+    private void armarCabeceras() {
         modelo.addColumn("ID Brigada");
         modelo.addColumn("Nombre de la Brigada");
         modelo.addColumn("Especialidad");
         modelo.addColumn("Estado");
         modelo.addColumn("ID Cuartel");
-        
 
         JTablaBrigadas.setModel(modelo);
     }
-    
 
-   private void unirBotones(){
-       ButtonGroup grupoDeBotones = new ButtonGroup();
-       grupoDeBotones.add(JRBBrigadasDisponibles);
-       grupoDeBotones.add(JRBBrigadasNODisponibles);
-      
-   }
-   
-   public void borrarFilasTabla() {
+    private void unirBotones() {
+        ButtonGroup grupoDeBotones = new ButtonGroup();
+        grupoDeBotones.add(JRBBrigadasDisponibles);
+        grupoDeBotones.add(JRBBrigadasNODisponibles);
+
+    }
+
+    public void borrarFilasTabla() {
         if (modelo != null) {
             int a = modelo.getRowCount() - 1;
             if (modelo.getRowCount() > 0) {
@@ -187,6 +173,5 @@ private void armarCabeceras() {
             }
         }
     }
-
 
 }

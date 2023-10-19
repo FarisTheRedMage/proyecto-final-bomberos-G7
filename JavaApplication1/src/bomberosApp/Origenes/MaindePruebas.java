@@ -541,11 +541,12 @@ public class MaindePruebas {
 //    public Date getFecha() {
 //        return fecha;
 //    }
-//
+
 //    public static void main(String[] args) {
-//        // Simulamos una lista de siniestros
+
+// Simulamos una lista de siniestros
 //        List<Siniestro> siniestros = new ArrayList<>();
-//
+
 //        // Obtén la fecha actual
 //        LocalDate fechaActual = LocalDate.now();
 //

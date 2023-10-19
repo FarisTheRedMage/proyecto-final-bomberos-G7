@@ -159,12 +159,16 @@ public class InformacionDeCuartelView extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabeceras() {
+        modelo.addColumn("ID Siniestro");
+        modelo.addColumn("Coordenada X");
+        modelo.addColumn("Coordenada Y");
+        modelo.addColumn("Fecha Siniestro");
+        modelo.addColumn("Tipo");
+        modelo.addColumn("Detalles");
         modelo.addColumn("ID Brigada");
-        modelo.addColumn("Nombre de la Brigada");
-        modelo.addColumn("Especialidad");
+        modelo.addColumn("Fecha Resolucion");
+        modelo.addColumn("Calificacion");
         modelo.addColumn("Estado");
-        modelo.addColumn("ID Cuartel");
-        modelo.addColumn("Disponibiblidad");
 
         JTablaBrigadasEnCuartel.setModel(modelo);
     }

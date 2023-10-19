@@ -9,19 +9,20 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class SiniestrosView1 extends javax.swing.JInternalFrame {
+public class SiniestrosView extends javax.swing.JInternalFrame {
 
     private SiniestroData sd = new SiniestroData();
-    private Siniestro siniestro = new Siniestro();
+    private Siniestro siniestro;
     private List<Siniestro> listarSiniestros = sd.ListarSiniestro();
 
     private Brigada brigada = new Brigada();
     private BrigadaData brigadaData = new BrigadaData();
     private List<Brigada> listarBrigada = brigadaData.ListarBrigada();
 
-    public SiniestrosView1() {
+    public SiniestrosView() {
         initComponents();
         llenarComboBox();
+        siniestro = new Siniestro();
     }
 
     @SuppressWarnings("unchecked")
@@ -154,7 +155,7 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(JDCFechaDeResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(38, 38, 38)
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
                                 .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -216,22 +217,24 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
                     .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(23, 23, 23))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(JDCFechaDeResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)))
-                .addGap(17, 17, 17)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(JRBEstado)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBSalir)
                     .addComponent(JBModificar)
                     .addComponent(JBGuardarNuevoSiniestro))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -245,26 +248,21 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
     private void JBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBModificarActionPerformed
         try {
             // Recopila y asigna datos de la interfaz a la entidad Siniestro.
+            siniestro.setId_siniestro(Integer.parseInt(JTCodigo.getText()));
             siniestro.setCoord_X(Integer.parseInt(JTFCoordX.getText()));
             siniestro.setCoord_Y(Integer.parseInt(JTFCoordY.getText()));
-
-            if (JDCFechaInicio.getDate() != null) {
-                siniestro.setFecha_siniestro(JDCFechaInicio.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
-            } else {
-                siniestro.setFecha_siniestro(null);  // Permite fecha_siniestro  null.
-            }
+            siniestro.setFecha_siniestro(JDCFechaInicio.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             siniestro.setTipo((String) jCBoxTipoSiniestro.getSelectedItem());
             siniestro.setDetalles(JTDetallesDelSiniestro.getText());
-
             Brigada brigadaSeleccionada = (Brigada) JCBAsignarBrigada.getSelectedItem();
             siniestro.setBrigada(brigadaSeleccionada);
-
+            
             if (JDCFechaDeResolucion.getDate() != null) {
                 siniestro.setFecha_resolucion(JDCFechaDeResolucion.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             } else {
                 siniestro.setFecha_resolucion(null);  // Permite fecha_resolución como null.
             }
-
+            
             // Procesa la calificación si se selecciona una Sino null.
             Integer calificacion = null;
             Object selectedCalificacion = JCBCalificacion.getSelectedItem();
@@ -282,12 +280,13 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
             } else {
                 JDCFechaDeResolucion.setDate(Date.from(siniestro.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
             }
+            siniestro.setEstado(JRBEstado.isSelected());
+            
             // Llama al método pa modificar
             sd.ModificarSiniestro(siniestro);
-            JOptionPane.showMessageDialog(this, "Siniestro modificado exitosamente.");
             limpiar();
         } catch (NullPointerException ex) {
-            JOptionPane.showMessageDialog(this, "No deje campos vacíos");
+            JOptionPane.showMessageDialog(this, "No deje campos vacíos" + ex.getMessage());
             limpiar();
 
             ex.printStackTrace();
@@ -327,7 +326,7 @@ public class SiniestrosView1 extends javax.swing.JInternalFrame {
                 if (sini.isEstado()) {
                     JRBEstado.setSelected(true);
                 }
-                if (sini.isEstado() == false) {
+                if (!sini.isEstado()) {
                     JRBEstado.setSelected(false);
                 }
             }

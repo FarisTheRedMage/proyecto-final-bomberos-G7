@@ -65,7 +65,7 @@ public class SiniestroData {
     public Siniestro BuscarSiniestroPorID(int id) {
         Siniestro siniestro = null;
 
-        String SQL = "SELECT * FROM siniestro WHERE id_siniestro = ? and estado = 1";
+        String SQL = "SELECT * FROM siniestro WHERE id_siniestro = ?";
 
         PreparedStatement ps = null;
 
@@ -113,35 +113,38 @@ public class SiniestroData {
     }
 
     public void ModificarSiniestro(Siniestro siniestro) {
-        String SQL = "UPDATE siniestro SET coord_X=?, coord_Y=?, fecha_siniestro=?, tipo=?, detalles=?, id_brigada=?, fecha_resolucion=?, calificacion=?, estado=? WHERE id_siniestro = ?";
+        String SQL = "UPDATE siniestro SET coord_X=?, coord_Y=?, fecha_siniestro=?, tipo=?, detalles=?, id_brigada=?, fecha_resolucion=?, calificacion=?, estado=? "
+                + "WHERE id_siniestro = ?";
 
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(SQL);
-
+            System.out.println(siniestro);
             ps.setInt(1, siniestro.getCoord_X());
             ps.setInt(2, siniestro.getCoord_Y());
             ps.setDate(3, Date.valueOf(siniestro.getFecha_siniestro()));
             ps.setString(4, siniestro.getTipo());
             ps.setString(5, siniestro.getDetalles());
             ps.setInt(6, siniestro.getBrigada().getId_brigada());
-           
+
             if (siniestro.getFecha_resolucion() != null) {
                 ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
+
             } else {
-                ps.setNull(7, Types.DATE);
+                ps.setNull(7, java.sql.Types.NULL);
             }
-            
+
             ps.setInt(8, siniestro.getCalificacion());
             ps.setBoolean(9, siniestro.isEstado());
             ps.setInt(10, siniestro.getId_siniestro());
-
+            
             int exito = ps.executeUpdate();
 
             if (exito == 1) {
                 JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
             } else {
                 JOptionPane.showMessageDialog(null, "El Siniestro no existe");
+
             }
             ps.close();
         } catch (SQLException ex) {
