@@ -224,8 +224,8 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
             cuartel.setId_cuartel(Integer.parseInt(JTFCodigo.getText()));
             cuartel.setNombre_cuartel(JTFNombre.getText());
             cuartel.setDireccion(JTFDireccion.getText());
-            cuartel.setCoord_X(Integer.parseInt(JTFCoordX.getText()));
-            cuartel.setCoord_Y(Integer.parseInt(JTFCoordY.getText()));
+            cuartel.setCoord_X(Double.parseDouble(JTFCoordX.getText())); //---
+            cuartel.setCoord_Y(Double.parseDouble(JTFCoordY.getText())); //----
             cuartel.setTelefono(JTFTelefono.getText());
             cuartel.setCorreo(JTFCorreo.getText());
             cuartel.setTelefono(JTFTelefono.getText());
@@ -251,8 +251,8 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
         try {
             cuartel.setNombre_cuartel(JTFNombre.getText());
             cuartel.setDireccion(JTFDireccion.getText());
-            cuartel.setCoord_X(Integer.parseInt(JTFCoordX.getText()));
-            cuartel.setCoord_Y(Integer.parseInt(JTFCoordY.getText()));
+            cuartel.setCoord_X(Double.parseDouble(JTFCoordX.getText())); //---
+            cuartel.setCoord_Y(Double.parseDouble(JTFCoordY.getText())); //----
             cuartel.setTelefono(JTFTelefono.getText());
             cuartel.setCorreo(JTFCorreo.getText());
             cuartel.setTelefono(JTFTelefono.getText());

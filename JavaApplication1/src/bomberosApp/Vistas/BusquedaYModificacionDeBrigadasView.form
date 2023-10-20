@@ -165,19 +165,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JTFCodigo">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFCodigoActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="JTFidCuartel">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFidCuartelActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="JTFEspecialidad">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFEspecialidadActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="JRBEstado">
       <Properties>
@@ -211,9 +202,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JTFCuartelito">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFCuartelitoActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="JBBuscarPorIDCuartel">
       <Properties>

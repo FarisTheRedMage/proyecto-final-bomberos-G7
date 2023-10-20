@@ -103,7 +103,6 @@ public class SiniestroData {
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(SQL);
-            System.out.println(siniestro);
             ps.setDouble(1, siniestro.getCoord_X());
             ps.setDouble(2, siniestro.getCoord_Y());
             ps.setDate(3, Date.valueOf(siniestro.getFecha_siniestro()));

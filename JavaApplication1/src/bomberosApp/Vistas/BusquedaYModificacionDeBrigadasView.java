@@ -67,24 +67,6 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
 
         jLabel5.setText("Especialidad");
 
-        JTFCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFCodigoActionPerformed(evt);
-            }
-        });
-
-        JTFidCuartel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFidCuartelActionPerformed(evt);
-            }
-        });
-
-        JTFEspecialidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFEspecialidadActionPerformed(evt);
-            }
-        });
-
         JRBEstado.setText("Estado");
 
         JBGuardar.setText("Guardar Modificaciones");
@@ -104,12 +86,6 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         JRBDisponibilidad.setText("Disponibilidad");
 
         jLabel6.setText("ID/ Codigo Cuartel");
-
-        JTFCuartelito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFCuartelitoActionPerformed(evt);
-            }
-        });
 
         JBBuscarPorIDCuartel.setText("Buscar");
         JBBuscarPorIDCuartel.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +194,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//funca
     private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
@@ -281,7 +257,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             JOptionPane.showMessageDialog(this, "No deje campos vacíos " + e.getMessage());
         }
     }//GEN-LAST:event_JBGuardarActionPerformed
-//funca pero se cambia el valor que le ingresas de 1 a 2.
+//funca
     private void JBBuscarPorIDCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarPorIDCuartelActionPerformed
 
         try {
@@ -304,7 +280,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         }
 
     }//GEN-LAST:event_JBBuscarPorIDCuartelActionPerformed
-//
+//funca
     private void JBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNuevoActionPerformed
 
         try {
@@ -342,25 +318,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             JOptionPane.showMessageDialog(this, "No deje campos vacíos. " + e.getMessage());
             //e.printStackTrace();
         }
-
-
     }//GEN-LAST:event_JBNuevoActionPerformed
-
-    private void JTFCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFCodigoActionPerformed
-
-    private void JTFidCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFidCuartelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFidCuartelActionPerformed
-
-    private void JTFCuartelitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCuartelitoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFCuartelitoActionPerformed
-
-    private void JTFEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEspecialidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFEspecialidadActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
