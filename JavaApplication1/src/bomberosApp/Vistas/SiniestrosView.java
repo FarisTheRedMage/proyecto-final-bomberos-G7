@@ -4,6 +4,7 @@ import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Siniestro;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
@@ -125,6 +126,20 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(JTFCoordX, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(334, 334, 334)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addComponent(JTFCoordY, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCBoxTipoSiniestro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -145,32 +160,17 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                                 .addGap(38, 38, 38)
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
-                                .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(JBGuardarNuevoSiniestro))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JBModificar)
-                                .addGap(184, 184, 184)
-                                .addComponent(JBSalir))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(JTFCoordY, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jCBoxTipoSiniestro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(208, 208, 208)
-                        .addComponent(JRBEstado))
+                                .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JBGuardarNuevoSiniestro)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(175, 175, 175)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(JBModificar)
+                                            .addComponent(JRBEstado))))
+                                .addGap(160, 160, 160)
+                                .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)
@@ -184,12 +184,12 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(5, 5, 5)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(JBBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(JTFCoordX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,67 +230,63 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                     .addComponent(JBSalir)
                     .addComponent(JBModificar)
                     .addComponent(JBGuardarNuevoSiniestro))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 //
     private void JBGuardarNuevoSiniestroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarNuevoSiniestroActionPerformed
-//         try {
-//            Cuartel c1 = new Cuartel();
-//            brigada.setId_brigada(Integer.parseInt(JTFCodigo.getText()));
-//            brigada.setNombre_brigada(JTFNombreBrigada.getText());
-//            brigada.setEspecialidad(JTFEspecialidad.getText());
-//            brigada.setEstado(JRBEstado.isSelected());
-//            brigada.setDisponibilidad(JRBDisponibilidad.isSelected());
-//            brigada.setNombre_cuartel(JTFCuartelito.getText());
-//            c1.setId_cuartel(Integer.parseInt(JTFidCuartel.getText()));
-//            brigada.setCuartel(c1);
-//
-//            if (JRBEstado.isSelected() == true) {
-//                brigada.setEstado(true);
-//            } else {
-//                brigada.setEstado(false);
-//            }
-//
-//            if (JRBDisponibilidad.isSelected() == true) {
-//                brigada.setDisponibilidad(true);
-//            } else {
-//                brigada.setDisponibilidad(false);
-//            }
-//            brigadaData.ModificarBrigada(brigada);
-//            limpiar();
-//
-//        } catch (NumberFormatException e) {
-//            JOptionPane.showMessageDialog(this, "El DNI debe ser un número. " + e.getMessage());
-//            limpiar();
-//        } catch (NullPointerException e) {
-//            JOptionPane.showMessageDialog(this, "No deje campos vacíos " + e.getMessage());
-//        }
-//    
+        
+        try {
+            Brigada b1 = new Brigada();
+            siniestro.setCoord_X(Double.parseDouble(JTFCoordX.getText())); //---
+            siniestro.setCoord_Y(Double.parseDouble(JTFCoordY.getText())); //----
+            siniestro.setFecha_siniestro(JDCFechaInicio.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            siniestro.setTipo((String) jCBoxTipoSiniestro.getSelectedItem());
+            siniestro.setDetalles(JTDetallesDelSiniestro.getText());
+            b1.setId_brigada(Integer.parseInt((String) JCBAsignarBrigada.getSelectedItem()));
+            siniestro.setBrigada(b1);
+            siniestro.setFecha_resolucion(JDCFechaDeResolucion.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            siniestro.setCalificacion((int) JCBCalificacion.getSelectedItem());
+            
+            if (JRBEstado.isSelected() == true) {
+                siniestro.setEstado(true);
+            } else {
+                siniestro.setEstado(false);
+            }
+
+            sd.ModificarSiniestro(siniestro);
+            limpiar();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El DNI debe ser un número. " + e.getMessage());
+            limpiar();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(this, "No deje campos vacíos " + e.getMessage());
+        }  
     }//GEN-LAST:event_JBGuardarNuevoSiniestroActionPerformed
 //funca
     private void JBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBModificarActionPerformed
         try {
             // Recopila y asigna datos de la interfaz a la entidad Siniestro.
             siniestro.setId_siniestro(Integer.parseInt(JTCodigo.getText()));
-            
+
             siniestro.setCoord_X(Double.parseDouble(JTFCoordX.getText())); //---
             siniestro.setCoord_Y(Double.parseDouble(JTFCoordY.getText())); //----
-            
+
             siniestro.setFecha_siniestro(JDCFechaInicio.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             siniestro.setTipo((String) jCBoxTipoSiniestro.getSelectedItem());
             siniestro.setDetalles(JTDetallesDelSiniestro.getText());
             Brigada brigadaSeleccionada = (Brigada) JCBAsignarBrigada.getSelectedItem();
             siniestro.setBrigada(brigadaSeleccionada);
-            
+
             if (JDCFechaDeResolucion.getDate() != null) {
                 siniestro.setFecha_resolucion(JDCFechaDeResolucion.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             } else {
                 siniestro.setFecha_resolucion(null);  // Permite fecha_resolución como null.
             }
-            
+
             // Procesa la calificación si se selecciona una Sino null.
             Integer calificacion = null;
             Object selectedCalificacion = JCBCalificacion.getSelectedItem();
@@ -309,7 +305,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 JDCFechaDeResolucion.setDate(Date.from(siniestro.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
             }
             siniestro.setEstado(JRBEstado.isSelected());
-            
+
             // Llama al método pa modificar
             sd.ModificarSiniestro(siniestro);
             limpiar();
@@ -349,7 +345,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                     JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 }
 
-                JCBCalificacion.setSelectedItem(sini.getCalificacion());
+                JCBCalificacion.setSelectedIndex(sini.getCalificacion());
 
                 if (sini.isEstado()) {
                     JRBEstado.setSelected(true);

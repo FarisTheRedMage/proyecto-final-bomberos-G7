@@ -138,7 +138,6 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
                         siniestrosDeAyer.add(siniestro);
                     }
                 }
-//                System.out.println(siniestrosDeAyer);
                 borrarFilasTabla();
                 for (Siniestro siniestro : siniestrosDeAyer) {
 

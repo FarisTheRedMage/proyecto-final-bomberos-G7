@@ -53,7 +53,7 @@
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JBBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="165" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="JBSalir" min="-2" max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Codigo/ID Cuartel"/>
+        <Property name="text" type="java.lang.String" value="Buscar Brigadas por Codigo de Cuartel"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JTFCodigo">

@@ -8,7 +8,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class InformacionDeCuartelView extends javax.swing.JInternalFrame {
+public class InformacionDeBrigadasEnCuartelView extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel();
 
@@ -20,7 +20,7 @@ public class InformacionDeCuartelView extends javax.swing.JInternalFrame {
     private Brigada brigada = new Brigada();
     private List<Brigada> listarBrigada = brigadaData.ListarBrigada();
 
-    public InformacionDeCuartelView() {
+    public InformacionDeBrigadasEnCuartelView() {
         initComponents();
         armarCabeceras();
     }
@@ -55,7 +55,7 @@ public class InformacionDeCuartelView extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("Codigo/ID Cuartel");
+        jLabel1.setText("Buscar Brigadas por Codigo de Cuartel");
 
         JTablaBrigadasEnCuartel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,7 +104,7 @@ public class InformacionDeCuartelView extends javax.swing.JInternalFrame {
                     .addComponent(JTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(JBBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JBSalir)

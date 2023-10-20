@@ -42,7 +42,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="JMIInformacionDeCuartel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Informacion De Cuartel"/>
+                <Property name="text" type="java.lang.String" value="Informacion De Brigadas En Cuartel"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMIInformacionDeCuartelActionPerformed"/>

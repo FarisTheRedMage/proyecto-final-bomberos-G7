@@ -105,7 +105,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         });
         JMCuarteles.add(JMIGestionDeCuarteles);
 
-        JMIInformacionDeCuartel.setText("Informacion De Cuartel");
+        JMIInformacionDeCuartel.setText("Informacion De Brigadas En Cuartel");
         JMIInformacionDeCuartel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JMIInformacionDeCuartelActionPerformed(evt);
@@ -232,7 +232,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        InformacionDeCuartelView idcv=new InformacionDeCuartelView();
+        InformacionDeBrigadasEnCuartelView idcv=new InformacionDeBrigadasEnCuartelView();
         idcv.setVisible(true);
         escritorio.add(idcv);
         escritorio.moveToFront(idcv);
