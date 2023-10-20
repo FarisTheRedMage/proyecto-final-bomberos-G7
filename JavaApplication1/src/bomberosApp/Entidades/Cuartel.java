@@ -5,8 +5,8 @@ public class Cuartel {
     private int id_cuartel;
     private String nombre_cuartel;
     private String direccion;
-    private int coord_X;
-    private int coord_Y;
+    private double coord_X;
+    private double coord_Y;
     private String telefono;
     private String correo;
     private Boolean estado;
@@ -14,7 +14,7 @@ public class Cuartel {
     public Cuartel() {
     }
 
-    public Cuartel(String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String correo, Boolean estado) {
+    public Cuartel(String nombre_cuartel, String direccion, double coord_X, double coord_Y, String telefono, String correo, Boolean estado) {
         this.nombre_cuartel = nombre_cuartel;
         this.direccion = direccion;
         this.coord_X = coord_X;
@@ -24,7 +24,7 @@ public class Cuartel {
         this.estado = estado;
     }
 
-    public Cuartel(int id_cuartel, String nombre_cuartel, String direccion, int coord_X, int coord_Y, String telefono, String correo, Boolean estado) {
+    public Cuartel(int id_cuartel, String nombre_cuartel, String direccion, double coord_X, double coord_Y, String telefono, String correo, Boolean estado) {
         this.id_cuartel = id_cuartel;
         this.nombre_cuartel = nombre_cuartel;
         this.direccion = direccion;
@@ -59,19 +59,19 @@ public class Cuartel {
         this.direccion = direccion;
     }
 
-    public int getCoord_X() {
+    public double getCoord_X() {
         return coord_X;
     }
 
-    public void setCoord_X(int coord_X) {
+    public void setCoord_X(double coord_X) {
         this.coord_X = coord_X;
     }
 
-    public int getCoord_Y() {
+    public double getCoord_Y() {
         return coord_Y;
     }
 
-    public void setCoord_Y(int coord_Y) {
+    public void setCoord_Y(double coord_Y) {
         this.coord_Y = coord_Y;
     }
 
@@ -98,8 +98,6 @@ public class Cuartel {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
-
-
 
     @Override
     public String toString() {

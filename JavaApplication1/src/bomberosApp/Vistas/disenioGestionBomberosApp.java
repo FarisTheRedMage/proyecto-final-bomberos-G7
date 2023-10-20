@@ -222,7 +222,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         escritorio.removeAll();
         escritorio.repaint();
-        HistorialDeEventosView1FC hdsv=new HistorialDeEventosView1FC();
+        HistorialDeEventosView hdsv=new HistorialDeEventosView();
         hdsv.setVisible(true);
         escritorio.add(hdsv);
         escritorio.moveToFront(hdsv);

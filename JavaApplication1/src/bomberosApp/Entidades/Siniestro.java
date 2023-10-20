@@ -1,14 +1,12 @@
 package bomberosApp.Entidades;
 
-
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Siniestro {
 
     private int id_siniestro;
-    private int coord_X;
-    private int coord_Y;
+    private double coord_X;
+    private double coord_Y;
     private LocalDate fecha_siniestro;
     private String tipo;
     private String detalles;
@@ -20,7 +18,7 @@ public class Siniestro {
     public Siniestro() {
     }
 
-    public Siniestro(int coord_X, int coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
+    public Siniestro(double coord_X, double coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
         this.fecha_siniestro = fecha_siniestro;
@@ -32,7 +30,7 @@ public class Siniestro {
         this.estado = estado;
     }
 
-    public Siniestro(int id_siniestro, int coord_X, int coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
+    public Siniestro(int id_siniestro, double coord_X, double coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Brigada brigada, LocalDate fecha_resolucion, int calificacion, Boolean estado) {
         this.id_siniestro = id_siniestro;
         this.coord_X = coord_X;
         this.coord_Y = coord_Y;
@@ -53,19 +51,19 @@ public class Siniestro {
         this.id_siniestro = id_siniestro;
     }
 
-    public int getCoord_X() {
+    public double getCoord_X() {
         return coord_X;
     }
 
-    public void setCoord_X(int coord_X) {
+    public void setCoord_X(double coord_X) {
         this.coord_X = coord_X;
     }
 
-    public int getCoord_Y() {
+    public double getCoord_Y() {
         return coord_Y;
     }
 
-    public void setCoord_Y(int coord_Y) {
+    public void setCoord_Y(double coord_Y) {
         this.coord_Y = coord_Y;
     }
 
@@ -131,7 +129,7 @@ public class Siniestro {
                 + ", Coordenadas X" + coord_X
                 + ", Coordenadas Y" + coord_Y
                 + ", Fecha Del Siniestro=" + fecha_siniestro
-                + ", Tipo" + tipo //revisar
+                + ", Tipo" + tipo 
                 + ", Detalles" + detalles
                 + ", Brigada" + brigada
                 + ", Fecha Resolucion" + fecha_resolucion

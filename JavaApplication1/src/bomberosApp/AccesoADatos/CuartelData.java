@@ -25,8 +25,8 @@ public class CuartelData {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, cuartel.getNombre_cuartel());
             ps.setString(2, cuartel.getDireccion());
-            ps.setInt(3, cuartel.getCoord_X());
-            ps.setInt(4, cuartel.getCoord_Y());
+            ps.setDouble(3, cuartel.getCoord_X());
+            ps.setDouble(4, cuartel.getCoord_Y());
             ps.setString(5, cuartel.getTelefono());
             ps.setString(6, cuartel.getCorreo());
             ps.setBoolean(7, cuartel.isEstado());
@@ -61,8 +61,8 @@ public class CuartelData {
                 cuartel.setId_cuartel(id);
                 cuartel.setNombre_cuartel(rs.getString("nombre_cuartel"));
                 cuartel.setDireccion(rs.getString("direccion"));
-                cuartel.setCoord_X(rs.getInt("coord_X"));
-                cuartel.setCoord_Y(rs.getInt("coord_Y"));
+                cuartel.setCoord_X(rs.getDouble("coord_X"));
+                cuartel.setCoord_Y(rs.getDouble("coord_Y"));
                 cuartel.setTelefono(rs.getString("telefono"));
                 cuartel.setCorreo(rs.getString("correo"));
                 cuartel.setEstado(rs.getBoolean("estado"));
@@ -88,8 +88,8 @@ public class CuartelData {
 
             ps.setString(1, cuartel.getNombre_cuartel());
             ps.setString(2, cuartel.getDireccion());
-            ps.setInt(3, cuartel.getCoord_X());
-            ps.setInt(4, cuartel.getCoord_Y());
+            ps.setDouble(3, cuartel.getCoord_X());
+            ps.setDouble(4, cuartel.getCoord_Y());
             ps.setString(5, cuartel.getTelefono());
             ps.setString(6, cuartel.getCorreo());
             ps.setBoolean(7, cuartel.isEstado());
@@ -143,8 +143,8 @@ public class CuartelData {
                 cuartel.setId_cuartel(rs.getInt("id_cuartel"));
                 cuartel.setNombre_cuartel(rs.getString("nombre_cuartel"));
                 cuartel.setDireccion(rs.getString("direccion"));
-                cuartel.setCoord_X(rs.getInt("coord_X"));
-                cuartel.setCoord_Y(rs.getInt("coord_Y"));
+                cuartel.setCoord_X(rs.getDouble("coord_X"));
+                cuartel.setCoord_Y(rs.getDouble("coord_Y"));
                 cuartel.setTelefono(rs.getString("telefono"));
                 cuartel.setCorreo(rs.getString("correo"));
                 cuartel.setEstado(rs.getBoolean("estado"));

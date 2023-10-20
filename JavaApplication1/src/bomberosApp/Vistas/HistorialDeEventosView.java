@@ -3,14 +3,13 @@ package bomberosApp.Vistas;
 import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Siniestro;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
+public class HistorialDeEventosView extends javax.swing.JInternalFrame {
 
     private Siniestro siniestro = new Siniestro();
     private SiniestroData siniestroData = new SiniestroData();
@@ -18,7 +17,7 @@ public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel();
 
-    public HistorialDeEventosView1FC() {
+    public HistorialDeEventosView() {
         initComponents();
         armarCabeceras();
         unirBotones();
@@ -107,12 +106,13 @@ public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(JRBEventosDeHoy)
                         .addComponent(JRBEventosDeAyer)
-                        .addComponent(JBListar)))
+                        .addComponent(JBListar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -138,9 +138,10 @@ public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
                         siniestrosDeAyer.add(siniestro);
                     }
                 }
-                System.out.println(siniestrosDeAyer);
+//                System.out.println(siniestrosDeAyer);
+                borrarFilasTabla();
                 for (Siniestro siniestro : siniestrosDeAyer) {
-                    borrarFilasTabla();
+
                     modelo.addRow(new Object[]{siniestro.getId_siniestro(),
                         siniestro.getCoord_X(),
                         siniestro.getCoord_Y(),
@@ -149,9 +150,9 @@ public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
                         siniestro.getDetalles(),
                         siniestro.getBrigada().getId_brigada(),
                         siniestro.getFecha_resolucion(),
-                        siniestro.getCalificacion(), 
+                        siniestro.getCalificacion(),
                         siniestro.isEstado()
-                });
+                    });
                 }
             }
             if (JRBEventosDeHoy.isSelected()) {
@@ -162,10 +163,11 @@ public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
                     if (fechaSiniestro.isEqual(fechaActual)) {
                         siniestrosDelDia.add(siniestro);
                     }
-                System.out.println(siniestrosDelDia);                    
+//                System.out.println(siniestrosDelDia);                    
                 }
+                borrarFilasTabla();
                 for (Siniestro siniestro : siniestrosDelDia) {
-                   borrarFilasTabla();
+
                     modelo.addRow(new Object[]{siniestro.getId_siniestro(),
                         siniestro.getCoord_X(),
                         siniestro.getCoord_Y(),
@@ -174,9 +176,9 @@ public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
                         siniestro.getDetalles(),
                         siniestro.getBrigada().getId_brigada(),
                         siniestro.getFecha_resolucion(),
-                        siniestro.getCalificacion(), 
+                        siniestro.getCalificacion(),
                         siniestro.isEstado()
-                });
+                    });
                 }
             }
         } catch (NumberFormatException e) {
@@ -212,6 +214,8 @@ public class HistorialDeEventosView1FC extends javax.swing.JInternalFrame {
         modelo.addColumn("Fecha Resolucion");
         modelo.addColumn("Calificacion");
         modelo.addColumn("Estado");
+
+        JTTablaHistorial.setModel(modelo);
     }
 
     private void unirBotones() {
