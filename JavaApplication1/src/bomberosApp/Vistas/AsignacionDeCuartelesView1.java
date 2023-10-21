@@ -266,21 +266,20 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
-    private void llenarComboBoxSiniestro() {
-        JCBSiniestro.removeAllItems();
-        List<Siniestro> incidenciasDispo = new ArrayList<>();
-
-        for (Siniestro siniestro : sd.ListarSiniestro()) {
-            Brigada brigada = siniestro.getBrigada();
-            if (brigada == null) { // Comprueba si el objeto Brigada es nulo
-                incidenciasDispo.add(siniestro);
-            }
-        }
-
-        // Ahora, puedes agregar los objetos Siniestro filtrados a tu JComboBox
-        for (Siniestro siniestro : incidenciasDispo) {
+  private void llenarComboBoxSiniestro() {
+    JCBSiniestro.removeAllItems();
+    List<Siniestro> siniestros = sd.ListarSiniestro();
+     
+    for (Siniestro siniestro : siniestros) {
+        if (siniestro != null && siniestro.getBrigada() == null && !siniestro.isEstado()) {
             JCBSiniestro.addItem(siniestro);
         }
+    } 
+}
+        
+        
+
+     
     }
 //
 //    public void limpiar() {
@@ -296,4 +295,4 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
 //        JDCFechaDeResolucion.setDate(null);//
 //        JDCFechaInicio.setDate(null);//
 //    }
-}
+
