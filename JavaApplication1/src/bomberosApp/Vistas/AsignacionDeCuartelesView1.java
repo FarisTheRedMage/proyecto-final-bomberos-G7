@@ -5,7 +5,6 @@ import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
 import bomberosApp.Entidades.Siniestro;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
@@ -266,33 +265,37 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
-  private void llenarComboBoxSiniestro() {
-    JCBSiniestro.removeAllItems();
-    List<Siniestro> siniestros = sd.ListarSiniestro();
-     
-    for (Siniestro siniestro : siniestros) {
-        if (siniestro != null && siniestro.getBrigada() == null && !siniestro.isEstado()) {
-            JCBSiniestro.addItem(siniestro);
+    private void llenarComboBoxSiniestro() {
+        JCBSiniestro.removeAllItems();
+        List<Siniestro> siniestros = sd.ListarSiniestro();
+
+        for (Siniestro siniestro : siniestros) {
+            if (siniestro != null && siniestro.getBrigada().getId_brigada() == 0 && !siniestro.isEstado()) {
+                JCBSiniestro.addItem(siniestro);
+            }
+    //ojo q se cargan los 2 Siniestros juntos en el JCB !!!!
         }
-    } 
-}
-        
-        
-
-     
     }
-//
-//    public void limpiar() {
-//        JCBCuartel.setSelectedIndex(0);
-//        JCBSiniestro.setSelectedIndex(0);
-//        JTFcoordSX.setText("");
-//        JTFcoordSY.setText("");
-//        JRBEstado.setSelected(false);
-//        jCBoxTipoSiniestro.setSelectedIndex(0);
-//        JCBAsignarBrigada.setSelectedIndex(0);
-//        JCBCalificacion.setSelectedIndex(0);
-//
-//        JDCFechaDeResolucion.setDate(null);//
-//        JDCFechaInicio.setDate(null);//
-//    }
 
+    //falta otro jcb para los cuarteles
+    
+    
+    
+    
+    public void limpiar() {
+        JCBSiniestro.setSelectedIndex(0);
+        JTFcoordSX.setText("");
+        JTFcoordSY.setText("");
+        JCBCuartel.setSelectedIndex(0);
+        JTFcoordCX.setText("");
+        JTFcoordCY.setText("");
+        JTFDistanciaEntreAmbos.setText("");
+
+//        // Si estás utilizando DefaultListModel para las listas, puedes utilizar esto:
+//        DefaultListModel<String> brigadaListModel = (DefaultListModel<String>) JLBrigadaDisponibleParaAsignar.getModel();
+//        brigadaListModel.clear();
+//        DefaultListModel<String> cuartelListModel = (DefaultListModel<String>) JListCuartelMASCercanoASiniestro.getModel();
+//        cuartelListModel.clear();
+    }
+
+}
