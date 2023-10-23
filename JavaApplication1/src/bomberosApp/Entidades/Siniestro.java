@@ -131,7 +131,8 @@ public class Siniestro {
                 + ", Fecha Del Siniestro=" + fecha_siniestro
                 + ", Tipo" + tipo 
                 + ", Detalles" + detalles
-                + ", Brigada" + brigada
+//                + ", Brigada" + brigada
+                +", ID Brigada" + brigada.getId_brigada()
                 + ", Fecha Resolucion" + fecha_resolucion
                 + ", Calificacion" + calificacion
                 + ", Estado" + estado;

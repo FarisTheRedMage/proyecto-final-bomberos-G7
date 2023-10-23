@@ -1,5 +1,6 @@
 package bomberosApp.Origenes;
 
+import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Siniestro;
@@ -478,31 +479,31 @@ public class MaindePruebas {
 //        siniestroD.EliminarSiniestro(1); 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------            
 //-------------------------------------------------------------Prueba Siniestro -ListarSiniestro --------------------------------------------------------            
-//
-//            SiniestroData siniestrito = new SiniestroData();
-//    
-//            List<Siniestro> ListarSiniestro = siniestrito.ListarSiniestro();
-//    
-//            if (!ListarSiniestro.isEmpty()) {
-//                System.out.println("Lista de Siniestros: ");
-//    
-//                for (Siniestro siniestro : ListarSiniestro) {
-//                    System.out.println("ID Siniestro: " + siniestro.getId_siniestro());
-//                    System.out.println("Coordenada X: " + siniestro.getCoord_X());
-//                    System.out.println("Coordenada Y: " + siniestro.getCoord_Y());  
-//                    System.out.println("Fecha Inicio de Siniestro: " + siniestro.getFecha_siniestro());
-//                    System.out.println("Tipo: " + siniestro.getTipo());
-//                    System.out.println("Detalles: " + siniestro.getDetalles());
-//                    System.out.println("Codigo de Brigada: " + siniestro.getBrigada().getId_brigada());//-----
-//                    System.out.println("Fecha de Resolucion: " + siniestro.getFecha_resolucion());
-//                    System.out.println("Calificacion: " + siniestro.getCalificacion());
-//                    System.out.println("Estado: " + siniestro.isEstado());
-//                    System.out.println("-----------------------------");
-//                }
-//    
-//            } else {
-//                System.out.println("No hay Siniestros en la lista.");
-//            }
+
+            SiniestroData siniestrito = new SiniestroData();
+    
+            List<Siniestro> ListarSiniestro = siniestrito.ListarSiniestro();
+    
+            if (!ListarSiniestro.isEmpty()) {
+                System.out.println("Lista de Siniestros: ");
+    
+                for (Siniestro siniestro : ListarSiniestro) {
+                    System.out.println("ID Siniestro: " + siniestro.getId_siniestro());
+                    System.out.println("Coordenada X: " + siniestro.getCoord_X());
+                    System.out.println("Coordenada Y: " + siniestro.getCoord_Y());  
+                    System.out.println("Fecha Inicio de Siniestro: " + siniestro.getFecha_siniestro());
+                    System.out.println("Tipo: " + siniestro.getTipo());
+                    System.out.println("Detalles: " + siniestro.getDetalles());
+                    System.out.println("Codigo de Brigada: " + siniestro.getBrigada().getId_brigada());//-----
+                    System.out.println("Fecha de Resolucion: " + siniestro.getFecha_resolucion());
+                    System.out.println("Calificacion: " + siniestro.getCalificacion());
+                    System.out.println("Estado: " + siniestro.isEstado());
+                    System.out.println("-----------------------------");
+                }
+    
+            } else {
+                System.out.println("No hay Siniestros en la lista.");
+            }
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------FIN SEGUNDA ENTREGA -------------------------------------------------------//
 //        BrigadaData brigadaData = new BrigadaData();
