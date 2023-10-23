@@ -86,7 +86,19 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
 
         JTFcoordCY.setEditable(false);
 
+        JCBSiniestro.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                JCBSiniestroItemStateChanged(evt);
+            }
+        });
+
         jLabel7.setText("Elija el Siniestro a Ubicar");
+
+        JCBCuartel.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                JCBCuartelItemStateChanged(evt);
+            }
+        });
 
         jLabel8.setText("Elija el Cuartel");
 
@@ -166,16 +178,14 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel4)
-                        .addGap(76, 76, 76)
+                        .addGap(145, 145, 145)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JBAsignarBrigada)
                                 .addGap(222, 222, 222)
                                 .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(182, 182, 182)
-                                .addComponent(jLabel3)))))
+                            .addComponent(jLabel3))))
                 .addContainerGap(75, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -237,6 +247,21 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JCBSiniestroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JCBSiniestroItemStateChanged
+        // TODO add your handling code here:
+        Siniestro siniestroSeleccionado =(Siniestro)(JCBSiniestro.getSelectedItem());
+       
+        JTFcoordSX.setText(siniestroSeleccionado.getCoord_X()+"");
+        JTFcoordSY.setText(siniestroSeleccionado.getCoord_Y()+"");
+    }//GEN-LAST:event_JCBSiniestroItemStateChanged
+
+    private void JCBCuartelItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JCBCuartelItemStateChanged
+        // TODO add your handling code here:
+        Cuartel cuartelSeleccionado =(Cuartel)(JCBCuartel.getSelectedItem());
+        JTFcoordCX.setText(cuartelSeleccionado.getCoord_X()+"");
+        JTFcoordCY.setText(cuartelSeleccionado.getCoord_Y()+"");
+    }//GEN-LAST:event_JCBCuartelItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBAsignarBrigada;
@@ -274,7 +299,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
             if (siniestro != null && siniestro.getBrigada().getId_brigada() == 0 && !siniestro.isEstado()) {
                 JCBSiniestro.addItem(siniestro);
             }
-//        System.out.println(siniestro);
+
 
         }
     }
@@ -297,11 +322,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
         JTFcoordCY.setText("");
         JTFDistanciaEntreAmbos.setText("");
 
-//        // Si estás utilizando DefaultListModel para las listas, puedes utilizar esto:
-//        DefaultListModel<String> brigadaListModel = (DefaultListModel<String>) JLBrigadaDisponibleParaAsignar.getModel();
-//        brigadaListModel.clear();
-//        DefaultListModel<String> cuartelListModel = (DefaultListModel<String>) JListCuartelMASCercanoASiniestro.getModel();
-//        cuartelListModel.clear();
+
     }
 
 }
