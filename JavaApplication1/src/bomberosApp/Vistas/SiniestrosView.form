@@ -99,7 +99,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace pref="27" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -148,31 +148,29 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="94" max="-2" attributes="0"/>
+                      <EmptySpace pref="9" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="JDCFechaDeResolucion" min="-2" pref="20" max="-2" attributes="0"/>
-                      <EmptySpace pref="88" max="-2" attributes="0"/>
+                      <EmptySpace pref="3" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" max="-2" attributes="0">
-                          <Component id="jLabel10" alignment="3" max="32767" attributes="0"/>
-                          <Component id="JCBCalificacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="JRBEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="85" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" max="-2" attributes="0">
+                      <Component id="jLabel10" alignment="3" max="32767" attributes="0"/>
+                      <Component id="JCBCalificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JRBEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="JBSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JBModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JBGuardarNuevoSiniestro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

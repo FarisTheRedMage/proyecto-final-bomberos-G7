@@ -125,17 +125,17 @@ public class Siniestro {
 
     @Override
     public String toString() {
-        return "ID" + id_siniestro
-                + ", Coordenadas X" + coord_X
-                + ", Coordenadas Y" + coord_Y
-                + ", Fecha Del Siniestro=" + fecha_siniestro
-                + ", Tipo" + tipo 
-                + ", Detalles" + detalles
+        return " ID" + id_siniestro
+                + ", Coordenadas X " + coord_X
+                + ", Coordenadas Y " + coord_Y
+                + ", Fecha Del Siniestro " + fecha_siniestro
+                + ", Tipo " + tipo 
+                + ", Detalles " + detalles
 //                + ", Brigada" + brigada
-                +", ID Brigada" + brigada.getId_brigada()
-                + ", Fecha Resolucion" + fecha_resolucion
-                + ", Calificacion" + calificacion
-                + ", Estado" + estado;
+                +", ID Brigada " + brigada.getId_brigada()
+                + ", Fecha Resolucion " + fecha_resolucion
+                + ", Calificacion " + calificacion
+                + ", Estado " + estado;
     }
 
 }

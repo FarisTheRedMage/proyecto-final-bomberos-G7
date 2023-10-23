@@ -101,13 +101,13 @@ public class Cuartel {
 
     @Override
     public String toString() {
-        return "ID" + id_cuartel
-                + ", Nombre del Cuartel" + nombre_cuartel
-                + ", Direccion" + direccion
-                + ", Coordenadas X" + coord_X
-                + ", Coordenadas Y" + coord_Y
-                + ", Telefono" + telefono
-                + ", Correo" + correo
-                + ", Estado" + estado;
+        return " ID " + id_cuartel
+                + ", Nombre del Cuartel " + nombre_cuartel
+                + ", Direccion " + direccion
+                + ", Coordenadas X " + coord_X
+                + ", Coordenadas Y " + coord_Y
+                + ", Telefono " + telefono
+                + ", Correo " + correo
+                + ", Estado " + estado;
     }
 }
