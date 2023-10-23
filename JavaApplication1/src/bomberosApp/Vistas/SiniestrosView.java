@@ -343,16 +343,17 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 JDCFechaInicio.setDate(Date.from(sini.getFecha_siniestro().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 jCBoxTipoSiniestro.setSelectedItem(sini.getTipo());
                 JTDetallesDelSiniestro.setText(sini.getDetalles());
-                JCBAsignarBrigada.setSelectedIndex(sini.getBrigada().getId_brigada() - 1); 
+                
+                JCBAsignarBrigada.setSelectedIndex(sini.getBrigada().getId_brigada()-1); 
 
                 if (sini.getFecha_resolucion() == null) {
                     JDCFechaDeResolucion.setDate(null);
                 } else {
                     JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 }
-
+                
                 JCBCalificacion.setSelectedIndex(sini.getCalificacion());
-
+                
                 if (sini.isEstado()) {
                     JRBEstado.setSelected(true);
                 }
@@ -418,6 +419,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         
         for (Brigada listarBrigada : listarBrigada) {
             JCBAsignarBrigada.addItem(listarBrigada);
+           
         }
     }
 
