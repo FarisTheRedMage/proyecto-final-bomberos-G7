@@ -154,9 +154,9 @@
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JCBAsignarBrigada" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="JRBBrigadaNull" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -342,7 +342,7 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="JRBBrigadaNull">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Brigada null"/>
+        <Property name="text" type="java.lang.String" value="Sin Brigada"/>
       </Properties>
     </Component>
   </SubComponents>

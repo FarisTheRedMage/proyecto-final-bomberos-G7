@@ -279,6 +279,7 @@ public class BrigadaData {
             if (resultado > 0) {
                 ps = null;
                 SQL = "UPDATE brigada SET disponibilidad = ? WHERE id_brigada =?";
+                
                 ps = con.prepareStatement(SQL);
                 ps.setBoolean(1, false);
                 ps.setInt(2, s1.getBrigada().getId_brigada());

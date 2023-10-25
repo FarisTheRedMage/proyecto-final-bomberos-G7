@@ -122,7 +122,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
 
         JCBCalificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
-        JRBBrigadaNull.setText("Brigada null");
+        JRBBrigadaNull.setText("Sin Brigada");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,9 +228,9 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(JRBBrigadaNull)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -262,7 +262,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             siniestro.setFecha_siniestro(JDCFechaInicio.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             siniestro.setTipo((String) jCBoxTipoSiniestro.getSelectedItem());
             siniestro.setDetalles(JTDetallesDelSiniestro.getText());
-            
+
             if (JRBBrigadaNull.isSelected()) {
                 siniestro.setBrigada(null);
             } else {
@@ -281,7 +281,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             if (JCBCalificacion.getSelectedIndex() == 0) {
                 siniestro.setCalificacion(0);
             } else {
-                siniestro.setCalificacion(Integer.parseInt( JCBCalificacion.getSelectedItem().toString()));
+                siniestro.setCalificacion(Integer.parseInt(JCBCalificacion.getSelectedItem().toString()));
             }
 
             if (JRBEstado.isSelected() == true) {
@@ -312,6 +312,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             siniestro.setDetalles(JTDetallesDelSiniestro.getText());
             Brigada brigadaSeleccionada = (Brigada) JCBAsignarBrigada.getSelectedItem();
             siniestro.setBrigada(brigadaSeleccionada);
+
             if (JDCFechaDeResolucion.getDate() != null) {
                 siniestro.setFecha_resolucion(JDCFechaDeResolucion.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
             } else {
@@ -336,6 +337,10 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             }
             siniestro.setEstado(JRBEstado.isSelected());
 
+            if (JRBBrigadaNull.isSelected()) {
+                siniestro.setBrigada(null);
+            }
+
             // Llama al método pa modificar
             sd.ModificarSiniestro(siniestro);
             limpiar();
@@ -358,8 +363,9 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
     private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
 
         try {
+            Siniestro sini = null;
             int id = Integer.parseInt(JTCodigo.getText());
-            Siniestro sini = sd.BuscarSiniestroPorID(id);
+            sini = sd.BuscarSiniestroPorID(id);
 
             if (sini != null) {
                 JTFCoordX.setText(String.valueOf(sini.getCoord_X()));
@@ -384,6 +390,12 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 if (!sini.isEstado()) {
                     JRBEstado.setSelected(false);
                 }
+                if (sini.getBrigada().getId_brigada() != null) {
+                    JRBBrigadaNull.setSelected(true);
+                } else {
+                    JRBBrigadaNull.setSelected(false);
+                }
+
             }
 
         } catch (NullPointerException ex) {
@@ -434,6 +446,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         JTFCoordY.setText("");
         JTDetallesDelSiniestro.setText("");
         JRBEstado.setSelected(false);
+        JRBBrigadaNull.setSelected(false);
         jCBoxTipoSiniestro.setSelectedIndex(0);
         JCBAsignarBrigada.setSelectedIndex(0);
         JCBCalificacion.setSelectedIndex(0);
