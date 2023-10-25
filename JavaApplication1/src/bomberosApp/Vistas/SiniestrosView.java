@@ -7,7 +7,6 @@ import bomberosApp.Entidades.Siniestro;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class SiniestrosView extends javax.swing.JInternalFrame {
@@ -77,12 +76,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         jLabel9.setText("Coordenadas Y");
 
         jLabel10.setText("Calificacion");
-
-        JTCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                JTCodigoKeyReleased(evt);
-            }
-        });
 
         JRBEstado.setText("Marcar si esta en curso");
 
@@ -408,10 +401,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         }
 
     }//GEN-LAST:event_JBBuscarActionPerformed
-
-    private void JTCodigoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTCodigoKeyReleased
-
-    }//GEN-LAST:event_JTCodigoKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;

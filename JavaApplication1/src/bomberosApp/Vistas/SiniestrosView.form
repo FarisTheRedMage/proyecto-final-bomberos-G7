@@ -225,9 +225,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JTCodigo">
-      <Events>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="JTCodigoKeyReleased"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="JCBAsignarBrigada">
       <Properties>
