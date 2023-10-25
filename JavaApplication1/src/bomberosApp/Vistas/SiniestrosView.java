@@ -390,16 +390,17 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 if (!sini.isEstado()) {
                     JRBEstado.setSelected(false);
                 }
-                if (sini.getBrigada().getId_brigada() != null) {
-                    JRBBrigadaNull.setSelected(true);
-                } else {
+                if (sini.getBrigada() != null ) {
                     JRBBrigadaNull.setSelected(false);
+                } else {
+                    JRBBrigadaNull.setSelected(true);
                 }
 
             }
 
         } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(this, "No deje campos vacios" + ex.getMessage());
+            ex.printStackTrace();
             limpiar();
         } catch (NumberFormatException ex2) {
             JOptionPane.showMessageDialog(this, "El dni debe ser un numero" + ex2.getMessage());
