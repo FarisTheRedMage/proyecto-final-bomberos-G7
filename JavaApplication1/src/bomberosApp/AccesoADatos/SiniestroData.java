@@ -15,6 +15,7 @@ import org.mariadb.jdbc.Statement;
 public class SiniestroData {
 
     private Connection con = null;
+    private BrigadaData brigadaD = new BrigadaData();
 
     public SiniestroData() {
         con = ConexionData.getConexion();
@@ -30,7 +31,13 @@ public class SiniestroData {
             ps.setDate(3, Date.valueOf(siniestro.getFecha_siniestro()));
             ps.setString(4, siniestro.getTipo());
             ps.setString(5, siniestro.getDetalles());
-            ps.setInt(6, siniestro.getBrigada().getId_brigada());//----------
+            
+            if(siniestro.getBrigada() == null){
+                ps.setString(6, null);
+            }else{
+             ps.setInt(6, siniestro.getBrigada().getId_brigada());//----------
+            }
+           
             if (siniestro.getFecha_resolucion() != null) {
                 ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
 
@@ -76,14 +83,19 @@ public class SiniestroData {
                 siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
                 siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
-                brg.setId_brigada(rs.getInt("id_brigada"));
+
+                //Usamos el metodo de BrigadaData.
+                brg = brigadaD.BuscarBrigada(rs.getInt("id_brigada"));
                 siniestro.setBrigada(brg);
+
                 if (rs.getDate("fecha_resolucion") != null) {
                     siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
+                    siniestro.setCalificacion(rs.getInt("calificacion"));
                 } else {
                     siniestro.setFecha_resolucion(null);
+                    siniestro.setCalificacion(0);
                 }
-                siniestro.setCalificacion(rs.getInt("calificacion"));
+
                 siniestro.setEstado(rs.getBoolean("estado"));
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el Siniestro");
@@ -120,7 +132,7 @@ public class SiniestroData {
             ps.setInt(8, siniestro.getCalificacion());
             ps.setBoolean(9, siniestro.isEstado());
             ps.setInt(10, siniestro.getId_siniestro());
-            
+
             int exito = ps.executeUpdate();
 
             if (exito == 1) {
@@ -188,5 +200,5 @@ public class SiniestroData {
         }
         return siniestros;
     }
-    
+
 }
