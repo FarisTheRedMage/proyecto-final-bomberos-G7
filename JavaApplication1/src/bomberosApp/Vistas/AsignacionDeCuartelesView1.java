@@ -39,7 +39,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         JBAsignarBrigada = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        JtfCuartelMAScECANO = new javax.swing.JTextField();
+        JTFCuartelMASCercano = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         JTFBrigadaAsignada = new javax.swing.JTextField();
 
@@ -77,7 +77,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Cuatel mas cercano");
 
-        JtfCuartelMAScECANO.setEditable(false);
+        JTFCuartelMASCercano.setEditable(false);
 
         jLabel2.setText("Brigada asignda");
 
@@ -95,7 +95,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
                             .addComponent(jLabel1)
                             .addComponent(JTFBrigadaAsignada, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addComponent(JtfCuartelMAScECANO, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFCuartelMASCercano, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JCBSiniestro, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
@@ -115,7 +115,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JtfCuartelMAScECANO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JTFCuartelMASCercano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -152,7 +152,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
     private javax.swing.JButton JBSalir;
     private javax.swing.JComboBox<Siniestro> JCBSiniestro;
     private javax.swing.JTextField JTFBrigadaAsignada;
-    private javax.swing.JTextField JtfCuartelMAScECANO;
+    private javax.swing.JTextField JTFCuartelMASCercano;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
@@ -209,7 +209,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
                 }
             }
         }
-        JtfCuartelMAScECANO.setText(cuartelMasCercano.getNombre_cuartel() +" "+ cuartelMasCercano.getDireccion()+ " "+ cuartelMasCercano.getTelefono());
+        JTFCuartelMASCercano.setText(cuartelMasCercano.getNombre_cuartel() +" "+ cuartelMasCercano.getDireccion()+ " "+ cuartelMasCercano.getTelefono());
         JTFBrigadaAsignada.setText(brigadaAAsignar.getNombre_brigada()+" "+brigadaAAsignar.getEspecialidad());
         s1.setBrigada(brigadaAAsignar);
 

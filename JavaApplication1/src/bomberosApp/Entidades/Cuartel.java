@@ -103,10 +103,10 @@ public class Cuartel {
     public String toString() {
         return " ID: " + id_cuartel
                 + ", Cuartel: " + nombre_cuartel
+                + ", Telefono: " + telefono
                 + ", Direccion: " + direccion
                 + ", Coordenadas X: " + coord_X
                 + ", Coordenadas Y: " + coord_Y
-                + ", Telefono: " + telefono
                 + ", Correo: " + correo
                 + ", Estado: " + estado;
     }

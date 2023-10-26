@@ -33,7 +33,7 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <Component id="JTFBrigadaAsignada" alignment="0" min="-2" pref="594" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="JtfCuartelMAScECANO" alignment="0" min="-2" pref="594" max="-2" attributes="0"/>
+                          <Component id="JTFCuartelMASCercano" alignment="0" min="-2" pref="594" max="-2" attributes="0"/>
                           <Component id="JCBSiniestro" alignment="0" min="-2" pref="823" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                       </Group>
@@ -59,7 +59,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="JtfCuartelMAScECANO" min="-2" max="-2" attributes="0"/>
+              <Component id="JTFCuartelMASCercano" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -115,7 +115,7 @@
         <Property name="text" type="java.lang.String" value="Cuatel mas cercano"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="JtfCuartelMAScECANO">
+    <Component class="javax.swing.JTextField" name="JTFCuartelMASCercano">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>

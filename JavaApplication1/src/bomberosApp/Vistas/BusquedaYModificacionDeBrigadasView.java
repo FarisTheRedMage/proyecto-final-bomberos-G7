@@ -4,8 +4,6 @@ import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.CuartelData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
-import static com.sun.corba.se.impl.util.Utility.printStackTrace;
-import java.time.ZoneId;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -21,7 +19,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
 
     public BusquedaYModificacionDeBrigadasView() {
         initComponents();
-        
+        llenarJCBCuartel();
     }
 
     @SuppressWarnings("unchecked")
@@ -46,6 +44,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         JBNuevo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         JCBCuarteles = new javax.swing.JComboBox<>();
+        JBLimpiar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -104,59 +103,65 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("*_En caso de crear nueva brigada primero Buscar un Cuartel por ID");
 
+        JBLimpiar.setText("Limpiar Campos");
+        JBLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBLimpiarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(156, 395, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(85, 85, 85))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(JRBEstado)
-                                .addGap(57, 57, 57)
-                                .addComponent(JRBDisponibilidad))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(JCBCuarteles, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JBBuscar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTFNombreBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTFEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(JBNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(JBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(JTFidCuartel, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(JBBuscarPorIDCuartel))
-                                    .addComponent(jLabel2))))
-                        .addGap(51, 51, 51))))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JBBuscar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTFNombreBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(JBLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JRBEstado)
+                                        .addGap(57, 57, 57)
+                                        .addComponent(JRBDisponibilidad))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(JBNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(91, 91, 91)
-                                .addComponent(JBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JCBCuarteles, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,12 +188,14 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
                     .addComponent(JTFEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRBEstado)
                     .addComponent(JRBDisponibilidad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBSalir)
                     .addComponent(JBGuardar)
-                    .addComponent(JBNuevo))
-                .addGap(63, 63, 63))
+                    .addComponent(JBNuevo)
+                    .addComponent(JBLimpiar))
+                .addGap(18, 18, 18)
+                .addComponent(JBSalir)
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -199,8 +206,9 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     }//GEN-LAST:event_JBSalirActionPerformed
 //funca
     private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
+
         try {
-            llenarJCBCuartel();
+
             int id = Integer.parseInt(JTFCodigo.getText());
             Brigada brigadita = brigadaData.BuscarBrigada(id);
 
@@ -210,8 +218,18 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
                 JTFEspecialidad.setText(brigadita.getEspecialidad());
                 JRBEstado.setSelected(brigadita.isEstado());
                 JRBDisponibilidad.setSelected(brigadita.isDisponibilidad());
-                JCBCuarteles.setSelectedItem(brigadita.getNombre_cuartel());
-                JTFidCuartel.setText(String.valueOf(brigadita.getCuartel().getId_cuartel()));
+                JTFidCuartel.setText(brigadita.getCuartel().getId_cuartel() + "");
+                // Carga el JComboBox de cuarteles con los cuarteles asociados a la brigada
+                JCBCuarteles.removeAllItems();
+                if (!JTFidCuartel.getText().isEmpty()) {
+                    int idCuartel = Integer.parseInt(JTFidCuartel.getText());
+                    cuartel = cuartelData.BuscarCuartelPorId(idCuartel);
+
+                    if (cuartel != null) {
+                        JCBCuarteles.addItem(cuartel);
+                        JCBCuarteles.setSelectedItem(cuartel);
+                    }
+                }
 
             } else {
 
@@ -220,6 +238,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese un número válido para el ID: " + e.getMessage());
         }
+
 
     }//GEN-LAST:event_JBBuscarActionPerformed
 //funca
@@ -232,7 +251,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             brigada.setEspecialidad(JTFEspecialidad.getText());
             brigada.setEstado(JRBEstado.isSelected());
             brigada.setDisponibilidad(JRBDisponibilidad.isSelected());
-            brigada.setNombre_cuartel((String) JCBCuarteles.getSelectedItem());
+//            brigada.setNombre_cuartel((String) JCBCuarteles.getSelectedItem());
             c1.setId_cuartel(Integer.parseInt(JTFidCuartel.getText()));
             brigada.setCuartel(c1);
 
@@ -257,28 +276,26 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             JOptionPane.showMessageDialog(this, "No deje campos vacíos " + e.getMessage());
         }
     }//GEN-LAST:event_JBGuardarActionPerformed
-//funca
+//funca-id cuartel
     private void JBBuscarPorIDCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarPorIDCuartelActionPerformed
 
         try {
-            int id = Integer.parseInt(JTFidCuartel.getText());
-            CuartelData cuartelData = new CuartelData();
-            Cuartel cuartelito = new Cuartel();
-            cuartelito = cuartelData.BuscarCuartelPorId(id);
-//            Brigada brigadita = brigadaData.BuscarBrigada(id);
-            if (cuartelito != null) {
+            JCBCuarteles.removeAllItems();
+            if (!JTFidCuartel.getText().isEmpty()) {
+                int idCuartel = Integer.parseInt(JTFidCuartel.getText());
+                cuartel = cuartelData.BuscarCuartelPorId(idCuartel);
 
-                JTFidCuartel.setText(String.valueOf(cuartelito.getId_cuartel()));
-                JCBCuarteles.setSelectedItem(cuartelito.getNombre_cuartel());
-
-            } else {
-                JOptionPane.showMessageDialog(this, "No se encontró un Cuartel con este ID.");
+                if (cuartel != null) {
+                    JCBCuarteles.addItem(cuartel);
+                    JCBCuarteles.setSelectedItem(cuartel);
+                }
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese un número válido para el ID: " + e.getMessage());
-//            printStackTrace();
+            JOptionPane.showMessageDialog(this, "El ID debe ser un número válido. " + e.getMessage());
+            limpiar();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(this, "No deje campos vacíos. " + e.getMessage());
         }
-
     }//GEN-LAST:event_JBBuscarPorIDCuartelActionPerformed
 //funca
     private void JBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBNuevoActionPerformed
@@ -320,10 +337,17 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         }
     }//GEN-LAST:event_JBNuevoActionPerformed
 
+    private void JBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBLimpiarActionPerformed
+       
+        limpiar();
+        llenarJCBCuartel();
+    }//GEN-LAST:event_JBLimpiarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
     private javax.swing.JButton JBBuscarPorIDCuartel;
     private javax.swing.JButton JBGuardar;
+    private javax.swing.JButton JBLimpiar;
     private javax.swing.JButton JBNuevo;
     private javax.swing.JButton JBSalir;
     private javax.swing.JComboBox<Cuartel> JCBCuarteles;
@@ -342,14 +366,13 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     // End of variables declaration//GEN-END:variables
 
     public void llenarJCBCuartel() {
-        JCBCuarteles.removeAllItems();
-        if (!JTFidCuartel.getText().isEmpty()) {
-            cuartel = cuartelData.BuscarCuartelPorId(Integer.parseInt(JTFidCuartel.getText()));
 
-                for (Cuartel cuarteles : listarCuarteles) {
-                    JCBCuarteles.addItem(cuarteles);
-                }
-            }
+        JCBCuarteles.removeAllItems();
+
+        for (Cuartel listarCuartel : listarCuarteles) {
+            JCBCuarteles.addItem(listarCuartel);
+        }
+
     }
 
     public void limpiar() {

@@ -63,7 +63,7 @@ public class SiniestroData {
     }
 
     public Siniestro BuscarSiniestroPorID(int id) {
-        Siniestro siniestro = null;
+      Siniestro siniestro = new Siniestro(); 
         String SQL = "SELECT * FROM siniestro WHERE id_siniestro = ?";
 
         PreparedStatement ps = null;
@@ -84,6 +84,7 @@ public class SiniestroData {
                 siniestro.setDetalles(rs.getString("detalles"));
 
                 if (siniestro.getBrigada() != null) {
+                    System.out.println(siniestro);
                     //              Usamos el metodo de BrigadaData.
                     brg = brigadaD.BuscarBrigada(rs.getInt("id_brigada"));
                     siniestro.setBrigada(brg);
@@ -109,6 +110,7 @@ public class SiniestroData {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro" + e.getMessage());
         }
+        System.out.println(siniestro);
         return siniestro;
     }
 

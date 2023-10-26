@@ -121,10 +121,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(248, 248, 248))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -165,27 +161,33 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(JBGuardarNuevoSiniestro)
-                                .addGap(99, 99, 99)
-                                .addComponent(JBModificar)
-                                .addGap(250, 250, 250)
-                                .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JDCFechaDeResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(81, 81, 81)
-                                .addComponent(JRBEstado))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(JRBBrigadaNull))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                            .addComponent(JRBBrigadaNull)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(JDCFechaDeResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(53, 53, 53)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JBGuardarNuevoSiniestro)
+                                        .addGap(99, 99, 99)
+                                        .addComponent(JBModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(67, 67, 67)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JRBEstado))))))
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(246, 246, 246))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,7 +225,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                     .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(JRBBrigadaNull)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -296,7 +298,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
 //funca
     private void JBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBModificarActionPerformed
         try {
-            // Recopila y asigna datos de la interfaz a la entidad Siniestro.
             siniestro.setId_siniestro(Integer.parseInt(JTCodigo.getText()));
             siniestro.setCoord_X(Double.parseDouble(JTFCoordX.getText())); //---
             siniestro.setCoord_Y(Double.parseDouble(JTFCoordY.getText())); //----
@@ -322,84 +323,79 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 }
             }
             siniestro.setCalificacion(calificacion);
-            // Actualiza la fecha de resolución en la interfaz si es null.
             if (siniestro.getFecha_resolucion() == null) {
                 JDCFechaDeResolucion.setDate(null);
             } else {
                 JDCFechaDeResolucion.setDate(Date.from(siniestro.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
             }
             siniestro.setEstado(JRBEstado.isSelected());
-
             if (JRBBrigadaNull.isSelected()) {
                 siniestro.setBrigada(null);
             }
-
-            // Llama al método pa modificar
             sd.ModificarSiniestro(siniestro);
             limpiar();
         } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(this, "No deje campos vacíos" + ex.getMessage());
             limpiar();
-
-//            ex.printStackTrace();
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "El campo debe ser un número");
             limpiar();
-//            ex.printStackTrace();
         }
     }//GEN-LAST:event_JBModificarActionPerformed
 //funca
     private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
-//funca - a medias
+//funca
     private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
 
         try {
             Siniestro sini = null;
             int id = Integer.parseInt(JTCodigo.getText());
             sini = sd.BuscarSiniestroPorID(id);
-
+//            System.out.println(sini);
             if (sini != null) {
                 JTFCoordX.setText(String.valueOf(sini.getCoord_X()));
                 JTFCoordY.setText(String.valueOf(sini.getCoord_Y()));
                 JDCFechaInicio.setDate(Date.from(sini.getFecha_siniestro().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 jCBoxTipoSiniestro.setSelectedItem(sini.getTipo());
-                JTDetallesDelSiniestro.setText(sini.getDetalles());
-//                JCBAsignarBrigada.setSelectedIndex(sini.getBrigada().getId_brigada() - 1);
-                llenarComboBox();
+                
+                if (sini.getBrigada() != null) {
+                    JCBAsignarBrigada.setSelectedItem(sini.getBrigada().getId_brigada());
+                } 
+                    JTDetallesDelSiniestro.setText(sini.getDetalles());
+                    llenarComboBox();
+                    //System.out.println(sini);
+                    if (sini.getFecha_resolucion() == null) {
+                        JDCFechaDeResolucion.setDate(null);
+                    } else {
+                        JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                    }
 
-                if (sini.getFecha_resolucion() == null) {
-                    JDCFechaDeResolucion.setDate(null);
-                } else {
-                    JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                    JCBCalificacion.setSelectedIndex(sini.getCalificacion());
+
+                    if (sini.isEstado()) {
+                        JRBEstado.setSelected(true);
+                    }
+                    if (!sini.isEstado()) {
+                        JRBEstado.setSelected(false);
+                    }
+                    if (sini.getBrigada() != null && sini.getBrigada().getId_brigada() != 0) {
+                        JRBBrigadaNull.setSelected(false);
+                    } else {
+                        JRBBrigadaNull.setSelected(true);
+                    }
+                    //System.out.println(sini);
                 }
 
-                JCBCalificacion.setSelectedIndex(sini.getCalificacion());
-
-                if (sini.isEstado()) {
-                    JRBEstado.setSelected(true);
-                }
-                if (!sini.isEstado()) {
-                    JRBEstado.setSelected(false);
-                }
-                if (sini.getBrigada() != null ) {
-                    JRBBrigadaNull.setSelected(false);
-                } else {
-                    JRBBrigadaNull.setSelected(true);
-                }
-
-            }
-
-        } catch (NullPointerException ex) {
+            }catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(this, "No deje campos vacios" + ex.getMessage());
-            ex.printStackTrace();
             limpiar();
-        } catch (NumberFormatException ex2) {
+            ex.printStackTrace();
+        }catch (NumberFormatException ex2) {
             JOptionPane.showMessageDialog(this, "El dni debe ser un numero" + ex2.getMessage());
             limpiar();
         }
-
     }//GEN-LAST:event_JBBuscarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
