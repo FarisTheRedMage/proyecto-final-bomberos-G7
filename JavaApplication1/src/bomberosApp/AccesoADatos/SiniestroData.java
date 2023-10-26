@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -63,7 +64,7 @@ public class SiniestroData {
     }
 
     public Siniestro BuscarSiniestroPorID(int id) {
-      Siniestro siniestro = new Siniestro(); 
+        Siniestro siniestro = new Siniestro();
         String SQL = "SELECT * FROM siniestro WHERE id_siniestro = ?";
 
         PreparedStatement ps = null;
@@ -72,7 +73,8 @@ public class SiniestroData {
             ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            Brigada brg;// -------
+            Brigada brg;
+
             if (rs.next()) {
                 siniestro = new Siniestro();
                 brg = new Brigada();
@@ -82,20 +84,14 @@ public class SiniestroData {
                 siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
                 siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
-//REVISAR POR QUE AUTOMATICAMENTE SE METE NULL
-                if (siniestro.getBrigada() !=null) {
-                   // System.out.println(siniestro);
-                    //              Usamos el metodo de BrigadaData.
+
+                if (siniestro.getBrigada() != null) {
                     brg = brigadaD.BuscarBrigada(rs.getInt("id_brigada"));
-                    
                     siniestro.setBrigada(brg);
-                    
-                    System.out.println(brg);
                 } else {
                     siniestro.setBrigada(null);
-                    System.out.println(brg);
                 }
-/////////////////////////////////////////////////////
+
                 if (rs.getDate("fecha_resolucion") != null) {
                     siniestro.setFecha_resolucion(rs.getDate("fecha_resolucion").toLocalDate());
                     siniestro.setCalificacion(rs.getInt("calificacion"));
@@ -105,16 +101,54 @@ public class SiniestroData {
                 }
 
                 siniestro.setEstado(rs.getBoolean("estado"));
-
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el Siniestro");
             }
             ps.close();
             rs.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro: " + e.getMessage());
         }
-       // System.out.println(siniestro);
+        return siniestro;
+    }
+
+    public Siniestro BuscarSiniestro_ID_NUEVO(int id) {
+        Siniestro siniestro = null;
+        String SQL = "SELECT * FROM siniestro WHERE id_siniestro = ?";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                siniestro = new Siniestro();
+                siniestro.setId_siniestro(rs.getInt("id_siniestro"));
+                siniestro.setCoord_X(rs.getDouble("coord_X"));
+                siniestro.setCoord_Y(rs.getDouble("coord_Y"));
+                siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
+                siniestro.setTipo(rs.getString("tipo"));
+                siniestro.setDetalles(rs.getString("detalles"));
+
+                // Verificar si id_brigada es NULL antes de asignarlo a la brigada
+                int idBrigada = rs.getInt("id_brigada");
+                if (!rs.wasNull()) {
+                    Brigada brigada = new Brigada();
+                    brigada.setId_brigada(idBrigada);
+                    siniestro.setBrigada(brigada);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No existe el Siniestro");
+            }
+            ps.close();
+            rs.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro: " + e.getMessage());
+        }
+
         return siniestro;
     }
 
@@ -130,21 +164,21 @@ public class SiniestroData {
             ps.setDate(3, Date.valueOf(siniestro.getFecha_siniestro()));
             ps.setString(4, siniestro.getTipo());
             ps.setString(5, siniestro.getDetalles());
-         
+
             if (siniestro.getBrigada() == null) {
                 ps.setString(6, null);
             } else {
                 ps.setInt(6, siniestro.getBrigada().getId_brigada());//----------
             }
 
+            // Configura fecha_resolucion y calificacion
             if (siniestro.getFecha_resolucion() != null) {
                 ps.setDate(7, Date.valueOf(siniestro.getFecha_resolucion()));
-
+                ps.setInt(8, siniestro.getCalificacion());
             } else {
-                ps.setNull(7, java.sql.Types.NULL);
+                ps.setNull(7, Types.DATE);
+                ps.setInt(8, 0);
             }
-
-            ps.setInt(8, siniestro.getCalificacion());
             ps.setBoolean(9, siniestro.isEstado());
             ps.setInt(10, siniestro.getId_siniestro());
 

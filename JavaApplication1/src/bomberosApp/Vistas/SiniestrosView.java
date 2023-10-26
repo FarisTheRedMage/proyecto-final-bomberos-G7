@@ -61,7 +61,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Siniestros");
 
-        jLabel1.setText("Codigo/ID");
+        jLabel1.setText("Buscar Por Codigo/ID de Siniestro");
 
         jLabel2.setText("Fecha de Inicio");
 
@@ -124,47 +124,33 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel3)
+                                .addGap(10, 10, 10)
+                                .addComponent(JTFCoordX, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JDCFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(148, 148, 148)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(155, 155, 155)
-                                .addComponent(jLabel1)
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addComponent(JTFCoordY))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JBBuscar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(JTFCoordX, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(JDCFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(148, 148, 148)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(JTFCoordY))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCBoxTipoSiniestro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(jCBoxTipoSiniestro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(266, 266, 266)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(JRBBrigadaNull)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -182,22 +168,33 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                                 .addGap(67, 67, 67)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JRBEstado))))))
-                .addContainerGap(53, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(246, 246, 246))
+                                    .addComponent(JRBEstado)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JRBBrigadaNull)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JBBuscar)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(JBBuscar))
-                .addGap(17, 17, 17)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -219,13 +216,13 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(JRBBrigadaNull)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -242,7 +239,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                     .addComponent(JBSalir)
                     .addComponent(JBModificar)
                     .addComponent(JBGuardarNuevoSiniestro))
-                .addContainerGap())
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -312,16 +309,31 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             } else {
                 siniestro.setFecha_resolucion(null);  // Permite fecha_resolución como null.
             }
-            // Procesa la calificación si se selecciona una Sino null.
+
+            //VER - PERO FUNCIONA!!!
             Integer calificacion = null;
             Object selectedCalificacion = JCBCalificacion.getSelectedItem();
             if (selectedCalificacion != null) {
                 if (selectedCalificacion instanceof Integer) {
                     calificacion = (Integer) selectedCalificacion;
-                } else {
-                    calificacion = Integer.parseInt(selectedCalificacion.toString());
+                } else if (selectedCalificacion instanceof String) {
+                    String calificacionStr = (String) selectedCalificacion;
+                    if (!calificacionStr.isEmpty()) {
+                        try {
+                            calificacion = Integer.parseInt(calificacionStr);
+                        } catch (NumberFormatException ex) {
+                            // Manejar la conversión fallida, por ejemplo, mostrando un mensaje de error.
+                            JOptionPane.showMessageDialog(this, "Calificación no válida");
+                        }
+                    }
                 }
             }
+
+// Verificar si calificacion es nulo y asignar un valor predeterminado si es necesario
+            if (calificacion == null) {
+                calificacion = 0; // O cualquier otro valor predeterminado que desees
+            }
+
             siniestro.setCalificacion(calificacion);
             if (siniestro.getFecha_resolucion() == null) {
                 JDCFechaDeResolucion.setDate(null);
@@ -329,16 +341,24 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 JDCFechaDeResolucion.setDate(Date.from(siniestro.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
             }
             siniestro.setEstado(JRBEstado.isSelected());
+
             if (JRBBrigadaNull.isSelected()) {
                 siniestro.setBrigada(null);
+            } else {
+                // Obtiene la brigada seleccionada del JComboBox
+                Brigada brigadaSELECT = (Brigada) JCBAsignarBrigada.getSelectedItem();
+                siniestro.setBrigada(brigadaSELECT);
             }
+
             sd.ModificarSiniestro(siniestro);
             limpiar();
         } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(this, "No deje campos vacíos" + ex.getMessage());
+            ex.printStackTrace();
             limpiar();
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "El campo debe ser un número");
+            ex.printStackTrace();
             limpiar();
         }
     }//GEN-LAST:event_JBModificarActionPerformed
@@ -346,55 +366,58 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
     private void JBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
-//funca
+//FUNCA!!!!!!!!
     private void JBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarActionPerformed
 
         try {
             Siniestro sini = null;
             int id = Integer.parseInt(JTCodigo.getText());
-            sini = sd.BuscarSiniestroPorID(id);
-//            System.out.println(sini);
+            sini = sd.BuscarSiniestro_ID_NUEVO(id);//LA SOLUCION ERA USAR EL METODO NUEVO DE ID
+
             if (sini != null) {
                 JTFCoordX.setText(String.valueOf(sini.getCoord_X()));
                 JTFCoordY.setText(String.valueOf(sini.getCoord_Y()));
                 JDCFechaInicio.setDate(Date.from(sini.getFecha_siniestro().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 jCBoxTipoSiniestro.setSelectedItem(sini.getTipo());
-                
+
                 if (sini.getBrigada() != null) {
-                    JCBAsignarBrigada.setSelectedItem(sini.getBrigada().getId_brigada());
-                } 
-                    JTDetallesDelSiniestro.setText(sini.getDetalles());
-                    llenarComboBox();
-                    //System.out.println(sini);
-                    if (sini.getFecha_resolucion() == null) {
-                        JDCFechaDeResolucion.setDate(null);
-                    } else {
-                        JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
-                    }
-
-                    JCBCalificacion.setSelectedIndex(sini.getCalificacion());
-
-                    if (sini.isEstado()) {
-                        JRBEstado.setSelected(true);
-                    }
-                    if (!sini.isEstado()) {
-                        JRBEstado.setSelected(false);
-                    }
-                   // if (sini.getBrigada() != null && sini.getBrigada().getId_brigada() != 0) {
-                    if (sini.getBrigada() !=null){ 
-                        JRBBrigadaNull.setSelected(false);
-                    } 
-                    if (sini.getBrigada()==null){
-                        JRBBrigadaNull.setSelected(true);
-                    }
-                    //System.out.println(sini);
+                    JCBAsignarBrigada.setSelectedItem(sini.getBrigada());
+                } else {
+                    JCBAsignarBrigada.setSelectedItem(null);
                 }
 
-            }catch (NullPointerException ex) {
+                JTDetallesDelSiniestro.setText(sini.getDetalles());
+                llenarComboBox();
+
+                if (sini.getFecha_resolucion() == null) {
+                    JDCFechaDeResolucion.setDate(null);
+                } else {
+                    JDCFechaDeResolucion.setDate(Date.from(sini.getFecha_resolucion().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                }
+
+                JCBCalificacion.setSelectedIndex(sini.getCalificacion());
+
+                if (sini.isEstado() != null) {
+                    if (sini.isEstado()) {
+                        JRBEstado.setSelected(true);
+                    } else {
+                        JRBEstado.setSelected(false);
+                    }
+                }
+                if (sini.getBrigada() != null) {
+                    JRBBrigadaNull.setSelected(false);
+                }
+                if (sini.getBrigada() == null) {
+                    JRBBrigadaNull.setSelected(true);
+                }
+
+            }
+
+        } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(this, "No deje campos vacios" + ex.getMessage());
             limpiar();
             ex.printStackTrace();
-        }catch (NumberFormatException ex2) {
+        } catch (NumberFormatException ex2) {
             JOptionPane.showMessageDialog(this, "El dni debe ser un numero" + ex2.getMessage());
             limpiar();
         }
@@ -443,28 +466,23 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
     }
 
     private void llenarComboBox() {
-
         JCBAsignarBrigada.removeAllItems();
-        if (!JTCodigo.getText().isEmpty()) {
-            siniestro = sd.BuscarSiniestroPorID(Integer.parseInt(JTCodigo.getText()));
 
-            siniestro.getBrigada();
+        if (!JTCodigo.getText().isEmpty()) {
+            int siniestroId = Integer.parseInt(JTCodigo.getText());
+            Siniestro siniestro = sd.BuscarSiniestro_ID_NUEVO(siniestroId); //APARECEN LOS DATOS EN NULL MENOS EL ID_BRIGADA
+
             if (siniestro.getBrigada() != null) {
                 JCBAsignarBrigada.addItem(siniestro.getBrigada());
-
-            } else {
-                for (Brigada brigadas : listarBrigada) {
-                    JCBAsignarBrigada.addItem(brigadas);
-                }
-
             }
-
         } else {
-            for (Brigada brigadas : listarBrigada) {
-                JCBAsignarBrigada.addItem(brigadas);
+            List<Brigada> brigadas = listarBrigada;
+            if (brigadas != null) {
+                for (Brigada brigada : brigadas) {
+                    JCBAsignarBrigada.addItem(brigada);
+                }
             }
-
         }
-
     }
+
 }

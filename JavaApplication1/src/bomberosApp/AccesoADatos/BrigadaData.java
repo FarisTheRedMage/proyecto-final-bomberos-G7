@@ -52,44 +52,49 @@ public class BrigadaData {
     }
 
     public Brigada BuscarBrigada(int id) {
-        Brigada brigada = null;
+    System.out.println("Iniciando método BuscarBrigada");
+    
+    Brigada brigada = null;
 
-        String SQL = "SELECT * FROM brigada WHERE id_brigada = ?";
-        PreparedStatement ps = null;
+    String SQL = "SELECT * FROM brigada WHERE id_brigada = ?";
+    PreparedStatement ps = null;
 
-        try {
-            ps = con.prepareStatement(SQL);
-            ps.setInt(1, id);
+    try {
+        System.out.println("Ejecutando consulta SQL: " + SQL);
+        
+        ps = con.prepareStatement(SQL);
+        ps.setInt(1, id);
 
-            ResultSet rs = ps.executeQuery();
-            Cuartel cuart;
+        ResultSet rs = ps.executeQuery();
+        Cuartel cuart;
 
-            if (rs.next()) {
-                brigada = new Brigada();
-                cuart = new Cuartel();
-                brigada.setId_brigada(rs.getInt("id_brigada"));
-                brigada.setNombre_brigada(rs.getString("nombre_brigada"));
-                brigada.setEspecialidad(rs.getString("especialidad"));
-                brigada.setEstado(rs.getBoolean("estado"));
-                brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
-                brigada.setNombre_cuartel(rs.getString("nombre_cuartel"));
-                cuart.setId_cuartel(rs.getInt("id_cuartel"));
-                
-                brigada.setCuartel(cuart);
-                
-                brigada.setId_brigada(id);
-                System.out.println(brigada);
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe el empleado");
-            }
-            ps.close();
-            rs.close();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Brigada" + e.getMessage());////VER ESTO!!!!!!!
+        if (rs.next()) {
+            brigada = new Brigada();
+            cuart = new Cuartel();
+            brigada.setId_brigada(rs.getInt("id_brigada"));
+            brigada.setNombre_brigada(rs.getString("nombre_brigada"));
+            brigada.setEspecialidad(rs.getString("especialidad"));
+            brigada.setEstado(rs.getBoolean("estado"));
+            brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
+            brigada.setNombre_cuartel(rs.getString("nombre_cuartel"));
+            cuart.setId_cuartel(rs.getInt("id_cuartel"));
+
+            brigada.setCuartel(cuart);
+
+            brigada.setId_brigada(id);
+            System.out.println("Datos de brigada obtenidos con éxito");
+        } else {
+            JOptionPane.showMessageDialog(null, "No existe la brigada");
         }
-        System.out.println(brigada);
-        return brigada;
+        ps.close();
+        rs.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Brigada" + e.getMessage());
     }
+
+    System.out.println("Finalizando método BuscarBrigada");
+    return brigada;
+}
 
     public void ModificarBrigada(Brigada brigada) {
 
