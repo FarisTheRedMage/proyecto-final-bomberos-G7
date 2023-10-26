@@ -84,8 +84,9 @@ public class SiniestroData {
                 siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
                 siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
-
-                if (siniestro.getBrigada() != null) {
+              
+                int idBrigi = rs.getInt("id_brigada");
+                if (!rs.wasNull()) {
                     brg = brigadaD.BuscarBrigada(rs.getInt("id_brigada"));
                     siniestro.setBrigada(brg);
                 } else {

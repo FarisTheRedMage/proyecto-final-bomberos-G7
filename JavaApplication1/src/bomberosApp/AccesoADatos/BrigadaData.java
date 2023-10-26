@@ -52,15 +52,14 @@ public class BrigadaData {
     }
 
     public Brigada BuscarBrigada(int id) {
-    System.out.println("Iniciando método BuscarBrigada");
-    
+
     Brigada brigada = null;
 
     String SQL = "SELECT * FROM brigada WHERE id_brigada = ?";
     PreparedStatement ps = null;
 
     try {
-        System.out.println("Ejecutando consulta SQL: " + SQL);
+      
         
         ps = con.prepareStatement(SQL);
         ps.setInt(1, id);
@@ -78,11 +77,11 @@ public class BrigadaData {
             brigada.setDisponibilidad(rs.getBoolean("disponibilidad"));
             brigada.setNombre_cuartel(rs.getString("nombre_cuartel"));
             cuart.setId_cuartel(rs.getInt("id_cuartel"));
-
             brigada.setCuartel(cuart);
-
             brigada.setId_brigada(id);
-            System.out.println("Datos de brigada obtenidos con éxito");
+            
+            //faltan algunas cosas.
+         
         } else {
             JOptionPane.showMessageDialog(null, "No existe la brigada");
         }
@@ -92,7 +91,7 @@ public class BrigadaData {
         JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Brigada" + e.getMessage());
     }
 
-    System.out.println("Finalizando método BuscarBrigada");
+    
     return brigada;
 }
 

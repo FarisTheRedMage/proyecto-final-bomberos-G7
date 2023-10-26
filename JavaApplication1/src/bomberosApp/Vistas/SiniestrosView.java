@@ -77,6 +77,12 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Calificacion");
 
+        JCBAsignarBrigada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBAsignarBrigadaActionPerformed(evt);
+            }
+        });
+
         JRBEstado.setText("Marcar si esta en curso");
 
         jLabel6.setText("Detalles Del Siniestro");
@@ -372,18 +378,22 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         try {
             Siniestro sini = null;
             int id = Integer.parseInt(JTCodigo.getText());
-            sini = sd.BuscarSiniestro_ID_NUEVO(id);//LA SOLUCION ERA USAR EL METODO NUEVO DE ID
+            sini = sd.BuscarSiniestroPorID(id);//LA SOLUCION ERA USAR EL METODO NUEVO DE ID
 
             if (sini != null) {
                 JTFCoordX.setText(String.valueOf(sini.getCoord_X()));
                 JTFCoordY.setText(String.valueOf(sini.getCoord_Y()));
                 JDCFechaInicio.setDate(Date.from(sini.getFecha_siniestro().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
                 jCBoxTipoSiniestro.setSelectedItem(sini.getTipo());
-
+                
                 if (sini.getBrigada() != null) {
                     JCBAsignarBrigada.setSelectedItem(sini.getBrigada());
+                    JCBAsignarBrigada.setEnabled(true);
+                    JRBBrigadaNull.setSelected(false);
                 } else {
                     JCBAsignarBrigada.setSelectedItem(null);
+                    JCBAsignarBrigada.setEnabled(false);
+                    JRBBrigadaNull.setSelected(true);
                 }
 
                 JTDetallesDelSiniestro.setText(sini.getDetalles());
@@ -404,13 +414,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                         JRBEstado.setSelected(false);
                     }
                 }
-                if (sini.getBrigada() != null) {
-                    JRBBrigadaNull.setSelected(false);
-                }
-                if (sini.getBrigada() == null) {
-                    JRBBrigadaNull.setSelected(true);
-                }
-
             }
 
         } catch (NullPointerException ex) {
@@ -422,6 +425,10 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             limpiar();
         }
     }//GEN-LAST:event_JBBuscarActionPerformed
+
+    private void JCBAsignarBrigadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAsignarBrigadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCBAsignarBrigadaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
@@ -467,20 +474,37 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
 
     private void llenarComboBox() {
         JCBAsignarBrigada.removeAllItems();
-
-        if (!JTCodigo.getText().isEmpty()) {
-            int siniestroId = Integer.parseInt(JTCodigo.getText());
-            Siniestro siniestro = sd.BuscarSiniestro_ID_NUEVO(siniestroId); //APARECEN LOS DATOS EN NULL MENOS EL ID_BRIGADA
-
-            if (siniestro.getBrigada() != null) {
+        
+        if(!JTCodigo.getText().isEmpty()){
+            siniestro = sd.BuscarSiniestroPorID(Integer.parseInt(JTCodigo.getText()));
+            siniestro.getBrigada();
+               if (siniestro.getBrigada() != null) {
                 JCBAsignarBrigada.addItem(siniestro.getBrigada());
+
+            } else {
+                for (Brigada brigadas : listarBrigada) {
+                    JCBAsignarBrigada.addItem(brigadas);
+                }
+
             }
         } else {
-            List<Brigada> brigadas = listarBrigada;
-            if (brigadas != null) {
-                for (Brigada brigada : brigadas) {
-                    JCBAsignarBrigada.addItem(brigada);
-                }
+            for (Brigada brigadas : listarBrigada) {
+                JCBAsignarBrigada.addItem(brigadas);
+            
+        
+//        if (!JTCodigo.getText().isEmpty()) {
+//            int siniestroId = Integer.parseInt(JTCodigo.getText());
+//            Siniestro siniestro = sd.BuscarSiniestro_ID_NUEVO(siniestroId); //APARECEN LOS DATOS EN NULL MENOS EL ID_BRIGADA
+//
+//            if (siniestro.getBrigada() != null) {
+//                JCBAsignarBrigada.addItem(siniestro.getBrigada());
+//            }
+//        } else {
+//            List<Brigada> brigadas = listarBrigada;
+//            if (brigadas != null) {
+//                for (Brigada brigada : brigadas) {
+//                    JCBAsignarBrigada.addItem(brigada);
+//                }
             }
         }
     }
