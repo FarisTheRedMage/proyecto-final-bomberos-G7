@@ -82,14 +82,18 @@ public class SiniestroData {
                 siniestro.setFecha_siniestro(rs.getDate("fecha_siniestro").toLocalDate());
                 siniestro.setTipo(rs.getString("tipo"));
                 siniestro.setDetalles(rs.getString("detalles"));
-
-                if (siniestro.getBrigada() != null) {
-                    System.out.println(siniestro);
+//REVISAR POR QUE AUTOMATICAMENTE SE METE NULL
+                if (siniestro.getBrigada() !=null) {
+                   // System.out.println(siniestro);
                     //              Usamos el metodo de BrigadaData.
                     brg = brigadaD.BuscarBrigada(rs.getInt("id_brigada"));
+                    
                     siniestro.setBrigada(brg);
+                    
+                    System.out.println(brg);
                 } else {
                     siniestro.setBrigada(null);
+                    System.out.println(brg);
                 }
 /////////////////////////////////////////////////////
                 if (rs.getDate("fecha_resolucion") != null) {
@@ -110,7 +114,7 @@ public class SiniestroData {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Siniestro" + e.getMessage());
         }
-        System.out.println(siniestro);
+       // System.out.println(siniestro);
         return siniestro;
     }
 

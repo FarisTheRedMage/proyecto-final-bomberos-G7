@@ -380,9 +380,11 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                     if (!sini.isEstado()) {
                         JRBEstado.setSelected(false);
                     }
-                    if (sini.getBrigada() != null && sini.getBrigada().getId_brigada() != 0) {
+                   // if (sini.getBrigada() != null && sini.getBrigada().getId_brigada() != 0) {
+                    if (sini.getBrigada() !=null){ 
                         JRBBrigadaNull.setSelected(false);
-                    } else {
+                    } 
+                    if (sini.getBrigada()==null){
                         JRBBrigadaNull.setSelected(true);
                     }
                     //System.out.println(sini);

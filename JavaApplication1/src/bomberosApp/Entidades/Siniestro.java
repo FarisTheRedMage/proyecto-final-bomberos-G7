@@ -43,6 +43,18 @@ public class Siniestro {
         this.estado = estado;
     }
 
+    public Siniestro(int id_siniestro, double coord_X, double coord_Y, LocalDate fecha_siniestro, String tipo, String detalles, Boolean estado) {
+        this.id_siniestro = id_siniestro;
+        this.coord_X = coord_X;
+        this.coord_Y = coord_Y;
+        this.fecha_siniestro = fecha_siniestro;
+        this.tipo = tipo;
+        this.detalles = detalles;
+        this.estado = estado;
+    }
+    
+    
+
     public int getId_siniestro() {
         return id_siniestro;
     }
@@ -131,7 +143,7 @@ public class Siniestro {
                 + ", Fecha Del Siniestro " + fecha_siniestro
                 + ", Tipo " + tipo 
                 + ", Detalles " + detalles
-                + ", Brigada" + brigada.getId_brigada()
+                + ", Brigada" + brigada
                 + ", Fecha Resolucion " + fecha_resolucion
                 + ", Calificacion " + calificacion
                 + ", Estado " + estado;
