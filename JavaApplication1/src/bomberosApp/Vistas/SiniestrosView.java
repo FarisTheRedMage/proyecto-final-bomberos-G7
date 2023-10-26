@@ -55,6 +55,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         jCBoxTipoSiniestro = new javax.swing.JComboBox<>();
         JCBCalificacion = new javax.swing.JComboBox<>();
         JRBBrigadaNull = new javax.swing.JRadioButton();
+        JRBMostrarBrigadas = new javax.swing.JRadioButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -123,6 +124,13 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
 
         JRBBrigadaNull.setText("Sin Brigada");
 
+        JRBMostrarBrigadas.setText("Mostrar Brigadas");
+        JRBMostrarBrigadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRBMostrarBrigadasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,7 +187,10 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(JRBBrigadaNull)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(JRBBrigadaNull)
+                                .addGap(43, 43, 43)
+                                .addComponent(JRBMostrarBrigadas))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(139, 139, 139)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,7 +238,9 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5)
                     .addComponent(JCBAsignarBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(JRBBrigadaNull)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JRBBrigadaNull)
+                    .addComponent(JRBMostrarBrigadas))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -245,7 +258,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                     .addComponent(JBSalir)
                     .addComponent(JBModificar)
                     .addComponent(JBGuardarNuevoSiniestro))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -388,11 +401,11 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 
                 if (sini.getBrigada() != null) {
                     JCBAsignarBrigada.setSelectedItem(sini.getBrigada());
-                    JCBAsignarBrigada.setEnabled(true);
+                  
                     JRBBrigadaNull.setSelected(false);
                 } else {
                     JCBAsignarBrigada.setSelectedItem(null);
-                    JCBAsignarBrigada.setEnabled(false);
+                    
                     JRBBrigadaNull.setSelected(true);
                 }
 
@@ -430,6 +443,10 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JCBAsignarBrigadaActionPerformed
 
+    private void JRBMostrarBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBMostrarBrigadasActionPerformed
+        llenarComboBox();
+    }//GEN-LAST:event_JRBMostrarBrigadasActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
     private javax.swing.JButton JBGuardarNuevoSiniestro;
@@ -441,6 +458,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
     private com.toedter.calendar.JDateChooser JDCFechaInicio;
     private javax.swing.JRadioButton JRBBrigadaNull;
     private javax.swing.JRadioButton JRBEstado;
+    private javax.swing.JRadioButton JRBMostrarBrigadas;
     private javax.swing.JTextField JTCodigo;
     private javax.swing.JTextPane JTDetallesDelSiniestro;
     private javax.swing.JTextField JTFCoordX;
@@ -478,9 +496,9 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         if(!JTCodigo.getText().isEmpty()){
             siniestro = sd.BuscarSiniestroPorID(Integer.parseInt(JTCodigo.getText()));
             siniestro.getBrigada();
-               if (siniestro.getBrigada() != null) {
+               if (siniestro.getBrigada() != null && !JRBMostrarBrigadas.isSelected()) {
                 JCBAsignarBrigada.addItem(siniestro.getBrigada());
-
+                
             } else {
                 for (Brigada brigadas : listarBrigada) {
                     JCBAsignarBrigada.addItem(brigadas);

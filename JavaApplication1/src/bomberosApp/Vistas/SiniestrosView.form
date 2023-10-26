@@ -91,7 +91,11 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="JCBAsignarBrigada" min="-2" pref="536" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="JRBBrigadaNull" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="JRBBrigadaNull" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="JRBMostrarBrigadas" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -155,7 +159,10 @@
                   <Component id="JCBAsignarBrigada" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="JRBBrigadaNull" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="JRBBrigadaNull" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRBMostrarBrigadas" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
@@ -178,7 +185,7 @@
                   <Component id="JBModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JBGuardarNuevoSiniestro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -344,6 +351,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sin Brigada"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="JRBMostrarBrigadas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar Brigadas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBMostrarBrigadasActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
