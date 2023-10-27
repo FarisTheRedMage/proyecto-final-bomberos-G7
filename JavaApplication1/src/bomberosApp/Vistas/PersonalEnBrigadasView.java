@@ -6,6 +6,7 @@ import bomberosApp.AccesoADatos.CuartelData;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -30,6 +31,7 @@ public class PersonalEnBrigadasView extends javax.swing.JInternalFrame {
         initComponents();
         llenarComboBox();
         armarCabeceras();
+        cambiarColor();
     }
 
     @SuppressWarnings("unchecked")
@@ -180,4 +182,23 @@ public class PersonalEnBrigadasView extends javax.swing.JInternalFrame {
             }
         }
     }
+    
+    private void cambiarColor(){
+       
+          
+          
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+        
+       
+        jLabel3.setForeground(new Color(200, 214, 214));
+   
+         JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+        
+    
+    
+    
+    
+}
+    
 }

@@ -2,6 +2,7 @@ package bomberosApp.Vistas;
 
 import bomberosApp.AccesoADatos.CuartelData;
 import bomberosApp.Entidades.Cuartel;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -13,6 +14,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
 
     public GestionDeCuartelesView() {
         initComponents();
+        cambiarColor();
     }
 
     @SuppressWarnings("unchecked")
@@ -81,6 +83,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
 
         JRBEstado.setText("Estado");
 
+        JBSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/pngwing.com.png"))); // NOI18N
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,7 +118,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
                                 .addComponent(JBBuscar)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(JBSalir)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +182,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
                         .addComponent(jLabel4)
                         .addComponent(JTFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(JRBEstado)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBAgregarCuartel)
                     .addComponent(JRBGuardarModificaciones)
@@ -308,6 +311,34 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
         JRBEstado.setSelected(false);
     }
 
+    private void cambiarColor(){
+       
+          
+          
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+        
+        jLabel1.setForeground(new Color(200, 214, 214));
+        jLabel2.setForeground(new Color(200, 214, 214));
+        jLabel3.setForeground(new Color(200, 214, 214));
+        jLabel4.setForeground(new Color(200, 214, 214));
+        jLabel5.setForeground(new Color(200, 214, 214));
+        jLabel6.setForeground(new Color(200, 214, 214));
+        jLabel7.setForeground(new Color(200, 214, 214));
+       
+        
+        
+        JBBuscar.setBackground(new Color(50, 47, 65));
+        JBBuscar.setForeground(new Color(200, 214, 214));
+
+        JBAgregarCuartel.setBackground(new Color(50, 47, 65));
+        JBAgregarCuartel.setForeground(new Color(200, 214, 214));
+        
+      
+        
+         JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+        
+   }
     
     
     

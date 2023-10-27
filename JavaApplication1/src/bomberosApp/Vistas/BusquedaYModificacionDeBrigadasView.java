@@ -4,6 +4,7 @@ import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.CuartelData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     public BusquedaYModificacionDeBrigadasView() {
         initComponents();
         llenarJCBCuartel();
+        cambiarColor();
     }
 
     @SuppressWarnings("unchecked")
@@ -384,4 +386,35 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         JRBEstado.setSelected(false);
     }
 
+     private void cambiarColor(){
+       
+    
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+
+        jLabel2.setForeground(new Color(200, 214, 214));
+        jLabel1.setForeground(new Color(200, 214, 214));
+        jLabel3.setForeground(new Color(200, 214, 214));
+        jLabel4.setForeground(new Color(200, 214, 214));
+        jLabel5.setForeground(new Color(200, 214, 214));
+        jLabel6.setForeground(new Color(200, 214, 214));
+        
+
+        JBBuscar.setBackground(new Color(50, 47, 65));
+        JBBuscar.setForeground(new Color(200, 214, 214));
+
+        JBBuscarPorIDCuartel.setBackground(new Color(50, 47, 65));
+        JBBuscarPorIDCuartel.setForeground(new Color(200, 214, 214));
+        
+        JBGuardar.setBackground(new Color(50, 47, 65));
+        JBGuardar.setForeground(new Color(200, 214, 214));
+        
+        JBLimpiar.setBackground(new Color(50, 47, 65));
+        JBLimpiar.setForeground(new Color(200, 214, 214));
+        
+        JBNuevo.setBackground(new Color(50, 47, 65));
+        JBNuevo.setForeground(new Color(200, 214, 214));
+        
+        JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+   }
 }

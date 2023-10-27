@@ -6,6 +6,7 @@ import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
 import bomberosApp.Entidades.Siniestro;
+import java.awt.Color;
 import java.util.List;
 
 public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
@@ -28,6 +29,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
        
         initComponents();
         llenarComboBoxSiniestro();
+        cambiarColor();
     }
     
     @SuppressWarnings("unchecked")
@@ -214,4 +216,25 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
         s1.setBrigada(brigadaAAsignar);
 
     }
+    
+     private void cambiarColor(){
+       
+    
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+
+        jLabel2.setForeground(new Color(200, 214, 214));
+        jLabel1.setForeground(new Color(200, 214, 214));
+        jLabel7.setForeground(new Color(200, 214, 214));
+       
+        
+
+        JBAsignarBrigada.setBackground(new Color(50, 47, 65));
+        JBAsignarBrigada.setForeground(new Color(200, 214, 214));
+
+        JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+        
+      
+   }
+    
 }

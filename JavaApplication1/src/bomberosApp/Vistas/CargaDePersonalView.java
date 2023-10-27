@@ -4,6 +4,7 @@ import bomberosApp.AccesoADatos.BomberoData;
 import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.Entidades.Bombero;
 import bomberosApp.Entidades.Brigada;
+import java.awt.Color;
 import java.time.ZoneId;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -20,6 +21,7 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
     public CargaDePersonalView() {
         initComponents();
         CargarComboBox();
+        cambiarColor();
     }
 
     @SuppressWarnings("unchecked")
@@ -264,5 +266,27 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
         JCBGrupoSanguineo.setSelectedIndex(0);
         JCBNombreClave.setSelectedIndex(0);
     }
+    
+     private void cambiarColor(){
+       
+    
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+
+        jLabel2.setForeground(new Color(200, 214, 214));
+        jLabel3.setForeground(new Color(200, 214, 214));
+        jLabel4.setForeground(new Color(200, 214, 214));
+        jLabel5.setForeground(new Color(200, 214, 214));
+        jLabel6.setForeground(new Color(200, 214, 214));
+        jLabel7.setForeground(new Color(200, 214, 214));
+        jLabel8.setForeground(new Color(200, 214, 214));
+        jLabel10.setForeground(new Color(200, 214, 214));
+
+        JBGuardar.setBackground(new Color(50, 47, 65));
+        JBGuardar.setForeground(new Color(200, 214, 214));
+
+        JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+   }
+
 
 }

@@ -2,6 +2,7 @@ package bomberosApp.Vistas;
 
 import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.Entidades.Brigada;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.ButtonGroup;
 import javax.swing.table.DefaultTableModel;
@@ -17,6 +18,7 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
         initComponents();
         armarCabeceras();
         unirBotones();
+        cambiarColor();
     }
 
     private DefaultTableModel modelo = new DefaultTableModel();
@@ -174,4 +176,21 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
         }
     }
 
+     private void cambiarColor(){
+       
+          
+          
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+        
+        jLabel1.setForeground(new Color(200, 214, 214));
+        JTablaBrigadas.setBackground(Color.GRAY);
+
+        
+         JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+        
+   }
+    
+    
+    
 }

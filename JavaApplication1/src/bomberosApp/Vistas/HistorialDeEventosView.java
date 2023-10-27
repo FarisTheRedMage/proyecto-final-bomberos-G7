@@ -2,6 +2,7 @@ package bomberosApp.Vistas;
 
 import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Siniestro;
+import java.awt.Color;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
         initComponents();
         armarCabeceras();
         unirBotones();
+        cambiarColor();
     }
 
     @SuppressWarnings("unchecked")
@@ -235,4 +237,27 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
         }
 
     }
+    
+    private void cambiarColor(){
+       
+          
+          
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+        
+        
+        jLabel2.setForeground(new Color(200, 214, 214));
+       
+        
+        
+        JBListar.setBackground(new Color(50, 47, 65));
+        JBListar.setForeground(new Color(200, 214, 214));
+
+       
+        
+         JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+        
+   }
+    
+    
 }

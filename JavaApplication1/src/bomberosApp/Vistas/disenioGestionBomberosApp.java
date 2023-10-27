@@ -9,6 +9,7 @@ import bomberosApp.AccesoADatos.BomberoData;
 import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.CuartelData;
 import bomberosApp.AccesoADatos.SiniestroData;
+import java.awt.Color;
 
 /**
  *
@@ -21,6 +22,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private final BrigadaData brigd;
     private final SiniestroData sd;
 
+   
     /**
      * Creates new form disenioGestionBomberosApp
      */
@@ -32,7 +34,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         cd = new CuartelData();
         brigd = new BrigadaData();
         sd = new SiniestroData();
-        
+        cambiarColor();
     }
 
     /**
@@ -64,15 +66,17 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        escritorio.setBackground(new java.awt.Color(60, 63, 65));
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1183, Short.MAX_VALUE)
+            .addGap(0, 1485, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
 
         JMUnidades.setText("Unidades");
@@ -185,11 +189,15 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -354,4 +362,23 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
+
+   private void cambiarColor(){
+       
+    escritorio.setBackground(new Color (78, 73, 102));
+//    this.getContentPane().setBackground(new Color(78, 73, 102));
+//
+//        jLabel2.setForeground(new Color(200, 214, 214));
+//
+//        JBguardar.setBackground(new Color(50, 47, 65));
+//        JBguardar.setForeground(new Color(200, 214, 214));
+//
+//        JBsalir.setBackground(new Color(50, 47, 65));
+//        JBsalir.setForeground(new Color(200, 214, 214));
+   }
+
+
+
+
+
 }

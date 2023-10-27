@@ -4,6 +4,7 @@ import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.CuartelData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Cuartel;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,6 +24,7 @@ public class InformacionDeBrigadasEnCuartelView extends javax.swing.JInternalFra
     public InformacionDeBrigadasEnCuartelView() {
         initComponents();
         armarCabeceras();
+        cambiarColor();
     }
 
     @SuppressWarnings("unchecked")
@@ -168,4 +170,28 @@ public class InformacionDeBrigadasEnCuartelView extends javax.swing.JInternalFra
 
         JTablaBrigadasEnCuartel.setModel(modelo);
     }
+    
+    private void cambiarColor(){
+       
+          
+          
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+        
+        jLabel1.setForeground(new Color(200, 214, 214));
+        
+        
+        
+        JBBuscar.setBackground(new Color(50, 47, 65));
+        JBBuscar.setForeground(new Color(200, 214, 214));
+
+        
+        
+         JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+        
+   }
+    
+    
+    
+    
 }

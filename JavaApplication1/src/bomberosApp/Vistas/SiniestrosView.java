@@ -4,6 +4,7 @@ import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.SiniestroData;
 import bomberosApp.Entidades.Brigada;
 import bomberosApp.Entidades.Siniestro;
+import java.awt.Color;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +24,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         initComponents();
         llenarComboBox();
         siniestro = new Siniestro();
-
+        cambiarColor();
     }
 
     @SuppressWarnings("unchecked")
@@ -527,4 +528,37 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         }
     }
 
+    
+      private void cambiarColor(){
+       
+          
+          
+    this.getContentPane().setBackground(new Color(78, 73, 102));
+        
+        jLabel1.setForeground(new Color(200, 214, 214));
+        jLabel2.setForeground(new Color(200, 214, 214));
+        jLabel3.setForeground(new Color(200, 214, 214));
+        jLabel4.setForeground(new Color(200, 214, 214));
+        jLabel5.setForeground(new Color(200, 214, 214));
+        jLabel6.setForeground(new Color(200, 214, 214));
+        jLabel7.setForeground(new Color(200, 214, 214));
+        jLabel9.setForeground(new Color(200, 214, 214));
+        jLabel10.setForeground(new Color(200, 214, 214));
+        
+        
+        JBBuscar.setBackground(new Color(50, 47, 65));
+        JBBuscar.setForeground(new Color(200, 214, 214));
+
+        JBGuardarNuevoSiniestro.setBackground(new Color(50, 47, 65));
+        JBGuardarNuevoSiniestro.setForeground(new Color(200, 214, 214));
+        
+         JBModificar.setBackground(new Color(50, 47, 65));
+        JBModificar.setForeground(new Color(200, 214, 214));
+        
+         JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setForeground(new Color(200, 214, 214));
+        
+   }
+    
+    
 }
