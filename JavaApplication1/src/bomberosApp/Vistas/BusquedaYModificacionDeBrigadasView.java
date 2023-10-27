@@ -118,7 +118,6 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("*_En caso de crear nueva brigada primero Buscar un Cuartel por ID");
 
         JBLimpiar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N

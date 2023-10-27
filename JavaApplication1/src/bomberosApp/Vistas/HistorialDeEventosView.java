@@ -243,9 +243,7 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
     }
     
     private void cambiarColor(){
-       
-          
-          
+
     this.getContentPane().setBackground(new Color(78, 73, 102));
         
         

@@ -77,6 +77,18 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
         JRBEstado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBEstado.setText("Estado");
 
+        JTFNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFNombreKeyTyped(evt);
+            }
+        });
+
+        JTFApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFApellidoKeyTyped(evt);
+            }
+        });
+
         JBGuardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBGuardar.jpg"))); // NOI18N
         JBGuardar.setText("Guardar");
@@ -122,8 +134,8 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JCBNombreClave, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JTFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,7 +203,7 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBSalir)
                     .addComponent(JBGuardar))
@@ -234,6 +246,26 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
 
+//validacion nombre
+    private void JTFNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNombreKeyTyped
+    char validar = evt.getKeyChar(); // agarra el caracter
+        if (Character.isDigit(validar)) {// verifica si el carácter es es un numero
+            getToolkit().beep();// sonidito xD
+            evt.consume();// consume el evento evitando que el dígito ingresado se muestre en el JTextField
+            JOptionPane.showMessageDialog(rootPane, "Ingrese Solo Letras. ");
+        }
+    }//GEN-LAST:event_JTFNombreKeyTyped
+
+//validacion apellido
+    private void JTFApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFApellidoKeyTyped
+        char validar = evt.getKeyChar(); 
+        if (Character.isDigit(validar)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingrese Solo Letras. ");
+        }
+    }//GEN-LAST:event_JTFApellidoKeyTyped
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBGuardar;
     private javax.swing.JButton JBSalir;
@@ -275,11 +307,10 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
         JCBGrupoSanguineo.setSelectedIndex(0);
         JCBNombreClave.setSelectedIndex(0);
     }
-    
-     private void cambiarColor(){
-       
-    
-    this.getContentPane().setBackground(new Color(78, 73, 102));
+
+    private void cambiarColor() {
+
+        this.getContentPane().setBackground(new Color(78, 73, 102));
 
         jLabel2.setForeground(new Color(200, 214, 214));
         jLabel3.setForeground(new Color(200, 214, 214));
@@ -295,7 +326,6 @@ public class CargaDePersonalView extends javax.swing.JInternalFrame {
 
         JBSalir.setBackground(new Color(50, 47, 65));
         JBSalir.setForeground(new Color(200, 214, 214));
-   }
-
+    }
 
 }

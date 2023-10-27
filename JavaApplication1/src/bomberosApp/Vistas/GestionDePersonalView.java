@@ -9,7 +9,6 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
 
 public class GestionDePersonalView extends javax.swing.JInternalFrame {
 
@@ -113,6 +112,18 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
             }
         });
 
+        JTFNombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFNombresKeyTyped(evt);
+            }
+        });
+
+        JTFApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTFApellidosKeyTyped(evt);
+            }
+        });
+
         JBBuscarPorDni.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBBuscarPorDni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBBuscar.jpg"))); // NOI18N
         JBBuscarPorDni.setText("Buscar");
@@ -123,12 +134,6 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
         });
 
         JCBGrupoSanguineo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" }));
-
-        JCBCodigoDeBrigada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBCodigoDeBrigadaActionPerformed(evt);
-            }
-        });
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel18.setText("Nombre Clave");
@@ -255,7 +260,6 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-//EVENTOS
 //Funca!!!!
     private void JBGuardarModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarModificacionesActionPerformed
 
@@ -341,10 +345,24 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Ingrese un número válido para el ID: " + e.getMessage());
         }
     }//GEN-LAST:event_JBBuscarPorIDActionPerformed
-
-    private void JCBCodigoDeBrigadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBCodigoDeBrigadaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBCodigoDeBrigadaActionPerformed
+//validacion nombre
+    private void JTFNombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFNombresKeyTyped
+        char validar = evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingrese Solo Letras. ");
+        }
+    }//GEN-LAST:event_JTFNombresKeyTyped
+//validacion apellido
+    private void JTFApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFApellidosKeyTyped
+        char validar = evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Ingrese Solo Letras. ");
+        }
+    }//GEN-LAST:event_JTFApellidosKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscarPorDni;
@@ -392,37 +410,34 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
         JCBGrupoSanguineo.setSelectedIndex(0);
         JCBNombreClave.setSelectedIndex(0);
     }
-    
-    private void cambiarColor(){
-       
-          
-          
-    this.getContentPane().setBackground(new Color(78, 73, 102));
-        
+
+    private void cambiarColor() {
+
+        this.getContentPane().setBackground(new Color(78, 73, 102));
+
         jLabel1.setForeground(new Color(200, 214, 214));
         jLabel2.setForeground(new Color(200, 214, 214));
         jLabel3.setForeground(new Color(200, 214, 214));
         jLabel4.setForeground(new Color(200, 214, 214));
-       
+
         jLabel6.setForeground(new Color(200, 214, 214));
         jLabel7.setForeground(new Color(200, 214, 214));
         jLabel9.setForeground(new Color(200, 214, 214));
         jLabel8.setForeground(new Color(200, 214, 214));
-        jLabel18.setForeground(new Color (200, 214, 214));
-        
+        jLabel18.setForeground(new Color(200, 214, 214));
+
         JBBuscarPorDni.setBackground(new Color(50, 47, 65));
         JBBuscarPorDni.setForeground(new Color(200, 214, 214));
 
         JBBuscarPorID.setBackground(new Color(50, 47, 65));
         JBBuscarPorID.setForeground(new Color(200, 214, 214));
-        
-         JBGuardarModificaciones.setBackground(new Color(50, 47, 65));
+
+        JBGuardarModificaciones.setBackground(new Color(50, 47, 65));
         JBGuardarModificaciones.setForeground(new Color(200, 214, 214));
-        
-         JBSalir.setBackground(new Color(50, 47, 65));
+
+        JBSalir.setBackground(new Color(50, 47, 65));
         JBSalir.setForeground(new Color(200, 214, 214));
-        
-   }
-    
+
+    }
 
 }
