@@ -55,6 +55,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
 
         jLabel1.setText("Codigo/ID Brigada");
 
+        JBBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBBuscar.jpg"))); // NOI18N
         JBBuscar.setText("Buscar");
         JBBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +90,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
 
         jLabel6.setText("ID/ Codigo Cuartel");
 
+        JBBuscarPorIDCuartel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBBuscar.jpg"))); // NOI18N
         JBBuscarPorIDCuartel.setText("Buscar");
         JBBuscarPorIDCuartel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,7 +193,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
                     .addComponent(JTFEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRBEstado)
                     .addComponent(JRBDisponibilidad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBGuardar)
                     .addComponent(JBNuevo)

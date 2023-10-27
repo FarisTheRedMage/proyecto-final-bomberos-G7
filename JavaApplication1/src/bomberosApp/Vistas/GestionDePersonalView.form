@@ -49,9 +49,9 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="JTFTelefono" min="-2" pref="89" max="-2" attributes="0"/>
-                      <EmptySpace min="63" pref="41" max="32767" attributes="0"/>
+                      <EmptySpace min="63" max="32767" attributes="0"/>
                       <Component id="JRBEstado" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="JCBNombreClave" min="-2" pref="154" max="-2" attributes="0"/>
@@ -103,7 +103,7 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="JTFApellidos" min="-2" pref="211" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -244,6 +244,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBBuscarPorID">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/bomberosApp/Imagenes/JBBuscar.jpg"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
@@ -264,6 +267,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBBuscarPorDni">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/bomberosApp/Imagenes/JBBuscar.jpg"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
