@@ -64,8 +64,10 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(JTTablaHistorial);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel2.setText("Historial de Eventos");
 
+        JBListar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBListar.setText("Listar");
         JBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +75,7 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
             }
         });
 
+        JBSalir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBSalir.png.png"))); // NOI18N
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -81,8 +84,10 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
             }
         });
 
+        JRBEventosDeAyer.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBEventosDeAyer.setText("Eventos de Ayer");
 
+        JRBEventosDeHoy.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBEventosDeHoy.setText("Eventos de Hoy");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

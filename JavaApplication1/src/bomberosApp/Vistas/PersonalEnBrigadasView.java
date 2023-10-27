@@ -55,8 +55,10 @@ public class PersonalEnBrigadasView extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel3.setText("Elegir la Brigada para ver el personal ");
 
+        JBSalir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBSalir.png.png"))); // NOI18N
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +110,7 @@ public class PersonalEnBrigadasView extends javax.swing.JInternalFrame {
                 .addComponent(JCBPersonalEnBrigada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(JBSalir)
                 .addGap(45, 45, 45))
         );

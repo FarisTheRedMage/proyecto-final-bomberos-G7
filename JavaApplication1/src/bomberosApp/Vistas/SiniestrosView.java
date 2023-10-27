@@ -63,20 +63,28 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Siniestros");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel1.setText("Buscar Por Codigo/ID de Siniestro");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel2.setText("Fecha de Inicio");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel3.setText("Coordenadas X");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel4.setText("Tipo De Siniestro");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel5.setText("Asignar Brigada");
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel7.setText("Fecha de Resolucion");
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel9.setText("Coordenadas Y");
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel10.setText("Calificacion");
 
         JCBAsignarBrigada.addActionListener(new java.awt.event.ActionListener() {
@@ -85,12 +93,15 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             }
         });
 
+        JRBEstado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBEstado.setText("Marcar si esta en curso");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel6.setText("Detalles Del Siniestro");
 
         jScrollPane1.setViewportView(JTDetallesDelSiniestro);
 
+        JBBuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBBuscar.jpg"))); // NOI18N
         JBBuscar.setText("Buscar");
         JBBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +110,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             }
         });
 
+        JBSalir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBSalir.png.png"))); // NOI18N
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +119,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             }
         });
 
+        JBModificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBModificar.setText("Modificar");
         JBModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +127,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             }
         });
 
+        JBGuardarNuevoSiniestro.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBGuardarNuevoSiniestro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBGuardar.jpg"))); // NOI18N
         JBGuardarNuevoSiniestro.setText("Guardar nuevo Siniestro");
         JBGuardarNuevoSiniestro.addActionListener(new java.awt.event.ActionListener() {
@@ -126,8 +140,10 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
 
         JCBCalificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
+        JRBBrigadaNull.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBBrigadaNull.setText("Sin Brigada");
 
+        JRBMostrarBrigadas.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBMostrarBrigadas.setText("Mostrar Brigadas");
         JRBMostrarBrigadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,28 +158,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(10, 10, 10)
-                                .addComponent(JTFCoordX, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(JDCFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(148, 148, 148)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(JTFCoordY))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCBoxTipoSiniestro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(266, 266, 266)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -175,18 +169,16 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(JDCFechaDeResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(53, 53, 53)
-                                        .addComponent(jLabel10)
+                                        .addGap(47, 47, 47)
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(JCBCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(JBGuardarNuevoSiniestro)
-                                        .addGap(99, 99, 99)
-                                        .addComponent(JBModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(67, 67, 67)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JRBEstado)))
+                                        .addGap(70, 70, 70)
+                                        .addComponent(JBModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(82, 82, 82)
+                                .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -199,12 +191,36 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                         .addGap(139, 139, 139)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jLabel1)
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(JBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JRBEstado)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(JTFCoordX, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(JDCFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(148, 148, 148)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JTFCoordY))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCBoxTipoSiniestro, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -260,9 +276,9 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JBSalir)
-                    .addComponent(JBModificar)
+                    .addComponent(JBModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBGuardarNuevoSiniestro))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();

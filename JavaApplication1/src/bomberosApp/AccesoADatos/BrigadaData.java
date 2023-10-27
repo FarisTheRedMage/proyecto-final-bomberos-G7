@@ -98,8 +98,8 @@ public class BrigadaData {
     public void ModificarBrigada(Brigada brigada) {
 
         String SQL = " UPDATE brigada "
-                + "SET nombre_brigada = ?, especialidad = ?, estado = ?, id_cuartel = ?, disponibilidad =?, nombre_cuartel =?"
-                + "WHERE id_brigada = ?";
+                + " SET nombre_brigada = ?, especialidad = ?, estado = ?, id_cuartel = ?, disponibilidad =?, nombre_cuartel =?"
+                + " WHERE id_brigada = ?";
 
         PreparedStatement ps = null;
         try {

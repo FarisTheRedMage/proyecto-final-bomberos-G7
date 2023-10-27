@@ -40,6 +40,7 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Revisar Brigadas");
 
+        JBSalir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBSalir.png.png"))); // NOI18N
         JBSalir.setText("Salir");
         JBSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -48,8 +49,10 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel1.setText("Selecciona una opcion para ver las Brigadas Activas e Inactivas ");
 
+        JRBBrigadasNODisponibles.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBBrigadasNODisponibles.setText("Brigadas En Labor");
         JRBBrigadasNODisponibles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +60,7 @@ public class RevisarBrigadasView extends javax.swing.JInternalFrame {
             }
         });
 
+        JRBBrigadasDisponibles.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBBrigadasDisponibles.setText("Brigadas Disponibles");
         JRBBrigadasDisponibles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -28,35 +28,6 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="JTFCoordX" min="-2" pref="138" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="JDCFechaInicio" min="-2" pref="138" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="JTFCoordY" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCBoxTipoSiniestro" min="-2" pref="162" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" pref="184" max="-2" attributes="0"/>
                   </Group>
@@ -69,22 +40,19 @@
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="JDCFechaDeResolucion" min="-2" pref="138" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" min="-2" pref="73" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="JCBCalificacion" min="-2" pref="47" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="JBGuardarNuevoSiniestro" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                                      <Component id="JBModificar" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                      <Component id="JBModificar" min="-2" pref="177" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="JBSalir" min="-2" pref="157" max="-2" attributes="0"/>
-                                  <Component id="JRBEstado" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                              <Component id="JBSalir" min="-2" pref="157" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -103,12 +71,45 @@
                       <Component id="jScrollPane1" min="-2" pref="376" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="216" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="JTCodigo" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="JBBuscar" min="-2" pref="125" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="JRBEstado" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel3" min="-2" pref="98" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="JTFCoordX" min="-2" pref="138" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel2" min="-2" pref="96" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="JDCFechaInicio" min="-2" pref="138" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel9" min="-2" pref="99" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="JTFCoordY" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel4" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jCBoxTipoSiniestro" min="-2" pref="162" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="24" max="32767" attributes="0"/>
@@ -182,10 +183,10 @@
               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="JBSalir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="JBModificar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JBModificar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="JBGuardarNuevoSiniestro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -193,41 +194,65 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar Por Codigo/ID de Siniestro"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Fecha de Inicio"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Coordenadas X"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Tipo De Siniestro"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Asignar Brigada"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Fecha de Resolucion"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Coordenadas Y"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Calificacion"/>
       </Properties>
     </Component>
@@ -248,11 +273,17 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="JRBEstado">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Marcar si esta en curso"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Detalles Del Siniestro"/>
       </Properties>
     </Component>
@@ -277,6 +308,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBBuscar">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/bomberosApp/Imagenes/JBBuscar.jpg"/>
         </Property>
@@ -288,6 +322,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBSalir">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/bomberosApp/Imagenes/JBSalir.png.png"/>
         </Property>
@@ -299,6 +336,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBModificar">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
       <Events>
@@ -307,6 +347,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBGuardarNuevoSiniestro">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/bomberosApp/Imagenes/JBGuardar.jpg"/>
         </Property>
@@ -358,11 +401,17 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="JRBBrigadaNull">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sin Brigada"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="JRBMostrarBrigadas">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Mostrar Brigadas"/>
       </Properties>
       <Events>
