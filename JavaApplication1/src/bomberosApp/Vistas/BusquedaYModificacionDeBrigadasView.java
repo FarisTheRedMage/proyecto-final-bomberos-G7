@@ -390,7 +390,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     }//GEN-LAST:event_JBLimpiarActionPerformed
 
     private void JRBMostrarCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBMostrarCuartelesActionPerformed
-        limpiar();
+
         llenarJCBCuartel();
         
     }//GEN-LAST:event_JRBMostrarCuartelesActionPerformed
@@ -398,6 +398,10 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     private void JCBCuartelesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JCBCuartelesItemStateChanged
         // TODO add your handling code here:
         if(JRBMostrarCuarteles.isSelected()){
+        Cuartel seleccion = (Cuartel)JCBCuarteles.getSelectedItem();
+        int id = seleccion.getId_cuartel();
+        JTFidCuartel.setText(id+"");
+        } else {
         Cuartel seleccion = (Cuartel)JCBCuarteles.getSelectedItem();
         int id = seleccion.getId_cuartel();
         JTFidCuartel.setText(id+"");
