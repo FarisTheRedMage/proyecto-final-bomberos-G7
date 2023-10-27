@@ -75,6 +75,7 @@ public class GestionDePersonalView extends javax.swing.JInternalFrame {
 
         JRBEstado.setText("Estado");
 
+        JBGuardarModificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBGuardar.jpg"))); // NOI18N
         JBGuardarModificaciones.setText("Guardar Modificaciones");
         JBGuardarModificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
