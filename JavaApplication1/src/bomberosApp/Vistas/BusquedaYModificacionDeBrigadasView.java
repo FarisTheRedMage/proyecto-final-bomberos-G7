@@ -121,6 +121,12 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
 
         jLabel2.setText("*_En caso de crear nueva brigada primero Buscar un Cuartel por ID");
 
+        JCBCuarteles.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                JCBCuartelesItemStateChanged(evt);
+            }
+        });
+
         JBLimpiar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JBLimpiar.setText("Limpiar Campos");
         JBLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -384,8 +390,19 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     }//GEN-LAST:event_JBLimpiarActionPerformed
 
     private void JRBMostrarCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBMostrarCuartelesActionPerformed
+        limpiar();
         llenarJCBCuartel();
+        
     }//GEN-LAST:event_JRBMostrarCuartelesActionPerformed
+
+    private void JCBCuartelesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JCBCuartelesItemStateChanged
+        // TODO add your handling code here:
+        if(JRBMostrarCuarteles.isSelected()){
+        Cuartel seleccion = (Cuartel)JCBCuarteles.getSelectedItem();
+        int id = seleccion.getId_cuartel();
+        JTFidCuartel.setText(id+"");
+        }
+    }//GEN-LAST:event_JCBCuartelesItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
@@ -418,16 +435,19 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             brigada.getCuartel();
             if (brigada.getCuartel() != null && !JRBMostrarCuarteles.isSelected()) {
                 JCBCuarteles.addItem(brigada.getCuartel());
+                
 
             } else {
                 for (Cuartel cuarteles : listarCuarteles) {
                     JCBCuarteles.addItem(cuarteles);
+                    
                 }
 
             }
         } else {
             for (Cuartel cuarteles : listarCuarteles) {
                 JCBCuarteles.addItem(cuarteles);
+                
             }
         }
     }
