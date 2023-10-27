@@ -38,7 +38,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         JTFidCuartel = new javax.swing.JTextField();
         JTFEspecialidad = new javax.swing.JTextField();
         JRBEstado = new javax.swing.JRadioButton();
-        JBGuardar = new javax.swing.JButton();
+        JBModificar = new javax.swing.JButton();
         JBSalir = new javax.swing.JButton();
         JRBDisponibilidad = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
@@ -47,6 +47,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         jLabel2 = new javax.swing.JLabel();
         JCBCuarteles = new javax.swing.JComboBox<>();
         JBLimpiar = new javax.swing.JButton();
+        JRBMostrarCuarteles = new javax.swing.JRadioButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -77,12 +78,12 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         JRBEstado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBEstado.setText("Estado");
 
-        JBGuardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        JBGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBGuardar.jpg"))); // NOI18N
-        JBGuardar.setText("Guardar Modificaciones");
-        JBGuardar.addActionListener(new java.awt.event.ActionListener() {
+        JBModificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        JBModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBGuardar.jpg"))); // NOI18N
+        JBModificar.setText("Guardar Modificaciones");
+        JBModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBGuardarActionPerformed(evt);
+                JBModificarActionPerformed(evt);
             }
         });
 
@@ -128,6 +129,14 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             }
         });
 
+        JRBMostrarCuarteles.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        JRBMostrarCuarteles.setText("Mostrar Cuarteles");
+        JRBMostrarCuarteles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRBMostrarCuartelesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,7 +166,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JBNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(JBGuardar)))
+                                .addComponent(JBModificar)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -185,7 +194,9 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JRBMostrarCuarteles)
+                            .addComponent(JBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
@@ -212,10 +223,11 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
                     .addComponent(jLabel5)
                     .addComponent(JTFEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRBEstado)
-                    .addComponent(JRBDisponibilidad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                    .addComponent(JRBDisponibilidad)
+                    .addComponent(JRBMostrarCuarteles))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBGuardar)
+                    .addComponent(JBModificar)
                     .addComponent(JBNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -267,7 +279,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
 
     }//GEN-LAST:event_JBBuscarActionPerformed
 //funca
-    private void JBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarActionPerformed
+    private void JBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBModificarActionPerformed
 
         try {
             Cuartel c1 = new Cuartel();
@@ -276,7 +288,10 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             brigada.setEspecialidad(JTFEspecialidad.getText());
             brigada.setEstado(JRBEstado.isSelected());
             brigada.setDisponibilidad(JRBDisponibilidad.isSelected());
-//            brigada.setNombre_cuartel((String) JCBCuarteles.getSelectedItem());
+            
+            Cuartel cuartelSeleccionado = (Cuartel) JCBCuarteles.getSelectedItem();
+            brigada.setCuartel(cuartelSeleccionado);
+
             c1.setId_cuartel(Integer.parseInt(JTFidCuartel.getText()));
             brigada.setCuartel(c1);
 
@@ -300,7 +315,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(this, "No deje campos vacíos " + e.getMessage());
         }
-    }//GEN-LAST:event_JBGuardarActionPerformed
+    }//GEN-LAST:event_JBModificarActionPerformed
 //funca-id cuartel
     private void JBBuscarPorIDCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarPorIDCuartelActionPerformed
 
@@ -363,21 +378,26 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     }//GEN-LAST:event_JBNuevoActionPerformed
 
     private void JBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBLimpiarActionPerformed
-       
+
         limpiar();
         llenarJCBCuartel();
     }//GEN-LAST:event_JBLimpiarActionPerformed
 
+    private void JRBMostrarCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBMostrarCuartelesActionPerformed
+        llenarJCBCuartel();
+    }//GEN-LAST:event_JRBMostrarCuartelesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBBuscar;
     private javax.swing.JButton JBBuscarPorIDCuartel;
-    private javax.swing.JButton JBGuardar;
     private javax.swing.JButton JBLimpiar;
+    private javax.swing.JButton JBModificar;
     private javax.swing.JButton JBNuevo;
     private javax.swing.JButton JBSalir;
     private javax.swing.JComboBox<Cuartel> JCBCuarteles;
     private javax.swing.JRadioButton JRBDisponibilidad;
     private javax.swing.JRadioButton JRBEstado;
+    private javax.swing.JRadioButton JRBMostrarCuarteles;
     private javax.swing.JTextField JTFCodigo;
     private javax.swing.JTextField JTFEspecialidad;
     private javax.swing.JTextField JTFNombreBrigada;
@@ -390,14 +410,26 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 
-    public void llenarJCBCuartel() {
-
+    private void llenarJCBCuartel() {
         JCBCuarteles.removeAllItems();
 
-        for (Cuartel listarCuartel : listarCuarteles) {
-            JCBCuarteles.addItem(listarCuartel);
-        }
+        if (!JTFCodigo.getText().isEmpty()) {
+            brigada = brigadaData.BuscarBrigada(Integer.parseInt(JTFCodigo.getText()));
+            brigada.getCuartel();
+            if (brigada.getCuartel() != null && !JRBMostrarCuarteles.isSelected()) {
+                JCBCuarteles.addItem(brigada.getCuartel());
 
+            } else {
+                for (Cuartel cuarteles : listarCuarteles) {
+                    JCBCuarteles.addItem(cuarteles);
+                }
+
+            }
+        } else {
+            for (Cuartel cuarteles : listarCuarteles) {
+                JCBCuarteles.addItem(cuarteles);
+            }
+        }
     }
 
     public void limpiar() {
@@ -409,10 +441,9 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         JRBEstado.setSelected(false);
     }
 
-     private void cambiarColor(){
-       
-    
-    this.getContentPane().setBackground(new Color(78, 73, 102));
+    private void cambiarColor() {
+
+        this.getContentPane().setBackground(new Color(78, 73, 102));
 
         jLabel2.setForeground(new Color(200, 214, 214));
         jLabel1.setForeground(new Color(200, 214, 214));
@@ -420,24 +451,24 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         jLabel4.setForeground(new Color(200, 214, 214));
         jLabel5.setForeground(new Color(200, 214, 214));
         jLabel6.setForeground(new Color(200, 214, 214));
-        
 
         JBBuscar.setBackground(new Color(50, 47, 65));
         JBBuscar.setForeground(new Color(200, 214, 214));
 
         JBBuscarPorIDCuartel.setBackground(new Color(50, 47, 65));
         JBBuscarPorIDCuartel.setForeground(new Color(200, 214, 214));
-        
-        JBGuardar.setBackground(new Color(50, 47, 65));
-        JBGuardar.setForeground(new Color(200, 214, 214));
-        
+
+        JBModificar.setBackground(new Color(50, 47, 65));
+        JBModificar.setForeground(new Color(200, 214, 214));
+
         JBLimpiar.setBackground(new Color(50, 47, 65));
         JBLimpiar.setForeground(new Color(200, 214, 214));
-        
+
         JBNuevo.setBackground(new Color(50, 47, 65));
         JBNuevo.setForeground(new Color(200, 214, 214));
-        
+
         JBSalir.setBackground(new Color(50, 47, 65));
         JBSalir.setForeground(new Color(200, 214, 214));
-   }
+    }
+
 }

@@ -55,7 +55,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="JBNuevo" min="-2" pref="111" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="JBGuardar" min="-2" max="-2" attributes="0"/>
+                              <Component id="JBModificar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -95,7 +95,10 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="JBSalir" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="JRBMostrarCuarteles" min="-2" max="-2" attributes="0"/>
+                          <Component id="JBSalir" min="-2" pref="120" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
@@ -129,10 +132,11 @@
                   <Component id="JTFEspecialidad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JRBEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JRBDisponibilidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRBMostrarCuarteles" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="63" max="32767" attributes="0"/>
+              <EmptySpace pref="67" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JBGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JBModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JBNuevo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="JBLimpiar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
@@ -206,7 +210,7 @@
         <Property name="text" type="java.lang.String" value="Estado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="JBGuardar">
+    <Component class="javax.swing.JButton" name="JBModificar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="3"/>
@@ -217,7 +221,7 @@
         <Property name="text" type="java.lang.String" value="Guardar Modificaciones"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBGuardarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBModificarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="JBSalir">
@@ -299,6 +303,17 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBLimpiarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="JRBMostrarCuarteles">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Mostrar Cuarteles"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBMostrarCuartelesActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

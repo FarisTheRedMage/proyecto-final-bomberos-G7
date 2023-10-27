@@ -87,12 +87,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel10.setText("Calificacion");
 
-        JCBAsignarBrigada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBAsignarBrigadaActionPerformed(evt);
-            }
-        });
-
         JRBEstado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         JRBEstado.setText("Marcar si esta en curso");
 
@@ -393,11 +387,11 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             limpiar();
         } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(this, "No deje campos vacíos" + ex.getMessage());
-            ex.printStackTrace();
+//            ex.printStackTrace();
             limpiar();
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "El campo debe ser un número");
-            ex.printStackTrace();
+//            ex.printStackTrace();
             limpiar();
         }
     }//GEN-LAST:event_JBModificarActionPerformed
@@ -458,10 +452,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
             limpiar();
         }
     }//GEN-LAST:event_JBBuscarActionPerformed
-
-    private void JCBAsignarBrigadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAsignarBrigadaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBAsignarBrigadaActionPerformed
 
     private void JRBMostrarBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBMostrarBrigadasActionPerformed
         llenarComboBox();
@@ -528,21 +518,6 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         } else {
             for (Brigada brigadas : listarBrigada) {
                 JCBAsignarBrigada.addItem(brigadas);
-            
-        
-//        if (!JTCodigo.getText().isEmpty()) {
-//            int siniestroId = Integer.parseInt(JTCodigo.getText());
-//            Siniestro siniestro = sd.BuscarSiniestro_ID_NUEVO(siniestroId); //APARECEN LOS DATOS EN NULL MENOS EL ID_BRIGADA
-//
-//            if (siniestro.getBrigada() != null) {
-//                JCBAsignarBrigada.addItem(siniestro.getBrigada());
-//            }
-//        } else {
-//            List<Brigada> brigadas = listarBrigada;
-//            if (brigadas != null) {
-//                for (Brigada brigada : brigadas) {
-//                    JCBAsignarBrigada.addItem(brigada);
-//                }
             }
         }
     }
