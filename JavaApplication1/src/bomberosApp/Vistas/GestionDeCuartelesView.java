@@ -28,7 +28,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        JRBGuardarModificaciones = new javax.swing.JButton();
+        JBGuardarModificaciones = new javax.swing.JButton();
         JBAgregarCuartel = new javax.swing.JButton();
         JTFCodigo = new javax.swing.JTextField();
         JTFDireccion = new javax.swing.JTextField();
@@ -60,11 +60,11 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
 
         jLabel7.setText("Correo");
 
-        JRBGuardarModificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBGuardar.jpg"))); // NOI18N
-        JRBGuardarModificaciones.setText("Guardar Modificaciones");
-        JRBGuardarModificaciones.addActionListener(new java.awt.event.ActionListener() {
+        JBGuardarModificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/JBGuardar.jpg"))); // NOI18N
+        JBGuardarModificaciones.setText("Guardar Modificaciones");
+        JBGuardarModificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JRBGuardarModificacionesActionPerformed(evt);
+                JBGuardarModificacionesActionPerformed(evt);
             }
         });
 
@@ -128,7 +128,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
                                 .addComponent(JTFCoordX, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(JRBGuardarModificaciones)))
+                        .addComponent(JBGuardarModificaciones)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -189,7 +189,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
                         .addComponent(JRBEstado)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JRBGuardarModificaciones)
+                    .addComponent(JBGuardarModificaciones)
                     .addComponent(JBSalir)
                     .addComponent(JBAgregarCuartel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41))
@@ -226,7 +226,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_JBSalirActionPerformed
 //Funca!!!
-    private void JRBGuardarModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBGuardarModificacionesActionPerformed
+    private void JBGuardarModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBGuardarModificacionesActionPerformed
 //como hacer para que una cadena solo contenga dígitos numéricos??? - es necesario cambiar el tipod el Atributo??
         try {
             cuartel.setId_cuartel(Integer.parseInt(JTFCodigo.getText()));
@@ -252,7 +252,7 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "No deje campos vacíos. " + e.getMessage());
         }
 
-    }//GEN-LAST:event_JRBGuardarModificacionesActionPerformed
+    }//GEN-LAST:event_JBGuardarModificacionesActionPerformed
 //Funca!!!
     private void JBAgregarCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAgregarCuartelActionPerformed
 
@@ -286,9 +286,9 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBAgregarCuartel;
     private javax.swing.JButton JBBuscar;
+    private javax.swing.JButton JBGuardarModificaciones;
     private javax.swing.JButton JBSalir;
     private javax.swing.JRadioButton JRBEstado;
-    private javax.swing.JButton JRBGuardarModificaciones;
     private javax.swing.JTextField JTFCodigo;
     private javax.swing.JTextField JTFCoordX;
     private javax.swing.JTextField JTFCoordY;
@@ -338,7 +338,8 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
         JBAgregarCuartel.setBackground(new Color(50, 47, 65));
         JBAgregarCuartel.setForeground(new Color(200, 214, 214));
         
-      
+        JBGuardarModificaciones.setBackground(new Color(50, 47, 65));
+        JBGuardarModificaciones.setForeground(new Color(200, 214, 214));
         
          JBSalir.setBackground(new Color(50, 47, 65));
         JBSalir.setForeground(new Color(200, 214, 214));

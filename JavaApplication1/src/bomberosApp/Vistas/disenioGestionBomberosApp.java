@@ -139,7 +139,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         });
         JMSiniestros.add(JMItemSiniestros);
 
-        JMIHistorialDeSiniestros.setText("Historial de Siniestros");
+        JMIHistorialDeSiniestros.setText("Historial de Eventos");
         JMIHistorialDeSiniestros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JMIHistorialDeSiniestrosActionPerformed(evt);

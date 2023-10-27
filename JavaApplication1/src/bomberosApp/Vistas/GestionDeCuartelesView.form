@@ -65,7 +65,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="JRBGuardarModificaciones" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBGuardarModificaciones" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -147,7 +147,7 @@
               </Group>
               <EmptySpace pref="65" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JRBGuardarModificaciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JBGuardarModificaciones" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JBSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JBAgregarCuartel" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
@@ -192,7 +192,7 @@
         <Property name="text" type="java.lang.String" value="Correo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="JRBGuardarModificaciones">
+    <Component class="javax.swing.JButton" name="JBGuardarModificaciones">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/bomberosApp/Imagenes/JBGuardar.jpg"/>
@@ -200,7 +200,7 @@
         <Property name="text" type="java.lang.String" value="Guardar Modificaciones"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JRBGuardarModificacionesActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBGuardarModificacionesActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="JBAgregarCuartel">
