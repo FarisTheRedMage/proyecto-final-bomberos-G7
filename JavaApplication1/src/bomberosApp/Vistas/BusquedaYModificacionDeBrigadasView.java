@@ -294,7 +294,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             brigada.setEspecialidad(JTFEspecialidad.getText());
             brigada.setEstado(JRBEstado.isSelected());
             brigada.setDisponibilidad(JRBDisponibilidad.isSelected());
-            
+
             Cuartel cuartelSeleccionado = (Cuartel) JCBCuarteles.getSelectedItem();
             brigada.setCuartel(cuartelSeleccionado);
 
@@ -384,27 +384,22 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
     }//GEN-LAST:event_JBNuevoActionPerformed
 
     private void JBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBLimpiarActionPerformed
-
         limpiar();
         llenarJCBCuartel();
     }//GEN-LAST:event_JBLimpiarActionPerformed
 
     private void JRBMostrarCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRBMostrarCuartelesActionPerformed
-
         llenarJCBCuartel();
-        
     }//GEN-LAST:event_JRBMostrarCuartelesActionPerformed
 
     private void JCBCuartelesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JCBCuartelesItemStateChanged
-        // TODO add your handling code here:
-        if(JRBMostrarCuarteles.isSelected()){
-        Cuartel seleccion = (Cuartel)JCBCuarteles.getSelectedItem();
-        int id = seleccion.getId_cuartel();
-        JTFidCuartel.setText(id+"");
-        } else {
-        Cuartel seleccion = (Cuartel)JCBCuarteles.getSelectedItem();
-        int id = seleccion.getId_cuartel();
-        JTFidCuartel.setText(id+"");
+        if (JRBMostrarCuarteles.isSelected()) {
+            Cuartel seleccion = (Cuartel) JCBCuarteles.getSelectedItem();
+
+            if (seleccion != null) {
+                int id = seleccion.getId_cuartel();
+                JTFidCuartel.setText(String.valueOf(id));
+            }
         }
     }//GEN-LAST:event_JCBCuartelesItemStateChanged
 
@@ -439,19 +434,18 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
             brigada.getCuartel();
             if (brigada.getCuartel() != null && !JRBMostrarCuarteles.isSelected()) {
                 JCBCuarteles.addItem(brigada.getCuartel());
-                
 
             } else {
                 for (Cuartel cuarteles : listarCuarteles) {
                     JCBCuarteles.addItem(cuarteles);
-                    
+
                 }
 
             }
         } else {
             for (Cuartel cuarteles : listarCuarteles) {
                 JCBCuarteles.addItem(cuarteles);
-                
+
             }
         }
     }
@@ -463,6 +457,7 @@ public class BusquedaYModificacionDeBrigadasView extends javax.swing.JInternalFr
         JTFNombreBrigada.setText("");
         JRBDisponibilidad.setSelected(false);
         JRBEstado.setSelected(false);
+        JRBMostrarCuarteles.setSelected(false);
     }
 
     private void cambiarColor() {

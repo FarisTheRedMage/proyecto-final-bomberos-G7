@@ -330,8 +330,8 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
     private void cambiarColor() {
 
-        escritorio.setBackground(new Color(78, 73, 102));
-        
+        escritorio.setBackground(new Color(40, 42, 54 ));
+                                    //87, 35, 100            188, 146, 248             40, 42, 54           78, 73, 102
     }
 
 }
