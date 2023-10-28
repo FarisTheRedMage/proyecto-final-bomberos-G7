@@ -29,6 +29,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
+        JLFondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         JMUnidades = new javax.swing.JMenu();
         JMICargaDePersonal = new javax.swing.JMenuItem();
@@ -50,15 +51,17 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         escritorio.setBackground(new java.awt.Color(60, 63, 65));
 
+        escritorio.setLayer(JLFondo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 953, Short.MAX_VALUE)
+            .addComponent(JLFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1112, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addComponent(JLFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
         );
 
         JMUnidades.setText("Unidades");
@@ -309,6 +312,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLFondo;
     private javax.swing.JMenu JMBrigadas;
     private javax.swing.JMenu JMCuarteles;
     private javax.swing.JMenuItem JMIAsignacionDeCuarteles;
@@ -331,7 +335,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void cambiarColor() {
 
         escritorio.setBackground(new Color(40, 42, 54 ));
-                                    //87, 35, 100            188, 146, 248             40, 42, 54           78, 73, 102
+//                                  87, 35, 100            188, 146, 248             40, 42, 54           78, 73, 102
     }
 
 }
