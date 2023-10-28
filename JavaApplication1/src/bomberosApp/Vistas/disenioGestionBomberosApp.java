@@ -54,8 +54,9 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         JMSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        fondito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/fondo.jpg"))); // NOI18N
+        fondito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/fondo2.png"))); // NOI18N
 
         escritorio.setLayer(fondito, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -63,15 +64,11 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(escritorioLayout.createSequentialGroup()
-                .addComponent(fondito)
-                .addGap(0, 182, Short.MAX_VALUE))
+            .addComponent(fondito, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(escritorioLayout.createSequentialGroup()
-                .addComponent(fondito)
-                .addGap(0, 147, Short.MAX_VALUE))
+            .addComponent(fondito, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 802, Short.MAX_VALUE)
         );
 
         JMUnidades.setText("Unidades");
@@ -184,11 +181,11 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio)
         );
 
         pack();
@@ -366,7 +363,8 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         fondito.setBounds(0,0, escritorio.getWidth(), escritorio.getHeight());
         fondito.setOpaque(true);
         
-        base.add(fondito, Integer.valueOf(0));
+        base.add(fondito);
+        
         escritorio.add(base);
         
     }
