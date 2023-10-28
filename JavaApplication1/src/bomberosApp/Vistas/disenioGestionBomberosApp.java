@@ -4,7 +4,12 @@ import bomberosApp.AccesoADatos.BomberoData;
 import bomberosApp.AccesoADatos.BrigadaData;
 import bomberosApp.AccesoADatos.CuartelData;
 import bomberosApp.AccesoADatos.SiniestroData;
+
+
 import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 
 public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
@@ -22,6 +27,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
         brigd = new BrigadaData();
         sd = new SiniestroData();
         cambiarColor();
+        cambiarfondo();
     }
 
     @SuppressWarnings("unchecked")
@@ -29,7 +35,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
-        JLFondo = new javax.swing.JLabel();
+        fondito = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         JMUnidades = new javax.swing.JMenu();
         JMICargaDePersonal = new javax.swing.JMenuItem();
@@ -49,19 +55,23 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        escritorio.setBackground(new java.awt.Color(60, 63, 65));
+        fondito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bomberosApp/Imagenes/fondo.jpg"))); // NOI18N
 
-        escritorio.setLayer(JLFondo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        escritorio.setLayer(fondito, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JLFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1112, Short.MAX_VALUE)
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addComponent(fondito)
+                .addGap(0, 182, Short.MAX_VALUE))
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JLFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addComponent(fondito)
+                .addGap(0, 147, Short.MAX_VALUE))
         );
 
         JMUnidades.setText("Unidades");
@@ -187,6 +197,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMItemSiniestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMItemSiniestrosActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         SiniestrosView sv = new SiniestrosView();
         sv.setVisible(true);
         escritorio.add(sv);
@@ -194,8 +205,10 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     }//GEN-LAST:event_JMItemSiniestrosActionPerformed
 
     private void JMIGestionDeBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIGestionDeBrigadasActionPerformed
+        
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         BusquedaYModificacionDeBrigadasView mybdbv = new BusquedaYModificacionDeBrigadasView();
         mybdbv.setVisible(true);
         escritorio.add(mybdbv);
@@ -205,6 +218,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMIHistorialDeSiniestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIHistorialDeSiniestrosActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         HistorialDeEventosView hdsv = new HistorialDeEventosView();
         hdsv.setVisible(true);
         escritorio.add(hdsv);
@@ -214,6 +228,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMIInformacionDeCuartelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIInformacionDeCuartelActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         InformacionDeBrigadasEnCuartelView idcv = new InformacionDeBrigadasEnCuartelView();
         idcv.setVisible(true);
         escritorio.add(idcv);
@@ -223,6 +238,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMICargaDePersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMICargaDePersonalActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         CargaDePersonalView cdpv = new CargaDePersonalView();
         cdpv.setVisible(true);
         escritorio.add(cdpv);
@@ -232,6 +248,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMIGestionDePersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIGestionDePersonalActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         GestionDePersonalView gdpv = new GestionDePersonalView();
         gdpv.setVisible(true);
         escritorio.add(gdpv);
@@ -241,6 +258,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMIGestionDeCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIGestionDeCuartelesActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         GestionDeCuartelesView gdcv = new GestionDeCuartelesView();
         gdcv.setVisible(true);
         escritorio.add(gdcv);
@@ -250,6 +268,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMIRevisarBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIRevisarBrigadasActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         RevisarBrigadasView rbv = new RevisarBrigadasView();
         rbv.setVisible(true);
         escritorio.add(rbv);
@@ -259,6 +278,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMIPersonalEnBrigadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIPersonalEnBrigadasActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         PersonalEnBrigadasView pebv = new PersonalEnBrigadasView();
         pebv.setVisible(true);
         escritorio.add(pebv);
@@ -268,6 +288,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private void JMIAsignacionDeCuartelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIAsignacionDeCuartelesActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
+        cambiarfondo();
         AsignacionDeCuartelesView1 adcv = new AsignacionDeCuartelesView1();
         adcv.setVisible(true);
         escritorio.add(adcv);
@@ -312,7 +333,6 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLFondo;
     private javax.swing.JMenu JMBrigadas;
     private javax.swing.JMenu JMCuarteles;
     private javax.swing.JMenuItem JMIAsignacionDeCuarteles;
@@ -329,6 +349,7 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
     private javax.swing.JMenu JMSiniestros;
     private javax.swing.JMenu JMUnidades;
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JLabel fondito;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 
@@ -336,6 +357,18 @@ public class disenioGestionBomberosApp extends javax.swing.JFrame {
 
         escritorio.setBackground(new Color(40, 42, 54 ));
 //                                  87, 35, 100            188, 146, 248             40, 42, 54           78, 73, 102
+    }
+    
+    private void cambiarfondo(){
+        JLayeredPane base = new JLayeredPane();
+        base.setBounds(0,0,escritorio.getWidth(), escritorio.getHeight());
+        
+        fondito.setBounds(0,0, escritorio.getWidth(), escritorio.getHeight());
+        fondito.setOpaque(true);
+        
+        base.add(fondito, Integer.valueOf(0));
+        escritorio.add(base);
+        
     }
 
 }
