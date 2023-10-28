@@ -340,12 +340,10 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
         JRBEstado.setSelected(false);
     }
 
-    private void cambiarColor(){
-       
-          
-          
-    this.getContentPane().setBackground(new Color(78, 73, 102));
-        
+    private void cambiarColor() {
+
+        this.getContentPane().setBackground(new Color(74, 84, 89));
+
         jLabel1.setForeground(new Color(200, 214, 214));
         jLabel2.setForeground(new Color(200, 214, 214));
         jLabel3.setForeground(new Color(200, 214, 214));
@@ -353,23 +351,19 @@ public class GestionDeCuartelesView extends javax.swing.JInternalFrame {
         jLabel5.setForeground(new Color(200, 214, 214));
         jLabel6.setForeground(new Color(200, 214, 214));
         jLabel7.setForeground(new Color(200, 214, 214));
-       
-        
-        
-        JBBuscar.setBackground(new Color(50, 47, 65));
+
+        JBBuscar.setBackground(new Color(74, 84, 89));
         JBBuscar.setForeground(new Color(200, 214, 214));
 
-        JBAgregarCuartel.setBackground(new Color(50, 47, 65));
+        JBAgregarCuartel.setBackground(new Color(74, 84, 89));
         JBAgregarCuartel.setForeground(new Color(200, 214, 214));
-        
-        JBGuardarModificaciones.setBackground(new Color(50, 47, 65));
+
+        JBGuardarModificaciones.setBackground(new Color(74, 84, 89));
         JBGuardarModificaciones.setForeground(new Color(200, 214, 214));
-        
-         JBSalir.setBackground(new Color(50, 47, 65));
+
+        JBSalir.setBackground(new Color(74, 84, 89));
         JBSalir.setForeground(new Color(200, 214, 214));
-        
-   }
-    
-    
-    
+
+    }
+
 }

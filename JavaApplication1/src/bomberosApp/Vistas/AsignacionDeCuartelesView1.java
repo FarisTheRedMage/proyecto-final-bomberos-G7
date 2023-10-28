@@ -227,7 +227,7 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
      private void cambiarColor(){
        
     
-    this.getContentPane().setBackground(new Color(78, 73, 102));
+    this.getContentPane().setBackground(new Color(74, 84, 89));
 
         jLabel2.setForeground(new Color(200, 214, 214));
         jLabel1.setForeground(new Color(200, 214, 214));
@@ -235,10 +235,10 @@ public class AsignacionDeCuartelesView1 extends javax.swing.JInternalFrame {
        
         
 
-        JBAsignarBrigada.setBackground(new Color(50, 47, 65));
+        JBAsignarBrigada.setBackground(new Color(74, 84, 89));
         JBAsignarBrigada.setForeground(new Color(200, 214, 214));
 
-        JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setBackground(new Color(74, 84, 89));
         JBSalir.setForeground(new Color(200, 214, 214));
         
       

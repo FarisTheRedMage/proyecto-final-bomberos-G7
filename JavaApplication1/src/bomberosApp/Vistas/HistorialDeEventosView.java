@@ -241,25 +241,19 @@ public class HistorialDeEventosView extends javax.swing.JInternalFrame {
         }
 
     }
-    
-    private void cambiarColor(){
 
-    this.getContentPane().setBackground(new Color(78, 73, 102));
-        
-        
+    private void cambiarColor() {
+
+        this.getContentPane().setBackground(new Color(74, 84, 89));
+
         jLabel2.setForeground(new Color(200, 214, 214));
-       
-        
-        
-        JBListar.setBackground(new Color(50, 47, 65));
+
+        JBListar.setBackground(new Color(74, 84, 89));
         JBListar.setForeground(new Color(200, 214, 214));
 
-       
-        
-         JBSalir.setBackground(new Color(50, 47, 65));
+        JBSalir.setBackground(new Color(74, 84, 89));
         JBSalir.setForeground(new Color(200, 214, 214));
-        
-   }
-    
-    
+
+    }
+
 }

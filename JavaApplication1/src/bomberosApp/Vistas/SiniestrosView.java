@@ -527,7 +527,7 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
        
           
           
-    this.getContentPane().setBackground(new Color(78, 73, 102));
+    this.getContentPane().setBackground(new Color(74, 84, 89));
         
         jLabel1.setForeground(new Color(200, 214, 214));
         jLabel2.setForeground(new Color(200, 214, 214));
@@ -540,16 +540,16 @@ public class SiniestrosView extends javax.swing.JInternalFrame {
         jLabel10.setForeground(new Color(200, 214, 214));
         
         
-        JBBuscar.setBackground(new Color(50, 47, 65));
+        JBBuscar.setBackground(new Color(74, 84, 89));
         JBBuscar.setForeground(new Color(200, 214, 214));
 
-        JBGuardarNuevoSiniestro.setBackground(new Color(50, 47, 65));
+        JBGuardarNuevoSiniestro.setBackground(new Color(74, 84, 89));
         JBGuardarNuevoSiniestro.setForeground(new Color(200, 214, 214));
         
-         JBModificar.setBackground(new Color(50, 47, 65));
+         JBModificar.setBackground(new Color(74, 84, 89));
         JBModificar.setForeground(new Color(200, 214, 214));
         
-         JBSalir.setBackground(new Color(50, 47, 65));
+         JBSalir.setBackground(new Color(74, 84, 89));
         JBSalir.setForeground(new Color(200, 214, 214));
         
    }
