@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2023 a las 01:00:19
+-- Tiempo de generación: 30-10-2023 a las 21:44:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -50,8 +50,10 @@ INSERT INTO `bombero` (`id_bombero`, `nombre`, `apellido`, `dni`, `fecha_nacimie
 (3, 'Juan Santo', 'Domingo', 1111, '1996-05-13', 'A+', 2, '23112412', 1, 'Omega'),
 (6, 'Walter', 'Heredia', 98765432, '1990-05-15', 'A+', 2, '22223333', 1, 'Alfa'),
 (7, 'Maria', 'Marquez', 1231111, '1990-05-15', 'A+', 3, '2231231231', 1, 'Zetta'),
-(20, 'asdasdasd', 'aaadasdasd', 123123, '1996-07-04', 'AB-', 3, '123-123123-123', 1, 'Gama'),
-(21, 'AAAAAA', 'AAAAAAAAAA', 123, '2023-10-25', 'B+', 4, '12312312-123123', 1, 'Omega');
+(20, 'Mario', 'Neta', 123123, '1996-07-04', 'AB-', 9, '223-131-432', 1, 'Omega'),
+(21, 'AAAAAA', 'AAAAAAAAAA', 123, '2023-10-25', 'B+', 4, '12312312-123123', 1, 'Omega'),
+(22, 'LOLA', 'MENTO', 313123, '1996-10-10', 'B+', 7, '3123-123123-123', 1, 'Gama'),
+(23, 'Natalia', 'Bueno', 39423453, '1996-06-13', 'B-', 9, '3584396015', 1, 'Gama');
 
 -- --------------------------------------------------------
 
@@ -74,14 +76,14 @@ CREATE TABLE `brigada` (
 --
 
 INSERT INTO `brigada` (`id_brigada`, `nombre_brigada`, `especialidad`, `estado`, `id_cuartel`, `disponibilidad`, `nombre_cuartel`) VALUES
-(2, 'Brigada de Rescate', 'Rescate de Montaña', 1, 1, 0, 'Cuartel Central'),
-(3, 'Brigada A', 'Prevencion', 1, 5, 1, 'Lo Mejore´'),
-(4, 'Los Salvavidas', 'Inundación', 1, 4, 0, 'Cuartel: Los Bomberi'),
-(5, 'Brigada Suroeste', 'Rescate de Montaña', 1, 2, 1, 'Central Suroeste'),
-(6, 'Brigada Central Sur', 'Inundacion', 1, 2, 1, 'Central Sur'),
+(2, 'Brigada Copada', 'Rescate de Montaña', 1, 4, 1, 'Cuartel: Los Bomberi'),
+(3, 'Brigada A', 'Prevencion', 1, 4, 1, 'Lo Mejore´'),
+(4, 'Los Salvavidas', 'Inundacion', 1, 4, 0, 'Cuartel: Los Bomberi'),
+(5, 'Brigada Suroeste', 'Rescate de Montaña', 1, 8, 1, 'Central Suroeste'),
+(6, 'Brigada Central Sur', 'Inundacion', 1, 2, 0, 'Central Sur'),
 (7, 'Brigada Noreste', 'Inundacion', 1, 6, 1, 'Cuartel Noreste'),
-(8, 'Brigada Noroeste', 'Incendio', 1, 3, 1, 'Cuartel Noroeste'),
-(9, 'Brigada Sureste', 'Incendio', 1, 3, 1, 'Cuartel Sureste');
+(8, 'Brigada Noroeste', 'Incendio', 1, 8, 1, 'Cuartel Noroeste'),
+(9, 'Brigada Sureste', 'Incendio', 1, 3, 0, 'Cuartel Sureste');
 
 -- --------------------------------------------------------
 
@@ -106,12 +108,13 @@ CREATE TABLE `cuartel` (
 
 INSERT INTO `cuartel` (`id_cuartel`, `nombre_cuartel`, `direccion`, `coord_X`, `coord_Y`, `telefono`, `correo`, `estado`) VALUES
 (1, 'Cuartel Central', '123 Calle Principal', 46, 78, '0800-333-1212', 'cuartelcentral02@gmail.com', 1),
-(2, '123', 'Santa Cecilia ST ', 13.43, 15.34, '131312312', 'cuartelgeneral123@gmail.com', 1),
+(2, 'AJO', 'DERSE', 13.43, 15.34, '131312312', 'cuartelgeneral123@gmail.com', 1),
 (3, 'Cuartel Zona Este', 'Santa Clara ST', 10, 52, '7773662', 'cuartelzonaeste12@gmail.com', 1),
 (4, 'Cuartel: Los Bomberi', 'Goove ST', 11, 31, '2221111222', 'groovesthome@gmail.com', 1),
 (5, 'Lo Mejore´', 'calle 40 ', 67, 32, '111', 'salvadores de gatitos', 1),
 (6, 'qqq', 'qqq', 12, 11, '111', 'sfadfs', 1),
-(7, 'LosDelOeste', 'oeste 32', 12, 32, '12341234', 'fjshfkjsad@sfsdfj.com', 1);
+(7, 'LosDelOeste', 'oeste 32', 12, 32, '12341234', 'fjshfkjsad@sfsdfj.com', 1),
+(8, 'AGUA', 'NTARC', 212, 12, '1233123', 'AEDQWEQW@ADFASD.ASAD', 1);
 
 -- --------------------------------------------------------
 
@@ -137,13 +140,13 @@ CREATE TABLE `siniestro` (
 --
 
 INSERT INTO `siniestro` (`id_siniestro`, `coord_X`, `coord_Y`, `fecha_siniestro`, `tipo`, `detalles`, `id_brigada`, `fecha_resolucion`, `calificacion`, `estado`) VALUES
-(2, 22.54, 22.1, '2023-10-20', 'Rescate en Montaña', 'Derrumbe de montañas', 2, '2023-10-24', 5, 0),
-(3, 23.31, 12.123, '2023-10-19', 'Inundacion', 'inundacion de departamentos', NULL, NULL, NULL, 1),
-(4, 43.34, 45.66, '2023-10-17', 'Incendio', 'bosque prendido fuego', NULL, NULL, NULL, 1),
-(5, 22.532, 54.14, '2023-10-20', 'Rescate de Montaña', 'Derrumbe de montañas', NULL, NULL, NULL, 0),
-(6, 22.532, 54.14, '2023-10-20', 'Inundacion', 'Inundcion de un Rio cercano', NULL, NULL, NULL, 0),
-(7, 22.532, 54.14, '2023-10-20', 'Incendio', 'Derrumbe de montañas', NULL, NULL, NULL, 0),
-(8, 22.532, 54.14, '2023-10-20', 'Prevencion', 'Derrumbe de montañas', NULL, NULL, NULL, 0),
+(2, 22.54, 22.1, '2023-10-30', 'Rescate en Montaña', 'Derrumbe de montañas', 5, '2023-10-30', 7, 0),
+(3, 23.31, 12.123, '2023-10-30', 'Derrumbe', 'inundacion de departamentos', 5, NULL, 0, 0),
+(4, 43.34, 45.66, '2023-10-29', 'Incendio', 'bosque prendido fuego', NULL, '2023-10-29', 8, 0),
+(5, 22.532, 54.14, '2023-10-29', 'Incendio', 'Derrumbe de montañas', NULL, '2023-10-29', 4, 0),
+(6, 22.532, 54.14, '2023-10-26', 'Inundacion', 'Inundcion de un Rio cercano', NULL, NULL, 0, 0),
+(7, 22.532, 54.14, '2023-10-26', 'Incendio', 'Derrumbe de montañas', NULL, NULL, 0, 0),
+(8, 22.532, 54.14, '2023-10-20', 'Prevencion', 'Derrumbe de montañas', 3, NULL, NULL, 0),
 (9, 22.532, 54.14, '2023-10-20', 'Prevencion', 'Derrumbe de montañas', NULL, NULL, NULL, 0),
 (10, 22.532, 54.14, '2023-10-20', 'Rescate de Montaña', 'Derrumbe de montañas', NULL, NULL, NULL, 0),
 (11, 123, 123, '2023-10-24', 'Rescate en Montaña', 'accidente', 5, '2023-10-24', 5, 0);
@@ -188,7 +191,7 @@ ALTER TABLE `siniestro`
 -- AUTO_INCREMENT de la tabla `bombero`
 --
 ALTER TABLE `bombero`
-  MODIFY `id_bombero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_bombero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `brigada`
@@ -200,7 +203,7 @@ ALTER TABLE `brigada`
 -- AUTO_INCREMENT de la tabla `cuartel`
 --
 ALTER TABLE `cuartel`
-  MODIFY `id_cuartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_cuartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `siniestro`
